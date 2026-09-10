@@ -1,0 +1,29 @@
+Magma V2.29-4     Thu Sep 10 2026 10:08:49 on mordell  [Seed = 146807683]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading startup file "distinct_products_isogeny_filters.m"
+
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "ribet_isog.m"
+Loading "genus_0_stars.m"
+Loading "counting_points.m"
+Loading "tracesALL.m"
+Loading "PPV_tables_6_7.m"
+Loading "isog_utils.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "ribet_isog.m"
+Loading "PPV_tables_6_7.m"
+After genus + corollary sieve: 82266 candidates
+Processed 10000 / 82266 | remaining: 1079
+Processed 20000 / 82266 | remaining: 1623
+Processed 30000 / 82266 | remaining: 1984
+Processed 40000 / 82266 | remaining: 2323
+Processed 50000 / 82266 | remaining: 2661
+Processed 60000 / 82266 | remaining: 3017
+Processed 70000 / 82266 | remaining: 3296
+Processed 80000 / 82266 | remaining: 3548
+After point count filter: 3599 candidates
+
+Total time: 8946.219 seconds, Total memory usage: 9819.91MB
