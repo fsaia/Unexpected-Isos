@@ -141,672 +141,679 @@ Sort(~possible_DN_omega5); // size 499
 Sort(~possible_DN_omega6); // size 88
 
 
-    // // // omega(DN) = 2 ///////////////////////////////////////////////////////////////////////
+// We now compute all genus matches in candidate levels for 2 <= omega(DN) <= 6.
+// Initially we ran these separately for the different omega(DN) values just for
+// timing purposes, so you see the lists stored individually (and commented code 
+// prints them to individual files, which we don't need to save) and combined afterwards.
 
-    // // Cases here:
-    // //      - D1 = 1, N1 = DN
-    // //      - D1 = DN, N1 = 1
+// // omega(DN) = 2 ///////////////////////////////////////////////////////////////////////
 
-    // genus_matches_omega_eq2 := AssociativeArray(possible_DN_omega2);
+// Cases here:
+//      - D1 = 1, N1 = DN
+//      - D1 = DN, N1 = 1
 
-    // step := 0;
+genus_matches_omega_eq2 := AssociativeArray(possible_DN_omega2);
 
-    // print "checking omega(DN) = 2 cases";
+step := 0;
 
-    // for DN in possible_DN_omega2 do 
-    //     print DN; // track progress
-    //     genus_matches_omega_eq2[DN] := AssociativeArray(Integers());
-    //     step := step + 1;
-    //     print "Step out of 276: ", step;
-    //     AL_sub_gens := AL_subgroups(DN);
-    //     AL_sub_identifiers := AssociativeArray(AL_sub_gens);
-    //     for gens in AL_sub_gens do 
-    //         AL_sub_identifiers[gens] := gens_to_identifier(DN,gens);
-    //     end for;
-    //     DN_primes := Seqset(PrimeDivisors(DN));
-    //     DN_primes_2 := Subsets(DN_primes,2);
+print "checking omega(DN) = 2 cases";
 
-    //     // Case D=DN and N=1
-    //     D1 := DN;
-    //     N1 := 1;
+for DN in possible_DN_omega2 do 
+    print DN; // track progress
+    genus_matches_omega_eq2[DN] := AssociativeArray(Integers());
+    step := step + 1;
+    print "Step out of 276: ", step;
+    AL_sub_gens := AL_subgroups(DN);
+    AL_sub_identifiers := AssociativeArray(AL_sub_gens);
+    for gens in AL_sub_gens do 
+        AL_sub_identifiers[gens] := gens_to_identifier(DN,gens);
+    end for;
+    DN_primes := Seqset(PrimeDivisors(DN));
+    DN_primes_2 := Subsets(DN_primes,2);
 
-    //     // For each AL subgroup W, we store the info of the 
-    //     // genus of the quotient X_0^{D1}(N_1)/W.
-    //     for Wgens in AL_sub_gens do
-    //         gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
+    // Case D=DN and N=1
+    D1 := DN;
+    N1 := 1;
 
-    //         if gW gt 0 then 
-    //             if IsDefined(genus_matches_omega_eq2[DN],gW) then 
-    //                 Append(~genus_matches_omega_eq2[DN][gW],[* D1, N1, Wgens *]);
-    //             else 
-    //                 genus_matches_omega_eq2[DN][gW] := [[* D1, N1, Wgens *]];
-    //             end if; 
-    //         end if; 
-    //     end for; 
+    // For each AL subgroup W, we store the info of the 
+    // genus of the quotient X_0^{D1}(N_1)/W.
+    for Wgens in AL_sub_gens do
+        gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
 
-    //     // Case D1 = 1 and N1 = DN
-    //     D1 := 1;
-    //     N1 := DN;
+        if gW gt 0 then 
+            if IsDefined(genus_matches_omega_eq2[DN],gW) then 
+                Append(~genus_matches_omega_eq2[DN][gW],[* D1, N1, Wgens *]);
+            else 
+                genus_matches_omega_eq2[DN][gW] := [[* D1, N1, Wgens *]];
+            end if; 
+        end if; 
+    end for; 
 
-    //     // For each AL subgroup W, we store the info of the 
-    //     // genus of the quotient X_0^{D1}(N_1)/W.
-    //     for Wgens in AL_sub_gens do
-    //         gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
+    // Case D1 = 1 and N1 = DN
+    D1 := 1;
+    N1 := DN;
 
-    //         if gW gt 0 then 
-    //             if IsDefined(genus_matches_omega_eq2[DN],gW) then 
-    //                 Append(~genus_matches_omega_eq2[DN][gW],[* D1, N1, Wgens *]);
-    //             else 
-    //                 genus_matches_omega_eq2[DN][gW] := [[* D1, N1, Wgens *]];
-    //             end if; 
-    //         end if; 
-    //     end for; 
+    // For each AL subgroup W, we store the info of the 
+    // genus of the quotient X_0^{D1}(N_1)/W.
+    for Wgens in AL_sub_gens do
+        gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
+
+        if gW gt 0 then 
+            if IsDefined(genus_matches_omega_eq2[DN],gW) then 
+                Append(~genus_matches_omega_eq2[DN][gW],[* D1, N1, Wgens *]);
+            else 
+                genus_matches_omega_eq2[DN][gW] := [[* D1, N1, Wgens *]];
+            end if; 
+        end if; 
+    end for; 
+end for; 
+
+genus_matches_omega_eq2_list := [* *];
+
+// printing info to a list
+for DN in possible_DN_omega2 do 
+    Append(~genus_matches_omega_eq2_list,[* DN, [* *] *]);
+    for g in Keys(genus_matches_omega_eq2[DN]) do
+        quotients_list := genus_matches_omega_eq2[DN][g];
+
+        // If all of the quotients possibly giving isogeny of Jacobians
+        // by our checks are of the same Shimura curve, we forget
+        // this info (as this was checked seperate computations)
+        if #{X[1] : X in quotients_list} gt 1 then 
+            Sort(~quotients_list,sort_quotient_lists);
+            Append(~genus_matches_omega_eq2_list[Index(possible_DN_omega2,DN)][2], [* g, quotients_list *]);
+        end if; 
+    end for;
+end for;
+
+// SetOutputFile("genus_matches_omega_eq2.m");
+// print "genus_matches_omega_eq2 := ", genus_matches_omega_eq2_list, ";";
+// UnsetOutputFile(); 
+
+
+
+// // omega(DN) = 3 ///////////////////////////////////////////////////////////////////////
+
+// Cases here:
+//      - D1=1, N1 = DN
+//      - omega(D1) = 2, omega(N1) = 1
+
+genus_matches_omega_eq3 := AssociativeArray(possible_DN_omega3);
+
+step := 0;
+
+print "checking omega(DN) = 3 cases";
+
+for DN in possible_DN_omega3 do 
+    print DN; // track progress
+    genus_matches_omega_eq3[DN] := AssociativeArray(Integers());
+    step := step + 1;
+    print "Step out of 644: ", step;
+    AL_sub_gens := AL_subgroups(DN);
+    AL_sub_identifiers := AssociativeArray(AL_sub_gens);
+    for gens in AL_sub_gens do 
+        AL_sub_identifiers[gens] := gens_to_identifier(DN,gens);
+    end for;
+
+    // Checking D=1, N = DN cases 
+    D1 := 1;
+    N1 := DN;
+
+    // For each AL subgroup W, we store the info of the 
+    // genus of the quotient X_0^{D1}(N_1)/W.
+    for Wgens in AL_sub_gens do
+        gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
+
+        if gW gt 0 then 
+            if IsDefined(genus_matches_omega_eq3[DN],gW) then 
+                Append(~genus_matches_omega_eq3[DN][gW],[* D1, N1, Wgens *]);
+            else 
+                genus_matches_omega_eq3[DN][gW] := [[* D1, N1, Wgens *]];
+            end if; 
+        end if; 
+    end for; 
+
+    // Checking omega(D) = 2, omega(N) = 1 cases
+    DN_primes := Seqset(PrimeDivisors(DN));
+    DN_primes_2 := Subsets(DN_primes,2);
+
+    for D1_primes in DN_primes_2 do 
+        N1_primes := [p : p in DN_primes | not (p in D1_primes)];
+        N1 := &*N1_primes;
+        D1 := &*D1_primes;
+
+        // For each AL subgroup W, we store the info of the 
+        // genus of the quotient X_0^{D1}(N_1)/W.
+        for Wgens in AL_sub_gens do
+            gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
+
+            if gW gt 0 then 
+                if IsDefined(genus_matches_omega_eq3[DN],gW) then 
+                    Append(~genus_matches_omega_eq3[DN][gW],[* D1, N1, Wgens *]);
+                else 
+                    genus_matches_omega_eq3[DN][gW] := [[* D1, N1, Wgens *]];
+                end if; 
+            end if; 
+        end for; 
+    end for;
+end for;   
+
+genus_matches_omega_eq3_list := [* *];
+
+// printing info to a list
+for DN in possible_DN_omega3 do 
+    Append(~genus_matches_omega_eq3_list,[* DN, [* *] *]);
+    for g in Keys(genus_matches_omega_eq3[DN]) do
+        quotients_list := genus_matches_omega_eq3[DN][g];
+
+        // If all of the quotients possibly giving isogeny of Jacobians
+        // by our checks are of the same Shimura curve, we forget
+        // this info (as this was checked seperate computations)
+        if #{X[1] : X in quotients_list} gt 1 then 
+            Sort(~quotients_list,sort_quotient_lists);
+            Append(~genus_matches_omega_eq3_list[Index(possible_DN_omega3,DN)][2], [* g, quotients_list *]);
+        end if; 
+    end for;
+end for;
+    
+
+// SetOutputFile("genus_matches_omega_eq3.m");
+// print "genus_matches_omega_eq3 := ", genus_matches_omega_eq3_list, ";";
+// UnsetOutputFile();    
+
+
+
+// // omega(DN) = 4 ///////////////////////////////////////////////////////////////////////
+
+// Cases here:
+//      - D=1, omega(N) = 3
+//      - omega(D) = 2 and omega(N) = 2,
+//      - omega(D) = 4 and N = 1.
+
+genus_matches_omega_eq4 := AssociativeArray(possible_DN_omega4);
+
+step := 0;
+
+print "checking omega(DN) = 4 cases";
+for DN in possible_DN_omega4 do 
+    print DN; // track progress
+    genus_matches_omega_eq4[DN] := AssociativeArray(Integers());
+    step := step + 1;
+    print "Step out of 815: ", step;
+    AL_sub_gens := AL_subgroups(DN);
+    AL_sub_identifiers := AssociativeArray(AL_sub_gens);
+    for gens in AL_sub_gens do 
+        AL_sub_identifiers[gens] := gens_to_identifier(DN,gens);
+    end for;
+
+    // Checking D1=1, N1 = DN cases 
+    D1 := 1;
+    N1 := DN;
+
+    // For each AL subgroup W, we store the info of the 
+    // genus of the quotient X_0^{D1}(N_1)/W.
+    for Wgens in AL_sub_gens do
+        gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
+
+        if gW gt 0 then 
+            if IsDefined(genus_matches_omega_eq4[DN],gW) then 
+                Append(~genus_matches_omega_eq4[DN][gW],[* D1, N1, Wgens *]);
+            else 
+                genus_matches_omega_eq4[DN][gW] := [[* D1, N1, Wgens *]];
+            end if; 
+        end if; 
+    end for; 
+
+    DN_primes := Seqset(PrimeDivisors(DN));
+    DN_primes_2 := Subsets(DN_primes,2);
+
+    // omega(D1) = omega(N1) = 2 cases
+    for D1_primes in DN_primes_2 do 
+        N1_primes := [p : p in DN_primes | not (p in D1_primes)];
+        N1 := &*N1_primes;
+        D1 := &*D1_primes;
+
+        // For each AL subgroup W, we store the info of the 
+        // genus of the quotient X_0^{D1}(N_1)/W.
+        for Wgens in AL_sub_gens do
+            gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
+
+            if gW gt 0 then 
+                if IsDefined(genus_matches_omega_eq4[DN],gW) then 
+                    Append(~genus_matches_omega_eq4[DN][gW],[* D1, N1, Wgens *]);
+                else 
+                    genus_matches_omega_eq4[DN][gW] := [[* D1, N1, Wgens *]];
+                end if; 
+            end if;
+        end for;       
+    end for;
+
+    // handling N = 1 cases
+    for Wgens in AL_sub_gens do
+        gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
+
+        if gW gt 0 then 
+            if IsDefined(genus_matches_omega_eq4[DN],gW) then 
+                Append(~genus_matches_omega_eq4[DN][gW],[* DN, 1, Wgens *]);
+            else 
+                genus_matches_omega_eq4[DN][gW] := [[* DN, 1, Wgens *]];
+            end if; 
+        end if;
+
+    end for;
+
+end for;   
+
+genus_matches_omega_eq4_list := [* *];
+
+// printing info to a list
+for DN in possible_DN_omega4 do 
+    Append(~genus_matches_omega_eq4_list,[* DN, [* *] *]);
+    for g in Keys(genus_matches_omega_eq4[DN]) do
+        quotients_list := genus_matches_omega_eq4[DN][g];
+        // If all of the quotients possibly giving isogeny of Jacobians
+        // by our checks are of the same Shimura curve, we forget
+        // this info (as this was checked seperate computations)
+        if #{X[1] : X in quotients_list} gt 1 then 
+            Sort(~quotients_list,sort_quotient_lists);
+            Append(~genus_matches_omega_eq4_list[Index(possible_DN_omega4,DN)][2], [* g, quotients_list *]);
+        end if; 
+    end for;
+end for;
+    
+
+// SetOutputFile("genus_matches_omega_eq4.m");
+// print "genus_matches_omega_eq4 := ", genus_matches_omega_eq4_list, ";";
+// UnsetOutputFile();  
+
+
+// // omega(DN) = 5 ///////////////////////////////////////////////////////////////////////
+
+// Cases here:
+//      - D1 = 1, N1 = DN
+//      - omega(D_1) = 2 and omega(N_1) = 3,
+//      - omega(D_1) = 4 and omega(N_1) = 1.
+
+
+// creating information for AL subgroups in omega(DN) = 5 case in advance
+// based on indices of prime divisors of DN, so that this is not recomputed
+// for each of the 499 levels DN encountered. Afterwards we just load in the
+// auxiliary file with this information, so the code is now left commented. 
+
+//     DN := 2*3*5*7*11;
+//     DN_primes := PrimeDivisors(DN);
+
+//     // creating list of AL subgroups for level DN
+//     Hseq := HallDivisors(DN);
+//     H := Seqset(Hseq);
+//     AL_subs := [];
+
+//     // add trivial subgroup
+//     Append(~AL_subs,[1]);
+
+//     // adding subgroups of size 2
+//     for m in [m : m in H | m ne 1] do
+//         Append(~AL_subs,[1,m]);
+//     end for;
+
+//     // adding subgroups of sizes 2^2, 2^3, and 2^4
+//     for genset in Subsets(H,4) do 
+//         W := gens_to_identifier(DN,genset); // Atkin--Lehner subgroup of size up to 2^4. EVERY AL subgroup
+//                                            // of size 2^2 to 2^4 is realized in this way.
+//         if not (W in AL_subs) then 
+//             Append(~AL_subs,W);
+//         end if; 
+//     end for; 
+
+//     // adding full group
+//     Append(~AL_subs,Hseq);
+
+//     AL_subs_with_gens := [[*[1],{1}*]] cat [[*W,identifier_to_min_gens(DN,W)*] : W in AL_subs | W ne [1]];
+
+//     // sequence of pairs of sequences [* W_by_indices, Wgens_by_indices *], each consisting 
+//     // of two sequences of form I = [i_1,...,i_r] corresponding to Hall Divisors 
+//     // m = prod_{i in I} p_i of DN, where [p_1,...,p_5] is the sequence of prime divisors of 
+//     // DN. The first in the pair gives all m so that w_m is in W, and the second in the pair
+//     // gives those for w_m's which comprise the minimal generating set Wgens for W. 
+//     AL_subs_with_gens_by_indices := [];
+//     for Wpair in AL_subs_with_gens do 
+//         W_by_indices := [];
+//         for m in Wpair[1] do 
+//             m_prime_indices := [Index(DN_primes,p) : p in PrimeDivisors(m)];
+//             Append(~W_by_indices,m_prime_indices);
+//         end for; 
+
+//         Wgens_by_indices := [];
+//         for m in Wpair[2] do 
+//             m_prime_indices := [Index(DN_primes,p) : p in PrimeDivisors(m)];
+//             Append(~Wgens_by_indices,m_prime_indices);
+//         end for; 
+
+//         Append(~AL_subs_with_gens_by_indices,[* W_by_indices, Wgens_by_indices *]);
+//     end for; 
+
+//     SetOutputFile("AL_subs_with_gens_by_indices_omega5.m");
+//     print "AL_subs_with_gens_by_indices := ", AL_subs_with_gens_by_indices, ";";
+//     UnsetOutputFile();
+
+
+// loading AL data (i.e., data for subgroup lattice of (Z/2Z)^5)
+// which is pre-computed using the above commented code
+load "AL_subs_with_gens_by_indices_omega5.m";
+
+// Ranging through possible omega(DN) = 5 values
+genus_matches_omega_eq5 := AssociativeArray(possible_DN_omega5);
+
+step := 0;
+print "checking omega(DN) = 5 cases";
+for DN in possible_DN_omega5 do 
+    genus_matches_omega_eq5[DN] := AssociativeArray(Integers());
+    step := step+1;
+    print "Step out of 499: ", step;
+    print "D*N: ", DN; // track progress;
+
+    // initializing list of AL subgroups for level DN
+    AL_sub_gens := [* *];
+    AL_sub_identifiers := AssociativeArray();
+    DN_primes := PrimeDivisors(DN);
+    DN_primes_2 := Subsets(Seqset(DN_primes),2);
+
+    // creating array of info of AL subgroups and their
+    // minimal generating sets using pre-computed omega(DN) = 5 data. 
+    for W_pair_by_indices in AL_subs_with_gens_by_indices do 
+        W_by_indices := W_pair_by_indices[1];
+        Wgens_by_indices := W_pair_by_indices[2];
+        W := [1] cat [&*[DN_primes[i] : i in m_prime_indices] : m_prime_indices in W_by_indices |  not (IsEmpty(m_prime_indices))];
+        Wgens := {&*[DN_primes[i] : i in m_prime_indices] : m_prime_indices in Wgens_by_indices |  not (IsEmpty(m_prime_indices))};
+        Append(~AL_sub_gens,Wgens);
+        AL_sub_identifiers[Wgens] := W;
+    end for; 
+
+    // Checking D1=1, N1 = DN cases 
+    D1 := 1;
+    N1 := DN;
+
+    // For each AL subgroup W, we store the info of the 
+    // genus of the quotient X_0^{D1}(N_1)/W.
+    for Wgens in AL_sub_gens do
+        gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
+
+        if gW gt 0 then 
+            if IsDefined(genus_matches_omega_eq5[DN],gW) then 
+                Append(~genus_matches_omega_eq5[DN][gW],[* D1, N1, Wgens *]);
+            else 
+                genus_matches_omega_eq5[DN][gW] := [[* D1, N1, Wgens *]];
+            end if; 
+        end if; 
+    end for; 
+
+    // omega(D1) = 2, omega(N1) = 3 cases
+    for D1_primes in DN_primes_2 do 
+        N1_primes := [p : p in DN_primes | not (p in D1_primes)];
+        N1 := &*N1_primes;
+        D1 := &*D1_primes;
+
+        // For each AL subgroup W, we store the info of the 
+        // genus of the quotient X_0^{D1}(N_1)/W.
+        for Wgens in AL_sub_gens do
+            gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
+
+            if gW gt 0 then 
+                if IsDefined(genus_matches_omega_eq5[DN],gW) then 
+                    Append(~genus_matches_omega_eq5[DN][gW],[* D1, N1, Wgens *]);
+                else 
+                    genus_matches_omega_eq5[DN][gW] := [[* D1, N1, Wgens *]];
+                end if; 
+            end if;
+        end for; 
+    end for; 
+
+    // omega(D1) = 4, omega(N1) = 1 cases
+    for N1 in DN_primes do 
+        D1 := ExactQuotient(DN,N1);
+        for Wgens in AL_sub_gens do
+            gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
+            if gW gt 0 then 
+                if IsDefined(genus_matches_omega_eq5[DN],gW) then 
+                    Append(~genus_matches_omega_eq5[DN][gW],[* D1, N1, Wgens *]);
+                else 
+                    genus_matches_omega_eq5[DN][gW] := [[* D1, N1, Wgens *]];
+                end if; 
+            end if;
+        end for; 
+    end for;
+end for;
+
+
+genus_matches_omega_eq5_list := [* *];
+
+// printing info to a list
+for DN in possible_DN_omega5 do 
+    Append(~genus_matches_omega_eq5_list,[* DN, [* *] *]);
+    for g in Keys(genus_matches_omega_eq5[DN]) do
+        quotients_list := genus_matches_omega_eq5[DN][g];
+
+        // If all of the quotients possibly giving isogeny of Jacobians
+        // by our checks are of the same Shimura curve, we forget
+        // this info (as this was checked seperate computations)
+        if #{X[1] : X in quotients_list} gt 1 then 
+            Sort(~quotients_list,sort_quotient_lists);
+            Append(~genus_matches_omega_eq5_list[Index(possible_DN_omega5,DN)][2], [* g, quotients_list *]);
+        end if; 
+    end for;
+end for;
+
+// SetOutputFile("genus_matches_omega_eq5.m");
+// print "genus_matches_omega_eq5 := ", genus_matches_omega_eq5_list, ";";
+// UnsetOutputFile();
+
+
+// // omega(DN) = 6 ///////////////////////////////////////////////////////////////////////
+
+// Cases here:
+//      - D1 = 1 and N1 = DN
+//      - omega(D_1) = 2 and omega(N_1) = 4,
+//      - omega(D_1) = 4 and omega(N_1) = 2,
+//      - D1 = DN and N_1 = 1.
+
+// creating information for AL subgroups in omega(DN) = 6 case in advance
+// based on indices of prime divisors of DN, so that this is not recomputed
+// for each of the 88 levels DN encountered. Afterwards we just load in the
+// auxiliary file with this information, so the code is now left commented. 
+
+    // DN := 2*3*5*7*11*13;
+    // DN_primes := PrimeDivisors(DN);
+
+    // // initializing list of AL subgroups for level DN
+    // Hseq := HallDivisors(DN);
+    // H := Seqset(Hseq);
+    // AL_subs := [];
+
+    // // adding trivial subgroup
+    // Append(~AL_subs,[1]);
+
+    // // adding subgroups of size 2
+    // for m in [m : m in H | m ne 1] do
+    //     Append(~AL_subs,[1,m]);
+    // end for;
+
+    // // adding subgroups of sizes 2^2
+    // for genset in Subsets(H,2) do 
+    //     W := gens_to_identifier(DN,genset); // Atkin--Lehner subgroup of size 2^2. EVERY AL subgroup
+    //                                        // of size 2^2 is realized in this way.
+    //     if not (W in AL_subs) then 
+    //         Append(~AL_subs,W);
+    //     end if; 
     // end for; 
 
-    // genus_matches_omega_eq2_list := [* *];
+    // // adding subgroups of size 2^3 to 2^5
+    // for genset in Subsets(H,5) do 
+    //     W := gens_to_identifier(DN,genset); // Atkin--Lehner subgroup of size 2^3 to 2^5. EVERY AL subgroup
+    //                                        // of size 2^3 to 2^5 is realized in this way.
+    //     if not (W in AL_subs) then 
+    //         Append(~AL_subs,W);
+    //     end if; 
+    // end for; 
 
-    // // printing info to a list
-    // for DN in possible_DN_omega2 do 
-    //     Append(~genus_matches_omega_eq2_list,[* DN, [* *] *]);
-    //     for g in Keys(genus_matches_omega_eq2[DN]) do
-    //         quotients_list := genus_matches_omega_eq2[DN][g];
+    // // adding full group
+    // Append(~AL_subs,Hseq);
 
-    //         // If all of the quotients possibly giving isogeny of Jacobians
-    //         // by our checks are of the same Shimura curve, we forget
-    //         // this info (as this was checked seperate computations)
-    //         if #{X[1] : X in quotients_list} gt 1 then 
-    //             Sort(~quotients_list,sort_quotient_lists);
-    //             Append(~genus_matches_omega_eq2_list[Index(possible_DN_omega2,DN)][2], [* g, quotients_list *]);
-    //         end if; 
-    //     end for;
-    // end for;
+    // AL_subs_with_gens := [[*[1],{1}*]] cat [[*W,identifier_to_min_gens(DN,W)*] : W in AL_subs | W ne [1]];
 
-    // SetOutputFile("genus_matches_omega_eq2.m");
-    // print "genus_matches_omega_eq2 := ", genus_matches_omega_eq2_list, ";";
-    // UnsetOutputFile(); 
-
-
-
-    // // // omega(DN) = 3 ///////////////////////////////////////////////////////////////////////
-
-    // // Cases here:
-    // //      - D1=1, N1 = DN
-    // //      - omega(D1) = 2, omega(N1) = 1
-
-    // genus_matches_omega_eq3 := AssociativeArray(possible_DN_omega3);
-
-    // step := 0;
-
-    // print "checking omega(DN) = 3 cases";
-
-    // for DN in possible_DN_omega3 do 
-    //     print DN; // track progress
-    //     genus_matches_omega_eq3[DN] := AssociativeArray(Integers());
-    //     step := step + 1;
-    //     print "Step out of 644: ", step;
-    //     AL_sub_gens := AL_subgroups(DN);
-    //     AL_sub_identifiers := AssociativeArray(AL_sub_gens);
-    //     for gens in AL_sub_gens do 
-    //         AL_sub_identifiers[gens] := gens_to_identifier(DN,gens);
-    //     end for;
-
-    //     // Checking D=1, N = DN cases 
-    //     D1 := 1;
-    //     N1 := DN;
-
-    //     // For each AL subgroup W, we store the info of the 
-    //     // genus of the quotient X_0^{D1}(N_1)/W.
-    //     for Wgens in AL_sub_gens do
-    //         gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
-
-    //         if gW gt 0 then 
-    //             if IsDefined(genus_matches_omega_eq3[DN],gW) then 
-    //                 Append(~genus_matches_omega_eq3[DN][gW],[* D1, N1, Wgens *]);
-    //             else 
-    //                 genus_matches_omega_eq3[DN][gW] := [[* D1, N1, Wgens *]];
-    //             end if; 
-    //         end if; 
+    // // sequence of pairs of sequences [* W_by_indices, Wgens_by_indices *], each consisting 
+    // // of two sequences of form I = [i_1,...,i_r] corresponding to Hall Divisors 
+    // // m = prod_{i in I} p_i of DN, where [p_1,...,p_6] is the sequence of prime divisors of 
+    // // DN. The first in the pair gives all m so that w_m is in W, and the second in the pair
+    // // gives those for w_m's which comprise the minimal generating set Wgens for W. 
+    // AL_subs_with_gens_by_indices := [];
+    // for Wpair in AL_subs_with_gens do 
+    //     W_by_indices := [];
+    //     for m in Wpair[1] do 
+    //         m_prime_indices := [Index(DN_primes,p) : p in PrimeDivisors(m)];
+    //         Append(~W_by_indices,m_prime_indices);
     //     end for; 
 
-    //     // Checking omega(D) = 2, omega(N) = 1 cases
-    //     DN_primes := Seqset(PrimeDivisors(DN));
-    //     DN_primes_2 := Subsets(DN_primes,2);
-
-    //     for D1_primes in DN_primes_2 do 
-    //         N1_primes := [p : p in DN_primes | not (p in D1_primes)];
-    //         N1 := &*N1_primes;
-    //         D1 := &*D1_primes;
-
-    //         // For each AL subgroup W, we store the info of the 
-    //         // genus of the quotient X_0^{D1}(N_1)/W.
-    //         for Wgens in AL_sub_gens do
-    //             gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
-
-    //             if gW gt 0 then 
-    //                 if IsDefined(genus_matches_omega_eq3[DN],gW) then 
-    //                     Append(~genus_matches_omega_eq3[DN][gW],[* D1, N1, Wgens *]);
-    //                 else 
-    //                     genus_matches_omega_eq3[DN][gW] := [[* D1, N1, Wgens *]];
-    //                 end if; 
-    //             end if; 
-    //         end for; 
-    //     end for;
-    // end for;   
-
-    // genus_matches_omega_eq3_list := [* *];
-
-    // // printing info to a list
-    // for DN in possible_DN_omega3 do 
-    //     Append(~genus_matches_omega_eq3_list,[* DN, [* *] *]);
-    //     for g in Keys(genus_matches_omega_eq3[DN]) do
-    //         quotients_list := genus_matches_omega_eq3[DN][g];
-
-    //         // If all of the quotients possibly giving isogeny of Jacobians
-    //         // by our checks are of the same Shimura curve, we forget
-    //         // this info (as this was checked seperate computations)
-    //         if #{X[1] : X in quotients_list} gt 1 then 
-    //             Sort(~quotients_list,sort_quotient_lists);
-    //             Append(~genus_matches_omega_eq3_list[Index(possible_DN_omega3,DN)][2], [* g, quotients_list *]);
-    //         end if; 
-    //     end for;
-    // end for;
-        
-
-    // SetOutputFile("genus_matches_omega_eq3.m");
-    // print "genus_matches_omega_eq3 := ", genus_matches_omega_eq3_list, ";";
-    // UnsetOutputFile();    
-
-
-
-    // // // omega(DN) = 4 ///////////////////////////////////////////////////////////////////////
-
-    // // Cases here:
-    // //      - D=1, omega(N) = 3
-    // //      - omega(D) = 2 and omega(N) = 2,
-    // //      - omega(D) = 4 and N = 1.
-
-    // genus_matches_omega_eq4 := AssociativeArray(possible_DN_omega4);
-
-    // step := 0;
-
-    // print "checking omega(DN) = 4 cases";
-    // for DN in possible_DN_omega4 do 
-    //     print DN; // track progress
-    //     genus_matches_omega_eq4[DN] := AssociativeArray(Integers());
-    //     step := step + 1;
-    //     print "Step out of 815: ", step;
-    //     AL_sub_gens := AL_subgroups(DN);
-    //     AL_sub_identifiers := AssociativeArray(AL_sub_gens);
-    //     for gens in AL_sub_gens do 
-    //         AL_sub_identifiers[gens] := gens_to_identifier(DN,gens);
-    //     end for;
-
-    //     // Checking D1=1, N1 = DN cases 
-    //     D1 := 1;
-    //     N1 := DN;
-
-    //     // For each AL subgroup W, we store the info of the 
-    //     // genus of the quotient X_0^{D1}(N_1)/W.
-    //     for Wgens in AL_sub_gens do
-    //         gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
-
-    //         if gW gt 0 then 
-    //             if IsDefined(genus_matches_omega_eq4[DN],gW) then 
-    //                 Append(~genus_matches_omega_eq4[DN][gW],[* D1, N1, Wgens *]);
-    //             else 
-    //                 genus_matches_omega_eq4[DN][gW] := [[* D1, N1, Wgens *]];
-    //             end if; 
-    //         end if; 
+    //     Wgens_by_indices := [];
+    //     for m in Wpair[2] do 
+    //         m_prime_indices := [Index(DN_primes,p) : p in PrimeDivisors(m)];
+    //         Append(~Wgens_by_indices,m_prime_indices);
     //     end for; 
 
-    //     DN_primes := Seqset(PrimeDivisors(DN));
-    //     DN_primes_2 := Subsets(DN_primes,2);
+    //     Append(~AL_subs_with_gens_by_indices,[* W_by_indices, Wgens_by_indices *]);
+    // end for; 
 
-    //     // omega(D1) = omega(N1) = 2 cases
-    //     for D1_primes in DN_primes_2 do 
-    //         N1_primes := [p : p in DN_primes | not (p in D1_primes)];
-    //         N1 := &*N1_primes;
-    //         D1 := &*D1_primes;
-
-    //         // For each AL subgroup W, we store the info of the 
-    //         // genus of the quotient X_0^{D1}(N_1)/W.
-    //         for Wgens in AL_sub_gens do
-    //             gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
-
-    //             if gW gt 0 then 
-    //                 if IsDefined(genus_matches_omega_eq4[DN],gW) then 
-    //                     Append(~genus_matches_omega_eq4[DN][gW],[* D1, N1, Wgens *]);
-    //                 else 
-    //                     genus_matches_omega_eq4[DN][gW] := [[* D1, N1, Wgens *]];
-    //                 end if; 
-    //             end if;
-    //         end for;       
-    //     end for;
-
-    //     // handling N = 1 cases
-    //     for Wgens in AL_sub_gens do
-    //         gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
-
-    //         if gW gt 0 then 
-    //             if IsDefined(genus_matches_omega_eq4[DN],gW) then 
-    //                 Append(~genus_matches_omega_eq4[DN][gW],[* DN, 1, Wgens *]);
-    //             else 
-    //                 genus_matches_omega_eq4[DN][gW] := [[* DN, 1, Wgens *]];
-    //             end if; 
-    //         end if;
-
-    //     end for;
-
-    // end for;   
-
-    // genus_matches_omega_eq4_list := [* *];
-
-    // // printing info to a list
-    // for DN in possible_DN_omega4 do 
-    //     Append(~genus_matches_omega_eq4_list,[* DN, [* *] *]);
-    //     for g in Keys(genus_matches_omega_eq4[DN]) do
-    //         quotients_list := genus_matches_omega_eq4[DN][g];
-    //         // If all of the quotients possibly giving isogeny of Jacobians
-    //         // by our checks are of the same Shimura curve, we forget
-    //         // this info (as this was checked seperate computations)
-    //         if #{X[1] : X in quotients_list} gt 1 then 
-    //             Sort(~quotients_list,sort_quotient_lists);
-    //             Append(~genus_matches_omega_eq4_list[Index(possible_DN_omega4,DN)][2], [* g, quotients_list *]);
-    //         end if; 
-    //     end for;
-    // end for;
-        
-
-    // SetOutputFile("genus_matches_omega_eq4.m");
-    // print "genus_matches_omega_eq4 := ", genus_matches_omega_eq4_list, ";";
-    // UnsetOutputFile();  
-
-
-    // // // omega(DN) = 5 ///////////////////////////////////////////////////////////////////////
-
-    // // Cases here:
-    // //      - D1 = 1, N1 = DN
-    // //      - omega(D_1) = 2 and omega(N_1) = 3,
-    // //      - omega(D_1) = 4 and omega(N_1) = 1.
-
-
-    // // creating information for AL subgroups in omega(DN) = 5 case in advance
-    // // based on indices of prime divisors of DN, so that this is not recomputed
-    // // for each of the 499 levels DN encountered.
-
-    // //     DN := 2*3*5*7*11;
-    // //     DN_primes := PrimeDivisors(DN);
-
-    // //     // creating list of AL subgroups for level DN
-    // //     Hseq := HallDivisors(DN);
-    // //     H := Seqset(Hseq);
-    // //     AL_subs := [];
-
-    // //     // add trivial subgroup
-    // //     Append(~AL_subs,[1]);
-
-    // //     // adding subgroups of size 2
-    // //     for m in [m : m in H | m ne 1] do
-    // //         Append(~AL_subs,[1,m]);
-    // //     end for;
-
-    // //     // adding subgroups of sizes 2^2, 2^3, and 2^4
-    // //     for genset in Subsets(H,4) do 
-    // //         W := gens_to_identifier(DN,genset); // Atkin--Lehner subgroup of size up to 2^4. EVERY AL subgroup
-    // //                                            // of size 2^2 to 2^4 is realized in this way.
-    // //         if not (W in AL_subs) then 
-    // //             Append(~AL_subs,W);
-    // //         end if; 
-    // //     end for; 
-
-    // //     // adding full group
-    // //     Append(~AL_subs,Hseq);
-
-    // //     AL_subs_with_gens := [[*[1],{1}*]] cat [[*W,identifier_to_min_gens(DN,W)*] : W in AL_subs | W ne [1]];
-
-    // //     // sequence of pairs of sequences [* W_by_indices, Wgens_by_indices *], each consisting 
-    // //     // of two sequences of form I = [i_1,...,i_r] corresponding to Hall Divisors 
-    // //     // m = prod_{i in I} p_i of DN, where [p_1,...,p_5] is the sequence of prime divisors of 
-    // //     // DN. The first in the pair gives all m so that w_m is in W, and the second in the pair
-    // //     // gives those for w_m's which comprise the minimal generating set Wgens for W. 
-    // //     AL_subs_with_gens_by_indices := [];
-    // //     for Wpair in AL_subs_with_gens do 
-    // //         W_by_indices := [];
-    // //         for m in Wpair[1] do 
-    // //             m_prime_indices := [Index(DN_primes,p) : p in PrimeDivisors(m)];
-    // //             Append(~W_by_indices,m_prime_indices);
-    // //         end for; 
-
-    // //         Wgens_by_indices := [];
-    // //         for m in Wpair[2] do 
-    // //             m_prime_indices := [Index(DN_primes,p) : p in PrimeDivisors(m)];
-    // //             Append(~Wgens_by_indices,m_prime_indices);
-    // //         end for; 
-
-    // //         Append(~AL_subs_with_gens_by_indices,[* W_by_indices, Wgens_by_indices *]);
-    // //     end for; 
-
-    // //     SetOutputFile("AL_subs_with_gens_by_indices_omega5.m");
-    // //     print "AL_subs_with_gens_by_indices := ", AL_subs_with_gens_by_indices, ";";
-    // //     UnsetOutputFile();
-
-
-    // // loading AL data (i.e., data for subgroup lattice of (Z/2Z)^5)
-    // // which is pre-computed using the above commented code
-    // load "AL_subs_with_gens_by_indices_omega5.m";
-
-    // // Ranging through possible omega(DN) = 5 values
-    // genus_matches_omega_eq5 := AssociativeArray(possible_DN_omega5);
-
-    // step := 0;
-    // print "checking omega(DN) = 5 cases";
-    // for DN in possible_DN_omega5 do 
-    //     genus_matches_omega_eq5[DN] := AssociativeArray(Integers());
-    //     step := step+1;
-    //     print "Step out of 499: ", step;
-    //     print "D*N: ", DN; // track progress;
-
-    //     // initializing list of AL subgroups for level DN
-    //     AL_sub_gens := [* *];
-    //     AL_sub_identifiers := AssociativeArray();
-    //     DN_primes := PrimeDivisors(DN);
-    //     DN_primes_2 := Subsets(Seqset(DN_primes),2);
-
-    //     // creating array of info of AL subgroups and their
-    //     // minimal generating sets using pre-computed omega(DN) = 5 data. 
-    //     for W_pair_by_indices in AL_subs_with_gens_by_indices do 
-    //         W_by_indices := W_pair_by_indices[1];
-    //         Wgens_by_indices := W_pair_by_indices[2];
-    //         W := [1] cat [&*[DN_primes[i] : i in m_prime_indices] : m_prime_indices in W_by_indices |  not (IsEmpty(m_prime_indices))];
-    //         Wgens := {&*[DN_primes[i] : i in m_prime_indices] : m_prime_indices in Wgens_by_indices |  not (IsEmpty(m_prime_indices))};
-    //         Append(~AL_sub_gens,Wgens);
-    //         AL_sub_identifiers[Wgens] := W;
-    //     end for; 
-
-    //     // Checking D1=1, N1 = DN cases 
-    //     D1 := 1;
-    //     N1 := DN;
-
-    //     // For each AL subgroup W, we store the info of the 
-    //     // genus of the quotient X_0^{D1}(N_1)/W.
-    //     for Wgens in AL_sub_gens do
-    //         gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
-
-    //         if gW gt 0 then 
-    //             if IsDefined(genus_matches_omega_eq5[DN],gW) then 
-    //                 Append(~genus_matches_omega_eq5[DN][gW],[* D1, N1, Wgens *]);
-    //             else 
-    //                 genus_matches_omega_eq5[DN][gW] := [[* D1, N1, Wgens *]];
-    //             end if; 
-    //         end if; 
-    //     end for; 
-
-    //     // omega(D1) = 2, omega(N1) = 3 cases
-    //     for D1_primes in DN_primes_2 do 
-    //         N1_primes := [p : p in DN_primes | not (p in D1_primes)];
-    //         N1 := &*N1_primes;
-    //         D1 := &*D1_primes;
-
-    //         // For each AL subgroup W, we store the info of the 
-    //         // genus of the quotient X_0^{D1}(N_1)/W.
-    //         for Wgens in AL_sub_gens do
-    //             gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
-
-    //             if gW gt 0 then 
-    //                 if IsDefined(genus_matches_omega_eq5[DN],gW) then 
-    //                     Append(~genus_matches_omega_eq5[DN][gW],[* D1, N1, Wgens *]);
-    //                 else 
-    //                     genus_matches_omega_eq5[DN][gW] := [[* D1, N1, Wgens *]];
-    //                 end if; 
-    //             end if;
-    //         end for; 
-    //     end for; 
-
-    //     // omega(D1) = 4, omega(N1) = 1 cases
-    //     for N1 in DN_primes do 
-    //         D1 := ExactQuotient(DN,N1);
-    //         for Wgens in AL_sub_gens do
-    //             gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
-    //             if gW gt 0 then 
-    //                 if IsDefined(genus_matches_omega_eq5[DN],gW) then 
-    //                     Append(~genus_matches_omega_eq5[DN][gW],[* D1, N1, Wgens *]);
-    //                 else 
-    //                     genus_matches_omega_eq5[DN][gW] := [[* D1, N1, Wgens *]];
-    //                 end if; 
-    //             end if;
-    //         end for; 
-    //     end for;
-    // end for;
-
-
-    // genus_matches_omega_eq5_list := [* *];
-
-    // // printing info to a list
-    // for DN in possible_DN_omega5 do 
-    //     Append(~genus_matches_omega_eq5_list,[* DN, [* *] *]);
-    //     for g in Keys(genus_matches_omega_eq5[DN]) do
-    //         quotients_list := genus_matches_omega_eq5[DN][g];
-
-    //         // If all of the quotients possibly giving isogeny of Jacobians
-    //         // by our checks are of the same Shimura curve, we forget
-    //         // this info (as this was checked seperate computations)
-    //         if #{X[1] : X in quotients_list} gt 1 then 
-    //             Sort(~quotients_list,sort_quotient_lists);
-    //             Append(~genus_matches_omega_eq5_list[Index(possible_DN_omega5,DN)][2], [* g, quotients_list *]);
-    //         end if; 
-    //     end for;
-    // end for;
-
-    // SetOutputFile("genus_matches_omega_eq5.m");
-    // print "genus_matches_omega_eq5 := ", genus_matches_omega_eq5_list, ";";
+    // SetOutputFile("AL_subs_with_gens_by_indices_omega6.m");
+    // print "AL_subs_with_gens_by_indices := ", AL_subs_with_gens_by_indices, ";";
     // UnsetOutputFile();
 
 
-    // // // omega(DN) = 6 ///////////////////////////////////////////////////////////////////////
+// loading AL data (i.e., data for subgroup lattice of (Z/2Z)^6)
+// which is pre-computed using the above commented code
+load "AL_subs_with_gens_by_indices_omega6.m";
 
-    // // Cases here:
-    // //      - D1 = 1 and N1 = DN
-    // //      - omega(D_1) = 2 and omega(N_1) = 4,
-    // //      - omega(D_1) = 4 and omega(N_1) = 2,
-    // //      - D1 = DN and N_1 = 1.
+// Ranging through possible omega(DN) = 6 values
+genus_matches_omega_eq6 := AssociativeArray(possible_DN_omega6);
 
-    // // creating information for AL subgroups in omega(DN) = 6 case in advance
-    // // based on indices of prime divisors of DN, so that this is not recomputed
-    // // for each of the 88 levels DN encountered.
+step := 0;
+print "checking omega(DN) = 6 cases";
+for DN in possible_DN_omega6 do 
+    genus_matches_omega_eq6[DN] := AssociativeArray(Integers());
+    step := step+1;
+    print "Step out of 88: ", step;
+    print "D*N: ", DN; // track progress;
 
-    //     // DN := 2*3*5*7*11*13;
-    //     // DN_primes := PrimeDivisors(DN);
+    // initializing list of AL subgroups for level DN
+    AL_sub_gens := [* *];
+    AL_sub_identifiers := AssociativeArray();
+    DN_primes := PrimeDivisors(DN);
+    DN_primes_2 := Subsets(Seqset(DN_primes),2);
 
-    //     // // initializing list of AL subgroups for level DN
-    //     // Hseq := HallDivisors(DN);
-    //     // H := Seqset(Hseq);
-    //     // AL_subs := [];
+    // creating array of info of AL subgroups and their
+    // minimal generating sets using pre-computed omega(DN) = 6 data. 
+    for W_pair_by_indices in AL_subs_with_gens_by_indices do 
+        W_by_indices := W_pair_by_indices[1];
+        Wgens_by_indices := W_pair_by_indices[2];
+        W := [1] cat [&*[DN_primes[i] : i in m_prime_indices] : m_prime_indices in W_by_indices |  not (IsEmpty(m_prime_indices))];
+        Wgens := {&*[DN_primes[i] : i in m_prime_indices] : m_prime_indices in Wgens_by_indices |  not (IsEmpty(m_prime_indices))};
+        Append(~AL_sub_gens,Wgens);
+        AL_sub_identifiers[Wgens] := W;
+    end for; 
 
-    //     // // adding trivial subgroup
-    //     // Append(~AL_subs,[1]);
+    // Checking D1=1, N1 = DN cases 
+    D1 := 1;
+    N1 := DN;
 
-    //     // // adding subgroups of size 2
-    //     // for m in [m : m in H | m ne 1] do
-    //     //     Append(~AL_subs,[1,m]);
-    //     // end for;
+    // For each AL subgroup W, we store the info of the 
+    // genus of the quotient X_0^{D1}(N_1)/W.
+    for Wgens in AL_sub_gens do
+        gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
 
-    //     // // adding subgroups of sizes 2^2
-    //     // for genset in Subsets(H,2) do 
-    //     //     W := gens_to_identifier(DN,genset); // Atkin--Lehner subgroup of size 2^2. EVERY AL subgroup
-    //     //                                        // of size 2^2 is realized in this way.
-    //     //     if not (W in AL_subs) then 
-    //     //         Append(~AL_subs,W);
-    //     //     end if; 
-    //     // end for; 
+        if gW gt 0 then 
+            if IsDefined(genus_matches_omega_eq6[DN],gW) then 
+                Append(~genus_matches_omega_eq6[DN][gW],[* D1, N1, Wgens *]);
+            else 
+                genus_matches_omega_eq6[DN][gW] := [[* D1, N1, Wgens *]];
+            end if; 
+        end if; 
+    end for; 
 
-    //     // // adding subgroups of size 2^3 to 2^5
-    //     // for genset in Subsets(H,5) do 
-    //     //     W := gens_to_identifier(DN,genset); // Atkin--Lehner subgroup of size 2^3 to 2^5. EVERY AL subgroup
-    //     //                                        // of size 2^3 to 2^5 is realized in this way.
-    //     //     if not (W in AL_subs) then 
-    //     //         Append(~AL_subs,W);
-    //     //     end if; 
-    //     // end for; 
+    // handling cases with N1 > 1
+    for D1_primes in DN_primes_2 do 
+        N1_primes := [p : p in DN_primes | not (p in D1_primes)];
+        N1 := &*N1_primes;
+        D1 := &*D1_primes;
 
-    //     // // adding full group
-    //     // Append(~AL_subs,Hseq);
+        // For each AL subgroup W, we store the info of the 
+        // genus of the quotient X_0^{D1}(N_1)/W.
 
-    //     // AL_subs_with_gens := [[*[1],{1}*]] cat [[*W,identifier_to_min_gens(DN,W)*] : W in AL_subs | W ne [1]];
+        // omega(D1) = 2, omega(N1) = 4 cases
+        for Wgens in AL_sub_gens do
+            gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
+            if gW gt 0 then 
+                if IsDefined(genus_matches_omega_eq6[DN],gW) then 
+                    Append(~genus_matches_omega_eq6[DN][gW],[* D1, N1, Wgens *]);
+                else 
+                    genus_matches_omega_eq6[DN][gW] := [[* D1, N1, Wgens *]];
+                end if; 
+            end if;
+        end for; 
 
-    //     // // sequence of pairs of sequences [* W_by_indices, Wgens_by_indices *], each consisting 
-    //     // // of two sequences of form I = [i_1,...,i_r] corresponding to Hall Divisors 
-    //     // // m = prod_{i in I} p_i of DN, where [p_1,...,p_6] is the sequence of prime divisors of 
-    //     // // DN. The first in the pair gives all m so that w_m is in W, and the second in the pair
-    //     // // gives those for w_m's which comprise the minimal generating set Wgens for W. 
-    //     // AL_subs_with_gens_by_indices := [];
-    //     // for Wpair in AL_subs_with_gens do 
-    //     //     W_by_indices := [];
-    //     //     for m in Wpair[1] do 
-    //     //         m_prime_indices := [Index(DN_primes,p) : p in PrimeDivisors(m)];
-    //     //         Append(~W_by_indices,m_prime_indices);
-    //     //     end for; 
+        // omega(D1) = 4, omega(N1) = 6 cases (which we 
+        // view here as just swapping D1 and N1 from the prior case)
+        for Wgens in AL_sub_gens do
+            gW := quot_genus(N1,D1,AL_sub_identifiers[Wgens]);
+            if gW gt 0 then 
+                if IsDefined(genus_matches_omega_eq6[DN],gW) then 
+                    Append(~genus_matches_omega_eq6[DN][gW],[* N1, D1, Wgens *]);
+                else 
+                    genus_matches_omega_eq6[DN][gW] := [[* N1, D1, Wgens *]];
+                end if; 
+            end if;
+        end for; 
+    end for;
 
-    //     //     Wgens_by_indices := [];
-    //     //     for m in Wpair[2] do 
-    //     //         m_prime_indices := [Index(DN_primes,p) : p in PrimeDivisors(m)];
-    //     //         Append(~Wgens_by_indices,m_prime_indices);
-    //     //     end for; 
+    // handling N = 1 cases
+    for Wgens in AL_sub_gens do
+        gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
+        if gW gt 0 then 
+            if IsDefined(genus_matches_omega_eq6[DN],gW) then 
+                Append(~genus_matches_omega_eq6[DN][gW],[* DN, 1, Wgens *]);
+            else 
+                genus_matches_omega_eq6[DN][gW] := [[* DN, 1, Wgens *]];
+            end if; 
+        end if;
+    end for; 
 
-    //     //     Append(~AL_subs_with_gens_by_indices,[* W_by_indices, Wgens_by_indices *]);
-    //     // end for; 
-
-    //     // SetOutputFile("AL_subs_with_gens_by_indices_omega6.m");
-    //     // print "AL_subs_with_gens_by_indices := ", AL_subs_with_gens_by_indices, ";";
-    //     // UnsetOutputFile();
-
-
-    // // loading AL data (i.e., data for subgroup lattice of (Z/2Z)^6)
-    // // which is pre-computed using the above commented code
-    // load "AL_subs_with_gens_by_indices_omega6.m";
-
-    // // Ranging through possible omega(DN) = 6 values
-    // genus_matches_omega_eq6 := AssociativeArray(possible_DN_omega6);
-
-    // step := 0;
-    // print "checking omega(DN) = 6 cases";
-    // for DN in possible_DN_omega6 do 
-    //     genus_matches_omega_eq6[DN] := AssociativeArray(Integers());
-    //     step := step+1;
-    //     print "Step out of 88: ", step;
-    //     print "D*N: ", DN; // track progress;
-
-    //     // initializing list of AL subgroups for level DN
-    //     AL_sub_gens := [* *];
-    //     AL_sub_identifiers := AssociativeArray();
-    //     DN_primes := PrimeDivisors(DN);
-    //     DN_primes_2 := Subsets(Seqset(DN_primes),2);
-
-    //     // creating array of info of AL subgroups and their
-    //     // minimal generating sets using pre-computed omega(DN) = 6 data. 
-    //     for W_pair_by_indices in AL_subs_with_gens_by_indices do 
-    //         W_by_indices := W_pair_by_indices[1];
-    //         Wgens_by_indices := W_pair_by_indices[2];
-    //         W := [1] cat [&*[DN_primes[i] : i in m_prime_indices] : m_prime_indices in W_by_indices |  not (IsEmpty(m_prime_indices))];
-    //         Wgens := {&*[DN_primes[i] : i in m_prime_indices] : m_prime_indices in Wgens_by_indices |  not (IsEmpty(m_prime_indices))};
-    //         Append(~AL_sub_gens,Wgens);
-    //         AL_sub_identifiers[Wgens] := W;
-    //     end for; 
-
-    //     // Checking D1=1, N1 = DN cases 
-    //     D1 := 1;
-    //     N1 := DN;
-
-    //     // For each AL subgroup W, we store the info of the 
-    //     // genus of the quotient X_0^{D1}(N_1)/W.
-    //     for Wgens in AL_sub_gens do
-    //         gW := GenusX0NQuotient(DN,[m : m in Wgens | m ne 1]);
-
-    //         if gW gt 0 then 
-    //             if IsDefined(genus_matches_omega_eq6[DN],gW) then 
-    //                 Append(~genus_matches_omega_eq6[DN][gW],[* D1, N1, Wgens *]);
-    //             else 
-    //                 genus_matches_omega_eq6[DN][gW] := [[* D1, N1, Wgens *]];
-    //             end if; 
-    //         end if; 
-    //     end for; 
-
-    //     // handling cases with N1 > 1
-    //     for D1_primes in DN_primes_2 do 
-    //         N1_primes := [p : p in DN_primes | not (p in D1_primes)];
-    //         N1 := &*N1_primes;
-    //         D1 := &*D1_primes;
-
-    //         // For each AL subgroup W, we store the info of the 
-    //         // genus of the quotient X_0^{D1}(N_1)/W.
-
-    //         // omega(D1) = 2, omega(N1) = 4 cases
-    //         for Wgens in AL_sub_gens do
-    //             gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
-    //             if gW gt 0 then 
-    //                 if IsDefined(genus_matches_omega_eq6[DN],gW) then 
-    //                     Append(~genus_matches_omega_eq6[DN][gW],[* D1, N1, Wgens *]);
-    //                 else 
-    //                     genus_matches_omega_eq6[DN][gW] := [[* D1, N1, Wgens *]];
-    //                 end if; 
-    //             end if;
-    //         end for; 
-
-    //         // omega(D1) = 4, omega(N1) = 6 cases (which we 
-    //         // view here as just swapping D1 and N1 from the prior case)
-    //         for Wgens in AL_sub_gens do
-    //             gW := quot_genus(N1,D1,AL_sub_identifiers[Wgens]);
-    //             if gW gt 0 then 
-    //                 if IsDefined(genus_matches_omega_eq6[DN],gW) then 
-    //                     Append(~genus_matches_omega_eq6[DN][gW],[* N1, D1, Wgens *]);
-    //                 else 
-    //                     genus_matches_omega_eq6[DN][gW] := [[* N1, D1, Wgens *]];
-    //                 end if; 
-    //             end if;
-    //         end for; 
-    //     end for;
-
-    //     // handling N = 1 cases
-    //     for Wgens in AL_sub_gens do
-    //         gW := quot_genus(D1,N1,AL_sub_identifiers[Wgens]);
-    //         if gW gt 0 then 
-    //             if IsDefined(genus_matches_omega_eq6[DN],gW) then 
-    //                 Append(~genus_matches_omega_eq6[DN][gW],[* DN, 1, Wgens *]);
-    //             else 
-    //                 genus_matches_omega_eq6[DN][gW] := [[* DN, 1, Wgens *]];
-    //             end if; 
-    //         end if;
-    //     end for; 
-
-    // end for;
+end for;
 
 
-    // genus_matches_omega_eq6_list := [* *];
+genus_matches_omega_eq6_list := [* *];
 
-    // // printing info to a list
-    // for DN in possible_DN_omega6 do 
-    //     Append(~genus_matches_omega_eq6_list,[* DN, [* *] *]);
-    //     for g in Keys(genus_matches_omega_eq6[DN]) do
-    //         quotients_list := genus_matches_omega_eq6[DN][g];
+// printing info to a list
+for DN in possible_DN_omega6 do 
+    Append(~genus_matches_omega_eq6_list,[* DN, [* *] *]);
+    for g in Keys(genus_matches_omega_eq6[DN]) do
+        quotients_list := genus_matches_omega_eq6[DN][g];
 
-    //         // If all of the quotients possibly giving isogeny of Jacobians
-    //         // by our checks are of the same Shimura curve, we forget
-    //         // this info (as this was checked seperate computations)
-    //         if #{X[1] : X in quotients_list} gt 1 then 
-    //             Sort(~quotients_list,sort_quotient_lists);
-    //             Append(~genus_matches_omega_eq6_list[Index(possible_DN_omega6,DN)][2], [* g, quotients_list *]);
-    //         end if; 
-    //     end for;
-    // end for;
+        // If all of the quotients possibly giving isogeny of Jacobians
+        // by our checks are of the same Shimura curve, we forget
+        // this info (as this was checked seperate computations)
+        if #{X[1] : X in quotients_list} gt 1 then 
+            Sort(~quotients_list,sort_quotient_lists);
+            Append(~genus_matches_omega_eq6_list[Index(possible_DN_omega6,DN)][2], [* g, quotients_list *]);
+        end if; 
+    end for;
+end for;
 
-    // SetOutputFile("genus_matches_omega_eq6.m");
-    // print "genus_matches_omega_eq6 := ", genus_matches_omega_eq6_list, ";";
-    // UnsetOutputFile();
+// SetOutputFile("genus_matches_omega_eq6.m");
+// print "genus_matches_omega_eq6 := ", genus_matches_omega_eq6_list, ";";
+// UnsetOutputFile();
 
-load "genus_matches_omega_eq2.m";
-load "genus_matches_omega_eq3.m";
-load "genus_matches_omega_eq4.m";
-load "genus_matches_omega_eq5.m";
-load "genus_matches_omega_eq6.m";
+// load "genus_matches_omega_eq2.m";
+// load "genus_matches_omega_eq3.m";
+// load "genus_matches_omega_eq4.m";
+// load "genus_matches_omega_eq5.m";
+// load "genus_matches_omega_eq6.m";
 
 genus_matches := genus_matches_omega_eq2 cat genus_matches_omega_eq3 cat genus_matches_omega_eq4 cat genus_matches_omega_eq5 cat genus_matches_omega_eq6;
 
