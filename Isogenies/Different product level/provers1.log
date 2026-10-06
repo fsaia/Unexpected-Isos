@@ -1,0 +1,21 @@
+Magma V2.29-4     Mon Oct  5 2026 12:03:56 on mordell  [Seed = 212144139]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading startup file "provers1.m"
+
+Loading "PPV_tables_6_7.m"
+Loading "isogenous_pairs__different_products.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "ribet_isog.m"
+Loading "isog_utils.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "ribet_isog.m"
+Loading "PPV_tables_6_7.m"
+Loading "genus_1_jacobian_isog_classes.m"
+Total: 3599
+After Cremona + lemmas: iso = 2793
+After transitivity: iso = 2938 | direct-check = 661 | non-iso = 0
+
+Total time: 30.920 seconds, Total memory usage: 64.12MB

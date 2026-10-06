@@ -1,0 +1,24 @@
+Magma V2.29-4     Tue Oct  6 2026 10:06:15 on mordell  [Seed = 832566938]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading startup file "distinct_levels_for_isogenies_of_modular_quotients.m"
+
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "quot_genus.m"
+Loading "ribet_isog.m"
+Loading "PPV_tables_6_7.m"
+Loading "isog_utils.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "ribet_isog.m"
+Loading "PPV_tables_6_7.m"
+PPV levels: 65
+Relevant levels: 84
+Done genus+prop sieve.
+Same-genus pair-instances: 2733
+Kept after sieves: 739
+Wrote isogenous_modular_quotients_different_levels.m
+Final isogenous modular quotient pairs: 150
+
+Total time: 300.230 seconds, Total memory usage: 96.16MB
