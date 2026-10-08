@@ -1,0 +1,2 @@
+Isogenies/SameProductLevel/same_product_genus_matches.m filter=lfs diff=lfs merge=lfs -text
+Isogenies/SameProductLevel/same_product_remaining_isog_lists_v1.m filter=lfs diff=lfs merge=lfs -text
