@@ -19,7 +19,7 @@ External data: `counting_points.m` loads `tracesALL.m` (744 MB, stored with Git 
 
 Checks for isogenous Jacobians among pairs $X_0^{D_1}(N_1)/W_1$, $X_0^{D_2}(N_2)/W_2$ with $D_1N_1 = D_2N_2$ and $D_1 \neq D_2$.
 
-- `same_product_isogeny_genus_checks.m`: In this file, we use some initial restrictions on levels admitting isogenies of the form $Jac(X_0^{D_1}(N_1)/W_1) \sim Jac(X_0^{D_1}(N_1)/W_2)$, with $D_1 N_1 = D_2 N_2$ and $D_1 \neq D_2$, to reduce to consideration of finitely many levels. We compute the genera of all Atkin--Lehner quotients at these levels as a first, coarse check on isogeny.  
+- `same_product_isogeny_genus_checks.m`: In this file, we use some initial restrictions on levels admitting isogenies of the form $\text{Jac}(X_0^{D_1}(N_1)/W_1) \sim \text{Jac}(X_0^{D_1}(N_1)/W_2)$, with $D_1 N_1 = D_2 N_2$ and $D_1 \neq D_2$, to reduce to consideration of finitely many levels. We compute the genera of all Atkin--Lehner quotients at these levels as a first, coarse check on isogeny.  
 
 - `same_product_genus_matches.m`: List of information on genus matches among candidate quotients for having Jacobian isogenous to that of another quotient with $D_1 N_1=D_2 N_2$ and $D_1 \neq D_2$, as computed in `same_product_isogeny_genus_checks.m`.  
 
@@ -34,7 +34,7 @@ Checks for isogenous Jacobians among pairs $X_0^{D_1}(N_1)/W_1$, $X_0^{D_2}(N_2)
 
 Checks for isogenous Jacobians among pairs $X_0^{D}(N)/W_1$, $X_0^{D}(N)/W_2$.  
 
-- `same_curve_isogeny_genus_checks.m`: In this file, we use some initial restrictions on levels admitting isogenies of the form $Jac(X_0^{D}(N)/W_1) \sim Jac(X_0^{D}(N)/W_2)$ to reduce to consideration of finitely many levels. We compute the genera of all Atkin--Lehner quotients at these levels as a first, coarse check on isogeny.  
+- `same_curve_isogeny_genus_checks.m`: In this file, we use some initial restrictions on levels admitting isogenies of the form $\text{Jac}(X_0^{D}(N)/W_1) \sim \text{Jac}(X_0^{D}(N)/W_2)$ to reduce to consideration of finitely many levels. We compute the genera of all Atkin--Lehner quotients at these levels as a first, coarse check on isogeny.  
 
 - `same_curve_genus_matches.m`: List of information on genus matches among candidate quotients for having Jacobian isogenous to that of another quotient with $D_1 = D_2$ and $N_1 = N_2$, as computed in `same_curve_isogeny_genus_checks.m`.  
 
