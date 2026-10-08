@@ -1,4 +1,4 @@
-remaining_isog_lists_v1 :=  [* [* 30, [* [* 2, [*
+same_curve_remaining_isog_lists_v1 :=  [* [* 30, [* [* 2, [*
     [ [* 1, 30,
         { 2 }
     *], [* 1, 30,
