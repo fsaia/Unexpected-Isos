@@ -1,3 +1,15 @@
+/*  
+List of information on all pairs of quotients X_0^{D1}(N1)/W1 and
+X_0^{D2}(N2)/W2, with D1N1 = D2N2 and D1 \neq D2, with
+isogenous Jacobians. Each list element is a 
+list of the form [*M, g_lists *], where each element of g_lists 
+is then a list of the form [*g, isog_lists *], and each element
+of isog_lists is a list L containing elements
+[* D, N, Wgens *] corresponding to quotients X_0^D(N)/W, with 
+W = <{w_m | m in Wgens}>, of genus g and level DN = M, such that
+all curves in L have isogenous Jacobians. 
+*/
+
 isogeny_lists_final_same_product :=  [* [* 14, [* [* 1,
     [
         [ [* 1, 14,
