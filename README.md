@@ -43,3 +43,16 @@ Checks for isogenous Jacobians among pairs $X_0^{D}(N)/W_1$, $X_0^{D}(N)/W_2$.
 - `same_curve_remaining_isog_lists_vi.m` for $i = 1,2,3$: These lists contain further narrowed candidates for isogenous Jacobians for increased $i$, and are computed in `same_curve_isogenies_narrowing.m` en route to the final list `isogeny_lists_final_same_curve.m`.  
 
 - `isogeny_lists_final_same_curve.m`: List of information on all pairs of quotients $X_0^{D}(N)/W_1$ and $X_0^{D}(N)/W_2$ with isogenous Jacobians. 
+
+## LowGenusModular
+
+Computations of Atkin--Lehner quotients of $X_0^D(N)$ of genus $0$ and $1$, which combined with 2026 work of Padurariu--Saia in the $D>1$ case allow us to restrict to genus $g \geq 2$ elsewhere in this work. 
+
+- `low_genus_modular_checks`: In this file, we determine all quotients $X_0(N)/W$, with $W <= W_0(1,N)$, having genus $0$ and $1$. We also determine the isomorphism classes of the 
+genus $1$ quotients. Surely this is known, and it follows relatively easily from the determination of star quotients of genera $0$ and $1$ as found in work of González--Lario, but perhaps it is not cleanly written down anywhere else in full.    
+
+- `genus_0_modular_quotients.m`: List of information on all quotients $X_0(N)/W$, with $N$ squarefree and with $W \leq W_0(1,N)$, having genus $0$.  
+
+- `genus_1_modular_quotients.m`: List of information on all quotients $X_0(N)/W$, with $N$ squarefree and with $W \leq W_0(1,N)$, having genus $1$.  
+
+- `genus_1_modular_quotient_isom_classes.m`: List of isomorphism classes over $\mathbb{Q}$ of all quotients listed in `genus_1_modular_quotients.m`.    
