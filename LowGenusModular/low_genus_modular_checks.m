@@ -81,8 +81,8 @@ genus_1_modular_quotient_isom_classes := [];
     * The index 65 curve X_0(94)/<w_{47}> is 94a1 by González 2012.
     * The index 66 curve X_0(95)/<w_{95}> is 19a3 by González 2012.
     * The index 67 curve X_0(101)/<w_{101}> is 101a1 by González 2012.
-    * The index 80 curve X_0(119)/<w_{119}> is 17a4 by González 2012.
-    * The index 83 curve X_0(131)/<w_{131}> is 131a1 by González 2012.
+    * The index 79 curve X_0(119)/<w_{119}> is 17a4 by González 2012.
+    * The index 82 curve X_0(131)/<w_{131}> is 131a1 by González 2012.
     * The index 85 curve X_0(142)/<w_{2},w_{71}> is in isogeny class 142b, which only has one element 142b1.
 */
 
@@ -97,9 +97,9 @@ genus_1_modular_quotient_isom_classes := [];
         CremonaReference(E);
 */
 
-skipped_indices := [21,65,66,67,80,83,85];
+skipped_indices := [21,65,66,67,79,82,85];
 skipped_curves := [[*21,"17a2"*],[*65,"94a1"*],[*66,"19a3"*],
-    [*67,"101a1"*],[*80,"17a4"*],[*83,"131a1"*],[*85,"142b"*]];
+    [*67,"101a1"*],[*79,"17a4"*],[*82,"131a1"*],[*85,"142b"*]];
 
 step := 0;
 
@@ -221,5 +221,22 @@ for i in [1..32] do
 
     print " & ", ref, " \\\\ \\hline";
 end for;
+
+L := genus_1_modular_quotient_isom_classes[97];
+N := L[1];
+Wgens := Sort(Setseq(L[2]));
+ref := L[3];
+print "$", N, "$ & $\\langle";
+
+if Wgens eq [1] then 
+    print "\\textnormal{id} \\rangle $";
+else 
+    for i in [1..#Wgens-1] do 
+        m := Wgens[i];
+        print "w_{", m, "}, ";
+    end for;
+    print "w_{", Wgens[#Wgens], "} \\rangle $";
+end if;
+print " & ", ref, " & & & & & & \\\\ \\hline";
 UnsetOutputFile();
 */

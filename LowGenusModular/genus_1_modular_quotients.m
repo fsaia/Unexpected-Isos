@@ -1,6 +1,6 @@
 /* All pairs [* N, Wgens *] with N squarefree 
 such that the Atkin--Lehner quotient 
-X_0(N)/<w_m | m in Wgens> has genus 1
+X = X_0(N)/<w_m | m in Wgens> has genus 1.
 */
 
 genus_1_modular_quotients :=  [ [* 11,
