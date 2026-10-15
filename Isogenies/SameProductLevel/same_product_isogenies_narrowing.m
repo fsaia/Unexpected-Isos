@@ -52,582 +52,592 @@ the code here in each step to check the corresponding computations.
 ////// Atkin--Lehner Compatability Checks
 ////////////////////////////////////////////////
 
-    // // Loading list of all genus matches ////////////////////////////////////////////////
-    // // Here we load our list containing the info on genus matches. Each element is a list
-    // // [*M, M_curves*] where M is a squarefree positive integer and M_curves is a list
-    // // of info for curves X_0^D(N)/W with DN = M for which we witnessed genus matches. 
-    // // Each element of M_curves is a list [*g, g_curves *], where g_curves is a list 
-    // // whose elements are lists 
-    // // [* D, N, Wgens *] of curves X_0^D(N)/<Wgens> of genus g with DN = M. 
+/*
 
-    // load "genus_matches.m";
+// Loading list of all genus matches ////////////////////////////////////////////////
+// Here we load our list containing the info on genus matches. Each element is a list
+// [*M, M_curves*] where M is a squarefree positive integer and M_curves is a list
+// of info for curves X_0^D(N)/W with DN = M for which we witnessed genus matches. 
+// Each element of M_curves is a list [*g, g_curves *], where g_curves is a list 
+// whose elements are lists 
+// [* D, N, Wgens *] of curves X_0^D(N)/<Wgens> of genus g with DN = M. 
 
-    // // Sorting and excluding candidate quotients for isomorphism by
-    // // testing compatibility of AL actions when we have newforms of
-    // // all sign patterns in the level we are dealing with
+load "genus_matches.m";
 
-    // genus_matches_number := #genus_matches;
+// Sorting and excluding candidate quotients for isomorphism by
+// testing compatibility of AL actions when we have newforms of
+// all sign patterns in the level we are dealing with
 
-    // print "excluding candidates by testing AL compatibility";
+genus_matches_number := #genus_matches;
 
-    // step := 0; 
+print "excluding candidates by testing AL compatibility";
 
-    // // initializing iso_candidates as an associative array on the levels M=DN
-    // // that provide possible isogenies of Jacobians 
-    // iso_candidates := AssociativeArray([L[1] : L in genus_matches]);
+step := 0; 
 
-    // for DN_list in genus_matches do 
-    //     DN := DN_list[1];  
-    //     step := step+1;
-    //     print "Step out of ", genus_matches_number , ": ", step;
+// initializing iso_candidates as an associative array on the levels M=DN
+// that provide possible isogenies of Jacobians 
+iso_candidates := AssociativeArray([L[1] : L in genus_matches]);
 
-    //     // initializing iso_candidates[DN] as an array indexed on the genera that
-    //     // occur in this level as possibly seeing isogenies of Jacobians
-    //     iso_candidates[DN] := AssociativeArray({g_list[1] : g_list in DN_list[2]});
+for DN_list in genus_matches do 
+    DN := DN_list[1];  
+    step := step+1;
+    print "Step out of ", genus_matches_number , ": ", step;
 
-    //     if DN in PPV_levels_seq then 
-    //         missing_newforms := true;
-    //     else
-    //         missing_newforms := false;
-    //     end if; 
+    // initializing iso_candidates[DN] as an array indexed on the genera that
+    // occur in this level as possibly seeing isogenies of Jacobians
+    iso_candidates[DN] := AssociativeArray({g_list[1] : g_list in DN_list[2]});
 
-    //     for g_list in DN_list[2] do
-    //         g := g_list[1];
-    //         g_curves := g_list[2];
-    //         g_iso_candidates_lists := [* *];
+    if DN in PPV_levels_seq then 
+        missing_newforms := true;
+    else
+        missing_newforms := false;
+    end if; 
 
-    //         // If there exists a sign pattern in level DN for which there exists no 
-    //         // newform of level DN, then we gain no information in this check. If 
-    //         // g = 1, then we also don't record any extra info from this check. 
-    //         if (missing_newforms) or (g le 1) then 
-    //             Append(~g_iso_candidates_lists,g_curves);
+    for g_list in DN_list[2] do
+        g := g_list[1];
+        g_curves := g_list[2];
+        g_iso_candidates_lists := [* *];
 
-    //         // Otherwise, we check "compatibility" of the Atkin--Lehner actions
-    //         // for isogeny candidates in level DN of each genus
-    //         else 
-    //             for X in g_curves do 
+        // If there exists a sign pattern in level DN for which there exists no 
+        // newform of level DN, then we gain no information in this check. If 
+        // g = 1, then we also don't record any extra info from this check. 
+        if (missing_newforms) or (g le 1) then 
+            Append(~g_iso_candidates_lists,g_curves);
 
-    //                 if IsEmpty(g_iso_candidates_lists) then 
-    //                     Append(~g_iso_candidates_lists,[ X ]);
-    //                 else
-    //                     D1 := X[1];
-    //                     N1 := X[2];
-    //                     W1_gens := X[3];
-    //                     W1 := gens_to_identifier(DN,W1_gens);
-    //                     X_class_found := false;
+        // Otherwise, we check "compatibility" of the Atkin--Lehner actions
+        // for isogeny candidates in level DN of each genus
+        else 
+            for X in g_curves do 
 
-    //                     // For each list, we check whether Jac(X) could be isogenous to the
-    //                     // Jacobian of a curve in this list by considering compatability
-    //                     // of the AL actions, which gives an equivalence relation on
-    //                     // these quotients coarser than isogeny of jacobians
-    //                     for L in g_iso_candidates_lists do
-    //                         L_index := Index(g_iso_candidates_lists,L);
-    //                         Y := L[1];
-    //                         D2 := Y[1];
-    //                         N2 := Y[2];
-    //                         W2_gens := Y[3];
-    //                         W2 := gens_to_identifier(DN,W2_gens);
+                if IsEmpty(g_iso_candidates_lists) then 
+                    Append(~g_iso_candidates_lists,[ X ]);
+                else
+                    D1 := X[1];
+                    N1 := X[2];
+                    W1_gens := X[3];
+                    W1 := gens_to_identifier(DN,W1_gens);
+                    X_class_found := false;
 
-    //                         W1_same_parity := {m : m in W1 | (#PrimeDivisors(GCD(D1,m)) mod 2) eq (#PrimeDivisors(GCD(D2,m)) mod 2)};
-    //                         W2_same_parity := {m : m in W2 | (#PrimeDivisors(GCD(D1,m)) mod 2) eq (#PrimeDivisors(GCD(D2,m)) mod 2)};
+                    // For each list, we check whether Jac(X) could be isogenous to the
+                    // Jacobian of a curve in this list by considering compatability
+                    // of the AL actions, which gives an equivalence relation on
+                    // these quotients coarser than isogeny of jacobians
+                    for L in g_iso_candidates_lists do
+                        L_index := Index(g_iso_candidates_lists,L);
+                        Y := L[1];
+                        D2 := Y[1];
+                        N2 := Y[2];
+                        W2_gens := Y[3];
+                        W2 := gens_to_identifier(DN,W2_gens);
 
-    //                         // if this check goes through, then we've found
-    //                         // the equivalence class that X belongs in 
-    //                         if (Seqset(W1) meet Seqset(W2)) eq ((W1_same_parity) join (W2_same_parity)) then  
-    //                             // append X to this list and update our
-    //                             // list of equivalence classes of size greater than 1
-    //                             // unders this AL compatibility relation
-    //                             L_new := Append(L,X);
-    //                             g_iso_candidates_lists[L_index] := L_new;
-    //                             X_class_found := true;
-    //                             break;
-    //                         end if;
-    //                     end for; 
+                        W1_same_parity := {m : m in W1 | (#PrimeDivisors(GCD(D1,m)) mod 2) eq (#PrimeDivisors(GCD(D2,m)) mod 2)};
+                        W2_same_parity := {m : m in W2 | (#PrimeDivisors(GCD(D1,m)) mod 2) eq (#PrimeDivisors(GCD(D2,m)) mod 2)};
 
-    //                     // In this case, the equivalence class of X is not 
-    //                     // yet represented
-    //                     if not X_class_found then 
-    //                         Append(~g_iso_candidates_lists,[ X ]);
-    //                     end if; 
+                        // if this check goes through, then we've found
+                        // the equivalence class that X belongs in 
+                        if (Seqset(W1) meet Seqset(W2)) eq ((W1_same_parity) join (W2_same_parity)) then  
+                            // append X to this list and update our
+                            // list of equivalence classes of size greater than 1
+                            // unders this AL compatibility relation
+                            L_new := Append(L,X);
+                            g_iso_candidates_lists[L_index] := L_new;
+                            X_class_found := true;
+                            break;
+                        end if;
+                    end for; 
 
-    //                 end if;
-    //             end for;  
-    //         end if;
+                    // In this case, the equivalence class of X is not 
+                    // yet represented
+                    if not X_class_found then 
+                        Append(~g_iso_candidates_lists,[ X ]);
+                    end if; 
 
-    //         // now we append to our genus g array the info of equivalence classes 
-    //         // of quotients, under the AL compatibility relation, which have size > 1
-    //         // and moreover do not consist of all quotients of the same curve X_0^D(N) 
-    //         iso_candidates[DN][g] := [L : L in g_iso_candidates_lists | #{X[1] : X in L} gt 1];
+                end if;
+            end for;  
+        end if;
 
-    //     end for; 
-    // end for; 
+        // now we append to our genus g array the info of equivalence classes 
+        // of quotients, under the AL compatibility relation, which have size > 1
+        // and moreover do not consist of all quotients of the same curve X_0^D(N) 
+        iso_candidates[DN][g] := [L : L in g_iso_candidates_lists | #{X[1] : X in L} gt 1];
 
-    // // printing info to a list
-    // same_product_remaining_isog_lists_v1 := [* *];
+    end for; 
+end for; 
 
-    // for DN in Sort(Setseq(Keys(iso_candidates))) do 
-    //     g_lists := [* *];
-    //     for g in Sort(Setseq(Keys(iso_candidates[DN]))) do
-    //         g_quotients_lists := iso_candidates[DN][g];
-    //         if not IsEmpty(g_quotients_lists) then 
-    //             Append(~g_lists, [* g, g_quotients_lists *]);
-    //         end if; 
-    //     end for;
+// printing info to a list
+same_product_remaining_isog_lists_v1 := [* *];
 
-    //     if not IsEmpty(g_lists) then 
-    //         Append(~same_product_remaining_isog_lists_v1, [* DN, g_lists *]);
-    //     end if; 
-    // end for;
+for DN in Sort(Setseq(Keys(iso_candidates))) do 
+    g_lists := [* *];
+    for g in Sort(Setseq(Keys(iso_candidates[DN]))) do
+        g_quotients_lists := iso_candidates[DN][g];
+        if not IsEmpty(g_quotients_lists) then 
+            Append(~g_lists, [* g, g_quotients_lists *]);
+        end if; 
+    end for;
 
-    // SetOutputFile("same_product_remaining_isog_lists_v1.m");
-    // print "same_product_remaining_isog_lists_v1 := ", same_product_remaining_isog_lists_v1, ";";
-    // UnsetOutputFile(); 
+    if not IsEmpty(g_lists) then 
+        Append(~same_product_remaining_isog_lists_v1, [* DN, g_lists *]);
+    end if; 
+end for;
 
+SetOutputFile("same_product_remaining_isog_lists_v1.m");
+print "same_product_remaining_isog_lists_v1 := ", same_product_remaining_isog_lists_v1, ";";
+UnsetOutputFile(); 
+
+*/
 
 ////////////////////////////////////////////////
 ////// Finer Compatability Checks
 ////////////////////////////////////////////////
 
-    // print "Performing finer compatability checks";
+/*
 
-    // // Given D an indefinite quaternion discriminant, N a positive integer, 
-    // // pattern and element of {-1,1}^{omega(DN)}, and gens a set of Hall
-    // // Divisors m of DN, returns True if pattern (viewed as a sign pattern
-    // // for the Atkin--Lehner action on X_0^D(N), with the ith element giving
-    // // the sign of w_{p_i} where p_i is the ith smallest prime divisor of DN)
-    // // is compatible with the action of W = <w_m | m in gens> on X_0^D(N) and
-    // // returns False otherwise. 
-    // IsCompatible := function(D,N,pattern,gens)
-        
-    //     compat_check := true;
-    //     DNprimes := PrimeDivisors(D*N);
+print "Performing finer compatability checks";
 
-    //     for m in gens do 
+// Given D an indefinite quaternion discriminant, N a positive integer, 
+// pattern and element of {-1,1}^{omega(DN)}, and gens a set of Hall
+// Divisors m of DN, returns True if pattern (viewed as a sign pattern
+// for the Atkin--Lehner action on X_0^D(N), with the ith element giving
+// the sign of w_{p_i} where p_i is the ith smallest prime divisor of DN)
+// is compatible with the action of W = <w_m | m in gens> on X_0^D(N) and
+// returns False otherwise. 
+IsCompatible := function(D,N,pattern,gens)
+    
+    compat_check := true;
+    DNprimes := PrimeDivisors(D*N);
 
-    //         m_sign := &*([1] cat [pattern[i] : i in [1..#pattern] | m mod DNprimes[i] eq 0]);
+    for m in gens do 
 
-    //         if m_sign ne (-1)^(#PrimeDivisors(GCD(D,m))) then
-    //             compat_check := false;
-    //             break;
-    //         end if;
-    //     end for;
+        m_sign := &*([1] cat [pattern[i] : i in [1..#pattern] | m mod DNprimes[i] eq 0]);
 
-    //     return compat_check;
-    // end function;
+        if m_sign ne (-1)^(#PrimeDivisors(GCD(D,m))) then
+            compat_check := false;
+            break;
+        end if;
+    end for;
 
-
-    // // Given an indefinite quaternion discriminants D, 
-    // // a squarefree positive integer N coprime to D, and 
-    // // a set Wgens of Hall Divisors generating an Atkin--Lehner subgroup W of 
-    // // X_0^{D}(N), returns the set of sign patterns in level D*N 
-    // // (as elements of {-1,1}^omega(DN)) that are compatible with the action of W. 
-    // compatible_patterns := function(D,N,Wgens)
-    //     signs := {-1,1}; 
-    //     sign_patterns := CartesianPower(signs,#PrimeDivisors(D*N));
-    //     return {pattern : pattern in sign_patterns | IsCompatible(D,N,pattern,Wgens)};
-    // end function;
+    return compat_check;
+end function;
 
 
-    // // Given sequences X1 and X2, each consisting of an indefinite quaternion discriminants Di, 
-    // // a squarefree positive integers Ni coprime to Di, such that D1N1 = D2N2, and 
-    // // a set Wigens of Hall Divisors generating an Atkin--Lehner subgroup Wi of 
-    // // X_0^{Di}(Ni), returns false if the sets of sign patterns
-    // // in level D1*N1 compatible with W1 and with W2 are different or if 
-    // // there exists a sign pattern in this level lacking newforms and returns true otherwise.  
-    // pattern_compatability_check := function(X1,X2)
-    //     D1 := X1[1];
-    //     N1 := X1[2];
-    //     W1gens := X1[3];
-    //     D2 := X2[1];
-    //     N2 := X2[2];
-    //     W2gens := X2[3];
-    //     DN := D1*N1;
-    //     assert DN eq D2*N2;
-
-    //     // If D1 \nmid D2 and is not among the PPV levels, then we know dim(S_2(D1)^{new}) > 1 and this newspace
-    //     // is generated by elements of S_2(D1N1)^{D1-new} minus S_2(D1N1)^{D2-new}, so we can't have
-    //     // isogeny. The same holds swapping the roles of D1 and D2.
-    //     // This argument easily generalizes to the hypothesis that there's a divisor D 
-    //     // of DN which is not in PPV levels such that D1 divides D and D2 does not divide D
-    //     // (or vice-verse), giving the more general check that follows in the else statement.
-    //     if (D1 ne D2) and ((not (D1 in PPV_levels_seq cat omega1_genus_zero_levels)) and (not (D2 in PPV_levels_seq cat omega1_genus_zero_levels))) then 
-    //         return false;
-    //     else
-    //         DN_divisors := Divisors(DN);
-    //         level_divisors_with_newforms := [D : D in DN_divisors | not (D in PPV_levels_seq cat omega1_genus_zero_levels)];
-    //         if not IsEmpty([D : D in level_divisors_with_newforms | (D mod D1 eq 0) and (D mod D2 ne 0)]) then 
-    //             return false;
-    //         elif not IsEmpty([D : D in level_divisors_with_newforms | (D mod D2 eq 0) and (D mod D1 ne 0)]) then 
-    //             return false;
-    //         end if; 
-    //     end if;
-
-    //     // If we made it through, we perform the finer pattern compatibility check.
-    //     // Specifically, for each divisor D of D1*N1 with D1 dividing D and D2 not dividing
-    //     // D, we check if there is a sign pattern epsilon in level D1*N1 which is 
-    //     // compatible with the action of W1 and whose truncation epsilon_D
-    //     // to level D has newforms (or similarly by replacing D1 with D2 and W1 with W2).
-    //     signs := {-1,1}; 
-    //     DN_primes := PrimeDivisors(D1*N1);
-    //     sign_patterns := CartesianPower(signs,#DN_primes);
-
-    //     // First checking on X1 side
-    //     X1_patterns := compatible_patterns(D1,N1,W1gens);
-    //     divs_for_D1 := [D : D in DN_divisors | (D in PPV_levels_seq) and ((D mod D1 eq 0) and (D mod D2 ne 0))];
-    //     for D in divs_for_D1 do 
-    //         for epsilon in X1_patterns do 
-    //             // truncation of sign pattern epsilon to level D
-    //             epsilon_D := [epsilon[i] : i in [1..#DN_primes] | D mod DN_primes[i] eq 0];
-    //             // if we have newforms for epsilon_D in level D, this setup
-    //             // proves non-isogeny
-    //             if not epsilon_D in PPV_array[D] then 
-    //                 // if D ne D1 then 
-    //                 //     print "X1, X2: ", X1, X2;
-    //                 //     print "D1 multiple D, epsilon, epsilon_D: ", D, epsilon, epsilon_D;
-    //                 // end if;
-    //                 return false;
-    //             end if; 
-    //         end for;
-    //     end for; 
-
-    //     // If above failed, we check X2 side
-    //     X2_patterns := compatible_patterns(D2,N2,W2gens);
-    //     divs_for_D2 := [D : D in DN_divisors | (D in PPV_levels_seq) and ((D mod D2 eq 0) and (D mod D1 ne 0))];
-    //     for D in divs_for_D2 do 
-    //         for epsilon in X2_patterns do 
-    //             // truncation of sign pattern epsilon to level D
-    //             epsilon_D := [epsilon[i] : i in [1..#DN_primes] | D mod DN_primes[i] eq 0];
-    //             // if we have newforms for epsilon_D in level D, this setup
-    //             // proves non-isogeny
-    //             if not epsilon_D in PPV_array[D] then 
-    //                 // if D ne D2 then 
-    //                 //     print "X1, X2: ", X1, X2;
-    //                 //     print "D2 multiple D, epsilon, epsilon_D: ", D, epsilon, epsilon_D;
-    //                 // end if;
-    //                 return false;
-    //             end if; 
-    //         end for;
-    //     end for; 
-
-    //     // If above failed, we check whether there are is a sign pattern in level D*N
-    //     // which has newforms and is compatible with one Atkin--Lehner subgroup but not 
-    //     // with the other.
-    //     uncommon_patterns := [P : P in X1_patterns | not (P in X2_patterns)] cat [P : P in X2_patterns | not (P in X1_patterns)];
-    //     if not IsEmpty(uncommon_patterns) then 
-    //         if not (DN in PPV_levels_seq cat omega1_genus_zero_levels) then 
-    //             return false;
-    //         else 
-    //             uncommon_patterns_with_newforms := [P : P in uncommon_patterns | not ([s : s in P] in PPV_array[DN])];
-    //             if not IsEmpty(uncommon_patterns_with_newforms) then 
-    //                 return false;
-    //             end if; 
-    //         end if;
-    //     end if;
-
-    //     // If above checks went through, we return true (indicating no knowledge of non-isogeny)
-    //     return true;
-    // end function; 
+// Given an indefinite quaternion discriminants D, 
+// a squarefree positive integer N coprime to D, and 
+// a set Wgens of Hall Divisors generating an Atkin--Lehner subgroup W of 
+// X_0^{D}(N), returns the set of sign patterns in level D*N 
+// (as elements of {-1,1}^omega(DN)) that are compatible with the action of W. 
+compatible_patterns := function(D,N,Wgens)
+    signs := {-1,1}; 
+    sign_patterns := CartesianPower(signs,#PrimeDivisors(D*N));
+    return {pattern : pattern in sign_patterns | IsCompatible(D,N,pattern,Wgens)};
+end function;
 
 
-    // // loading back in same_product_remaining_isog_lists_v1 for finer compatability checks
-    // load "same_product_remaining_isog_lists_v1.m";
+// Given sequences X1 and X2, each consisting of an indefinite quaternion discriminants Di, 
+// a squarefree positive integers Ni coprime to Di, such that D1N1 = D2N2, and 
+// a set Wigens of Hall Divisors generating an Atkin--Lehner subgroup Wi of 
+// X_0^{Di}(Ni), returns false if the sets of sign patterns
+// in level D1*N1 compatible with W1 and with W2 are different or if 
+// there exists a sign pattern in this level lacking newforms and returns true otherwise.  
+pattern_compatability_check := function(X1,X2)
+    D1 := X1[1];
+    N1 := X1[2];
+    W1gens := X1[3];
+    D2 := X2[1];
+    N2 := X2[2];
+    W2gens := X2[3];
+    DN := D1*N1;
+    assert DN eq D2*N2;
 
-    // // initializing iso_candidates as an associative array on the levels M=DN
-    // // that provide possible isogenies of Jacobians 
-    // iso_candidates := AssociativeArray([L[1] : L in same_product_remaining_isog_lists_v1]);
+    // If D1 \nmid D2 and is not among the PPV levels, then we know dim(S_2(D1)^{new}) > 1 and this newspace
+    // is generated by elements of S_2(D1N1)^{D1-new} minus S_2(D1N1)^{D2-new}, so we can't have
+    // isogeny. The same holds swapping the roles of D1 and D2.
+    // This argument easily generalizes to the hypothesis that there's a divisor D 
+    // of DN which is not in PPV levels such that D1 divides D and D2 does not divide D
+    // (or vice-verse), giving the more general check that follows in the else statement.
+    if (D1 ne D2) and ((not (D1 in PPV_levels_seq cat omega1_genus_zero_levels)) and (not (D2 in PPV_levels_seq cat omega1_genus_zero_levels))) then 
+        return false;
+    else
+        DN_divisors := Divisors(DN);
+        level_divisors_with_newforms := [D : D in DN_divisors | not (D in PPV_levels_seq cat omega1_genus_zero_levels)];
+        if not IsEmpty([D : D in level_divisors_with_newforms | (D mod D1 eq 0) and (D mod D2 ne 0)]) then 
+            return false;
+        elif not IsEmpty([D : D in level_divisors_with_newforms | (D mod D2 eq 0) and (D mod D1 ne 0)]) then 
+            return false;
+        end if; 
+    end if;
 
-    // remainders_number_v1 := #same_product_remaining_isog_lists_v1;
-    // step := 0;
+    // If we made it through, we perform the finer pattern compatibility check.
+    // Specifically, for each divisor D of D1*N1 with D1 dividing D and D2 not dividing
+    // D, we check if there is a sign pattern epsilon in level D1*N1 which is 
+    // compatible with the action of W1 and whose truncation epsilon_D
+    // to level D has newforms (or similarly by replacing D1 with D2 and W1 with W2).
+    signs := {-1,1}; 
+    DN_primes := PrimeDivisors(D1*N1);
+    sign_patterns := CartesianPower(signs,#DN_primes);
 
-    // for DN_list in same_product_remaining_isog_lists_v1 do 
-    //     DN := DN_list[1];
-    //     step := step+1;
-    //     print "Step out of ", remainders_number_v1 , ": ", step;
+    // First checking on X1 side
+    X1_patterns := compatible_patterns(D1,N1,W1gens);
+    divs_for_D1 := [D : D in DN_divisors | (D in PPV_levels_seq) and ((D mod D1 eq 0) and (D mod D2 ne 0))];
+    for D in divs_for_D1 do 
+        for epsilon in X1_patterns do 
+            // truncation of sign pattern epsilon to level D
+            epsilon_D := [epsilon[i] : i in [1..#DN_primes] | D mod DN_primes[i] eq 0];
+            // if we have newforms for epsilon_D in level D, this setup
+            // proves non-isogeny
+            if not epsilon_D in PPV_array[D] then 
+                // if D ne D1 then 
+                //     print "X1, X2: ", X1, X2;
+                //     print "D1 multiple D, epsilon, epsilon_D: ", D, epsilon, epsilon_D;
+                // end if;
+                return false;
+            end if; 
+        end for;
+    end for; 
 
-    //     // initializing iso_candidates[DN] as an array indexed on the genera that
-    //     // occur in this level as possibly seeing isogenies of Jacobians
-    //     iso_candidates[DN] := AssociativeArray({g_list[1] : g_list in DN_list[2]});
+    // If above failed, we check X2 side
+    X2_patterns := compatible_patterns(D2,N2,W2gens);
+    divs_for_D2 := [D : D in DN_divisors | (D in PPV_levels_seq) and ((D mod D2 eq 0) and (D mod D1 ne 0))];
+    for D in divs_for_D2 do 
+        for epsilon in X2_patterns do 
+            // truncation of sign pattern epsilon to level D
+            epsilon_D := [epsilon[i] : i in [1..#DN_primes] | D mod DN_primes[i] eq 0];
+            // if we have newforms for epsilon_D in level D, this setup
+            // proves non-isogeny
+            if not epsilon_D in PPV_array[D] then 
+                // if D ne D2 then 
+                //     print "X1, X2: ", X1, X2;
+                //     print "D2 multiple D, epsilon, epsilon_D: ", D, epsilon, epsilon_D;
+                // end if;
+                return false;
+            end if; 
+        end for;
+    end for; 
 
-    //     // we perform our finer check on "compatability" of Atkin--Lehner actions
-    //     // for isogeny candidates in level DN for each genus, checking if there
-    //     // is a sign pattern with newforms compatible with an action corresponding
-    //     // to one quotient and not the other
-    //     for g_list in DN_list[2] do 
-    //         g := g_list[1];
-    //         g_iso_candidate_lists := g_list[2];
-    //         g_iso_candidate_lists_new := [* *];
+    // If above failed, we check whether there are is a sign pattern in level D*N
+    // which has newforms and is compatible with one Atkin--Lehner subgroup but not 
+    // with the other.
+    uncommon_patterns := [P : P in X1_patterns | not (P in X2_patterns)] cat [P : P in X2_patterns | not (P in X1_patterns)];
+    if not IsEmpty(uncommon_patterns) then 
+        if not (DN in PPV_levels_seq cat omega1_genus_zero_levels) then 
+            return false;
+        else 
+            uncommon_patterns_with_newforms := [P : P in uncommon_patterns | not ([s : s in P] in PPV_array[DN])];
+            if not IsEmpty(uncommon_patterns_with_newforms) then 
+                return false;
+            end if; 
+        end if;
+    end if;
 
-    //         for candidate_list in g_iso_candidate_lists do 
-    //             candidate_lists_finer := [* *];
-    //             for X in candidate_list do 
-    //                 if IsEmpty(candidate_lists_finer) then 
-    //                     Append(~candidate_lists_finer,[ X ]);
-    //                 else 
-    //                     X_class_found := false;
-    //                     for L in candidate_lists_finer do
-    //                         L_index := Index(candidate_lists_finer,L);
-    //                         for Y in L do 
-    //                             // If this check goes through, then we've found
-    //                             // a class that X belongs in. Note that
-    //                             // we check possibly all elements of L because
-    //                             // the relation given by pattern_compatability_check
-    //                             // is not transitive. 
-    //                             if pattern_compatability_check(X,Y) then 
-    //                                 candidate_lists_finer[L_index] := Append(L,X);
-    //                                 X_class_found := true;
-    //                                 break;
-    //                             end if;
-    //                         end for; 
-    //                     end for;
-
-    //                     // In this case, the equivalence class of X is not 
-    //                     // yet represented
-    //                     if not X_class_found then 
-    //                         Append(~candidate_lists_finer,[ X ]);
-    //                     end if; 
-    //                 end if;
-    //             end for;
-
-    //             // Now we collect the information of the further sieved candidate lists
-    //             // in g_candidate_lists_new
-    //             for L in [L : L in candidate_lists_finer | #L gt 1] do 
-    //                 Append(~g_iso_candidate_lists_new,L);
-    //             end for; 
-
-    //         end for;
-
-    //     // now we append to our genus g array the info of equivalence classes 
-    //     // of quotients, under the AL compatibility relation, which have size > 1
-    //     // and moreover do not consist of all quotients of the same curve X_0^D(N) 
-    //     iso_candidates[DN][g] := [L : L in g_iso_candidate_lists_new | #{X[1] : X in L} gt 1];
-
-    //     end for;
-    // end for; 
-
-
-    // // printing info to a list
-    // same_product_remaining_isog_lists_v2 := [* *];
-
-    // for DN in Sort(Setseq(Keys(iso_candidates))) do 
-    //     g_lists := [* *];
-    //     for g in Sort(Setseq(Keys(iso_candidates[DN]))) do
-    //         g_quotients_lists := iso_candidates[DN][g];
-    //         if not IsEmpty(g_quotients_lists) then 
-    //             Append(~g_lists, [* g, g_quotients_lists *]);
-    //         end if; 
-    //     end for;
-
-    //     if not IsEmpty(g_lists) then 
-    //         Append(~same_product_remaining_isog_lists_v2, [* DN, g_lists *]);
-    //     end if; 
-    // end for;
+    // If above checks went through, we return true (indicating no knowledge of non-isogeny)
+    return true;
+end function; 
 
 
-    // SetOutputFile("same_product_remaining_isog_lists_v2.m");
-    // print "same_product_remaining_isog_lists_v2 := ", same_product_remaining_isog_lists_v2, ";";
-    // UnsetOutputFile(); 
+// loading back in same_product_remaining_isog_lists_v1 for finer compatability checks
+load "same_product_remaining_isog_lists_v1.m";
 
-    // // sanity check showing there are overlaps in above lists
-    // found_overlap := false;
-    // for DN_list in same_product_remaining_isog_lists_v2 do 
-    // print "step DN: ", DN_list[1];
-    // for g_list in DN_list[2] do 
-    //     isog_candidate_lists := g_list[2];
-    //     for i in [1..#isog_candidate_lists] do 
-    //         L1 := isog_candidate_lists[i];
-    //         for j in [i+1..#isog_candidate_lists] do 
-    //             L2 := isog_candidate_lists[j];
-    //             if not (IsEmpty([X : X in L1 | X in L2])) then 
-    //                 print "DN, g: ", DN_list[1], g_list[1];
-    //                 print "L1, L2: ", L1, L2; 
-    //                 found_overlap := true;
-    //                 break;
-    //             end if;
-    //         end for;
+// initializing iso_candidates as an associative array on the levels M=DN
+// that provide possible isogenies of Jacobians 
+iso_candidates := AssociativeArray([L[1] : L in same_product_remaining_isog_lists_v1]);
 
-    //         if found_overlap then 
-    //             break;
-    //         end if;
-    //     end for;
+remainders_number_v1 := #same_product_remaining_isog_lists_v1;
+step := 0;
 
-    //     if found_overlap then 
-    //         break;
-    //     end if;
-    // end for; 
+for DN_list in same_product_remaining_isog_lists_v1 do 
+    DN := DN_list[1];
+    step := step+1;
+    print "Step out of ", remainders_number_v1 , ": ", step;
 
-    // if found_overlap then 
-    //     break;
-    // end if;
-    // end for;
+    // initializing iso_candidates[DN] as an array indexed on the genera that
+    // occur in this level as possibly seeing isogenies of Jacobians
+    iso_candidates[DN] := AssociativeArray({g_list[1] : g_list in DN_list[2]});
 
+    // we perform our finer check on "compatability" of Atkin--Lehner actions
+    // for isogeny candidates in level DN for each genus, checking if there
+    // is a sign pattern with newforms compatible with an action corresponding
+    // to one quotient and not the other
+    for g_list in DN_list[2] do 
+        g := g_list[1];
+        g_iso_candidate_lists := g_list[2];
+        g_iso_candidate_lists_new := [* *];
+
+        for candidate_list in g_iso_candidate_lists do 
+            candidate_lists_finer := [* *];
+            for X in candidate_list do 
+                if IsEmpty(candidate_lists_finer) then 
+                    Append(~candidate_lists_finer,[ X ]);
+                else 
+                    X_class_found := false;
+                    for L in candidate_lists_finer do
+                        L_index := Index(candidate_lists_finer,L);
+                        for Y in L do 
+                            // If this check goes through, then we've found
+                            // a class that X belongs in. Note that
+                            // we check possibly all elements of L because
+                            // the relation given by pattern_compatability_check
+                            // is not transitive. 
+                            if pattern_compatability_check(X,Y) then 
+                                candidate_lists_finer[L_index] := Append(L,X);
+                                X_class_found := true;
+                                break;
+                            end if;
+                        end for; 
+                    end for;
+
+                    // In this case, the equivalence class of X is not 
+                    // yet represented
+                    if not X_class_found then 
+                        Append(~candidate_lists_finer,[ X ]);
+                    end if; 
+                end if;
+            end for;
+
+            // Now we collect the information of the further sieved candidate lists
+            // in g_candidate_lists_new
+            for L in [L : L in candidate_lists_finer | #L gt 1] do 
+                Append(~g_iso_candidate_lists_new,L);
+            end for; 
+
+        end for;
+
+    // now we append to our genus g array the info of equivalence classes 
+    // of quotients, under the AL compatibility relation, which have size > 1
+    // and moreover do not consist of all quotients of the same curve X_0^D(N) 
+    iso_candidates[DN][g] := [L : L in g_iso_candidate_lists_new | #{X[1] : X in L} gt 1];
+
+    end for;
+end for; 
+
+
+// printing info to a list
+same_product_remaining_isog_lists_v2 := [* *];
+
+for DN in Sort(Setseq(Keys(iso_candidates))) do 
+    g_lists := [* *];
+    for g in Sort(Setseq(Keys(iso_candidates[DN]))) do
+        g_quotients_lists := iso_candidates[DN][g];
+        if not IsEmpty(g_quotients_lists) then 
+            Append(~g_lists, [* g, g_quotients_lists *]);
+        end if; 
+    end for;
+
+    if not IsEmpty(g_lists) then 
+        Append(~same_product_remaining_isog_lists_v2, [* DN, g_lists *]);
+    end if; 
+end for;
+
+
+SetOutputFile("same_product_remaining_isog_lists_v2.m");
+print "same_product_remaining_isog_lists_v2 := ", same_product_remaining_isog_lists_v2, ";";
+UnsetOutputFile(); 
+
+// sanity check showing there are overlaps in above lists
+found_overlap := false;
+for DN_list in same_product_remaining_isog_lists_v2 do 
+print "step DN: ", DN_list[1];
+for g_list in DN_list[2] do 
+    isog_candidate_lists := g_list[2];
+    for i in [1..#isog_candidate_lists] do 
+        L1 := isog_candidate_lists[i];
+        for j in [i+1..#isog_candidate_lists] do 
+            L2 := isog_candidate_lists[j];
+            if not (IsEmpty([X : X in L1 | X in L2])) then 
+                print "DN, g: ", DN_list[1], g_list[1];
+                print "L1, L2: ", L1, L2; 
+                found_overlap := true;
+                break;
+            end if;
+        end for;
+
+        if found_overlap then 
+            break;
+        end if;
+    end for;
+
+    if found_overlap then 
+        break;
+    end if;
+end for; 
+
+if found_overlap then 
+    break;
+end if;
+end for;
+
+*/
 
 
 ////////////////////////////////////////////////
 ////// Finite field point count checks
 ////////////////////////////////////////////////
 
-    // // loading back in same_product_remaining_isog_lists_v2 for finite field point count checks
-    // load "same_product_remaining_isog_lists_v2.m";
+/*
 
-    // // initializing iso_candidates as an associative array on the levels M=DN
-    // // that provide possible isogenies of Jacobians 
-    // iso_candidates := AssociativeArray([L[1] : L in same_product_remaining_isog_lists_v2]);
+// loading back in same_product_remaining_isog_lists_v2 for finite field point count checks
+load "same_product_remaining_isog_lists_v2.m";
 
-    // remainders_number_v2 := #same_product_remaining_isog_lists_v2;
-    // step := 0;
+// initializing iso_candidates as an associative array on the levels M=DN
+// that provide possible isogenies of Jacobians 
+iso_candidates := AssociativeArray([L[1] : L in same_product_remaining_isog_lists_v2]);
 
-    // // Loading in code for finite field point counts, from work of 
-    // // Mercuri--Padurariu--Saia--Stirpe, and setting largest prime p
-    // // and power p^rmax to check up to. 
-    // load "counting_points.m";
-    // primes_to_check := PrimesUpTo(100);
-    // rmax := 3;
+remainders_number_v2 := #same_product_remaining_isog_lists_v2;
+step := 0;
 
-    // for DN_list in same_product_remaining_isog_lists_v2 do 
-    //     DN := DN_list[1];
-    //     step := step+1;
-    //     print "Step out of ", remainders_number_v2 , ": ", step;
-    //     DN_primes := PrimeDivisors(DN);
+// Loading in code for finite field point counts, from work of 
+// Mercuri--Padurariu--Saia--Stirpe, and setting largest prime p
+// and power p^rmax to check up to. 
+load "counting_points.m";
+primes_to_check := PrimesUpTo(100);
+rmax := 3;
 
-    //     // initializing iso_candidates[DN] as an array indexed on the genera that
-    //     // occur in this level as possibly seeing isogenies of Jacobians
-    //     iso_candidates[DN] := AssociativeArray({g_list[1] : g_list in DN_list[2]});
+for DN_list in same_product_remaining_isog_lists_v2 do 
+    DN := DN_list[1];
+    step := step+1;
+    print "Step out of ", remainders_number_v2 , ": ", step;
+    DN_primes := PrimeDivisors(DN);
 
-    //     // wW perform finite field point count checks
-    //     // for isogeny candidates in level DN for each genus.
-    //     for g_list in DN_list[2] do 
-    //         g := g_list[1];
-    //         g_iso_candidate_lists := g_list[2];
-    //         g_iso_candidate_lists_new := [* *];
+    // initializing iso_candidates[DN] as an array indexed on the genera that
+    // occur in this level as possibly seeing isogenies of Jacobians
+    iso_candidates[DN] := AssociativeArray({g_list[1] : g_list in DN_list[2]});
 
-    //         for candidate_list in g_iso_candidate_lists do 
-    //             candidate_lists_finer := [* *];
-    //             for X in candidate_list do 
-    //                 if IsEmpty(candidate_lists_finer) then 
-    //                     Append(~candidate_lists_finer,[ X ]);
-    //                 else 
-    //                     D1 := X[1];
-    //                     N1 := X[2];
-    //                     W1gens := X[3];
-    //                     W1gens_by_indices := [{Index(DN_primes,p) : p in PrimeDivisors(m)} : m in W1gens];
-    //                     X_class_found := false;
+    // wW perform finite field point count checks
+    // for isogeny candidates in level DN for each genus.
+    for g_list in DN_list[2] do 
+        g := g_list[1];
+        g_iso_candidate_lists := g_list[2];
+        g_iso_candidate_lists_new := [* *];
 
-    //                     for L in candidate_lists_finer do
-    //                         L_index := Index(candidate_lists_finer,L);
-    //                         Y := L[1];
-    //                         D2 := Y[1];
-    //                         N2 := Y[2];
-    //                         W2gens := Y[3];
-    //                         W2gens_by_indices := [{Index(DN_primes,p) : p in PrimeDivisors(m)} : m in W2gens];
-                         
-    //                         found_disagreement := false;
-    //                         for p in [p : p in primes_to_check | not (p in DN_primes)] do 
-    //                             gX, Xcounts := shipoints(p, D1, N1, traces_to_forms(dataByLevel, p, D1, N1) : ALprimes:=W1gens_by_indices, m:=rmax, eps:=3);
-    //                             gY, Ycounts := shipoints(p, D2, N2, traces_to_forms(dataByLevel, p, D2, N2) : ALprimes:=W2gens_by_indices, m:=rmax, eps:=3);
-    //                             assert gX eq gY;
+        for candidate_list in g_iso_candidate_lists do 
+            candidate_lists_finer := [* *];
+            for X in candidate_list do 
+                if IsEmpty(candidate_lists_finer) then 
+                    Append(~candidate_lists_finer,[ X ]);
+                else 
+                    D1 := X[1];
+                    N1 := X[2];
+                    W1gens := X[3];
+                    W1gens_by_indices := [{Index(DN_primes,p) : p in PrimeDivisors(m)} : m in W1gens];
+                    X_class_found := false;
 
-    //                             for r in [1..rmax] do
-    //                                 if Xcounts[r] ne Ycounts[r] then 
-    //                                     found_disagreement := true;
-    //                                     break;
-    //                                 end if; 
-    //                             end for;
+                    for L in candidate_lists_finer do
+                        L_index := Index(candidate_lists_finer,L);
+                        Y := L[1];
+                        D2 := Y[1];
+                        N2 := Y[2];
+                        W2gens := Y[3];
+                        W2gens_by_indices := [{Index(DN_primes,p) : p in PrimeDivisors(m)} : m in W2gens];
+                     
+                        found_disagreement := false;
+                        for p in [p : p in primes_to_check | not (p in DN_primes)] do 
+                            gX, Xcounts := shipoints(p, D1, N1, traces_to_forms(dataByLevel, p, D1, N1) : ALprimes:=W1gens_by_indices, m:=rmax, eps:=3);
+                            gY, Ycounts := shipoints(p, D2, N2, traces_to_forms(dataByLevel, p, D2, N2) : ALprimes:=W2gens_by_indices, m:=rmax, eps:=3);
+                            assert gX eq gY;
 
-    //                             if found_disagreement then 
-    //                                 break;
-    //                             end if;
-    //                         end for; 
+                            for r in [1..rmax] do
+                                if Xcounts[r] ne Ycounts[r] then 
+                                    found_disagreement := true;
+                                    break;
+                                end if; 
+                            end for;
 
-    //                         // if this check goes through, then we've found
-    //                         // the equivalence class that X belongs in with respect
-    //                         // to these point count checks
-    //                         if not found_disagreement then 
-    //                             candidate_lists_finer[L_index] := Append(L,X);
-    //                             X_class_found := true;
-    //                             break;
-    //                         end if;
-    //                     end for; 
+                            if found_disagreement then 
+                                break;
+                            end if;
+                        end for; 
 
-    //                     // In this case, the equivalence class of X is not 
-    //                     // yet represented
-    //                     if not X_class_found then 
-    //                         Append(~candidate_lists_finer,[ X ]);
-    //                     end if; 
-    //                 end if;
-    //             end for;
+                        // if this check goes through, then we've found
+                        // the equivalence class that X belongs in with respect
+                        // to these point count checks
+                        if not found_disagreement then 
+                            candidate_lists_finer[L_index] := Append(L,X);
+                            X_class_found := true;
+                            break;
+                        end if;
+                    end for; 
 
-    //             // Now we collect the information of the further sieved candidate lists
-    //             // in g_candidate_lists_new
-    //             for L in [L : L in candidate_lists_finer | #L gt 1] do 
-    //                 Append(~g_iso_candidate_lists_new,L);
-    //             end for; 
+                    // In this case, the equivalence class of X is not 
+                    // yet represented
+                    if not X_class_found then 
+                        Append(~candidate_lists_finer,[ X ]);
+                    end if; 
+                end if;
+            end for;
 
-    //         end for;
+            // Now we collect the information of the further sieved candidate lists
+            // in g_candidate_lists_new
+            for L in [L : L in candidate_lists_finer | #L gt 1] do 
+                Append(~g_iso_candidate_lists_new,L);
+            end for; 
 
-    //     // now we append to our genus g array the info of equivalence classes 
-    //     // of quotients, under the point counts relation, which have size > 1
-    //     // and moreover do not consist of all quotients of the same curve X_0^D(N) 
-    //     iso_candidates[DN][g] := [L : L in g_iso_candidate_lists_new | #{X[1] : X in L} gt 1];
+        end for;
 
-    //     end for;
-    // end for; 
+    // now we append to our genus g array the info of equivalence classes 
+    // of quotients, under the point counts relation, which have size > 1
+    // and moreover do not consist of all quotients of the same curve X_0^D(N) 
+    iso_candidates[DN][g] := [L : L in g_iso_candidate_lists_new | #{X[1] : X in L} gt 1];
 
-
-    // // printing info to a list
-    // same_product_remaining_isog_lists_v3 := [* *];
-
-    // for DN in Sort(Setseq(Keys(iso_candidates))) do 
-    //     g_lists := [* *];
-    //     for g in Sort(Setseq(Keys(iso_candidates[DN]))) do
-    //         g_quotients_lists := iso_candidates[DN][g];
-    //         if not IsEmpty(g_quotients_lists) then 
-    //             Append(~g_lists, [* g, g_quotients_lists *]);
-    //         end if; 
-    //     end for;
-
-    //     if not IsEmpty(g_lists) then 
-    //         Append(~same_product_remaining_isog_lists_v3, [* DN, g_lists *]);
-    //     end if; 
-    // end for;
+    end for;
+end for; 
 
 
-    // SetOutputFile("same_product_remaining_isog_lists_v3.m");
-    // print "same_product_remaining_isog_lists_v3 := ", same_product_remaining_isog_lists_v3, ";";
-    // UnsetOutputFile();
+// printing info to a list
+same_product_remaining_isog_lists_v3 := [* *];
+
+for DN in Sort(Setseq(Keys(iso_candidates))) do 
+    g_lists := [* *];
+    for g in Sort(Setseq(Keys(iso_candidates[DN]))) do
+        g_quotients_lists := iso_candidates[DN][g];
+        if not IsEmpty(g_quotients_lists) then 
+            Append(~g_lists, [* g, g_quotients_lists *]);
+        end if; 
+    end for;
+
+    if not IsEmpty(g_lists) then 
+        Append(~same_product_remaining_isog_lists_v3, [* DN, g_lists *]);
+    end if; 
+end for;
 
 
-    // // sanity check showing there are overlaps in above lists
-    // found_overlap := false;
-    // for DN_list in same_product_remaining_isog_lists_v3 do 
-    //     print "step DN: ", DN_list[1];
-    //     for g_list in DN_list[2] do 
-    //         isog_candidate_lists := g_list[2];
-    //         for i in [1..#isog_candidate_lists] do 
-    //             L1 := isog_candidate_lists[i];
-    //             for j in [i+1..#isog_candidate_lists] do 
-    //                 L2 := isog_candidate_lists[j];
-    //                 if not (IsEmpty([X : X in L1 | X in L2])) then 
-    //                     print "DN, g: ", DN_list[1], g_list[1];
-    //                     print "L1, L2: ", L1, L2; 
-    //                     found_overlap := true;
-    //                     break;
-    //                 end if;
-    //             end for;
+SetOutputFile("same_product_remaining_isog_lists_v3.m");
+print "same_product_remaining_isog_lists_v3 := ", same_product_remaining_isog_lists_v3, ";";
+UnsetOutputFile();
 
-    //             if found_overlap then 
-    //                 break;
-    //             end if;
-    //         end for;
 
-    //         if found_overlap then 
-    //             break;
-    //         end if;
-    //     end for; 
+// sanity check showing there are overlaps in above lists
+found_overlap := false;
+for DN_list in same_product_remaining_isog_lists_v3 do 
+    print "step DN: ", DN_list[1];
+    for g_list in DN_list[2] do 
+        isog_candidate_lists := g_list[2];
+        for i in [1..#isog_candidate_lists] do 
+            L1 := isog_candidate_lists[i];
+            for j in [i+1..#isog_candidate_lists] do 
+                L2 := isog_candidate_lists[j];
+                if not (IsEmpty([X : X in L1 | X in L2])) then 
+                    print "DN, g: ", DN_list[1], g_list[1];
+                    print "L1, L2: ", L1, L2; 
+                    found_overlap := true;
+                    break;
+                end if;
+            end for;
 
-    //     if found_overlap then 
-    //         break;
-    //     end if;
-    // end for;
+            if found_overlap then 
+                break;
+            end if;
+        end for;
+
+        if found_overlap then 
+            break;
+        end if;
+    end for; 
+
+    if found_overlap then 
+        break;
+    end if;
+end for;
+
+*/
 
 
 ////////////////////////////////////////////////
@@ -636,7 +646,7 @@ the code here in each step to check the corresponding computations.
 
 print "Performing explicit Jacobian isogeny check";
 
-// loading back in same_product_remaining_isog_lists_v2 for explicit isogeny checks
+// loading back in same_product_remaining_isog_lists_v3 for explicit isogeny checks
 load "same_product_remaining_isog_lists_v3.m";
 
 // Loading functions for isogeny decompositions
