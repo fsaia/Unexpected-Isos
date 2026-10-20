@@ -66,21 +66,21 @@ Checks for isogenous Jacobians among pairs $X_0^{D}(N)/W_1$, $X_0^{D}(N)/W_2$.
 
 - `full_isogenies_list_fixed_product_level.m`: List of information on all pairs of quotients $X_0^{D_1}(N_1)/W_1$ and
 $X_0^{D_2}(N_2)/W_2$, with $D_1 N_1 = D_2 N_2$, with
-isogenous Jacobians. Each list element is a list of the form [$M$, g_lists], where each element of g_lists 
-is then a list of the form [$g$, isog_lists], and each element of isog_lists is a list $L$ containing elements
-[$D$, $N$, Wgens] corresponding to quotients $X_0^{D}(N)/W$, with $W = \langle \{w_m | m \text{ in Wgens} \} \rangle$, of genus $g$ and level $DN = M$, such that all curves in $L$ have isogenous Jacobians.  
+isogenous Jacobians. Each list element is a list of the form [ $M$, g_lists], where each element of g_lists 
+is then a list of the form [ $g$, isog_lists], and each element of isog_lists is a list $L$ containing elements
+[ $D$, $N$, Wgens] corresponding to quotients $X_0^{D}(N)/W$, with $W = \langle \{w_m | m \text{ in Wgens} \} \rangle$, of genus $g$ and level $DN = M$, such that all curves in $L$ have isogenous Jacobians.  
 
 - `same_product_isomorphisms_narrowing.m`: In this file, we take those pairs of Atkin--Lehner quotients with $D_1 N_1 = D_2 N_2$ whose Jacobians are isogenous and we undergo checks to work to prove whether the curves are isomorphic over $\mathbb{Q}$. 
 
--`remaining_isomorphism_lists_same_product_v1.m`: This is an intermediate list of candidate pairs of quotients for isomorphism, in the $D_1 N_1=D_2 N_2$ case, after we narrow down initial candidates using knowledge of automorphisms of quotients.
+- `remaining_isomorphism_lists_same_product_v1.m`: This is an intermediate list of candidate pairs of quotients for isomorphism, in the $D_1 N_1=D_2 N_2$ case, after we narrow down initial candidates using knowledge of automorphisms of quotients.
 
--`genus_2_isom.m`: Here we list all pairs of Atkin--Lehner quotients $X_0^{D_1}(N_1)/W_1$ and $X_0^{D_2}(N_2)/W_2$ of genus $2$ with $D_1 N_1 = D_2 N_2$ which we have proved to be isomorphic over $\mathbb{Q}$. 
+- `genus_2_isom.m`: Here we list all pairs of Atkin--Lehner quotients $X_0^{D_1}(N_1)/W_1$ and $X_0^{D_2}(N_2)/W_2$ of genus $2$ with $D_1 N_1 = D_2 N_2$ which we have proved to be isomorphic over $\mathbb{Q}$. 
 
--`higher_genus_isom.m`: Here we list all pairs of Atkin--Lehner quotients $X_0^{D_1}(N_1)/W_1$ and $X_0^{D_2}(N_2)/W_2$ of genus $g>2$ with $D_1 N_1 = D_2 N_2$ which we have proved to be isomorphic over $\mathbb{Q}$. 
+- `higher_genus_isom.m`: Here we list all pairs of Atkin--Lehner quotients $X_0^{D_1}(N_1)/W_1$ and $X_0^{D_2}(N_2)/W_2$ of genus $g>2$ with $D_1 N_1 = D_2 N_2$ which we have proved to be isomorphic over $\mathbb{Q}$. 
 
--`remaining_genus_2_isom_candidates_v2.m`: Here we list all pairs of Atkin--Lehner quotients $X = X_0^{D_1}(N_1)/W_1$ and $Y = X_0^{D_2}(N_2)/W_2$ of genus $2$ for which we have not yet proven whether $X$ and $Y$ are isomorphic over $\mathbb{Q}$.  
+- `remaining_genus_2_isom_candidates_v2.m`: Here we list all pairs of Atkin--Lehner quotients $X = X_0^{D_1}(N_1)/W_1$ and $Y = X_0^{D_2}(N_2)/W_2$ of genus $2$ for which we have not yet proven whether $X$ and $Y$ are isomorphic over $\mathbb{Q}$.  
 
--`remaining_higher_genus_isom_candidates_v2.m`: Here we list all pairs of Atkin--Lehner quotients $X = X_0^{D_1}(N_1)/W_1$ and $Y = X_0^{D_2}(N_2)/W_2$ of genus $g>2$ for which we have not yet proven whether $X$ and $Y$ are isomorphic over $\mathbb{Q}$.  
+- `remaining_higher_genus_isom_candidates_v2.m`: Here we list all pairs of Atkin--Lehner quotients $X = X_0^{D_1}(N_1)/W_1$ and $Y = X_0^{D_2}(N_2)/W_2$ of genus $g>2$ for which we have not yet proven whether $X$ and $Y$ are isomorphic over $\mathbb{Q}$.  
 
 
 ## Isomorphisms/DifferentProductLevel 
