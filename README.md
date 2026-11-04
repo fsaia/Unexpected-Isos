@@ -89,7 +89,9 @@ is then a list of the form [ $g$, isog_lists], and each element of isog_lists is
 ## Auxiliary Files
 
 - `AL_identifiers.m`, `quot_genus.m`, `ribet_isog.m`, and
-`dual_graphs.m`: Functionality for working with Atkin--Lehner subgroups, computing genera of quotients of Shimura curves, computing isogeny factors of Jacobians of such quotients, and computing reductions type information for such quotients at primes dividing the discriminant. Code is borrowed from prior work of the second and third named authors (in particular, from https://github.com/fsaia/GenusAtMost2).  
+`discriminant_dual_graphs.m`: Functionality for working with Atkin--Lehner subgroups, computing genera of quotients of Shimura curves, computing isogeny factors of Jacobians of such quotients, and computing reductions type information for such quotients at primes dividing the discriminant. Code is borrowed from prior work of the second and third named authors (in particular, from https://github.com/fsaia/GenusAtMost2).  
+
+- `level_dual_graphs.m`: Functionality for computing reductions type information for Atkin--Lehner quotients at primes dividing the level.  
 
 - `genus_2_bielliptics_eqn_determined_final.m` and `genus_2_bielliptics_eqn_not_determined_final.m`: lists containing information on models for bielliptic genus 2 curves, coming from the same work referenced in the prior item. See the comments on the individual files, or the linked repository, for details.  
 
