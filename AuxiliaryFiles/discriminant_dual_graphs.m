@@ -283,12 +283,12 @@ end function;
 load "AL_identifiers.m";
 
 
-// Kodaira_from_dual : take D, N, Wgens set of generators for W with X_0^D(N)/W genus 1, 
+// Kodaira_from_dual_discriminant : take D, N, Wgens set of generators for W with X_0^D(N)/W genus 1, 
 // return Kodaira symbols of X_0^D(N)/W at all primes p|D. 
 // Note: if X_0^D(N)/W does not have genus 1, then this returns for each prime p|D
 // the number of edges in the dual graph of the minimal regular model X_0^D(N)/W at p. 
 
-Kodaira_from_dual := function(D,N,Wgens) 
+Kodaira_from_dual_discriminant := function(D,N,Wgens) 
 	
 	symbols := []; // initializing list of symbols
 
