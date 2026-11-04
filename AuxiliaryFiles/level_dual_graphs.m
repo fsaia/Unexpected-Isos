@@ -11,6 +11,7 @@
 load "discriminant_dual_graphs.m";
 
 
+
 // level_fiber : given D, M and a prime p not dividing DM, return the edge information and
 // Atkin--Lehner data of the dual graph of the special fiber of X_0^D(pM) at p, in the same
 // format as modular_fiber (first half of edge_info one orientation, second half the reverses).
