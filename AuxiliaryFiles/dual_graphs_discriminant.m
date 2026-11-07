@@ -283,14 +283,14 @@ end function;
 load "AL_identifiers.m";
 
 
-// dual_graph_at_p_edge_counts_discriminant : take D, N, Wgens set of 
+// dual_graph_at_p_edge_count_discriminant : take D, N, Wgens set of 
 // generators for W with X = X_0^D(N)/W, 
 // returns number of edges in the dual graph of the minimal regular 
-// model of X at p.
+// model of X at p for a prime p dividing D.
 // Note: if X has genus 1, then this returns the Kodaira symbol of X
 // at p. 
 
-dual_graph_at_p_edge_counts_discriminant := function(D,N,Wgens,p) 
+dual_graph_at_p_edge_count_discriminant := function(D,N,Wgens,p) 
 	
 	// get AL info at p for top graph G
 	edge_info, AL := bipartite_cover_fiber(D,N,p);
@@ -331,7 +331,7 @@ dual_graph_edge_counts_discriminant := function(D,N,Wgens)
 	edge_counts := []; // initializing list of edge counts
 
 	for p in PrimeDivisors(D) do 
-		e_p := dual_graph_at_p_edge_counts_discriminant(D,N,Wgens,p);
+		e_p := dual_graph_at_p_edge_count_discriminant(D,N,Wgens,p);
 		Append(~edge_counts, [p, e_p]); 
 	end for; 
 

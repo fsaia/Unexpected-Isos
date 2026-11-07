@@ -156,15 +156,15 @@ level_quotient_edges := function(D,N,p,Wgens)
 end function;
 
 
-// dual_graph_at_p_edge_counts_level : take D, N, Wgens set of generators for 
+// dual_graph_at_p_edge_count_level : take D, N, Wgens set of generators for 
 // W with X = X_0^D(N)/W, 
 // returns the number of edges in the dual graph of the minimal regular 
-// model of X at p.
+// model of X at p for a prime p dividing N.
 // Note: if X has genus 1, then this gives the Kodaira symbol of X
 // at p.
 // This is the p | N analogue of dual_graph_at_p_edge_counts_discriminant, 
 // and returns data in the same format.
-dual_graph_at_p_edge_counts_level := function(D,N,Wgens,p)
+dual_graph_at_p_edge_count_level := function(D,N,Wgens,p)
 
 	orbits_seq := level_quotient_edges(D,N,p,Wgens);
 
@@ -194,11 +194,30 @@ dual_graph_edge_counts_level := function(D,N,Wgens)
 	edge_counts := []; // initializing list of edge counts
 
 	for p in PrimeDivisors(N) do 
-		e_p := dual_graph_at_p_edge_counts_level(D,N,Wgens,p);
+		e_p := dual_graph_at_p_edge_count_level(D,N,Wgens,p);
 		Append(~edge_counts, [p, e_p]); 
 	end for; 
 
 	return edge_counts;
+
+end function;
+
+
+// dual_graph_at_p_edge_count : take D, N, Wgens set of generators for 
+// W with X = X_0^D(N)/W, 
+// returns the number of edges in the dual graph of the minimal regular 
+// model of X at p for a prime p dividing DN.
+// Note: if X has genus 1, then this gives the Kodaira symbol of X
+// at p.
+dual_graph_at_p_edge_count := function(D,N,Wgens,p)
+	
+	assert D*N mod p eq 0;
+
+	if D mod p eq 0 then 
+		return dual_graph_at_p_edge_count_discriminant(D,N,Wgens,p);
+	else
+		return dual_graph_at_p_edge_count_level(D,N,Wgens,p);
+	end if; 
 
 end function;
 
