@@ -283,46 +283,61 @@ end function;
 load "AL_identifiers.m";
 
 
-// Kodaira_from_dual_discriminant : take D, N, Wgens set of generators for W with X_0^D(N)/W genus 1, 
-// return Kodaira symbols of X_0^D(N)/W at all primes p|D. 
-// Note: if X_0^D(N)/W does not have genus 1, then this returns for each prime p|D
-// the number of edges in the dual graph of the minimal regular model X_0^D(N)/W at p. 
+// dual_graph_at_p_edge_counts_discriminant : take D, N, Wgens set of 
+// generators for W with X = X_0^D(N)/W, 
+// returns number of edges in the dual graph of the minimal regular 
+// model of X at p.
+// Note: if X has genus 1, then this returns the Kodaira symbol of X
+// at p. 
 
-Kodaira_from_dual_discriminant := function(D,N,Wgens) 
+dual_graph_at_p_edge_counts_discriminant := function(D,N,Wgens,p) 
 	
-	symbols := []; // initializing list of symbols
+	// get AL info at p for top graph G
+	edge_info, AL := bipartite_cover_fiber(D,N,p);
 
-	for p in PrimeDivisors(D) do 
+	// identify edges via W
+	orbits_seq := AL_quotient_edges(D,N,p,gens_to_identifier(D*N,Wgens),edge_info,AL);
 
-		// get AL info at p for top graph G
-		edge_info, AL := bipartite_cover_fiber(D,N,p);
+	// minimize
+	minimal_check := false; 
+	while minimal_check eq false do 
+		pruned_orbits_seq := prune(orbits_seq,edge_info);
+		if pruned_orbits_seq eq orbits_seq then 
+			minimal_check := true;
+		else 
+			orbits_seq := pruned_orbits_seq;
+		end if; 
+	end while; 
 
-		// identify edges via W
-		orbits_seq := AL_quotient_edges(D,N,p,gens_to_identifier(D*N,Wgens),edge_info,AL);
+	// n = count of edges with multiplicity after pruning
 
-		// minimize
-		minimal_check := false; 
-		while minimal_check eq false do 
-			pruned_orbits_seq := prune(orbits_seq,edge_info);
-			if pruned_orbits_seq eq orbits_seq then 
-				minimal_check := true;
-			else 
-				orbits_seq := pruned_orbits_seq;
-			end if; 
-		end while; 
+	edge_count := Integers()!(&+[orbit[2] : orbit in orbits_seq]/2);
 
-		// n = count of edges with multiplicity after pruning
-
-		n := Integers()!(&+[orbit[2] : orbit in orbits_seq]/2);
-
-		Append(~symbols, [p, n]); 
-
-	end for; 
-
-	return symbols;
+	return edge_count;
 
 end function; 
 
+
+// dual_graph_edge_counts_discriminant : take D, N, Wgens set of generators for 
+// W with X = X_0^D(N)/W, 
+// returns sequence of pairs [p,e], where e is the number of edges in the 
+// dual graph of the minimal regular 
+// model of X at p, for all primes p dividing D.
+// Note: if X has genus 1, then this gives the Kodaira symbols of X
+// at all primes p dividing D. 
+
+dual_graph_edge_counts_discriminant := function(D,N,Wgens) 
+	
+	edge_counts := []; // initializing list of edge counts
+
+	for p in PrimeDivisors(D) do 
+		e_p := dual_graph_at_p_edge_counts_discriminant(D,N,Wgens,p);
+		Append(~edge_counts, [p, e_p]); 
+	end for; 
+
+	return edge_counts;
+
+end function; 
 
 
 // quotient_has_Qp_points: given D, N, Wgens, and p | D, determines whether the quotient

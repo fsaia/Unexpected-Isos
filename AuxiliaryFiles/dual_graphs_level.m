@@ -1,6 +1,6 @@
 // Dual graphs of the special fibers of Atkin--Lehner quotients X_0^D(N)/W at primes p || N
 // (D >= 1, DN squarefree). This generalises modular_dual_graphs.m (the case D = 1); the
-// primes p | D are described in dual_graphs.m.
+// primes p | D are described in dual_graphs_discriminant.m.
 //
 // With N = pM: X_0^D(N) over Fbar_p is two copies of X_0^D(M) glued at the supersingular
 // points, which are the left ideal classes of an Eichler order of level M in the definite
@@ -8,8 +8,7 @@
 // w_d swaps the two copies iff p | d. On X_0^D(N)/W the description is as in
 // modular_dual_graphs.m (Buzzard's model; for D = 1 Deligne--Rapoport).
 
-load "discriminant_dual_graphs.m";
-
+load "dual_graphs_discriminant.m";
 
 
 // level_fiber : given D, M and a prime p not dividing DM, return the edge information and
@@ -157,6 +156,53 @@ level_quotient_edges := function(D,N,p,Wgens)
 end function;
 
 
+// dual_graph_at_p_edge_counts_level : take D, N, Wgens set of generators for 
+// W with X = X_0^D(N)/W, 
+// returns the number of edges in the dual graph of the minimal regular 
+// model of X at p.
+// Note: if X has genus 1, then this gives the Kodaira symbol of X
+// at p.
+// This is the p | N analogue of dual_graph_at_p_edge_counts_discriminant, 
+// and returns data in the same format.
+dual_graph_at_p_edge_counts_level := function(D,N,Wgens,p)
+
+	orbits_seq := level_quotient_edges(D,N,p,Wgens);
+
+	// n = count of edges with multiplicity (each edge occurs in both orientations)
+	if IsEmpty(orbits_seq) then
+		e_p := 0;
+	else
+		e_p := Integers()!(&+[orbit[2] : orbit in orbits_seq]/2);
+	end if;
+
+	return e_p;
+
+end function;
+
+
+// dual_graph_edge_counts_level : take D, N, Wgens set of generators for 
+// W with X = X_0^D(N)/W, 
+// returns sequence of pairs [p,e], where e is the number of edges in the 
+// dual graph of the minimal regular 
+// model of X at p, for all primes p dividing N.
+// Note: if X has genus 1, then this gives the Kodaira symbols of X
+// at all primes p dividing D. 
+// This is the p | N analogue of dual_graph_edge_counts_discriminant, 
+// and returns data in the same format.
+dual_graph_edge_counts_level := function(D,N,Wgens) 
+	
+	edge_counts := []; // initializing list of edge counts
+
+	for p in PrimeDivisors(N) do 
+		e_p := dual_graph_at_p_edge_counts_level(D,N,Wgens,p);
+		Append(~edge_counts, [p, e_p]); 
+	end for; 
+
+	return edge_counts;
+
+end function;
+
+
 // Kodaira_from_dual_level : given D, N with DN squarefree and Wgens a set of generators for
 // W <= W_0(D,N), return for each prime p | N the number of edges in the dual graph of the
 // minimal regular model of X_0^D(N)/W at p, counted with multiplicity.
@@ -180,6 +226,20 @@ Kodaira_from_dual_level := function(D,N,Wgens)
 
 	return symbols;
 end function;
+
+
+// staples together the information of edge counts
+// in the dual graphs of X = X_0^D(N)/<Wgens> at all bad primes
+// Note: if X has genus 1, this gives all Kodaira symbols for X
+dual_graph_edge_counts := function(D,N,Wgens)
+	level_counts := dual_graph_edge_counts_discriminant(D,N,Wgens);
+	disc_counts := dual_graph_edge_counts_level(D,N,Wgens);
+
+	counts := level_counts cat disc_counts;
+	Sort(~counts);
+
+	return counts;
+end function; 
 
 
 // reduction_profile_level : finer data at each p | N, as [* p, c, g, T *] with c the number
@@ -211,15 +271,4 @@ reduction_profile_level := function(D,N,Wgens)
 end function;
 
 
-// staples together the information of edge counts
-// in the dual graphs at all bad primes
-Kodaira_from_dual := function(D,N,Wgens)
-	level_counts := Kodaira_from_dual_level(D,N,Wgens);
-	disc_counts := Kodaira_from_dual_discriminant(D,N,Wgens);
-
-	counts := level_counts cat disc_counts;
-	Sort(~counts);
-
-	return counts;
-end function; 
 
