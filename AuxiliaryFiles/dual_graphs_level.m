@@ -203,31 +203,6 @@ dual_graph_edge_counts_level := function(D,N,Wgens)
 end function;
 
 
-// Kodaira_from_dual_level : given D, N with DN squarefree and Wgens a set of generators for
-// W <= W_0(D,N), return for each prime p | N the number of edges in the dual graph of the
-// minimal regular model of X_0^D(N)/W at p, counted with multiplicity.
-// This is the p | N analogue of Kodaira_from_dual, and returns data in the same format.
-Kodaira_from_dual_level := function(D,N,Wgens)
-
-	symbols := [];
-
-	for p in PrimeDivisors(N) do
-		orbits_seq := level_quotient_edges(D,N,p,Wgens);
-
-		// n = count of edges with multiplicity (each edge occurs in both orientations)
-		if IsEmpty(orbits_seq) then
-			n := 0;
-		else
-			n := Integers()!(&+[orbit[2] : orbit in orbits_seq]/2);
-		end if;
-
-		Append(~symbols, [p, n]);
-	end for;
-
-	return symbols;
-end function;
-
-
 // staples together the information of edge counts
 // in the dual graphs of X = X_0^D(N)/<Wgens> at all bad primes
 // Note: if X has genus 1, this gives all Kodaira symbols for X
