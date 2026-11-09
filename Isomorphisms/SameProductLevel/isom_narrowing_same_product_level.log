@@ -1,0 +1,3986 @@
+Loading "no_involution_star_pairs_10k.m"
+Loading "all_atkin_lehner_10k.m"
+excluding candidates using automorphism checks
+Step out of  97 :  1
+Step out of  97 :  2
+Step out of  97 :  3
+Step out of  97 :  4
+Step out of  97 :  5
+Step out of  97 :  6
+Step out of  97 :  7
+Step out of  97 :  8
+Step out of  97 :  9
+Step out of  97 :  10
+Step out of  97 :  11
+Step out of  97 :  12
+Step out of  97 :  13
+Step out of  97 :  14
+Step out of  97 :  15
+Step out of  97 :  16
+Step out of  97 :  17
+Step out of  97 :  18
+Step out of  97 :  19
+Step out of  97 :  20
+Step out of  97 :  21
+Step out of  97 :  22
+Step out of  97 :  23
+Step out of  97 :  24
+Step out of  97 :  25
+Step out of  97 :  26
+Step out of  97 :  27
+Step out of  97 :  28
+Step out of  97 :  29
+Step out of  97 :  30
+Step out of  97 :  31
+Step out of  97 :  32
+Step out of  97 :  33
+Step out of  97 :  34
+Step out of  97 :  35
+Step out of  97 :  36
+Step out of  97 :  37
+Step out of  97 :  38
+Step out of  97 :  39
+Step out of  97 :  40
+Step out of  97 :  41
+Step out of  97 :  42
+Step out of  97 :  43
+Step out of  97 :  44
+Step out of  97 :  45
+Step out of  97 :  46
+Step out of  97 :  47
+Step out of  97 :  48
+Step out of  97 :  49
+Step out of  97 :  50
+Step out of  97 :  51
+Step out of  97 :  52
+Step out of  97 :  53
+Step out of  97 :  54
+Step out of  97 :  55
+Step out of  97 :  56
+Step out of  97 :  57
+Step out of  97 :  58
+Step out of  97 :  59
+Step out of  97 :  60
+Step out of  97 :  61
+Step out of  97 :  62
+Step out of  97 :  63
+Step out of  97 :  64
+Step out of  97 :  65
+Step out of  97 :  66
+Step out of  97 :  67
+Step out of  97 :  68
+Step out of  97 :  69
+Step out of  97 :  70
+Step out of  97 :  71
+Step out of  97 :  72
+Step out of  97 :  73
+Step out of  97 :  74
+Step out of  97 :  75
+Step out of  97 :  76
+Step out of  97 :  77
+Step out of  97 :  78
+Step out of  97 :  79
+Step out of  97 :  80
+Step out of  97 :  81
+Step out of  97 :  82
+Step out of  97 :  83
+Step out of  97 :  84
+Step out of  97 :  85
+Step out of  97 :  86
+Step out of  97 :  87
+Step out of  97 :  88
+Step out of  97 :  89
+Step out of  97 :  90
+Step out of  97 :  91
+Step out of  97 :  92
+Step out of  97 :  93
+Step out of  97 :  94
+Step out of  97 :  95
+Step out of  97 :  96
+Step out of  97 :  97
+Total number of isogenous pairs tested:  1466
+Total number of isogenous pairs excluded by aut checks:  0
+
+
+Loading "remaining_isomorphism_lists_same_product_v1.m"
+Loading "genus_2_bielliptics_eqn_determined_final.m"
+Loading "genus_2_bielliptics_eqn_not_determined_final.m"
+Loading "dual_graphs_discriminant.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "dual_graphs_level.m"
+Loading "dual_graphs_discriminant.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Step out of  273 :  1
+Pair:  [* [* 1, 26,
+    { 1 }
+*], [* 26, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  2
+Pair:  [* [* 1, 30,
+    { 2 }
+*], [* 1, 30,
+    { 10 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  3
+Pair:  [* [* 1, 30,
+    { 2 }
+*], [* 15, 2,
+    { 2 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  4
+Pair:  [* [* 1, 30,
+    { 2 }
+*], [* 15, 2,
+    { 6 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  5
+Pair:  [* [* 1, 30,
+    { 10 }
+*], [* 15, 2,
+    { 2 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  6
+Pair:  [* [* 1, 30,
+    { 10 }
+*], [* 15, 2,
+    { 6 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  7
+Pair:  [* [* 15, 2,
+    { 2 }
+*], [* 15, 2,
+    { 6 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  8
+Pair:  [* [* 1, 30,
+    { 3 }
+*], [* 15, 2,
+    { 5 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  9
+Pair:  [* [* 1, 35,
+    { 7 }
+*], [* 35, 1,
+    { 5 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  10
+Pair:  [* [* 1, 39,
+    { 13 }
+*], [* 39, 1,
+    { 3 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  11
+Pair:  [* [* 1, 42,
+    { 3 }
+*], [* 1, 42,
+    { 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  12
+Pair:  [* [* 1, 42,
+    { 3 }
+*], [* 14, 3,
+    { 3 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  13
+Pair:  [* [* 1, 42,
+    { 3 }
+*], [* 14, 3,
+    { 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  14
+Pair:  [* [* 1, 42,
+    { 21 }
+*], [* 14, 3,
+    { 3 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  15
+Pair:  [* [* 1, 42,
+    { 21 }
+*], [* 14, 3,
+    { 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  16
+Pair:  [* [* 14, 3,
+    { 3 }
+*], [* 14, 3,
+    { 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  17
+Pair:  [* [* 1, 42,
+    { 6 }
+*], [* 1, 42,
+    { 42 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  18
+Pair:  [* [* 21, 2,
+    { 6 }
+*], [* 21, 2,
+    { 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  19
+Pair:  [* [* 1, 57,
+    { 3 }
+*], [* 1, 57,
+    { 57 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  20
+Pair:  [* [* 1, 58,
+    { 29 }
+*], [* 58, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  21
+Pair:  [* [* 1, 66,
+    { 11 }
+*], [* 6, 11,
+    { 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  22
+Pair:  [* [* 1, 66,
+    { 11 }
+*], [* 22, 3,
+    { 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  23
+Pair:  [* [* 6, 11,
+    { 11 }
+*], [* 22, 3,
+    { 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  24
+Pair:  [* [* 1, 66,
+    { 2, 3 }
+*], [* 1, 66,
+    { 3, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  25
+Pair:  [* [* 6, 11,
+    { 2 }
+*], [* 22, 3,
+    { 2 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  26
+Pair:  [* [* 6, 11,
+    { 2 }
+*], [* 33, 2,
+    { 33 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  27
+Pair:  [* [* 22, 3,
+    { 2 }
+*], [* 33, 2,
+    { 33 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  28
+Pair:  [* [* 6, 11,
+    { 3 }
+*], [* 22, 3,
+    { 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  29
+Pair:  [* [* 6, 11,
+    { 3 }
+*], [* 33, 2,
+    { 3 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  30
+Pair:  [* [* 22, 3,
+    { 22 }
+*], [* 33, 2,
+    { 3 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  31
+Pair:  [* [* 1, 70,
+    { 35 }
+*], [* 14, 5,
+    { 5 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  32
+Pair:  [* [* 1, 70,
+    { 35 }
+*], [* 14, 5,
+    { 10 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  33
+Pair:  [* [* 14, 5,
+    { 5 }
+*], [* 14, 5,
+    { 10 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have models for both, checking isomorphism
+Step out of  273 :  34
+Pair:  [* [* 1, 70,
+    { 2, 7 }
+*], [* 1, 70,
+    { 7, 10 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  35
+Pair:  [* [* 1, 70,
+    { 2, 7 }
+*], [* 35, 2,
+    { 2, 5 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  36
+Pair:  [* [* 1, 70,
+    { 2, 7 }
+*], [* 35, 2,
+    { 5, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  37
+Pair:  [* [* 1, 70,
+    { 7, 10 }
+*], [* 35, 2,
+    { 2, 5 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  38
+Pair:  [* [* 1, 70,
+    { 7, 10 }
+*], [* 35, 2,
+    { 5, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  39
+Pair:  [* [* 35, 2,
+    { 2, 5 }
+*], [* 35, 2,
+    { 5, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  40
+Pair:  [* [* 1, 78,
+    { 39 }
+*], [* 26, 3,
+    { 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  41
+Pair:  [* [* 1, 78,
+    { 39 }
+*], [* 26, 3,
+    { 78 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+have models for both, checking isomorphism
+Step out of  273 :  42
+Pair:  [* [* 26, 3,
+    { 6 }
+*], [* 26, 3,
+    { 78 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  43
+Pair:  [* [* 1, 78,
+    { 2, 13 }
+*], [* 39, 2,
+    { 2, 3 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  44
+Pair:  [* [* 1, 78,
+    { 2, 13 }
+*], [* 39, 2,
+    { 3, 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+have models for both, checking isomorphism
+Step out of  273 :  45
+Pair:  [* [* 39, 2,
+    { 2, 3 }
+*], [* 39, 2,
+    { 3, 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  46
+Pair:  [* [* 1, 85,
+    { 5, 17 }
+*], [* 85, 1,
+    { 85 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  47
+Pair:  [* [* 1, 87,
+    { 29 }
+*], [* 87, 1,
+    { 3 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  48
+Pair:  [* [* 1, 91,
+    { 91 }
+*], [* 91, 1,
+    { 91 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+have models for both, checking isomorphism
+Step out of  273 :  49
+Pair:  [* [* 1, 93,
+    { 3, 31 }
+*], [* 93, 1,
+    { 93 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+have models for both, checking isomorphism
+Step out of  273 :  50
+Pair:  [* [* 1, 102,
+    { 3, 17 }
+*], [* 34, 3,
+    { 3 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  51
+Pair:  [* [* 1, 102,
+    { 3, 17 }
+*], [* 34, 3,
+    { 102 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+have models for both, checking isomorphism
+Step out of  273 :  52
+Pair:  [* [* 34, 3,
+    { 3 }
+*], [* 34, 3,
+    { 102 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  53
+Pair:  [* [* 6, 17,
+    { 6 }
+*], [* 51, 2,
+    { 51 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  54
+Pair:  [* [* 34, 3,
+    { 6 }
+*], [* 34, 3,
+    { 51 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  55
+Pair:  [* [* 51, 2,
+    { 2, 17 }
+*], [* 51, 2,
+    { 6, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  56
+Pair:  [* [* 15, 7,
+    { 15, 21 }
+*], [* 21, 5,
+    { 5, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  57
+Pair:  [* [* 35, 3,
+    { 3, 5 }
+*], [* 35, 3,
+    { 5, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  58
+Pair:  [* [* 10, 11,
+    { 2 }
+*], [* 22, 5,
+    { 2 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  59
+Pair:  [* [* 10, 11,
+    { 2 }
+*], [* 55, 2,
+    { 55 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  60
+Pair:  [* [* 22, 5,
+    { 2 }
+*], [* 55, 2,
+    { 55 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  61
+Pair:  [* [* 10, 11,
+    { 10 }
+*], [* 22, 5,
+    { 11 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  62
+Pair:  [* [* 10, 11,
+    { 22 }
+*], [* 22, 5,
+    { 5 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  63
+Pair:  [* [* 10, 11,
+    { 5, 11 }
+*], [* 22, 5,
+    { 10, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  64
+Pair:  [* [* 6, 19,
+    { 6 }
+*], [* 57, 2,
+    { 19 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  65
+Pair:  [* [* 57, 2,
+    { 2, 3 }
+*], [* 57, 2,
+    { 3, 38 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  66
+Pair:  [* [* 1, 115,
+    { 5, 23 }
+*], [* 115, 1,
+    { 115 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+no models, unsuccessful check :(
+Step out of  273 :  67
+Pair:  [* [* 10, 13,
+    { 5 }
+*], [* 65, 2,
+    { 5, 13 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  68
+Pair:  [* [* 6, 23,
+    { 2, 3 }
+*], [* 46, 3,
+    { 2, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  69
+Pair:  [* [* 6, 23,
+    { 2, 3 }
+*], [* 69, 2,
+    { 3, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  70
+Pair:  [* [* 46, 3,
+    { 2, 23 }
+*], [* 69, 2,
+    { 3, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  71
+Pair:  [* [* 69, 2,
+    { 2, 23 }
+*], [* 69, 2,
+    { 6, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  72
+Pair:  [* [* 1, 154,
+    { 2, 7, 11 }
+*], [* 77, 2,
+    { 2, 77 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+no models, unsuccessful check :(
+Step out of  273 :  73
+Pair:  [* [* 14, 11,
+    { 2, 7 }
+*], [* 22, 7,
+    { 2, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  74
+Pair:  [* [* 14, 11,
+    { 2, 7 }
+*], [* 77, 2,
+    { 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  75
+Pair:  [* [* 22, 7,
+    { 2, 11 }
+*], [* 77, 2,
+    { 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  76
+Pair:  [* [* 1, 161,
+    { 7, 23 }
+*], [* 161, 1,
+    { 161 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+no models, unsuccessful check :(
+Step out of  273 :  77
+Pair:  [* [* 1, 165,
+    { 3, 5, 11 }
+*], [* 15, 11,
+    { 11, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  78
+Pair:  [* [* 1, 165,
+    { 3, 5, 11 }
+*], [* 33, 5,
+    { 5, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  79
+Pair:  [* [* 1, 165,
+    { 3, 5, 11 }
+*], [* 55, 3,
+    { 3, 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+no models, unsuccessful check :(
+Step out of  273 :  80
+Pair:  [* [* 15, 11,
+    { 11, 15 }
+*], [* 33, 5,
+    { 5, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  81
+Pair:  [* [* 15, 11,
+    { 11, 15 }
+*], [* 55, 3,
+    { 3, 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  82
+Pair:  [* [* 33, 5,
+    { 5, 33 }
+*], [* 55, 3,
+    { 3, 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  83
+Pair:  [* [* 15, 11,
+    { 3, 11 }
+*], [* 33, 5,
+    { 3, 5 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  84
+Pair:  [* [* 15, 11,
+    { 3, 11 }
+*], [* 55, 3,
+    { 15, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  85
+Pair:  [* [* 33, 5,
+    { 3, 5 }
+*], [* 55, 3,
+    { 15, 33 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  86
+Pair:  [* [* 55, 3,
+    { 3, 11 }
+*], [* 55, 3,
+    { 11, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  87
+Pair:  [* [* 10, 17,
+    { 2, 5 }
+*], [* 34, 5,
+    { 2, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  88
+Pair:  [* [* 10, 17,
+    { 10, 34 }
+*], [* 34, 5,
+    { 5, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  89
+Pair:  [* [* 6, 29,
+    { 2 }
+*], [* 87, 2,
+    { 87 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  90
+Pair:  [* [* 6, 29,
+    { 6 }
+*], [* 58, 3,
+    { 29 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  91
+Pair:  [* [* 1, 186,
+    { 2, 3, 31 }
+*], [* 93, 2,
+    { 2, 93 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+no models, unsuccessful check :(
+Step out of  273 :  92
+Pair:  [* [* 6, 31,
+    { 3 }
+*], [* 62, 3,
+    { 62 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  93
+Pair:  [* [* 6, 31,
+    { 6 }
+*], [* 93, 2,
+    { 31 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  94
+Pair:  [* [* 10, 19,
+    { 2 }
+*], [* 38, 5,
+    { 2, 19 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  95
+Pair:  [* [* 10, 19,
+    { 10 }
+*], [* 95, 2,
+    { 95 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  96
+Pair:  [* [* 10, 19,
+    { 190 }
+*], [* 38, 5,
+    { 5, 38 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have models for both, checking isomorphism
+Step out of  273 :  97
+Pair:  [* [* 38, 5,
+    { 2, 5 }
+*], [* 38, 5,
+    { 2, 95 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  98
+Pair:  [* [* 38, 5,
+    { 5, 19 }
+*], [* 38, 5,
+    { 10, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  99
+Pair:  [* [* 15, 13,
+    { 3, 5 }
+*], [* 39, 5,
+    { 3, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  100
+Pair:  [* [* 15, 13,
+    { 3, 5 }
+*], [* 65, 3,
+    { 5, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  101
+Pair:  [* [* 39, 5,
+    { 3, 13 }
+*], [* 65, 3,
+    { 5, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  102
+Pair:  [* [* 6, 35,
+    { 2, 3 }
+*], [* 10, 21,
+    { 2, 35 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  103
+Pair:  [* [* 6, 35,
+    { 2, 5 }
+*], [* 21, 10,
+    { 15, 21 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  104
+Pair:  [* [* 6, 35,
+    { 2, 21 }
+*], [* 10, 21,
+    { 2, 5 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  105
+Pair:  [* [* 6, 35,
+    { 3, 7 }
+*], [* 10, 21,
+    { 10, 14 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  106
+Pair:  [* [* 6, 35,
+    { 3, 7 }
+*], [* 15, 14,
+    { 3, 7 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  107
+Pair:  [* [* 10, 21,
+    { 10, 14 }
+*], [* 15, 14,
+    { 3, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have models for both, checking isomorphism
+Step out of  273 :  108
+Pair:  [* [* 6, 35,
+    { 3, 35 }
+*], [* 10, 21,
+    { 6, 70 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  109
+Pair:  [* [* 6, 35,
+    { 5, 6 }
+*], [* 14, 15,
+    { 5, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  110
+Pair:  [* [* 6, 35,
+    { 5, 14 }
+*], [* 6, 35,
+    { 7, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  111
+Pair:  [* [* 6, 35,
+    { 5, 14 }
+*], [* 6, 35,
+    { 14, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  112
+Pair:  [* [* 6, 35,
+    { 7, 15 }
+*], [* 6, 35,
+    { 14, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  113
+Pair:  [* [* 6, 35,
+    { 5, 42 }
+*], [* 10, 21,
+    { 10, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  114
+Pair:  [* [* 6, 35,
+    { 6, 7 }
+*], [* 15, 14,
+    { 7, 15 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  115
+Pair:  [* [* 6, 35,
+    { 10, 14 }
+*], [* 6, 35,
+    { 14, 30 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  116
+Pair:  [* [* 6, 35,
+    { 15, 21 }
+*], [* 6, 35,
+    { 15, 42 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  117
+Pair:  [* [* 10, 21,
+    { 2, 3 }
+*], [* 35, 6,
+    { 15, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have models for both, checking isomorphism
+Step out of  273 :  118
+Pair:  [* [* 10, 21,
+    { 3, 7 }
+*], [* 10, 21,
+    { 7, 30 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  119
+Pair:  [* [* 10, 21,
+    { 3, 10 }
+*], [* 14, 15,
+    { 3, 14 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  120
+Pair:  [* [* 10, 21,
+    { 6, 7 }
+*], [* 10, 21,
+    { 7, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  121
+Pair:  [* [* 10, 21,
+    { 6, 7 }
+*], [* 10, 21,
+    { 14, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  122
+Pair:  [* [* 10, 21,
+    { 7, 15 }
+*], [* 10, 21,
+    { 14, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  123
+Pair:  [* [* 10, 21,
+    { 15, 21 }
+*], [* 10, 21,
+    { 15, 42 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  124
+Pair:  [* [* 14, 15,
+    { 2, 7 }
+*], [* 21, 10,
+    { 7, 15 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  125
+Pair:  [* [* 14, 15,
+    { 2, 105 }
+*], [* 14, 15,
+    { 2, 3, 5 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  126
+Pair:  [* [* 14, 15,
+    { 3, 35 }
+*], [* 14, 15,
+    { 6, 35 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  127
+Pair:  [* [* 14, 15,
+    { 5, 21 }
+*], [* 14, 15,
+    { 10, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  128
+Pair:  [* [* 14, 15,
+    { 15, 21 }
+*], [* 14, 15,
+    { 21, 30 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  129
+Pair:  [* [* 14, 15,
+    { 15, 21 }
+*], [* 14, 15,
+    { 30, 35 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  130
+Pair:  [* [* 14, 15,
+    { 21, 30 }
+*], [* 14, 15,
+    { 30, 35 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  131
+Pair:  [* [* 15, 14,
+    { 2, 3, 5 }
+*], [* 21, 10,
+    { 2, 3, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  132
+Pair:  [* [* 15, 14,
+    { 2, 3, 5 }
+*], [* 35, 6,
+    { 2, 5, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  133
+Pair:  [* [* 21, 10,
+    { 2, 3, 7 }
+*], [* 35, 6,
+    { 2, 5, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  134
+Pair:  [* [* 15, 14,
+    { 2, 15, 21 }
+*], [* 15, 14,
+    { 6, 10, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  135
+Pair:  [* [* 15, 14,
+    { 2, 15, 21 }
+*], [* 21, 10,
+    { 2, 5, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  136
+Pair:  [* [* 15, 14,
+    { 2, 15, 21 }
+*], [* 21, 10,
+    { 5, 6, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  137
+Pair:  [* [* 15, 14,
+    { 6, 10, 14 }
+*], [* 21, 10,
+    { 2, 5, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  138
+Pair:  [* [* 15, 14,
+    { 6, 10, 14 }
+*], [* 21, 10,
+    { 5, 6, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  139
+Pair:  [* [* 21, 10,
+    { 2, 5, 7 }
+*], [* 21, 10,
+    { 5, 6, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  140
+Pair:  [* [* 35, 6,
+    { 2, 3, 5 }
+*], [* 35, 6,
+    { 2, 5, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  141
+Pair:  [* [* 35, 6,
+    { 2, 3, 5 }
+*], [* 35, 6,
+    { 3, 5, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  142
+Pair:  [* [* 35, 6,
+    { 2, 5, 21 }
+*], [* 35, 6,
+    { 3, 5, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  143
+Pair:  [* [* 6, 37,
+    { 2 }
+*], [* 111, 2,
+    { 111 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  144
+Pair:  [* [* 6, 37,
+    { 3 }
+*], [* 74, 3,
+    { 74 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  145
+Pair:  [* [* 1, 230,
+    { 2, 5, 23 }
+*], [* 115, 2,
+    { 2, 115 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+no models, unsuccessful check :(
+Step out of  273 :  146
+Pair:  [* [* 10, 23,
+    { 2, 5 }
+*], [* 46, 5,
+    { 2, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  147
+Pair:  [* [* 10, 23,
+    { 2, 5 }
+*], [* 115, 2,
+    { 5, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  148
+Pair:  [* [* 46, 5,
+    { 2, 23 }
+*], [* 115, 2,
+    { 5, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  149
+Pair:  [* [* 10, 23,
+    { 5, 23 }
+*], [* 46, 5,
+    { 10, 46 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  150
+Pair:  [* [* 21, 11,
+    { 3, 7 }
+*], [* 33, 7,
+    { 3, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  151
+Pair:  [* [* 21, 11,
+    { 3, 7 }
+*], [* 77, 3,
+    { 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  152
+Pair:  [* [* 33, 7,
+    { 3, 11 }
+*], [* 77, 3,
+    { 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  153
+Pair:  [* [* 6, 41,
+    { 2, 3 }
+*], [* 82, 3,
+    { 2, 41 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  154
+Pair:  [* [* 1, 255,
+    { 3, 5, 17 }
+*], [* 85, 3,
+    { 3, 85 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  155
+Pair:  [* [* 6, 43,
+    { 2, 3 }
+*], [* 86, 3,
+    { 2, 43 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  156
+Pair:  [* [* 14, 19,
+    { 2, 7 }
+*], [* 38, 7,
+    { 2, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  157
+Pair:  [* [* 21, 13,
+    { 7, 13 }
+*], [* 39, 7,
+    { 21, 39 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  158
+Pair:  [* [* 15, 19,
+    { 3, 5 }
+*], [* 95, 3,
+    { 5, 19 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  159
+Pair:  [* [* 15, 19,
+    { 3, 19 }
+*], [* 95, 3,
+    { 15, 57 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  160
+Pair:  [* [* 1, 286,
+    { 2, 11, 13 }
+*], [* 143, 2,
+    { 2, 143 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+no models, unsuccessful check :(
+Step out of  273 :  161
+Pair:  [* [* 22, 13,
+    { 286 }
+*], [* 26, 11,
+    { 11, 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have models for both, checking isomorphism
+Step out of  273 :  162
+Pair:  [* [* 22, 13,
+    { 2, 11 }
+*], [* 143, 2,
+    { 11, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  163
+Pair:  [* [* 10, 29,
+    { 10, 58 }
+*], [* 58, 5,
+    { 5, 29 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  164
+Pair:  [* [* 6, 53,
+    { 2, 3 }
+*], [* 159, 2,
+    { 3, 53 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  165
+Pair:  [* [* 1, 330,
+    { 2, 3, 5, 11 }
+*], [* 15, 22,
+    { 2, 11, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  166
+Pair:  [* [* 1, 330,
+    { 2, 3, 5, 11 }
+*], [* 33, 10,
+    { 2, 5, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  167
+Pair:  [* [* 15, 22,
+    { 2, 11, 15 }
+*], [* 33, 10,
+    { 2, 5, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  168
+Pair:  [* [* 6, 55,
+    { 2, 165 }
+*], [* 33, 10,
+    { 15, 33 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  169
+Pair:  [* [* 6, 55,
+    { 3, 10 }
+*], [* 22, 15,
+    { 5, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  170
+Pair:  [* [* 6, 55,
+    { 3, 22 }
+*], [* 10, 33,
+    { 10, 11 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  171
+Pair:  [* [* 6, 55,
+    { 3, 22 }
+*], [* 15, 22,
+    { 3, 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  172
+Pair:  [* [* 10, 33,
+    { 10, 11 }
+*], [* 15, 22,
+    { 3, 55 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  173
+Pair:  [* [* 6, 55,
+    { 5, 6 }
+*], [* 6, 55,
+    { 6, 110 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  174
+Pair:  [* [* 6, 55,
+    { 6, 10 }
+*], [* 6, 55,
+    { 6, 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  175
+Pair:  [* [* 6, 55,
+    { 6, 10 }
+*], [* 22, 15,
+    { 10, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  176
+Pair:  [* [* 6, 55,
+    { 6, 55 }
+*], [* 22, 15,
+    { 10, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have models for both, checking isomorphism
+Step out of  273 :  177
+Pair:  [* [* 6, 55,
+    { 11, 30 }
+*], [* 22, 15,
+    { 6, 110 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  178
+Pair:  [* [* 10, 33,
+    { 5, 22 }
+*], [* 330, 1,
+    { 5, 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  179
+Pair:  [* [* 10, 33,
+    { 2, 3, 5 }
+*], [* 22, 15,
+    { 2, 3, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  180
+Pair:  [* [* 10, 33,
+    { 3, 5, 11 }
+*], [* 10, 33,
+    { 5, 6, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  181
+Pair:  [* [* 10, 33,
+    { 3, 5, 11 }
+*], [* 22, 15,
+    { 3, 10, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  182
+Pair:  [* [* 10, 33,
+    { 5, 6, 11 }
+*], [* 22, 15,
+    { 3, 10, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  183
+Pair:  [* [* 10, 33,
+    { 3, 10, 22 }
+*], [* 22, 15,
+    { 3, 5, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  184
+Pair:  [* [* 15, 22,
+    { 15, 33 }
+*], [* 330, 1,
+    { 6, 10 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  185
+Pair:  [* [* 15, 22,
+    { 3, 10, 11 }
+*], [* 33, 10,
+    { 3, 5, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  186
+Pair:  [* [* 6, 65,
+    { 2, 3, 13 }
+*], [* 10, 39,
+    { 2, 5, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  187
+Pair:  [* [* 6, 65,
+    { 2, 3, 13 }
+*], [* 15, 26,
+    { 3, 5, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  188
+Pair:  [* [* 10, 39,
+    { 2, 5, 13 }
+*], [* 15, 26,
+    { 3, 5, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  189
+Pair:  [* [* 6, 65,
+    { 3, 5, 13 }
+*], [* 10, 39,
+    { 6, 10, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  190
+Pair:  [* [* 10, 39,
+    { 2, 3, 5 }
+*], [* 26, 15,
+    { 2, 3, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  191
+Pair:  [* [* 15, 26,
+    { 3, 5, 26 }
+*], [* 39, 10,
+    { 3, 10, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  192
+Pair:  [* [* 15, 29,
+    { 3, 145 }
+*], [* 87, 5,
+    { 3, 5, 29 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  193
+Pair:  [* [* 6, 77,
+    { 2, 3, 7 }
+*], [* 22, 21,
+    { 2, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  194
+Pair:  [* [* 6, 77,
+    { 2, 3, 7 }
+*], [* 33, 14,
+    { 3, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  195
+Pair:  [* [* 22, 21,
+    { 2, 7, 11 }
+*], [* 33, 14,
+    { 3, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  196
+Pair:  [* [* 6, 77,
+    { 2, 11, 21 }
+*], [* 22, 21,
+    { 2, 3, 77 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  197
+Pair:  [* [* 6, 77,
+    { 3, 14, 22 }
+*], [* 22, 21,
+    { 6, 11, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  198
+Pair:  [* [* 14, 33,
+    { 3, 7, 11 }
+*], [* 14, 33,
+    { 6, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  199
+Pair:  [* [* 6, 83,
+    { 2, 249 }
+*], [* 166, 3,
+    { 2, 3, 83 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  200
+Pair:  [* [* 22, 23,
+    { 2, 253 }
+*], [* 46, 11,
+    { 2, 253 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have models for both, checking isomorphism
+Step out of  273 :  201
+Pair:  [* [* 6, 85,
+    { 2, 17 }
+*], [* 15, 34,
+    { 15, 17 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  273 :  202
+Pair:  [* [* 6, 85,
+    { 10, 51 }
+*], [* 34, 15,
+    { 5, 6, 34 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  203
+Pair:  [* [* 6, 85,
+    { 2, 3, 5 }
+*], [* 51, 10,
+    { 3, 5, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  204
+Pair:  [* [* 10, 51,
+    { 3, 170 }
+*], [* 34, 15,
+    { 3, 10, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have models for X and candidate models for Y, checking isomorphism
+Step out of  273 :  205
+Pair:  [* [* 14, 37,
+    { 2, 259 }
+*], [* 74, 7,
+    { 2, 7, 37 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  206
+Pair:  [* [* 6, 91,
+    { 2, 3, 7 }
+*], [* 14, 39,
+    { 2, 21, 39 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  207
+Pair:  [* [* 6, 91,
+    { 2, 3, 7 }
+*], [* 26, 21,
+    { 2, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  208
+Pair:  [* [* 14, 39,
+    { 2, 21, 39 }
+*], [* 26, 21,
+    { 2, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  209
+Pair:  [* [* 6, 91,
+    { 2, 3, 13 }
+*], [* 14, 39,
+    { 2, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  210
+Pair:  [* [* 6, 91,
+    { 2, 3, 13 }
+*], [* 21, 26,
+    { 3, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  211
+Pair:  [* [* 14, 39,
+    { 2, 7, 13 }
+*], [* 21, 26,
+    { 3, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  212
+Pair:  [* [* 6, 95,
+    { 2, 3, 19 }
+*], [* 10, 57,
+    { 2, 5, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  213
+Pair:  [* [* 14, 43,
+    { 2, 301 }
+*], [* 86, 7,
+    { 2, 7, 43 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  214
+Pair:  [* [* 10, 61,
+    { 2, 305 }
+*], [* 122, 5,
+    { 2, 5, 61 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  215
+Pair:  [* [* 6, 115,
+    { 10, 69 }
+*], [* 46, 15,
+    { 5, 6, 46 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  216
+Pair:  [* [* 6, 115,
+    { 2, 3, 23 }
+*], [* 10, 69,
+    { 2, 5, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  217
+Pair:  [* [* 6, 115,
+    { 2, 15, 69 }
+*], [* 690, 1,
+    { 2, 5, 23 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  218
+Pair:  [* [* 10, 77,
+    { 2, 11, 35 }
+*], [* 22, 35,
+    { 2, 5, 77 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  219
+Pair:  [* [* 10, 77,
+    { 5, 14, 22 }
+*], [* 22, 35,
+    { 10, 11, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  220
+Pair:  [* [* 10, 77,
+    { 10, 11, 14 }
+*], [* 22, 35,
+    { 5, 14, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  221
+Pair:  [* [* 6, 155,
+    { 3, 10, 62 }
+*], [* 10, 93,
+    { 5, 6, 62 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  222
+Pair:  [* [* 10, 93,
+    { 2, 3, 155 }
+*], [* 62, 15,
+    { 2, 3, 5, 31 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  223
+Pair:  [* [* 22, 105,
+    { 2, 3, 5, 7, 11 }
+*], [* 210, 11,
+    { 2, 15, 21, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  224
+Pair:  [* [* 22, 105,
+    { 2, 3, 5, 7, 11 }
+*], [* 330, 7,
+    { 2, 7, 11, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  225
+Pair:  [* [* 22, 105,
+    { 2, 3, 5, 7, 11 }
+*], [* 462, 5,
+    { 2, 5, 11, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  226
+Pair:  [* [* 22, 105,
+    { 2, 3, 5, 7, 11 }
+*], [* 770, 3,
+    { 2, 3, 11, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  227
+Pair:  [* [* 210, 11,
+    { 2, 15, 21, 33 }
+*], [* 330, 7,
+    { 2, 7, 11, 15 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  228
+Pair:  [* [* 210, 11,
+    { 2, 15, 21, 33 }
+*], [* 462, 5,
+    { 2, 5, 11, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  229
+Pair:  [* [* 210, 11,
+    { 2, 15, 21, 33 }
+*], [* 770, 3,
+    { 2, 3, 11, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  230
+Pair:  [* [* 330, 7,
+    { 2, 7, 11, 15 }
+*], [* 462, 5,
+    { 2, 5, 11, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  231
+Pair:  [* [* 330, 7,
+    { 2, 7, 11, 15 }
+*], [* 770, 3,
+    { 2, 3, 11, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  232
+Pair:  [* [* 462, 5,
+    { 2, 5, 11, 21 }
+*], [* 770, 3,
+    { 2, 3, 11, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  233
+Pair:  [* [* 210, 11,
+    { 2, 11, 105 }
+*], [* 462, 5,
+    { 2, 15, 77 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  234
+Pair:  [* [* 210, 11,
+    { 2, 3, 35, 55 }
+*], [* 330, 7,
+    { 2, 3, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  235
+Pair:  [* [* 210, 11,
+    { 2, 3, 35, 55 }
+*], [* 770, 3,
+    { 2, 11, 15, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  236
+Pair:  [* [* 330, 7,
+    { 2, 3, 7, 11 }
+*], [* 770, 3,
+    { 2, 11, 15, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  237
+Pair:  [* [* 210, 11,
+    { 2, 5, 21, 33 }
+*], [* 462, 5,
+    { 2, 11, 15, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  238
+Pair:  [* [* 210, 11,
+    { 2, 7, 15, 33 }
+*], [* 330, 7,
+    { 2, 11, 15, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  239
+Pair:  [* [* 210, 11,
+    { 2, 7, 15, 33 }
+*], [* 462, 5,
+    { 2, 5, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  240
+Pair:  [* [* 330, 7,
+    { 2, 11, 15, 21 }
+*], [* 462, 5,
+    { 2, 5, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  241
+Pair:  [* [* 210, 11,
+    { 3, 5, 11, 14 }
+*], [* 330, 7,
+    { 3, 5, 7, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  242
+Pair:  [* [* 210, 11,
+    { 3, 5, 14, 22 }
+*], [* 330, 7,
+    { 3, 5, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  243
+Pair:  [* [* 210, 11,
+    { 3, 5, 14, 22 }
+*], [* 462, 5,
+    { 3, 10, 11, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  244
+Pair:  [* [* 330, 7,
+    { 3, 5, 7, 11 }
+*], [* 462, 5,
+    { 3, 10, 11, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  245
+Pair:  [* [* 210, 11,
+    { 3, 7, 10, 11 }
+*], [* 330, 7,
+    { 3, 10, 14, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  246
+Pair:  [* [* 210, 11,
+    { 3, 7, 10, 11 }
+*], [* 462, 5,
+    { 3, 5, 7, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  247
+Pair:  [* [* 330, 7,
+    { 3, 10, 14, 22 }
+*], [* 462, 5,
+    { 3, 5, 7, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  248
+Pair:  [* [* 210, 11,
+    { 5, 6, 11, 14 }
+*], [* 330, 7,
+    { 5, 6, 7, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  249
+Pair:  [* [* 210, 11,
+    { 6, 7, 10, 11 }
+*], [* 330, 7,
+    { 6, 10, 14, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  250
+Pair:  [* [* 210, 11,
+    { 6, 7, 10, 11 }
+*], [* 462, 5,
+    { 5, 6, 7, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  251
+Pair:  [* [* 330, 7,
+    { 6, 10, 14, 22 }
+*], [* 462, 5,
+    { 5, 6, 7, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  252
+Pair:  [* [* 210, 13,
+    { 2, 5, 21, 39 }
+*], [* 546, 5,
+    { 2, 13, 15, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  253
+Pair:  [* [* 210, 13,
+    { 2, 7, 13, 15 }
+*], [* 546, 5,
+    { 2, 5, 7, 39 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  254
+Pair:  [* [* 210, 13,
+    { 3, 5, 13, 14 }
+*], [* 390, 7,
+    { 3, 5, 7, 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  255
+Pair:  [* [* 210, 13,
+    { 5, 6, 14, 26 }
+*], [* 390, 7,
+    { 5, 6, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  256
+Pair:  [* [* 210, 13,
+    { 6, 7, 10, 26 }
+*], [* 390, 7,
+    { 6, 10, 13, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  257
+Pair:  [* [* 210, 13,
+    { 6, 7, 10, 26 }
+*], [* 546, 5,
+    { 5, 6, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  258
+Pair:  [* [* 390, 7,
+    { 6, 10, 13, 14 }
+*], [* 546, 5,
+    { 5, 6, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  259
+Pair:  [* [* 390, 7,
+    { 2, 5, 21, 39 }
+*], [* 546, 5,
+    { 2, 7, 15, 39 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  260
+Pair:  [* [* 390, 7,
+    { 3, 5, 14, 26 }
+*], [* 546, 5,
+    { 3, 7, 10, 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  261
+Pair:  [* [* 6, 595,
+    { 2, 3, 5, 7, 17 }
+*], [* 210, 17,
+    { 2, 3, 17, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  262
+Pair:  [* [* 6, 595,
+    { 2, 3, 5, 7, 17 }
+*], [* 510, 7,
+    { 2, 3, 7, 85 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  263
+Pair:  [* [* 210, 17,
+    { 2, 3, 17, 35 }
+*], [* 510, 7,
+    { 2, 3, 7, 85 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  264
+Pair:  [* [* 210, 17,
+    { 2, 5, 17, 21 }
+*], [* 510, 7,
+    { 2, 5, 7, 51 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  265
+Pair:  [* [* 210, 17,
+    { 3, 5, 14, 17 }
+*], [* 510, 7,
+    { 3, 5, 7, 34 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  266
+Pair:  [* [* 210, 17,
+    { 3, 10, 14, 17 }
+*], [* 510, 7,
+    { 3, 7, 10, 34 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  267
+Pair:  [* [* 210, 17,
+    { 3, 10, 14, 34 }
+*], [* 510, 7,
+    { 3, 7, 10, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  268
+Pair:  [* [* 210, 17,
+    { 5, 6, 7, 34 }
+*], [* 510, 7,
+    { 5, 6, 14, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  269
+Pair:  [* [* 210, 19,
+    { 2, 5, 19, 21 }
+*], [* 570, 7,
+    { 2, 5, 7, 57 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  270
+Pair:  [* [* 210, 19,
+    { 2, 7, 15, 57 }
+*], [* 570, 7,
+    { 2, 15, 19, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  273 :  271
+Pair:  [* [* 210, 19,
+    { 2, 15, 21, 57 }
+*], [* 570, 7,
+    { 2, 7, 15, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  272
+Pair:  [* [* 210, 19,
+    { 3, 10, 14, 38 }
+*], [* 570, 7,
+    { 3, 7, 10, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  273 :  273
+Pair:  [* [* 6, 715,
+    { 2, 3, 5, 11, 13 }
+*], [* 330, 13,
+    { 2, 3, 13, 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+
+Step out of  164 :  1
+Pair:  [* [* 1, 30,
+    { 1 }
+*], [* 15, 2,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  2
+Pair:  [* [* 1, 35,
+    { 1 }
+*], [* 35, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  3
+Pair:  [* [* 1, 39,
+    { 1 }
+*], [* 39, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  4
+Pair:  [* [* 1, 42,
+    { 7 }
+*], [* 21, 2,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  5
+Pair:  [* [* 1, 57,
+    { 19 }
+*], [* 57, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  6
+Pair:  [* [* 1, 58,
+    { 2 }
+*], [* 1, 58,
+    { 58 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  7
+Pair:  [* [* 6, 11,
+    { 1 }
+*], [* 22, 3,
+    { 1 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  8
+Pair:  [* [* 1, 70,
+    { 14 }
+*], [* 35, 2,
+    { 2 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  9
+Pair:  [* [* 1, 70,
+    { 14 }
+*], [* 35, 2,
+    { 70 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  10
+Pair:  [* [* 35, 2,
+    { 2 }
+*], [* 35, 2,
+    { 70 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  11
+Pair:  [* [* 1, 78,
+    { 26 }
+*], [* 39, 2,
+    { 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  12
+Pair:  [* [* 1, 78,
+    { 26 }
+*], [* 39, 2,
+    { 78 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+have models for both, checking isomorphism
+Step out of  164 :  13
+Pair:  [* [* 39, 2,
+    { 6 }
+*], [* 39, 2,
+    { 78 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  14
+Pair:  [* [* 26, 3,
+    { 3 }
+*], [* 26, 3,
+    { 39 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  15
+Pair:  [* [* 1, 82,
+    { 41 }
+*], [* 82, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  16
+Pair:  [* [* 1, 95,
+    { 19 }
+*], [* 95, 1,
+    { 5 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  17
+Pair:  [* [* 6, 17,
+    { 1 }
+*], [* 34, 3,
+    { 34 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  18
+Pair:  [* [* 1, 105,
+    { 3, 5 }
+*], [* 35, 3,
+    { 3, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  19
+Pair:  [* [* 15, 7,
+    { 15 }
+*], [* 21, 5,
+    { 7 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  20
+Pair:  [* [* 15, 7,
+    { 21 }
+*], [* 15, 7,
+    { 35 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  21
+Pair:  [* [* 21, 5,
+    { 5 }
+*], [* 21, 5,
+    { 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  22
+Pair:  [* [* 35, 3,
+    { 15 }
+*], [* 35, 3,
+    { 105 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  23
+Pair:  [* [* 1, 110,
+    { 2, 11 }
+*], [* 55, 2,
+    { 2, 5 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  24
+Pair:  [* [* 10, 11,
+    { 5 }
+*], [* 22, 5,
+    { 22 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  25
+Pair:  [* [* 10, 11,
+    { 11 }
+*], [* 22, 5,
+    { 10 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  26
+Pair:  [* [* 10, 11,
+    { 55 }
+*], [* 22, 5,
+    { 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  27
+Pair:  [* [* 1, 114,
+    { 2, 19 }
+*], [* 57, 2,
+    { 114 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+have one modular curve and one non-modular curve; checking local points
+no models, unsuccessful check :(
+Step out of  164 :  28
+Pair:  [* [* 65, 2,
+    { 2, 5 }
+*], [* 65, 2,
+    { 5, 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  29
+Pair:  [* [* 65, 2,
+    { 2, 13 }
+*], [* 65, 2,
+    { 10, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  30
+Pair:  [* [* 6, 23,
+    { 2 }
+*], [* 46, 3,
+    { 2 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  31
+Pair:  [* [* 14, 11,
+    { 2 }
+*], [* 22, 7,
+    { 2 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  32
+Pair:  [* [* 77, 2,
+    { 2, 7 }
+*], [* 77, 2,
+    { 7, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  33
+Pair:  [* [* 15, 11,
+    { 3, 5 }
+*], [* 33, 5,
+    { 3, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  34
+Pair:  [* [* 15, 11,
+    { 3, 5 }
+*], [* 55, 3,
+    { 5, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  35
+Pair:  [* [* 33, 5,
+    { 3, 11 }
+*], [* 55, 3,
+    { 5, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  36
+Pair:  [* [* 10, 19,
+    { 95 }
+*], [* 38, 5,
+    { 10, 38 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  37
+Pair:  [* [* 6, 35,
+    { 210 }
+*], [* 6, 35,
+    { 5, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  38
+Pair:  [* [* 10, 21,
+    { 3 }
+*], [* 35, 6,
+    { 3, 35 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  39
+Pair:  [* [* 10, 21,
+    { 35 }
+*], [* 15, 14,
+    { 3, 35 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  40
+Pair:  [* [* 10, 21,
+    { 105 }
+*], [* 10, 21,
+    { 6, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  41
+Pair:  [* [* 14, 15,
+    { 3, 10 }
+*], [* 14, 15,
+    { 5, 6 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  42
+Pair:  [* [* 15, 14,
+    { 2, 7 }
+*], [* 15, 14,
+    { 2, 105 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  43
+Pair:  [* [* 15, 14,
+    { 15, 42 }
+*], [* 21, 10,
+    { 7, 30 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  44
+Pair:  [* [* 21, 10,
+    { 2, 21 }
+*], [* 35, 6,
+    { 2, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  45
+Pair:  [* [* 21, 10,
+    { 6, 10 }
+*], [* 21, 10,
+    { 6, 70 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  46
+Pair:  [* [* 35, 6,
+    { 2, 3, 7 }
+*], [* 35, 6,
+    { 3, 7, 10 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  47
+Pair:  [* [* 10, 23,
+    { 2, 23 }
+*], [* 46, 5,
+    { 2, 5 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  48
+Pair:  [* [* 21, 11,
+    { 7, 11 }
+*], [* 33, 7,
+    { 21, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  49
+Pair:  [* [* 15, 17,
+    { 3, 5 }
+*], [* 51, 5,
+    { 3, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  50
+Pair:  [* [* 15, 17,
+    { 3, 5 }
+*], [* 85, 3,
+    { 5, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  51
+Pair:  [* [* 51, 5,
+    { 3, 17 }
+*], [* 85, 3,
+    { 5, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  52
+Pair:  [* [* 6, 43,
+    { 3 }
+*], [* 129, 2,
+    { 3, 43 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  53
+Pair:  [* [* 21, 13,
+    { 13, 21 }
+*], [* 39, 7,
+    { 7, 39 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  54
+Pair:  [* [* 6, 47,
+    { 141 }
+*], [* 94, 3,
+    { 6, 94 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  55
+Pair:  [* [* 6, 47,
+    { 282 }
+*], [* 94, 3,
+    { 3, 94 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  56
+Pair:  [* [* 94, 3,
+    { 3, 47 }
+*], [* 94, 3,
+    { 6, 47 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  57
+Pair:  [* [* 10, 29,
+    { 2, 5 }
+*], [* 58, 5,
+    { 2, 29 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  58
+Pair:  [* [* 10, 31,
+    { 155 }
+*], [* 62, 5,
+    { 10, 62 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  59
+Pair:  [* [* 10, 31,
+    { 310 }
+*], [* 62, 5,
+    { 5, 62 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  60
+Pair:  [* [* 62, 5,
+    { 5, 31 }
+*], [* 62, 5,
+    { 10, 31 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  61
+Pair:  [* [* 6, 55,
+    { 3, 55 }
+*], [* 6, 55,
+    { 3, 110 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  62
+Pair:  [* [* 10, 33,
+    { 11, 30 }
+*], [* 22, 15,
+    { 10, 66 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  63
+Pair:  [* [* 15, 22,
+    { 2, 3, 5 }
+*], [* 15, 22,
+    { 3, 5, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  64
+Pair:  [* [* 15, 22,
+    { 2, 3, 5 }
+*], [* 33, 10,
+    { 2, 3, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  65
+Pair:  [* [* 15, 22,
+    { 3, 5, 22 }
+*], [* 33, 10,
+    { 2, 3, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  66
+Pair:  [* [* 55, 6,
+    { 3, 10, 11 }
+*], [* 55, 6,
+    { 6, 10, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  67
+Pair:  [* [* 10, 37,
+    { 2, 5 }
+*], [* 74, 5,
+    { 2, 37 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  68
+Pair:  [* [* 22, 17,
+    { 22, 34 }
+*], [* 34, 11,
+    { 11, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  69
+Pair:  [* [* 6, 65,
+    { 2, 3 }
+*], [* 10, 39,
+    { 2, 65 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  70
+Pair:  [* [* 15, 26,
+    { 2, 3, 5 }
+*], [* 39, 10,
+    { 2, 3, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  71
+Pair:  [* [* 15, 26,
+    { 2, 15, 39 }
+*], [* 15, 26,
+    { 6, 10, 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  72
+Pair:  [* [* 21, 19,
+    { 21, 57 }
+*], [* 57, 7,
+    { 7, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  73
+Pair:  [* [* 22, 19,
+    { 209 }
+*], [* 38, 11,
+    { 22, 38 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  74
+Pair:  [* [* 14, 33,
+    { 2, 3, 7 }
+*], [* 14, 33,
+    { 2, 7, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  75
+Pair:  [* [* 21, 22,
+    { 2, 7, 11 }
+*], [* 33, 14,
+    { 2, 21, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  76
+Pair:  [* [* 6, 91,
+    { 3, 13 }
+*], [* 14, 39,
+    { 13, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  77
+Pair:  [* [* 14, 39,
+    { 2, 3, 7 }
+*], [* 26, 21,
+    { 2, 3, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  78
+Pair:  [* [* 10, 77,
+    { 2, 5, 11 }
+*], [* 22, 35,
+    { 2, 35, 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  79
+Pair:  [* [* 10, 77,
+    { 5, 11, 14 }
+*], [* 22, 35,
+    { 10, 14, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  80
+Pair:  [* [* 6, 155,
+    { 2, 3, 31 }
+*], [* 10, 93,
+    { 2, 5, 31 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  81
+Pair:  [* [* 210, 11,
+    { 7, 11, 30 }
+*], [* 462, 5,
+    { 7, 15, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  82
+Pair:  [* [* 210, 11,
+    { 2, 3, 5, 7 }
+*], [* 330, 7,
+    { 2, 3, 5, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  83
+Pair:  [* [* 210, 11,
+    { 2, 3, 5, 7 }
+*], [* 462, 5,
+    { 2, 3, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  84
+Pair:  [* [* 210, 11,
+    { 2, 3, 5, 7 }
+*], [* 770, 3,
+    { 2, 5, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  85
+Pair:  [* [* 330, 7,
+    { 2, 3, 5, 11 }
+*], [* 462, 5,
+    { 2, 3, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  86
+Pair:  [* [* 330, 7,
+    { 2, 3, 5, 11 }
+*], [* 770, 3,
+    { 2, 5, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  87
+Pair:  [* [* 462, 5,
+    { 2, 3, 7, 11 }
+*], [* 770, 3,
+    { 2, 5, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  88
+Pair:  [* [* 210, 13,
+    { 2, 3, 5, 7 }
+*], [* 390, 7,
+    { 2, 3, 5, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  89
+Pair:  [* [* 210, 13,
+    { 2, 3, 5, 7 }
+*], [* 546, 5,
+    { 2, 3, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  90
+Pair:  [* [* 390, 7,
+    { 2, 3, 5, 13 }
+*], [* 546, 5,
+    { 2, 3, 7, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  91
+Pair:  [* [* 210, 13,
+    { 3, 7, 10, 26 }
+*], [* 390, 7,
+    { 3, 10, 13, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  92
+Pair:  [* [* 210, 17,
+    { 3, 7, 10, 17 }
+*], [* 510, 7,
+    { 3, 10, 14, 34 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  93
+Pair:  [* [* 210, 17,
+    { 5, 6, 14, 34 }
+*], [* 510, 7,
+    { 5, 6, 7, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  94
+Pair:  [* [* 210, 17,
+    { 6, 7, 10, 17 }
+*], [* 510, 7,
+    { 6, 10, 14, 34 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  95
+Pair:  [* [* 210, 19,
+    { 5, 6, 7, 19 }
+*], [* 570, 7,
+    { 5, 6, 14, 38 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  96
+Pair:  [* [* 210, 19,
+    { 5, 6, 14, 19 }
+*], [* 570, 7,
+    { 5, 6, 7, 38 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  97
+Pair:  [* [* 1, 70,
+    { 10 }
+*], [* 1, 70,
+    { 70 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  98
+Pair:  [* [* 35, 2,
+    { 10 }
+*], [* 35, 2,
+    { 14 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  99
+Pair:  [* [* 39, 2,
+    { 2 }
+*], [* 39, 2,
+    { 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  100
+Pair:  [* [* 1, 82,
+    { 2 }
+*], [* 1, 82,
+    { 82 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  101
+Pair:  [* [* 1, 93,
+    { 3 }
+*], [* 1, 93,
+    { 93 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  102
+Pair:  [* [* 1, 102,
+    { 2, 3 }
+*], [* 1, 102,
+    { 3, 34 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  103
+Pair:  [* [* 1, 119,
+    { 17 }
+*], [* 119, 1,
+    { 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  104
+Pair:  [* [* 38, 5,
+    { 5 }
+*], [* 38, 5,
+    { 190 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  105
+Pair:  [* [* 15, 14,
+    { 2, 21 }
+*], [* 15, 14,
+    { 2, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  106
+Pair:  [* [* 15, 14,
+    { 2, 21 }
+*], [* 15, 14,
+    { 6, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  107
+Pair:  [* [* 15, 14,
+    { 2, 35 }
+*], [* 15, 14,
+    { 6, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  108
+Pair:  [* [* 15, 14,
+    { 6, 10 }
+*], [* 21, 10,
+    { 2, 7 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  109
+Pair:  [* [* 15, 14,
+    { 10, 14 }
+*], [* 15, 14,
+    { 30, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  110
+Pair:  [* [* 21, 10,
+    { 2, 5 }
+*], [* 21, 10,
+    { 5, 42 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  111
+Pair:  [* [* 21, 10,
+    { 5, 6 }
+*], [* 21, 10,
+    { 5, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  112
+Pair:  [* [* 21, 10,
+    { 5, 6 }
+*], [* 21, 10,
+    { 6, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  113
+Pair:  [* [* 21, 10,
+    { 5, 14 }
+*], [* 21, 10,
+    { 6, 35 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  114
+Pair:  [* [* 10, 23,
+    { 5 }
+*], [* 46, 5,
+    { 46 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  115
+Pair:  [* [* 21, 13,
+    { 3, 7 }
+*], [* 39, 7,
+    { 3, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  116
+Pair:  [* [* 10, 33,
+    { 3, 55 }
+*], [* 10, 33,
+    { 30, 55 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  117
+Pair:  [* [* 10, 33,
+    { 5, 6 }
+*], [* 22, 15,
+    { 3, 22 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  118
+Pair:  [* [* 10, 33,
+    { 6, 55 }
+*], [* 10, 33,
+    { 15, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  119
+Pair:  [* [* 55, 6,
+    { 2, 3, 5 }
+*], [* 55, 6,
+    { 2, 5, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  120
+Pair:  [* [* 22, 17,
+    { 2, 11 }
+*], [* 34, 11,
+    { 2, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  121
+Pair:  [* [* 22, 17,
+    { 11, 17 }
+*], [* 34, 11,
+    { 22, 34 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  122
+Pair:  [* [* 21, 22,
+    { 2, 3, 7 }
+*], [* 33, 14,
+    { 2, 3, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  123
+Pair:  [* [* 15, 34,
+    { 2, 3, 5 }
+*], [* 51, 10,
+    { 2, 3, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  124
+Pair:  [* [* 10, 77,
+    { 2, 5, 7 }
+*], [* 22, 35,
+    { 2, 7, 11 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  125
+Pair:  [* [* 210, 17,
+    { 2, 3, 5, 7 }
+*], [* 510, 7,
+    { 2, 3, 5, 17 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  126
+Pair:  [* [* 210, 19,
+    { 3, 7, 10, 38 }
+*], [* 570, 7,
+    { 3, 10, 14, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  127
+Pair:  [* [* 1, 65,
+    { 1 }
+*], [* 65, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  128
+Pair:  [* [* 1, 93,
+    { 31 }
+*], [* 93, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  129
+Pair:  [* [* 35, 3,
+    { 3 }
+*], [* 35, 3,
+    { 21 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  130
+Pair:  [* [* 10, 11,
+    { 1 }
+*], [* 22, 5,
+    { 1 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  131
+Pair:  [* [* 15, 11,
+    { 3 }
+*], [* 33, 5,
+    { 3 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  132
+Pair:  [* [* 15, 11,
+    { 15 }
+*], [* 33, 5,
+    { 33 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  133
+Pair:  [* [* 55, 3,
+    { 3 }
+*], [* 55, 3,
+    { 165 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  134
+Pair:  [* [* 55, 3,
+    { 15 }
+*], [* 55, 3,
+    { 33 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  135
+Pair:  [* [* 10, 19,
+    { 1 }
+*], [* 38, 5,
+    { 38 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  136
+Pair:  [* [* 38, 5,
+    { 10 }
+*], [* 38, 5,
+    { 95 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  137
+Pair:  [* [* 35, 6,
+    { 6, 10 }
+*], [* 35, 6,
+    { 10, 42 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  138
+Pair:  [* [* 10, 23,
+    { 2 }
+*], [* 46, 5,
+    { 2 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  139
+Pair:  [* [* 21, 11,
+    { 7 }
+*], [* 33, 7,
+    { 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  140
+Pair:  [* [* 129, 2,
+    { 2, 3 }
+*], [* 129, 2,
+    { 3, 86 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  141
+Pair:  [* [* 91, 3,
+    { 3, 13 }
+*], [* 91, 3,
+    { 13, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  142
+Pair:  [* [* 15, 22,
+    { 15, 22 }
+*], [* 33, 10,
+    { 2, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+no models, unsuccessful check :(
+Step out of  164 :  143
+Pair:  [* [* 22, 15,
+    { 15, 22 }
+*], [* 22, 15,
+    { 22, 30 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  144
+Pair:  [* [* 21, 19,
+    { 3, 7 }
+*], [* 57, 7,
+    { 3, 19 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  145
+Pair:  [* [* 15, 38,
+    { 2, 5, 19 }
+*], [* 15, 38,
+    { 5, 6, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  146
+Pair:  [* [* 210, 11,
+    { 2, 7, 15 }
+*], [* 462, 5,
+    { 2, 7, 11 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  147
+Pair:  [* [* 210, 19,
+    { 2, 3, 5, 7 }
+*], [* 570, 7,
+    { 2, 3, 5, 19 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  148
+Pair:  [* [* 65, 2,
+    { 2 }
+*], [* 65, 2,
+    { 130 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  149
+Pair:  [* [* 35, 6,
+    { 2, 3 }
+*], [* 35, 6,
+    { 3, 70 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  150
+Pair:  [* [* 35, 6,
+    { 3, 10 }
+*], [* 35, 6,
+    { 3, 14 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  151
+Pair:  [* [* 35, 6,
+    { 3, 10 }
+*], [* 35, 6,
+    { 10, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  152
+Pair:  [* [* 35, 6,
+    { 3, 14 }
+*], [* 35, 6,
+    { 10, 21 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  153
+Pair:  [* [* 15, 22,
+    { 2, 5 }
+*], [* 15, 22,
+    { 5, 66 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  154
+Pair:  [* [* 15, 22,
+    { 3, 22 }
+*], [* 15, 22,
+    { 3, 110 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  155
+Pair:  [* [* 15, 22,
+    { 5, 6 }
+*], [* 15, 22,
+    { 5, 22 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  156
+Pair:  [* [* 65, 6,
+    { 2, 3, 13 }
+*], [* 65, 6,
+    { 3, 10, 13 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  157
+Pair:  [* [* 14, 33,
+    { 3, 7 }
+*], [* 14, 33,
+    { 7, 66 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  158
+Pair:  [* [* 1, 91,
+    { 1 }
+*], [* 91, 1,
+    { 1 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+Step out of  164 :  159
+Pair:  [* [* 65, 2,
+    { 10 }
+*], [* 65, 2,
+    { 26 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  160
+Pair:  [* [* 14, 23,
+    { 2 }
+*], [* 46, 7,
+    { 2 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  161
+Pair:  [* [* 14, 33,
+    { 6, 7 }
+*], [* 14, 33,
+    { 7, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  162
+Pair:  [* [* 55, 6,
+    { 6, 10 }
+*], [* 55, 6,
+    { 10, 33 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  163
+Pair:  [* [* 55, 6,
+    { 3, 10 }
+*], [* 55, 6,
+    { 10, 66 }
+*] *]
+checking real points
+checking reduction type info at bad primes
+proven non-isomorphic by reduction types at a prime p dividing DN
+Step out of  164 :  164
+Pair:  [* [* 22, 23,
+    { 2 }
+*], [* 46, 11,
+    { 2 }
+*] *]
+checking real points
+proven non-isomorphic by existence of real points
+[* 10, 51,
+    { 3, 170 }
+*]
+[* 34, 15,
+    { 3, 10, 17 }
+*]
