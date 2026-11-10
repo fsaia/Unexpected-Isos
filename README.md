@@ -72,15 +72,15 @@ is then a list of the form [ $g$, isog_lists], and each element of isog_lists is
 
 - `same_product_isomorphisms_narrowing.m`: In this file, we take those pairs of Atkin--Lehner quotients with $D_1 N_1 = D_2 N_2$ whose Jacobians are isogenous and we undergo checks to work to prove whether the curves are isomorphic over $\mathbb{Q}$. 
 
-- `remaining_isomorphism_lists_same_product_v1.m`: This is an intermediate list of candidate pairs of quotients for isomorphism, in the $D_1 N_1=D_2 N_2$ case, after we narrow down initial candidates using knowledge of automorphisms of quotients.
+- `isomorphism_candidates_v1.m`: This is an intermediate list of candidate pairs of quotients for isomorphism, in the $D_1 N_1=D_2 N_2$ case, after we narrow down initial candidates using knowledge of automorphisms of quotients.
 
 - `genus_2_isom.m`: Here we list all pairs of Atkin--Lehner quotients $X_0^{D_1}(N_1)/W_1$ and $X_0^{D_2}(N_2)/W_2$ of genus $2$ with $D_1 N_1 = D_2 N_2$ which we have proved to be isomorphic over $\mathbb{Q}$. 
 
 - `higher_genus_isom.m`: Here we list all pairs of Atkin--Lehner quotients $X_0^{D_1}(N_1)/W_1$ and $X_0^{D_2}(N_2)/W_2$ of genus $g>2$ with $D_1 N_1 = D_2 N_2$ which we have proved to be isomorphic over $\mathbb{Q}$. 
 
-- `remaining_genus_2_isom_candidates_v2.m`: Here we list all pairs of Atkin--Lehner quotients $X = X_0^{D_1}(N_1)/W_1$ and $Y = X_0^{D_2}(N_2)/W_2$ of genus $2$ for which we have not yet proven whether $X$ and $Y$ are isomorphic over $\mathbb{Q}$.  
+- `remaining_genus_2_isom_candidates.m`: Here we list all pairs of Atkin--Lehner quotients $X = X_0^{D_1}(N_1)/W_1$ and $Y = X_0^{D_2}(N_2)/W_2$ of genus $2$ for which we have not yet proven whether $X$ and $Y$ are isomorphic over $\mathbb{Q}$.  
 
-- `remaining_higher_genus_isom_candidates_v2.m`: Here we list all pairs of Atkin--Lehner quotients $X = X_0^{D_1}(N_1)/W_1$ and $Y = X_0^{D_2}(N_2)/W_2$ of genus $g>2$ for which we have not yet proven whether $X$ and $Y$ are isomorphic over $\mathbb{Q}$.  
+- `remaining_higher_genus_isom_candidates.m`: Here we list all pairs of Atkin--Lehner quotients $X = X_0^{D_1}(N_1)/W_1$ and $Y = X_0^{D_2}(N_2)/W_2$ of genus $g>2$ for which we have not yet proven whether $X$ and $Y$ are isomorphic over $\mathbb{Q}$.  
 
 
 ## Isomorphisms/DifferentProductLevel 
@@ -89,9 +89,9 @@ is then a list of the form [ $g$, isog_lists], and each element of isog_lists is
 ## Auxiliary Files
 
 - `AL_identifiers.m`, `quot_genus.m`, `ribet_isog.m`, and
-`discriminant_dual_graphs.m`: Functionality for working with Atkin--Lehner subgroups, computing genera of quotients of Shimura curves, computing isogeny factors of Jacobians of such quotients, and computing reductions type information for such quotients at primes dividing the discriminant. Code is borrowed from prior work of the second and third named authors (in particular, from https://github.com/fsaia/GenusAtMost2).  
+`dual_graphsdiscriminant.m`: Functionality for working with Atkin--Lehner subgroups, computing genera of quotients of Shimura curves, computing isogeny factors of Jacobians of such quotients, and computing reductions type information for such quotients at primes dividing the discriminant. Code is borrowed from prior work of the second and third named authors (in particular, from https://github.com/fsaia/GenusAtMost2).  
 
-- `level_dual_graphs.m`: Functionality for computing reductions type information for Atkin--Lehner quotients at primes dividing the level.  
+- `dual_graphs_level.m`: Functionality for computing reductions type information for Atkin--Lehner quotients at primes dividing the level.  
 
 - `genus_2_bielliptics_eqn_determined_final.m` and `genus_2_bielliptics_eqn_not_determined_final.m`: lists containing information on models for bielliptic genus 2 curves, coming from the same work referenced in the prior item. See the comments on the individual files, or the linked repository, for details.  
 
