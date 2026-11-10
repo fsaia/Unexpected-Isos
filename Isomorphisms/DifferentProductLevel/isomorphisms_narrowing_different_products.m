@@ -1,9 +1,9 @@
 // Run from the top folder Unexpected-Isos (copy this file there):
 //   nohup magma -s isomorphisms_narrowing_different_products.m > isomorphisms_narrowing_different_products.log &
 
-// Loading code for dual graphs of special fibers at primes dividing the level
-// (via Brandt modules) and at primes dividing the discriminant (via the algorithm
-// of Padurariu--Saia 2026).
+// Loading code for dual graphs of special fibers: at primes dividing the level via
+// our description using Brandt modules (dual_graphs_level.m), and at primes dividing
+// the discriminant via the algorithm of Padurariu--Saia 2026.
 
 ChangeDirectory("AuxiliaryFiles");
 load "dual_graphs_level.m";
@@ -62,11 +62,9 @@ load "Isomorphisms/DifferentProductLevel/isogenous_pairs__different_products.m";
         end if;
 
         if not proven_non_isom then
-            // We compare the number of edges of the dual graph of the minimal regular
-            // model at every prime dividing both D1*N1 and D2*N2: at p | D via the
-            // algorithm of Padurariu--Saia 2026, at p | N via the Brandt module.
-            // This covers p dividing both discriminants, both levels, or the
-            // discriminant of one curve and the level of the other.
+            // Compare the number of edges of the dual graph of the minimal regular model
+            // at every common bad prime: p dividing both discriminants, both levels, or
+            // the discriminant of one curve and the level of the other.
             print "checking reduction type info at common bad primes";
             for p in [p : p in PrimeDivisors(D1*N1) | (D2*N2) mod p eq 0] do
                 p_edges_X := dual_graph_at_p_edge_count(D1,N1,Seqset(W1),p);
