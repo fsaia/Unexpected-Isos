@@ -18,12 +18,16 @@ load "full_isogenies_list_fixed_product_level.m";
 ////// Automorphism group checks
 ////////////////////////////////////////////////
 
-/*
+// Note: in hindsight, this check gives NO extra information.
+// So, functionally all this first section is doing is removing the
+// genus 1 cases from the full_isogenies_list_fixed_product_level list
+// from consideration.
 
 // List of all levels M so that X_0(M)^* has genus at least 3 and has a
 // non-trivial automorphism. This comes from Bars--Gonzalez 2021. 
 star_has_auts_levels := [178,183,246,249,258,290,303,318,370,366,430,455,510,645];
 
+SetLogFile("isom_narrowing_same_product_level.log");
 
 // Loading list of pairs (D,N) with D>1 for which we know X_0^D(N)^* has 
 // no non-trivial automorphisms (and hence for which each AL quotient of X_0^D(N) has
@@ -44,6 +48,10 @@ total_steps := #full_isogenies_list_fixed_product_level;
 print "excluding candidates using automorphism checks";
 
 step := 0; 
+
+// initalizing some counters
+total_pairs_tested := 0;
+excluded_by_auts_count := 0;
 
 // initializing iso_candidates as an associative array on the levels M=DN
 // that provide possible isogenies of Jacobians 
@@ -95,6 +103,7 @@ for DN_list in full_isogenies_list_fixed_product_level do
                     N2 := C2[2];
                     W2gens := C2[3];
                     C2_all_AL := false; // initializing
+                    total_pairs_tested := total_pairs_tested+1;
 
                     if D2 gt 1 then 
                         // Ensures that X_0^{D_2}(N_2)/W2 has 2^omega(DN)/|W2| auts
@@ -116,7 +125,9 @@ for DN_list in full_isogenies_list_fixed_product_level do
                     if C1_all_AL and C2_all_AL then 
                         if #W1gens eq #W2gens then 
                             Append(~g_isom_candidate_pairs,[*C1,C2*]);
-                        end if; 
+                        else
+                            excluded_by_auts_count := excluded_by_auts_count+1;
+                        end if;
 
                     // In this case we know that C1 has only AL automorphisms,
                     // and so #W1gens can be no smaller than #W2gens in order
@@ -124,6 +135,8 @@ for DN_list in full_isogenies_list_fixed_product_level do
                     elif C1_all_AL then 
                         if #W1gens le #W2gens then 
                             Append(~g_isom_candidate_pairs,[*C1,C2*]);
+                        else
+                            excluded_by_auts_count := excluded_by_auts_count+1;
                         end if;
 
                     // In this case we know that C2 has only AL automorphisms,
@@ -132,6 +145,8 @@ for DN_list in full_isogenies_list_fixed_product_level do
                     elif C2_all_AL then 
                         if #W2gens le #W1gens then 
                             Append(~g_isom_candidate_pairs,[*C1,C2*]);
+                        else
+                            excluded_by_auts_count := excluded_by_auts_count+1;
                         end if;
 
                     // In this case we have no useful info 
@@ -149,8 +164,12 @@ for DN_list in full_isogenies_list_fixed_product_level do
     end for; 
 end for; 
 
+// printing for log file
+print "Total number of isogenous pairs tested: ", total_pairs_tested;
+print "Total number of isogenous pairs excluded by aut checks: ", excluded_by_auts_count;
+
 // printing info to a list
-remaining_isomorphism_lists_v1 := [* *];
+isomorphism_candidates_v1 := [* *];
 
 for DN in Sort(Setseq(Keys(isom_candidates))) do 
     g_lists := [* *];
@@ -162,15 +181,16 @@ for DN in Sort(Setseq(Keys(isom_candidates))) do
     end for;
 
     if not IsEmpty(g_lists) then 
-        Append(~remaining_isomorphism_lists_v1, [* DN, g_lists *]);
+        Append(~isomorphism_candidates_v1, [* DN, g_lists *]);
     end if; 
 end for;
 
-SetOutputFile("remaining_isomorphism_lists_same_product_v1.m");
-print "remaining_isomorphism_lists_same_product_v1 := ", remaining_isomorphism_lists_v1, ";";
-UnsetOutputFile(); 
+UnsetLogFile();
 
-*/
+
+SetOutputFile("isomorphism_candidates_v1.m");
+print "isomorphism_candidates_v1 := ", isomorphism_candidates_v1, ";";
+UnsetOutputFile(); 
 
 
 ////////////////////////////////////////////////
@@ -178,10 +198,10 @@ UnsetOutputFile();
 ////////////////////////////////////////////////
 
 
-load "remaining_isomorphism_lists_same_product_v1.m";
+load "isomorphism_candidates_v1.m";
 
 genera_occuring := [];
-for DN_list in remaining_isomorphism_lists_same_product_v1 do 
+for DN_list in isomorphism_candidates_v1 do 
     for g_list in DN_list[2] do 
         g := g_list[1];
         if not (g in genera_occuring) then 
@@ -204,7 +224,7 @@ genus_9_isom_candidates := [];
 genus_10_isom_candidates := [];
 genus_11_isom_candidates := [];
 
-for DN_list in remaining_isomorphism_lists_same_product_v1 do 
+for DN_list in isomorphism_candidates_v1 do 
     for g_list in DN_list[2] do 
         g := g_list[1];
         if g eq 2 then 
@@ -475,8 +495,13 @@ load "genus_2_bielliptics_eqn_not_determined_final.m";
 
 // loading algorithms from Padurariu--Saia for computing reduction types
 // and existence of local points at primes dividing D for quotients of X_0^D(N)
-// with N squarefree and D>1, and also functionality for working with AL quotients.
-load "dual_graphs.m";
+// with N squarefree and D>1.
+load "dual_graphs_discriminant.m";
+
+// loading algorithms for computing reduction types
+// at primes dividing N for quotients of X_0^D(N)
+// with p exactly dividing N and D>1.
+load "dual_graphs_level.m";
 
 genus_2_bielliptics_having_eqn := [];
 genus_2_bielliptics_having_eqn_candidates := [];
@@ -528,150 +553,72 @@ for pair in genus_2_isom_candidates do
     print "Pair: ", pair;
     X := pair[1];
     Y := pair[2];
+    D1 := X[1];
+    N1 := X[2];
+    W1gens := X[3];
+    D2 := Y[1];
+    N2 := Y[2];
+    W2gens := Y[3];
+    DN_primes := PrimeDivisors(D1*N1);
 
     // initalizing a boolean 
     proven_non_isom := false;
 
-    // Here, we employ a simple check related to reduction types at 
-    // primes dividing the level N: if p is such a prime and you quotient X_0^D(N) by 
-    // a subgroup W consisting of w_m with p not dividing m then the dual graph of the 
-    // special fiber at p of the quotient has two irreducible components, and otherwise
-    // (if W has some w_m with p dividing m) the graph has one irreducible component.
-    // This gives an easy check on \Q-isomorphism.
-    D1 := X[1];
-    D2 := Y[1];
-    N1 := X[2];
-    N2 := Y[2];
-    shared_primes := {p : p in PrimeDivisors(N1) | p in PrimeDivisors(N2)};
-    W1gens := X[3];
-    W2gens := Y[3];
-    one_comp_primes_X := {p : p in shared_primes | LCM(W1gens) mod p eq 0};
-    one_comp_primes_Y := {p : p in shared_primes | LCM(W2gens) mod p eq 0};
-    if not (one_comp_primes_X eq one_comp_primes_Y) then 
-        print "proven non-isomorphic by reductions types at prime dividing levels";
+    // Here we check existence of real points
+    print "checking real points";
+    if quotient_has_real_points(D1,N1,gens_to_identifier(D1*N1,W1gens)) ne quotient_has_real_points(D2,N2,gens_to_identifier(D2*N2,W2gens)) then 
+        print "proven non-isomorphic by existence of real points";
         proven_non_isom := true;
-        Append(~genus_2_excluded_by_red_types,pair);
+        Append(~genus_2_excluded_by_real_pts,pair);
     end if;
 
+    // We check info of reduction types for at primes dividing DN.
     if not proven_non_isom then 
+        print "checking reduction type info at bad primes";
+        for p in PrimeDivisors(D1*N1) do  
+            p_edge_count_X := dual_graph_at_p_edge_count(D1,N1,W1gens,p);
+            p_edge_count_Y := dual_graph_at_p_edge_count(D2,N2,W2gens,p);
+            if p_edge_count_X ne p_edge_count_Y then 
+                print "proven non-isomorphic by reduction types at a prime p dividing DN";
+                proven_non_isom := true;
+                Append(~genus_2_excluded_by_red_types,pair);
+                break;
+            end if; 
+        end for;
+    end if; 
 
-        // Here we check existence of real points
-        print "checking real points";
-        if quotient_has_real_points(D1,N1,gens_to_identifier(D1*N1,W1gens)) ne quotient_has_real_points(D2,N2,gens_to_identifier(D2*N2,W2gens)) then 
-            print "proven non-isomorphic by existence of real points";
-            proven_non_isom := true;
-            Append(~genus_2_excluded_by_real_pts,pair);
-        end if;
+    if not proven_non_isom then 
+        for p in PrimeDivisors(GCD(D1,D2)) do 
+            if quotient_has_Qp_points(D1,N1,W1gens,p) ne quotient_has_Qp_points(D2,N2,W2gens,p) then 
+                print "proven non-isomorphic by exactly one curve lacking local points at a prime dividing both discriminants";
+                proven_non_isom := true;
+                Append(~genus_2_excluded_by_Qp_pts,pair);
+                break;
+            end if;
+        end for; 
+    end if;
 
-        // We check info of reduction types for Shimura curves at primes dividing
-        // both discriminants using the algorithm of Padurariu--Saia 2026. We do this
-        // earlier for higher genus because direct isomorphism checks with models often
-        // seem to take longer. 
-        if not proven_non_isom then 
-            print "checking reduction type info at primes dividing discriminants";
-            edge_counts_X := Kodaira_from_dual(D1,N1,W1gens);
-            edge_counts_Y := Kodaira_from_dual(D2,N2,W2gens);
-            for p in [p : p in PrimeDivisors(D1) | p in PrimeDivisors(D2)] do 
-                p_edges_X := Explode([pair[2] : pair in edge_counts_X | pair[1] eq p]);
-                p_edges_Y := Explode([pair[2] : pair in edge_counts_Y | pair[1] eq p]);
-                if p_edges_X ne p_edges_Y then 
-                    print "proven non-isomorphic by reduction types at a prime dividing both discriminants";
-                    proven_non_isom := true;
-                    Append(~genus_2_excluded_by_red_types,pair);
-                    break;
-                elif quotient_has_Qp_points(D1,N1,W1gens,p) ne quotient_has_Qp_points(D2,N2,W2gens,p) then 
-                    print "proven non-isomorphic by exactly one curve lacking local points at a prime dividing both discriminants";
+    if not proven_non_isom then
+        // This is the case where exactly one of the curves has D=1. In this case, we will check reduction types
+        // against the modular curve separately using Tim Dokchitser's package for hyperelliptic curves
+        // in a separate file, but here we check whether the Shimura curve quotient can be seen
+        // to lack a rational point by local means at a prime dividing the discriminant.
+        if (X[1] eq 1) and (Y[1] gt 1) then  
+            print "have one modular curve and one non-modular curve; checking local points";
+            Y := pair[2];
+            D := Y[1];
+            N := Y[2];
+            Wgens := Y[3];
+            for p in PrimeDivisors(D) do 
+                if not (quotient_has_Qp_points(D,N,Wgens,p)) then
+                    print "proven non-isomorphic by local points check"; 
                     proven_non_isom := true;
                     Append(~genus_2_excluded_by_Qp_pts,pair);
                     break;
                 end if;
             end for;
         end if;
-
-        // For a prime p dividing one discriminant D_i and not the other D_j, hence dividing N_j,
-        // we know that each irreducible component of the special fiber of X_0^{D_j}(N_j)/W_j
-        // at p must be genus 0 from Cerednik--Drinfeld reduction theory. Furthermore, 
-        // we know that each such component is isomorphic to X_0^{D_j}(N_j/p)/H_j,
-        // where H_j is the image of W_j in Aut(X_0^{D_j}(N_j/p)) under the natural map. 
-        if not proven_non_isom then 
-            for p in [p : p in PrimeDivisors(D1) | not (p in PrimeDivisors(D2))] do
-                Hgens := [];
-                for m in [m : m in W1gens | m gt 1] do 
-                    if (m mod p eq 0) then 
-                        if (m/p gt 1) then 
-                            Append(~Hgens,Integers()!(m/p));
-                        end if;
-                    else
-                        Append(~Hgens,m);
-                    end if;
-                end for;
-
-                if D2 eq 1 then 
-                    g_components := GenusX0NQuotient(Integers()!(N2/p),Hgens);
-                else 
-                    g_components := quot_genus(D2,Integers()!(N2/p),gens_to_identifier(Integers()!(D2*N2/p),Seqset(Hgens)));
-                end if;
-
-                if g_components ne 0 then 
-                    print "proven non-isomorphic by reduction types at prime dividing D1 and N2";
-                    proven_non_isom := true;
-                    Append(~genus_2_excluded_by_red_types,pair);
-                    break;
-                end if;
-            end for;
-        end if; 
-
-        if not proven_non_isom then 
-            for p in [p : p in PrimeDivisors(D2) | not (p in PrimeDivisors(D1))] do
-                Hgens := [];
-                for m in [m : m in W1gens | m gt 1] do 
-                    if (m mod p eq 0) then 
-                        if (m/p gt 1) then 
-                            Append(~Hgens,Integers()!(m/p));
-                        end if;
-                    else
-                        Append(~Hgens,m);
-                    end if;
-                end for;
-
-                if D1 eq 1 then 
-                    g_components := GenusX0NQuotient(Integers()!(N1/p),Hgens);
-                else 
-                    g_components := quot_genus(D1,Integers()!(N1/p),gens_to_identifier(Integers()!(D1*N1/p),Seqset(Hgens)));
-                end if;
-
-                if g_components ne 0 then 
-                    print "proven non-isomorphic by reduction types at prime dividing D2 and N1";
-                    proven_non_isom := true;
-                    Append(~genus_2_excluded_by_red_types,pair);
-                    break;
-                end if;
-            end for;
-        end if; 
-
-        if not proven_non_isom then
-            // This is the case where exactly one of the curves has D=1. In this case, we will check reduction types
-            // against the modular curve separately using Tim Dokchitser's package for hyperelliptic curves
-            // in a separate file, but here we check whether the Shimura curve quotient can be seen
-            // to lack a rational point by local means at a prime dividing the discriminant.
-            if (X[1] eq 1) and (Y[1] gt 1) then  
-                print "have one modular curve and one non-modular curve; checking local points";
-                Y := pair[2];
-                D := Y[1];
-                N := Y[2];
-                Wgens := Y[3];
-                for p in PrimeDivisors(D) do 
-                    if not (quotient_has_Qp_points(D,N,Wgens,p)) then
-                        print "proven non-isomorphic by local points check"; 
-                        proven_non_isom := true;
-                        Append(~genus_2_excluded_by_Qp_pts,pair);
-                        break;
-                    end if;
-                end for;
-            end if;
-        end if;
     end if;
-
 
     // If the above checks did not succeed in concluding the quotients were
     // not isomorphic over \Q, then we test isomorphism using models if we have them
@@ -811,8 +758,8 @@ for pair in genus_2_isom_candidates do
     end if;
 end for;
 
-SetOutputFile("remaining_genus_2_isom_candidates_v1.m");
-print "remaining_genus_2_isom_candidates_v1 := ", remaining_genus_2_isom_candidates, ";";
+SetOutputFile("remaining_genus_2_isom_candidates.m");
+print "remaining_genus_2_isom_candidates := ", remaining_genus_2_isom_candidates, ";";
 UnsetOutputFile();
 
 SetOutputFile("genus_2_isom.m");
@@ -840,7 +787,6 @@ print "genus_2_excluded_by_eqns := ", genus_2_excluded_by_eqns, ";";
 UnsetOutputFile();
 
 
-
 //////////////////////     
 // Genus >= 3 cases
 /////////////////////
@@ -858,6 +804,8 @@ higher_genus_excluded_by_red_types := [];
 higher_genus_excluded_by_Qp_pts := [];
 higher_genus_excluded_by_eqns := [];
 
+SetLogFile("isom_narrowing_same_product_level.log");
+
 // running checks
 steps := #higher_genus_isom_candidates;
 step := 0;
@@ -868,156 +816,78 @@ for pair in higher_genus_isom_candidates do
     print "Pair: ", pair;
     X := pair[1];
     Y := pair[2];
+    D1 := X[1];
+    N1 := X[2];
+    W1gens := X[3];
+    D2 := Y[1];
+    N2 := Y[2];
+    W2gens := Y[3];
+    D_primes := PrimeDivisors(D);
+    N_primes := PrimeDivisors(N);
 
     // initalizing a boolean 
     proven_non_isom := false;
 
-    // Here, we employ a simple check related to reduction types at 
-    // primes dividing the level N: if p is such a prime and you quotient X_0^D(N) by 
-    // a subgroup W consisting of w_m with p not dividing m then the dual graph of the 
-    // special fiber at p of the quotient has two irreducible components, and otherwise
-    // (if W has some w_m with p dividing m) the graph has one irreducible component.
-    // This gives an easy check on \Q-isomorphism.
-    D1 := X[1];
-    D2 := Y[1];
-    N1 := X[2];
-    N2 := Y[2];
-    shared_primes := {p : p in PrimeDivisors(N1) | p in PrimeDivisors(N2)};
-    W1gens := X[3];
-    W2gens := Y[3];
-    one_comp_primes_X := {p : p in shared_primes | LCM(W1gens) mod p eq 0};
-    one_comp_primes_Y := {p : p in shared_primes | LCM(W2gens) mod p eq 0};
-    if not (one_comp_primes_X eq one_comp_primes_Y) then 
-        print "proven non-isomorphic by reductions types at prime dividing levels";
+    // Here we check existence of real points
+    print "checking real points";
+    if quotient_has_real_points(D1,N1,gens_to_identifier(D1*N1,W1gens)) ne quotient_has_real_points(D2,N2,gens_to_identifier(D2*N2,W2gens)) then 
+        print "proven non-isomorphic by existence of real points";
         proven_non_isom := true;
-        Append(~higher_genus_excluded_by_red_types,pair);
+        Append(~higher_genus_excluded_by_real_pts,pair);
     end if;
 
+    // We check info of reduction types for at primes dividing DN.
     if not proven_non_isom then 
+        print "checking reduction type info at bad primes";
+        for p in PrimeDivisors(D1*N1) do  
+            p_edge_count_X := dual_graph_at_p_edge_count(D1,N1,W1gens,p);
+            p_edge_count_Y := dual_graph_at_p_edge_count(D2,N2,W2gens,p);
+            if p_edge_count_X ne p_edge_count_Y then 
+                print "proven non-isomorphic by reduction types at a prime p dividing DN";
+                proven_non_isom := true;
+                Append(~higher_genus_excluded_by_red_types,pair);
+                break;
+            end if; 
+        end for;
+    end if; 
 
-        // Here we check existence of real points
-        print "checking real points";
-        if quotient_has_real_points(D1,N1,gens_to_identifier(D1*N1,W1gens)) ne quotient_has_real_points(D2,N2,gens_to_identifier(D2*N2,W2gens)) then 
-            print "proven non-isomorphic by existence of real points";
-            proven_non_isom := true;
-            Append(~higher_genus_excluded_by_real_pts,pair);
-        end if;
-
-        // We check info of reduction types for Shimura curves at primes dividing
-        // the discriminant using the algorithm of Padurariu--Saia 2026. We do this
-        // earlier for higher genus because direct isomorphism checks with models often
-        // seem to take longer. 
-        if not proven_non_isom then 
-            print "checking reduction type info at primes dividing discriminants";
-            edge_counts_X := Kodaira_from_dual(D1,N1,W1gens);
-            edge_counts_Y := Kodaira_from_dual(D2,N2,W2gens);
-            for p in [p : p in PrimeDivisors(D1) | p in PrimeDivisors(D2)] do 
-                p_edges_X := Explode([pair[2] : pair in edge_counts_X | pair[1] eq p]);
-                p_edges_Y := Explode([pair[2] : pair in edge_counts_Y | pair[1] eq p]);
-                if p_edges_X ne p_edges_Y then 
-                    print "proven non-isomorphic by reduction types at a prime dividing both discriminants";
-                    proven_non_isom := true;
-                    Append(~higher_genus_excluded_by_red_types,pair);
-                    break;
-                elif quotient_has_Qp_points(D1,N1,W1gens,p) ne quotient_has_Qp_points(D2,N2,W2gens,p) then 
-                    print "proven non-isomorphic by exactly one curve lacking local points at a prime dividing both discriminants";
+    if not proven_non_isom then 
+        for p in PrimeDivisors(GCD(D1,D2)) do 
+            if quotient_has_Qp_points(D1,N1,W1gens,p) ne quotient_has_Qp_points(D2,N2,W2gens,p) then 
+                print "proven non-isomorphic by exactly one curve lacking local points at a prime dividing both discriminants";
+                proven_non_isom := true;
+                Append(~higher_genus_excluded_by_Qp_pts,pair);
+                break;
+            end if;
+        end for; 
+    end if;
+    
+    // This case only occurs if exactly one of the curves has D=1. In this case, we will check reduction types
+    // against the modular curve separately using Tim Dokchitser's package for hyperelliptic curves
+    // in a separate file, but here we check whether the Shimura curve quotient can be seen
+    // to lack a rational point by local means at a prime dividing the discriminant.
+    if not proven_non_isom then
+        if (D1 eq 1) and (D2 gt 1) then  
+            print "have one modular curve and one non-modular curve; checking local points";
+            Y := pair[2];
+            D := Y[1];
+            N := Y[2];
+            Wgens := Y[3];
+            for p in PrimeDivisors(D) do 
+                if not (quotient_has_Qp_points(D,N,Wgens,p)) then
+                    print "proven non-isomorphic by local points check"; 
                     proven_non_isom := true;
                     Append(~higher_genus_excluded_by_Qp_pts,pair);
                     break;
                 end if;
             end for;
         end if;
-
-        // For a prime p dividing one discriminant D_i and not the other D_j, hence dividing N_j,
-        // we know that each irreducible component of the special fiber of X_0^{D_j}(N_j)/W_j
-        // at p must be genus 0 from Cerednik--Drinfeld reduction theory. Furthermore, 
-        // we know that each such component is isomorphic to X_0^{D_j}(N_j/p)/H_j,
-        // where H_j is the image of W_j in Aut(X_0^{D_j}(N_j/p)) under the natural map. 
-        if not proven_non_isom then 
-            for p in [p : p in PrimeDivisors(D1) | not (p in PrimeDivisors(D2))] do
-                Hgens := [];
-                for m in [m : m in W2gens | m gt 1] do 
-                    if (m mod p eq 0) then 
-                        if (m/p gt 1) then 
-                            Append(~Hgens,Integers()!(m/p));
-                        end if;
-                    else
-                        Append(~Hgens,m);
-                    end if;
-                end for;
-
-                if D1 eq 1 then 
-                    g_components := GenusX0NQuotient(Integers()!(N2/p),Hgens);
-                else 
-                    g_components := quot_genus(D2,Integers()!(N2/p),gens_to_identifier(Integers()!(D2*N2/p),Seqset(Hgens)));
-                end if;
-
-                if g_components ne 0 then 
-                    print "proven non-isomorphic by reduction types at prime dividing D1 and N2";
-                    proven_non_isom := true;
-                    Append(~higher_genus_excluded_by_red_types,pair);
-                    break;
-                end if;
-            end for;
-        end if; 
-
-        if not proven_non_isom then 
-            for p in [p : p in PrimeDivisors(D2) | not (p in PrimeDivisors(D1))] do
-                Hgens := [];
-                for m in [m : m in W1gens | m gt 1] do 
-                    if (m mod p eq 0) then 
-                        if (m/p gt 1) then 
-                            Append(~Hgens,Integers()!(m/p));
-                        end if;
-                    else
-                        Append(~Hgens,m);
-                    end if;
-                end for;
-
-                if D1 eq 1 then 
-                    g_components := GenusX0NQuotient(Integers()!(N1/p),Hgens);
-                else 
-                    "p: ", p;
-                    g_components := quot_genus(D1,Integers()!(N1/p),gens_to_identifier(Integers()!(D1*N1/p),Seqset(Hgens)));
-                end if;
-
-                if g_components ne 0 then 
-                    print "proven non-isomorphic by reduction types at prime dividing D2 and N1";
-                    proven_non_isom := true;
-                    Append(~higher_genus_excluded_by_red_types,pair);
-                    break;
-                end if;
-            end for;
-        end if; 
-        
-        // This case only occurs if exactly one of the curves has D=1. In this case, we will check reduction types
-        // against the modular curve separately using Tim Dokchitser's package for hyperelliptic curves
-        // in a separate file, but here we check whether the Shimura curve quotient can be seen
-        // to lack a rational point by local means at a prime dividing the discriminant.
-        if not proven_non_isom then
-            if (D1 eq 1) and (D2 gt 1) then  
-                print "have one modular curve and one non-modular curve; checking local points";
-                Y := pair[2];
-                D := Y[1];
-                N := Y[2];
-                Wgens := Y[3];
-                for p in PrimeDivisors(D) do 
-                    if not (quotient_has_Qp_points(D,N,Wgens,p)) then
-                        print "proven non-isomorphic by local points check"; 
-                        proven_non_isom := true;
-                        Append(~higher_genus_excluded_by_Qp_pts,pair);
-                        break;
-                    end if;
-                end for;
-            end if;
-        end if;
     end if;
-
 
     // If the above checks did not succeed in concluding the quotients were
     // not isomorphic over \Q, then we test isomorphism using models if we have them
     if not proven_non_isom then 
-    
+
         // initializing boolean trackers
         have_X_model := false;
         have_Y_model := false;
@@ -1067,12 +937,13 @@ for pair in higher_genus_isom_candidates do
             print "no models, unsuccessful check :(";
             Append(~remaining_higher_genus_isom_candidates,pair);
         end if;
-
     end if;
 end for;
 
-SetOutputFile("remaining_higher_genus_isom_candidates_v1.m");
-print "remaining_higher_genus_isom_candidates_v1 := ", remaining_higher_genus_isom_candidates, ";";
+UnsetLogFile();
+
+SetOutputFile("remaining_higher_genus_isom_candidates.m");
+print "remaining_higher_genus_isom_candidates := ", remaining_higher_genus_isom_candidates, ";";
 UnsetOutputFile();
 
 SetOutputFile("higher_genus_isom.m");
@@ -1124,111 +995,8 @@ for pair in remaining_higher_genus_isom_candidates do
 end for;
 
 
-// Here we individually remove some remaining isomorphism candidate pairs
-// where one of the quotients is a quotient of a modular curve and we compute 
-// a difference in reduction types at an odd prime. This is done separately 
-// using Tim Dokchitser's package, since we do not load that in here.
-
-// Reduction type disagreement at p=5
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 70,
-    { 2, 7 }
-*], [* 35, 2,
-    { 2, 5 }
-*] *]);
-
-// Reduction type disagreement at p=7
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 70,
-    { 2, 7 }
-*], [* 35, 2,
-    { 5, 14 }
-*] *]);
-
-// Reduction type disagreement at p=5
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 70,
-    { 7, 10 }
-*], [* 35, 2,
-    { 2, 5 }
-*] *]);
-
-// Reduction type disagreement at p=5
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 70,
-    { 7, 10 }
-*], [* 35, 2,
-    { 5, 14 }
-*] *]);
-
-// Reduction type disagreement at p=5
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 85,
-    { 5, 17 }
-*], [* 85, 1,
-    { 85 }
-*] *]);
-
-// Reduction type disagreement at p=3
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 165,
-    { 3, 5, 11 }
-*], [* 15, 11,
-    { 11, 15 }
-*] *]);
-
-// Reduction type disagreement at p=3
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 165,
-    { 3, 5, 11 }
-*], [* 33, 5,
-    { 5, 33 }
-*] *]);
-
-// Reduction type disagreement at p=5
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 255,
-    { 3, 5, 17 }
-*], [* 85, 3,
-    { 3, 85 }
-*] *]);
-
-// Reduction type disagreement at p=3
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 330,
-    { 2, 3, 5, 11 }
-*], [* 15, 22,
-    { 2, 11, 15 }
-*] *] );
-
-// Reduction type disagreement at p=3
-Exclude(~remaining_genus_2_isom_candidates,[* [* 1, 330,
-    { 2, 3, 5, 11 }
-*], [* 33, 10,
-    { 2, 5, 33 }
-*] *] );
-
-
-SetOutputFile("remaining_genus_2_isom_candidates_v2.m");
-print "remaining_genus_2_isom_candidates_v2 := ", remaining_genus_2_isom_candidates, ";";
-UnsetOutputFile();
-
-// Reduction type disagreement at p=5
-Exclude(~remaining_higher_genus_isom_candidates,[* [* 1, 70,
-    { 14 }
-*], [* 35, 2,
-    { 70 }
-*] *]);
-
-// Reduction type disagreement at p=5
-Exclude(~remaining_higher_genus_isom_candidates,[* [* 1, 105,
-    { 3, 5 }
-*], [* 35, 3,
-    { 3, 7 }
-*] *]);
-
-// Reduction type disagreement at p=5
-Exclude(~remaining_higher_genus_isom_candidates,[* [* 1, 110,
-    { 2, 11 }
-*], [* 55, 2,
-    { 2, 5 }
-*] *]);
-
-SetOutputFile("remaining_higher_genus_isom_candidates_v2.m");
-print "remaining_higher_genus_isom_candidates_v2 := ", remaining_higher_genus_isom_candidates, ";";
-UnsetOutputFile();
-
+load "remaining_genus_2_isom_candidates.m";
+load "remaining_higher_genus_isom_candidates.m";
 
 remaining_isom_candidates := remaining_genus_2_isom_candidates cat remaining_higher_genus_isom_candidates;
 
@@ -1286,8 +1054,10 @@ sort_pairs := function(pair1,pair2)
     end if;
 end function;
 
+
 Sort(~remaining_isom_candidates,sort_pairs);
 
+/*
 // creating table with following columns for remaining candidates for \Q isomorphism:
 //      * Discriminant D1
 //      * Level N1
@@ -1297,7 +1067,7 @@ Sort(~remaining_isom_candidates,sort_pairs);
 //      * AL subgroup generators W2gens
 //      * Genus g
 
-/*
+
 SetOutputFile("remaining_isomorphism_candidates_table.m");
 for pair in remaining_isom_candidates do 
     X := pair[1];
@@ -1332,9 +1102,6 @@ end for;
 UnsetOutputFile();
 
 */
-
-
-
 
 
 

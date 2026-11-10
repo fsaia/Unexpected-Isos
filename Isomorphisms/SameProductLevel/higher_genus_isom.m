@@ -4,10 +4,9 @@ with D1N1 = D2N2 which we have proved to be isomorphic
 over \mathbb{Q}
 */ 
 
-higher_genus_isom := [
-[* [* 1, 78,
+higher_genus_isom :=  [ [* [* 1, 78,
     { 26 }
 *], [* 39, 2,
     { 78 }
-*] *]
-];
+*] *] ]
+;

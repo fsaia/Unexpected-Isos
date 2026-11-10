@@ -1,10 +1,11 @@
-/* This is an intermediate list of candidate pairs
-of quotients for isomorphism, in the D1N1=D2N2 case, 
-after we narrow down initial candidates using knowledge
-of automorphisms of quotients
+/* 
+List containing all pairs of isogenous quotients
+that pass the checks on automorphism groups, meant to exclude
+candidate pairs from being geometrically isomorphic,
+in the file isomorphisms_narrowing.m
 */
 
-remaining_isomorphism_lists_same_product_v1 :=  [* [* 26, [* [* 2, [* [* [* 1, 
+isomorphism_candidates_v1 :=  [* [* 26, [* [* 2, [* [* [* 1, 
     26,
     { 1 }
 *], [* 26, 1,

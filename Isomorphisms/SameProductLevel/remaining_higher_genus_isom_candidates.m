@@ -4,7 +4,7 @@ with D1N1 = D2N2 for which we have not yet proven
 whether X and Y are isomorphic over \mathbb{Q}
 */ 
 
-remaining_higher_genus_isom_candidates_v2 :=  [ [* [* 1, 114,
+remaining_higher_genus_isom_candidates :=  [ [* [* 1, 114,
     { 2, 19 }
 *], [* 57, 2,
     { 114 }
@@ -16,10 +16,6 @@ remaining_higher_genus_isom_candidates_v2 :=  [ [* [* 1, 114,
     { 2, 21 }
 *], [* 35, 6,
     { 2, 35 }
-*] *], [* [* 51, 5,
-    { 3, 17 }
-*], [* 85, 3,
-    { 5, 17 }
 *] *], [* [* 94, 3,
     { 3, 47 }
 *], [* 94, 3,
@@ -56,10 +52,6 @@ remaining_higher_genus_isom_candidates_v2 :=  [ [* [* 1, 114,
     { 5, 6, 14, 34 }
 *], [* 510, 7,
     { 5, 6, 7, 17 }
-*] *], [* [* 15, 34,
-    { 2, 3, 5 }
-*], [* 51, 10,
-    { 2, 3, 17 }
 *] *], [* [* 15, 22,
     { 15, 22 }
 *], [* 33, 10,
