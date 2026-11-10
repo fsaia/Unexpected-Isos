@@ -1,6 +1,6 @@
 // Dual graphs of the special fibers of Atkin--Lehner quotients of modular curves.
 //
-// This is the D = 1 counterpart of dual_graphs.m. Here we describe
+// This is the D = 1 counterpart of dual_graphs_discriminant.m. Here we describe
 // X_0(N)/W at a prime p || N via Deligne--Rapoport, so that reduction type data of
 // a Shimura curve quotient and of a modular curve quotient can be compared
 // without needing an equation for either.
@@ -23,27 +23,18 @@
 // node of thickness e into a chain of e-1 projective lines, all of self-intersection
 // -2, so no further contraction is possible and the minimal regular and the regular
 // semistable models agree. In particular the edge counts produced here can be
-// directly compared to those of Kodaira_from_dual.
+// directly compared to those of dual_graph_edge_counts_discriminant.
 //
 // The description above is valid at every prime p || N, including p = 2.
 
-// The functions below are the case D = 1 of level_dual_graphs.m (which loads dual_graphs.m).
-load "level_dual_graphs.m";
-
-
-// modular_fiber : given M and a prime p not dividing M, the edge information and
-// Atkin--Lehner data of the dual graph of the special fiber of X_0(pM) at p.
-
-modular_fiber := function(M,p)
-	return level_fiber(1,M,p);
-end function;
+// The functions below are the case D = 1 of dual_graphs_level.m (which loads dual_graphs_discriminant.m).
+load "dual_graphs_level.m";
 
 
 // Kodaira_from_dual_modular : given N squarefree and Wgens a set of generators for
 // W <= W_N, return for each prime p | N the number of edges in the dual graph of the
 // minimal regular model of X_0(N)/W at p, counted with multiplicity.
-// This is the D = 1 analogue of Kodaira_from_dual, and returns data in the same format.
 
 Kodaira_from_dual_modular := function(N,Wgens)
-	return Kodaira_from_dual_level(1,N,Wgens);
+	return dual_graph_edge_counts_level(1,N,Wgens);
 end function;
