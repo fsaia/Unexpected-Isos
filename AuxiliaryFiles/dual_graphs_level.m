@@ -33,28 +33,79 @@ level_nodes := function(D,M,p)
 	return perm, MonodromyWeights(B);
 end function;
 
+// BrandtModule allows AtkinLehnerOperators only for primes
+// so here we build general w_m as a composition of w_q
+// for primes q dividing m
+// and perm is the action of w_q for all primes q
+AL_action_on_node := function(m, i, perm)
+	for q in PrimeDivisors(m) do
+		i := perm[q][i];
+	end for;
+	return i;
+end function;
+
 // level_quotient_nodes : thicknesses of the nodes of X_0^D(N)/W at p.
 // These are the W-orbits of nodes, a node x has thickness #W_x * weight(x),
 // unless it's smoothed out
 // (because there is some w in W_x swapping the two components).
 level_quotient_nodes := function(D,N,p,W)
 	perm, weights := level_nodes(D, N div p, p);
-	act := function(m,i)
-		for l in PrimeDivisors(m) do i := perm[l][i]; end for;
-		return i;
-	end function;
 
 	T := [];
 	seen := {};
 	for i in [1..#weights] do
 		if i in seen then continue; end if;
-		seen join:= { act(m,i) : m in W };
-		stab := [ m : m in W | act(m,i) eq i ];
+		seen join:= { AL_action_on_node(m,i, perm) : m in W };
+		stab := [ m : m in W | AL_action_on_node(m,i, perm) eq i ];
 		if forall{ m : m in stab | m mod p ne 0 } then
 			Append(~T, #stab*weights[i]);
 		end if;
 	end for;
 	return Sort(T);
+end function;
+
+// short version immediately below
+//Frob_in_orbit := function(perm, p, H, i)
+//	for h in H do
+//		if AL_action_on_node(h, i) eq perm[p][i] then
+//			return true;
+//		end if;
+//	end for;
+//	return false;
+//end function;
+
+
+// does the H-orbit of a node i
+// contain Frob i?
+// Frob i = perm[p][i]
+Frob_in_orbit := function(perm, p, H, i)
+  return exists{ m : m in H | AL_action_on_node(m, i, perm) eq perm[p][i]};
+end function;
+
+// is the image of i on the quotient (by W) F_p-rational?
+is_node_Fp_rational := function(perm, p, W, i)
+  return Frob_in_orbit(perm, p, W, i);
+end function;
+
+is_node_smoothed_out := function(perm, p, W, i)
+  stab := [m : m in W | AL_action_on_node(m, i, perm) eq i];
+  if forall{ m : m in stab | m mod p ne 0 } then
+    return false;
+  else return true;
+  end if;
+end function;
+
+is_node_split := function(perm, p, W, i)
+  if is_node_smoothed_out(perm, p, W, i) then
+    return false;
+  end if;
+  
+  Wprime := [m : m in W | m mod p ne 0];
+  return Frob_in_orbit(perm, p, Wprime, i);
+end function;
+
+is_node_non_split := function(perm, p, W, i)
+  return (is_node_Fp_rational(perm, p, W, i) and not is_node_smoothed_out(perm, p, W, i) and not is_node_split(perm, p, W, i));
 end function;
 
 // the total count of the edges in the minimal regular model
@@ -86,9 +137,9 @@ all_bad_level_reductions_profile := function(D,N,Wgens)
 	profile := [* *];
 	for p in PrimeDivisors(N) do
 		M := N div p;
-		Wp := [m : m in W | m mod p ne 0];
-		c := (#Wp eq #W) select 2 else 1;
-		g := (D eq 1) select GenusX0NQuotient(M,[m : m in Wp | m ne 1]) else Integers()!quot_genus(D,M,Wp);
+		Wprime := [m : m in W | m mod p ne 0];
+		c := (#Wprime eq #W) select 2 else 1;
+		g := (D eq 1) select GenusX0NQuotient(M,[m : m in Wprime | m ne 1]) else Integers()!quot_genus(D,M,Wprime);
 		Append(~profile, [* p, c, g, level_quotient_nodes(D,N,p,W) *]);
 	end for;
 	return profile;
