@@ -1,8 +1,9 @@
-// gens_to_identifier: given DN an integer and gens a set of Hall divisors of DN,
+// gens_to_identifier: given DN an integer and gens a set (or sequence) of Hall divisors of DN,
 // returns the identifier for W = <w_m | m in gens>, by which we mean the ordered sequence of
 // Hall divisors m so that {w_m | m in identifier} is the full set of nontrivial elements of W
 gens_to_identifier := function(DN,gens)
 
+     gens := { m : m in gens };   // sequences are allowed too, as in X0NQuotient
      G := Setseq(gens);
      prods := Subsets(gens,2);
      while #prods gt 0 do

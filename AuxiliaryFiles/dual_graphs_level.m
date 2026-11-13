@@ -44,11 +44,13 @@ AL_action_on_node := function(m, i, perm)
 	return i;
 end function;
 
-// level_quotient_nodes : thicknesses of the nodes of X_0^D(N)/W at p.
+// level_quotient_nodes : thicknesses of the nodes of X_0^D(N)/W at p, where W = <w_m : m in Wgens>
+// (any generators, as a sequence or a set, as in X0NQuotient).
 // These are the W-orbits of nodes, a node x has thickness #W_x * weight(x),
 // unless it's smoothed out
 // (because there is some w in W_x swapping the two components).
-level_quotient_nodes := function(D,N,p,W)
+level_quotient_nodes := function(D,N,p,Wgens)
+	W := gens_to_identifier(D*N,Wgens);
 	perm, weights := level_nodes(D, N div p, p);
 
 	T := [];
@@ -110,7 +112,7 @@ end function;
 
 // the total count of the edges in the minimal regular model
 dual_graph_at_p_edge_count_level := function(D,N,Wgens,p)
-  return &+(level_quotient_nodes(D,N,p,gens_to_identifier(D*N,Wgens)) cat [0]);
+  return &+(level_quotient_nodes(D,N,p,Wgens) cat [0]);
 end function;
 
 // dual_graph_at_p_edge_count
