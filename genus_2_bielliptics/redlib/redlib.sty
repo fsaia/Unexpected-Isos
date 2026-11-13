@@ -1,0 +1,328 @@
+% (c) Tim Dokchitser, redlib library, v3.0, October 2024, https://people.maths.bris.ac.uk/~matyd/redlib/
+%
+% implements \redtype{...}, some tikz picture defaults for special fibres,
+%   elliptic curve reduction types \II, \IIS, etc., 
+%   and macros for drawing reduction type graphs and principal types
+% \redtype{...} uses no packages
+
+% used packages
+\usepackage{pbox,amsmath,amsfonts,tkz-graph,xifthen}
+\usetikzlibrary{snakes,positioning,calc,arrows.meta}
+
+% standard commands
+\def\Z{\text{$\mathbb Z$}}
+\def\F{\text{$\mathbb F$}}
+\def\Q{\text{$\mathbb Q$}}
+\def\P{\text{$\mathbb P$}}
+
+\def\cO{\text{$\mathcal O$}}
+\def\cL{\text{$\mathcal L$}}
+
+\def\Aut{\mathop{\rm Aut}}
+
+% Elliptic curve reduction types
+\def\IZ{\text{\rm I$_0$}}
+\def\IZS{\text{\rm I$_0^*$}}
+\def\In#1{{\text{\rm I{}$_{#1}$}}}
+\def\InS#1{{\text{\rm I{}$_{#1}^*$}}}
+\def\II{\text{\rm II}}
+\def\IIS{\text{\rm II$^*$}}
+\def\III{\text{\rm III}}
+\def\IIIS{\text{\rm III$^*$}}
+\def\IV{\text{\rm IV}}
+\def\IVS{\text{\rm IV$^*$}}
+
+% Default scaling factors for auto-generated pictures with parse
+\def\deltaxscale{0.8}
+\def\deltayscale{0.6}
+\def\fibrexscale{1.0}
+\def\fibreyscale{1.0}
+
+% Basic RNC Type pictures, e.g. \typepic{6}{1,2,3} for type II
+\tikzstyle{TPMain}=[
+  xscale=0.4,
+  yscale=0.3,
+  edgemult/.style={right=-0.05,scale=0.65},
+  edgemults/.style={above right=-0.67 and -0.14,scale=0.65},
+  mainmult/.style={right,scale=0.75},
+  label/.style={midway,below=0.35,scale=0.75},
+  thinedge/.style={shorten <= -4,shorten >= -4},
+  ethinedge/.style={shorten <= -4,shorten >= -10},
+  thickedge/.style={thick}
+]
+
+\tikzstyle{type}=[
+  xscale=1.2,
+  yscale=1.2,
+  sup/.style={midway,auto,scale=0.5},  
+  sub/.style={sup,swap},
+  lrg/.style={scale=0.9,inner sep=0.1em}
+]
+
+\def\typepicmain#1#2#3{% #1 = multiplicity, #2 = list of outgoing edge multiplicities #3 = label below
+  \begin{tikzpicture}[TPMain]
+    \draw[-] (0,0) 
+    \foreach\i in {#2}
+    {
+      edge[thickedge] ++(1,0) ++(0.4,0.7) edge[thinedge] ++(0,-0.7) node[edgemult] {\i} ++(0.4,-0.7)
+    }
+    node[mainmult] (A) {#1};
+    #3
+  \end{tikzpicture}
+}
+\def\typepic#1#2{\typepicmain{#1}{#2}{}}
+\def\itypepic#1#2{\raise-5pt\hbox{\typepicmain{#1}{#2}{}}}  % inline
+\def\typepiclabel#1#2#3{\typepicmain{#1}{#2}{\path (0,0)--(A) node[label] {\smash{#3}};}}
+\def\itypepiclabel#1#2#3{\raise-10pt\hbox{\typepicmain{#1}{#2}{\path (0,0)--(A) node[label] {\smash{#3}};}}}
+
+\def\emptytypemain#1#2{
+\begin{tikzpicture}[TPMain]
+  \draw[-] (2,0) edge[thickedge] (0,0)
+  node[mainmult] (A) {#1}; #2
+\end{tikzpicture}}
+\def\emptytype#1{\emptytypemain{#1}{}}
+\def\iemptytype#1{\raise-5pt\hbox{\emptytypemain{#1}{}}}
+\def\emptytypelabel#1#2{\emptytypemain{#1}{\path (0,0)--(A) node[label] {\smash{#2}};}}
+\def\iemptytypelabel#1#2{\raise-7pt\hbox{\emptytypemain{#1}{\path (0,0)--(A) node[label] {\smash{#2}};}}}
+
+\def\D{{\rm D}}   % type, like II,III,...
+
+\def\btwo{\raise2pt\hbox{\smaller[2]2}}
+\def\bthree{\raise2pt\hbox{\smaller[2]3}}
+
+%\def\p#1#2{#1\leftrightarrow #2}   % path
+\def\p#1#2{P_{{#1},{#2}}}   % path
+
+\tikzset{ellredstyle/.style={
+  xscale=0.8,yscale=0.7,
+  l1/.style={shorten >=-1.5em,shorten <=-0.7em,thick},
+  l2/.style={shorten >=-0.3em,shorten <=-0.3em},
+  l2end/.style={shorten <=-0.3em},
+  lfnt/.style={font=\footnotesize,scale=0.9},
+  bluedash/.style={blue!80!white,densely dashed,shorten <=0em,shorten >=0em},
+  leftl/.style={left=-2pt,lfnt},
+  rightl/.style={right=-2pt,lfnt},
+  mainl/.style={scale=0.9,above left=-0.17em and -1.5em},
+  abovel/.style={above=-1pt,lfnt},
+  aboveleftl/.style={above left=-4.5pt,lfnt},
+  aboverightl/.style={above right=-4.5pt,lfnt},
+  facel/.style={scale=0.5,blue,below right=-0.5pt and 6pt} 
+}}
+
+\tikzset{redstyle/.style={
+  xscale=0.8,yscale=0.7,
+  l1/.style={shorten >=-1.3em,shorten <=-0.5em,thick},
+  l2/.style={shorten >=-0.3em,shorten <=-0.3em},
+  l2end/.style={shorten <=-0.3em},
+  lfnt/.style={font=\tiny},
+  bluedash/.style={blue!80!white,densely dashed,shorten <=0em,shorten >=0em},
+  leftl/.style={left=-3pt,lfnt},
+  rightl/.style={right=-3pt,lfnt},
+  mainl/.style={scale=0.8,above left=-0.17em and -1.5em},
+  abovel/.style={above=-2.5pt,lfnt},
+  aboveleftl/.style={above left=-4.5pt,lfnt},
+  aboverightl/.style={above right=-4.5pt,lfnt},
+  facel/.style={scale=0.5,blue,below right=-0.5pt and 6pt}
+}}
+
+\def\cbox#1{\pbox[c]{\textwidth}{#1}}
+
+% Drawing principal components as arcs with lines sticking out up and down
+%
+% comparc / comparclabel / comparcrotated
+%
+% Example: \draw (0,0) \comparcrotated{45}{25pt}{}{}{1 {\rm g}1} 
+%              ++(2,0) \comparc{25pt}{}{1,1,1}{3};
+
+\tikzset{
+  comparcarc/.style={},                       % main arc thickness and style
+  comparcmain/.style={right,scale=0.8},       % main multiplicity and genus
+  comparcouter/.style={scale=0.7},            % outer labels
+  comparcloop/.style={scale=0.6},             % outer labels for shapes - loops
+  comparcD/.style={scale=0.6},                % outer labels for shapes - D's
+  comparcldots/.style={scale=0.6},            % outer labels for shapes - ldots (shapearclen)
+  comparcinner/.style={scale=0.7},            % inner labels
+  comparctype/.style={below, inner sep=0pt}   % type label below
+}
+
+\def\comparc#1#2#3#4{      % radius, outer list, inner list, multiplicity/genus
+  coordinate (startpt);
+  \pgfmathsetmacro{\onum}{dim({#2})-0.99}
+  \pgfmathsetmacro{\inum}{dim({#3})-0.95}
+  \draw (startpt) ++(120:#1) 
+  arc (120:60:#1) node[comparcmain] {#4};     % arc and multiplicity/genus
+  \foreach \x[count=\i] in {#2}{                  % outer
+    \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1) -- ++(110+1/\onum*40-\i/\onum*40:6pt) ++(90:4pt) node[comparcouter] {\x};
+  }
+  \foreach \x[count=\i] in {#3}{                  % inner 
+    \draw (startpt) ++(115+1/\inum*50-\i/\inum*50:#1) -- ++(290+1/\inum*50-\i/\inum*50:6pt) ++(270:4pt) node[comparcinner] {\x};
+  }
+  \draw (startpt)
+}
+
+\def\comparclabel#1#2#3#4#5{ % radius, outer list, inner list, multiplicity/genus, label
+  \comparc{#1}{#2}{#3}{#4}
+  node[comparctype] {#5} 
+}
+
+\def\comparcrotated#1#2#3#4#5{% angle, radius, outer list, inner list, multiplicity/genus
+  coordinate (startpoint) ++(0,1) coordinate (rotpoint);
+  \begin{scope}[rotate around={#1:(rotpoint)}]
+  \draw (startpoint)
+  \comparc{#2}{#3}{#4}{#5};
+  \end{scope}
+  \draw (startpoint)
+}
+
+% Without numbering on the outer edges (just variable number of them)
+\def\comparco#1#2#3#4{      % radius, outer number, inner list, multiplicity/genus
+  coordinate (startpt);
+  \pgfmathsetmacro{\onum}{#2-0.99}
+  \pgfmathsetmacro{\inum}{dim({#3})-0.95}
+  \draw[comparcarc] (startpt) ++(120:#1) 
+  arc (120:60:#1) node[comparcmain] {#4};     % arc and multiplicity/genus
+  \foreach \i in {1,...,#2}{                 % outer
+    \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1) -- ++(110+1/\onum*40-\i/\onum*40:6pt);
+  }
+  \foreach \x[count=\i] in {#3}{                  % inner 
+    \draw (startpt) ++(115+1/\inum*50-\i/\inum*50:#1) -- ++(290+1/\inum*50-\i/\inum*50:6pt) ++(270:4pt) node[comparcinner] {\x};
+  }
+  \draw (startpt)
+}
+
+\def\comparcorotated#1#2#3#4#5{% angle, radius, outer number, inner list, multiplicity/genus
+  coordinate (startpoint) ++(0,1) coordinate (rotpoint);
+  \begin{scope}[rotate around={#1:(rotpoint)}]
+  \draw (startpoint)
+  \comparco{#2}{#3}{#4}{#5};
+  \end{scope}
+  \draw (startpoint)
+}
+
+\def\comparcnum#1#2#3#4#5#6{        % radius, outer list, inner list, multiplicity/genus, olength, ilength
+  coordinate (startpt);             % for arcs with multiplicities such as $d_1$,... that cannot be processed 
+  \pgfmathsetmacro{\onum}{#5-0.99}  % correctly by pgfmathsetmacro
+  \pgfmathsetmacro{\inum}{#6-0.95}
+  \draw[comparcarc] (startpt) ++(120:#1) 
+  arc (120:60:#1) node[comparcmain] {#4};     % arc and multiplicity/genus
+  \foreach \x[count=\i] in {#2}{                  % outer
+    \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1) -- ++(110+1/\onum*40-\i/\onum*40:6pt) ++(90:4pt) node[comparcouter] {\x};
+  }
+  \foreach \x[count=\i] in {#3}{                  % inner 
+    \draw (startpt) ++(115+1/\inum*50-\i/\inum*50:#1) -- ++(290+1/\inum*50-\i/\inum*50:6pt) ++(270:4pt) node[comparcinner] {\x};
+  }
+  \draw (startpt)
+}
+
+\def\hashyphen#1\endhashyphen{\isin{-}{#1}}
+\def\hasdot#1\endhasdot{\isin{.}{#1}}
+\def\hasstar#1\endhasstar{\isin{*}{#1}}
+\def\recodedot#1#2\endrecodedot{\ifthenelse{\equal{#2}{1}}{}{#2}}
+
+% example: \draw(0,0) \shapearc{35pt}{2-1,3,.1,.2}{1,1,3,3}{4}; 
+\def\shapearclen#1#2#3#4#5#6{   % radius, outer list, inner list, multiplicity/genus, outer length, inner length
+  coordinate (startpt);         %   outer list: numbers (1,2,...), loops (1-2,2-3,...) or D-links (.1,.2,...)
+  \pgfmathsetmacro{\onum}{#5-0.99}
+  \pgfmathsetmacro{\inum}{#6-0.95}
+  \draw (startpt) ++(120:#1) arc (120:60:#1) node[comparcmain] {#4};     % arc and multiplicity/genus
+
+  \foreach \x[count=\i] in {#2}{                  % outer
+    \ifthenelse{\expandafter\hashyphen\x\endhashyphen}
+    {
+    \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1)       % loops
+       to[in=20+1/\onum*40-\i/\onum*40] ++(110+1/\onum*40-\i/\onum*40:6pt) node[above,comparcloop] {\x}
+       to[out=200+1/\onum*40-\i/\onum*40] ++(290+1/\onum*40-\i/\onum*40:6pt);
+    }
+    {                                                         % single numbers
+      \ifthenelse{\expandafter\hasstar\x\endhasstar}
+      {               % * -> ldots
+        \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1) ++(110+1/\onum*40-\i/\onum*40:4pt) ++(90:4pt) node[comparcldots] {$\ldots$};
+      }
+      {
+        \ifthenelse{\expandafter\hasdot\x\endhasdot}
+        {             % .n -> n[D]
+        \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1) -- ++(110+1/\onum*40-\i/\onum*40:6pt) ++(90:4pt) node[comparcD] {\expandafter\recodedot\x\endrecodedot D};
+        }
+        {             % single numbers
+        \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1) -- ++(110+1/\onum*40-\i/\onum*40:12pt) ++(90:6pt) node[comparcouter] {\x};
+        }
+      }
+    }
+  }
+  \foreach \x[count=\i] in {#3}{                  % inner 
+    \draw (startpt) ++(115+1/\inum*50-\i/\inum*50:#1) -- ++(290+1/\inum*50-\i/\inum*50:6pt) ++(270:5pt) node[comparcinner] {\x};
+  }
+  \draw (startpt)
+}
+\def\shapearc#1#2#3#4{      % radius, outer list, inner list, multiplicity/genus
+  coordinate (startpt);     %   outer list: numbers (1,2,...), loops (1-2,2-3,...) or D-links (.1,.2,...)
+  \pgfmathsetmacro{\onum}{dim({#2})-0.99}
+  \pgfmathsetmacro{\inum}{dim({#3})-0.95}
+  \draw (startpt) ++(120:#1) arc (120:60:#1) node[comparcmain] {#4};     % arc and multiplicity/genus
+
+  \foreach \x[count=\i] in {#2}{                  % outer
+    \ifthenelse{\expandafter\hashyphen\x\endhashyphen}
+    {
+    \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1)       % loops
+       to[in=20+1/\onum*40-\i/\onum*40] ++(110+1/\onum*40-\i/\onum*40:6pt) node[above,comparcloop] {\x}
+       to[out=200+1/\onum*40-\i/\onum*40] ++(290+1/\onum*40-\i/\onum*40:6pt);
+    }
+    {                                                         % single numbers
+      \ifthenelse{\expandafter\hasdot\x\endhasdot}
+      {             % .n -> n[D]
+      \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1) -- ++(110+1/\onum*40-\i/\onum*40:6pt) ++(90:4pt) node[comparcD] {\expandafter\recodedot\x\endrecodedot D};
+      }
+      {             % single numbers
+      \draw (startpt) ++(110+1/\onum*40-\i/\onum*40:#1) -- ++(110+1/\onum*40-\i/\onum*40:12pt) ++(90:6pt) node[comparcouter] {\x};
+      }
+    }
+  }
+  \foreach \x[count=\i] in {#3}{                  % inner 
+    \draw (startpt) ++(115+1/\inum*50-\i/\inum*50:#1) -- ++(290+1/\inum*50-\i/\inum*50:6pt) ++(270:5pt) node[comparcinner] {\x};
+  }
+  \draw (startpt)
+}
+% example: \draw(0,0) \shapearclabel{35pt}{2-1,3,.1,.2}{1,1,3,3}{4} {\redtype 1_{g1};}; 
+\def\shapearc#1#2#3#4{% radius, outer list, inner list, multiplicity/genus (new version)
+  \shapearclen{#1}{#2}{#3}{#4}{dim {#2}}{dim {#3}}}
+\def\shapearclabel#1#2#3#4{\shapearc{#1}{#2}{#3}{#4} node[below=-#1/3,scale=0.8]}
+
+% General arc of multiplicity m, genus g, size #1, o_1,..,o_#2 below and l_1,...,l_#3 above
+\def\mgolarc#1#2#3{\comparcnum{#1}{$l_1$,$l_2$,$\cdot\!\!\cdot\!\!\cdot$,$l_#3$}{$o_1$,$o_2$,$\cdot\!\!\cdot\!\!\cdot$,$o_#2$}{$m\ {\rm g}g$}{4.1}{4}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REDTYPE implementation in TeX - copy from this line onwards if you only need \redtype (uses no packages)
+%
+% Example:
+%   8^1,3,4_1-[4]I0*-III*g1=(3)III-(2)IV*_{3-3}18                                      <- Label(R)
+% =>
+%   \redtype{8^{1,3,4}_1\e [4]I^*_0\e III^*_{g1}\d(3)III\e(2)IV^*_{\{3\m3\}18}}        <- Label(R: tex)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\redtypeskip}
+\setlength{\redtypeskip}{0.05em}
+
+\makeatletter
+% make - smaller, keep all other tokens
+\def\rtMinsgn{\mskip1mu\text{-}}
+\def\rt@sbm#1{\ifx #1-\rtMinsgn\else#1\fi}               
+% split into tokens and apply @rt@sbm@ in subscripts of reduction types and edge multiplicities
+\def\rt@sbp#1{\@tfor\@tempa:=#1\do{\expandafter\rt@sbm\@tempa}}  
+% simple edge with optional {...} parameter (superscript) and (...) length parameter (subscript)
+\def\rt@edgYY#1(#2){\ifdim\lastskip=\redtypeskip\relax\else\hskip \redtypeskip\relax\fi\frac{\rt@sbp{#1}}{\scriptstyle #2}\hskip \redtypeskip\relax}
+\def\rt@edgY#1{\@ifnextchar({\rt@edgYY{#1}}{\rt@edgYY{#1}(\ \>)}}
+\def\rtMinusEdge{\@ifnextchar\bgroup{\rt@edgY}{\rt@edgY{{\hbox to 5pt{\hfill}}}}}
+% double edge with optional (...) length parameter (subscript)
+\def\rt@dedgp(#1){\rtMinusEdge{\hrulefill}(#1)}
+\def\rtEqualEdge{\@ifnextchar({\rt@dedgp}{\rt@dedgp(\hspace{0.5em})}}
+\makeatother
+
+\def\redtype#1{\begingroup
+  \let\e\rtMinusEdge%                    % \e{superscripts}(subscript) for single edges, both parameters are optional
+  \let\d\rtEqualEdge                     % \d(subscript) for double edges, parameter is optional
+  \let\m\rtMinsgn                        % \m dash (minus sign) in loop and D-tail subscripts
+  \let\amp\&\def\&{\hskip\redtypeskip\amp\hskip\redtypeskip}%    % "&" as a jump between two components
+  \text{$\rm #1$}\endgroup               % handle both math and non-math mode, make Kodaira symbols straight
+}
