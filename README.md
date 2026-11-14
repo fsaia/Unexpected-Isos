@@ -107,7 +107,7 @@ is then a list of the form [ $g$, isog_lists], and each element of isog_lists is
 ## Auxiliary Files
 
 - `AL_identifiers.m`, `quot_genus.m`, `ribet_isog.m`, and
-`dual_graphsdiscriminant.m`: Functionality for working with Atkin--Lehner subgroups, computing genera of quotients of Shimura curves, computing isogeny factors of Jacobians of such quotients, and computing reductions type information for such quotients at primes dividing the discriminant. Code is borrowed from prior work of the second and third named authors (in particular, from https://github.com/fsaia/GenusAtMost2).  
+`dual_graphs_discriminant.m`: Functionality for working with Atkin--Lehner subgroups, computing genera of quotients of Shimura curves, computing isogeny factors of Jacobians of such quotients, and computing reductions type information for such quotients at primes dividing the discriminant. Code is borrowed from prior work of the second and third named authors (in particular, from https://github.com/fsaia/GenusAtMost2).  
 
 - `dual_graphs_level.m`: Functionality for computing reductions type information for Atkin--Lehner quotients at primes dividing the level.  
 
