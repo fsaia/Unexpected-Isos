@@ -49,11 +49,14 @@ end function;
 // These are the W-orbits of nodes, a node x has thickness #W_x * weight(x),
 // unless it's smoothed out
 // (because there is some w in W_x swapping the two components).
+// Additionally, for testing the existence of Q_p-points, it returns R, a representative of each
+// node in T (in the same order; smoothed-out nodes are not included), and perm. The basis order
+// of BrandtModule changes between calls, so R must be used with this perm.
 level_quotient_nodes := function(D,N,p,Wgens)
 	W := gens_to_identifier(D*N,Wgens);
 	perm, weights := level_nodes(D, N div p, p);
 
-	T := [];
+	T := []; R := [];
 	seen := {};
 	for i in [1..#weights] do
 		if i in seen then continue; end if;
@@ -61,9 +64,11 @@ level_quotient_nodes := function(D,N,p,Wgens)
 		stab := [ m : m in W | AL_action_on_node(m,i, perm) eq i ];
 		if forall{ m : m in stab | m mod p ne 0 } then
 			Append(~T, #stab*weights[i]);
+      			Append(~R, i);
 		end if;
 	end for;
-	return Sort(T);
+	ParallelSort(~T, ~R);
+	return T, R, perm;
 end function;
 
 // short version immediately below
@@ -131,6 +136,15 @@ dual_graph_at_p_edge_count := function(D,N,Wgens,p)
 
 end function;
 
+
+// number of components
+component_count := function(D, N, p, Wgens)
+  W := gens_to_identifier(D*N, Wgens);
+  M := N div p;
+	Wprime := [m : m in W | m mod p ne 0];
+	c := (#Wprime eq #W) select 2 else 1;
+  return c;
+end function;
 
 // all_bad_level_reductions_profile : [* p, c, g, T *] for each p | N, with c the number of components
 // (2 iff W = W'), g their genus (that of X_0^D(M)/W') and T the thicknesses of the nodes
