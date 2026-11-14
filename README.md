@@ -60,6 +60,24 @@ Checks for isogenous Jacobians among pairs $X_0^{D}(N)/W_1$, $X_0^{D}(N)/W_2$.
 - `isogeny_lists_final_same_curve.m`: List of information on all pairs of quotients $X_0^{D}(N)/W_1$ and $X_0^{D}(N)/W_2$ with isogenous Jacobians. 
 
 
+## Genus2Bielliptics 
+
+To run the main file `narrowing_bielliptic_eqns_by_red_types.m`, one should download and copy locally the [reduction type computation library](https://people.maths.bris.ac.uk/~matyd/redlib/) of Tim Dokchitser.
+
+- `genus_2_bielliptics_eqn_determined_PS_AH.m`: Equations of genus $2$ bielliptic Atkin--Lehner quotients of $X_0^D(N)$ determined by work initiated in Padurariu--Saia 2025 and improved in work of Assaf--Hashimoto 2026.  
+
+- `genus_2_bielliptics_eqn_not_determined_PS_AH.m`: Candidate equations of genus $2$ bielliptic Atkin--Lehner quotients of $X_0^D(N)$, determined by work initiated in Padurariu--Saia 2025 and improved in work of Assaf--Hashimoto 2026, in cases where the isomorphism class over $\mathbb{Q}$ is not determined.
+
+- `narrowing_bielliptic_eqns_by_red_types.m`: In this file, we use our implementation of reduction type computations for Atkin--Lehner quotients of $X_0^D(N)$ at primes $p \parallel N$ in order to narrow isomorphism class determinations for genus $2$ bielliptic equations compared to work that initiated in Padurariu--Saia 2025
+and was improved in work of Assaf--Hashimoto 2026.  
+
+- `genus_2_bielliptics_eqn_determined_by_level_red_types.m`: The four new equations determined via reduction type computations for Atkin--Lehner quotients of curves $X_0^D(N)$ at primes dividing $N$ via the code in `narrowing_bielliptic_eqns_by_red_types.m`.  
+
+- `genus_2_bielliptics_eqn_determined_APS.m`: An improved version of `genus_2_bielliptics_eqn_determined_PS_AH.m`, where more isomorphism classes are decided via `narrowing_bielliptic_eqns_by_red_types.m`.  
+
+- `genus_2_bielliptics_eqn_not_determined_APS.m`: An improved version of `genus_2_bielliptics_eqn_not_determined_PS_AH.m`, where more isomorphism classes are decided via `narrowing_bielliptic_eqns_by_red_types.m`.  
+
+
 ## Isomorphisms/SameProductLevel 
 
 - `combining_isogeny_lists.m`: A quick script for combining the isogeny lists from the cases with $D_1 N_1=D_2 N_2$, since we handled this in two individual cases in the isogenytests and will handle them together in checks for isomorphisms.

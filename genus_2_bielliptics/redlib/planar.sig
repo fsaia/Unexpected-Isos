@@ -1,3 +1,0 @@
-178,0
-S,StandardGraphCoordinates,"Tries to embed a graph in the plane with the least number of edge self-intersections. For planar graphs on at most 7 vertices and a few others, use a built-in database. Returns  x=[x1,x2,...], y=[y1,y1,...] - x,y-coordinates for every vertex in VertexSet(G), and suggested vertex labels",0,1,0,0,0,0,0,0,0,105,,82,82,82,-38,-38,-38
-S,TeXGraph,"Simple function to draw a small planar graph in tikz. Labels can be a sequence  of strings (or ""none"", or ""default"" -> 1,2,3,... unless G is labelled) to draw vertices. This function is not used in the core of the package, and is just here to illustrate  StandardGraphCoordinates used for drawing shapes and reduction types",0,1,0,0,0,0,0,0,0,105,,298,-38,-38,-38,-38,-38
