@@ -103,8 +103,8 @@ Total number of isogenous pairs excluded by aut checks:  0
 
 
 Loading "remaining_isomorphism_lists_same_product_v1.m"
-Loading "genus_2_bielliptics_eqn_determined_final.m"
-Loading "genus_2_bielliptics_eqn_not_determined_final.m"
+Loading "genus_2_bielliptics_eqn_determined_PS_AH.m"
+Loading "genus_2_bielliptics_eqn_not_determined_PS_AH.m"
 Loading "dual_graphs_discriminant.m"
 Loading "AL_identifiers.m"
 Loading "quot_genus.m"

@@ -13,8 +13,8 @@
 // bielliptic quotients of Shimura curves.
 ChangeDirectory("AuxiliaryFiles");
 load "AL_identifiers.m";
-load "genus_2_bielliptics_eqn_determined_final.m";
-load "genus_2_bielliptics_eqn_not_determined_final.m";
+load "genus_2_bielliptics_eqn_determined_PS_AH.m";
+load "genus_2_bielliptics_eqn_not_determined_PS_AH.m";
 load "models_db.m";
 ChangeDirectory("..");
 

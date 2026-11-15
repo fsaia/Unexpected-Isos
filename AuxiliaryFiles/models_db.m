@@ -2,8 +2,8 @@
 //
 //   quotients_of_hyperelliptic_models_plus_Molina_eqs.m   quotients of hyperelliptic top
 //                                                         curves, and Molina's level 1 list
-//   AuxiliaryFiles/genus_2_bielliptics_eqn_determined_final.m       one polynomial per quotient
-//   AuxiliaryFiles/genus_2_bielliptics_eqn_not_determined_final.m   a list of candidates
+//   AuxiliaryFiles/genus_2_bielliptics_eqn_determined_PS_AH.m       one polynomial per quotient
+//   AuxiliaryFiles/genus_2_bielliptics_eqn_not_determined_PS_AH.m   a list of candidates
 //   ShimDB (optional, see SHIMDB_DIRS)                    one file per quotient, any genus
 //
 // together with X0NQuotient on the modular side.
@@ -36,13 +36,13 @@ ModelsFor := function(D,N,Wgens)
         end if;
     end for;
 
-    for L in genus_2_bielliptics_eqn_determined_final do
+    for L in genus_2_bielliptics_eqn_determined_PS_AH do
         if L[1] eq D and L[2] eq N and gens_to_identifier(D*N,L[3]) eq W then
             return [HyperellipticCurve(L[4])];
         end if;
     end for;
 
-    for L in genus_2_bielliptics_eqn_not_determined_final do
+    for L in genus_2_bielliptics_eqn_not_determined_PS_AH do
         if L[1] eq D and L[2] eq N and gens_to_identifier(D*N,L[3]) eq W then
             return [HyperellipticCurve(f) : f in L[4]];
         end if;

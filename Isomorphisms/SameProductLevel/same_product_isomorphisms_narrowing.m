@@ -486,12 +486,12 @@ end function;
 
 // list of equations of some bielliptic genus 2 quotients of Shimura curves
 // from Padurariu--Saia 2025
-load "genus_2_bielliptics_eqn_determined_final.m";
+load "genus_2_bielliptics_eqn_determined_PS_AH.m";
 
 // list of candidate equations of some bielliptic genus 2 quotients of Shimura curves
 // from Padurariu--Saia 2025 (for each quotient in the list, exactly one of the
 // given candidate models is correct)
-load "genus_2_bielliptics_eqn_not_determined_final.m";
+load "genus_2_bielliptics_eqn_not_determined_PS_AH.m";
 
 // loading algorithms from Padurariu--Saia for computing reduction types
 // and existence of local points at primes dividing D for quotients of X_0^D(N)
@@ -510,21 +510,21 @@ for pair in genus_2_isom_candidates do
     X := pair[1];
     Y := pair[2];
 
-    X_matches_having_eqn := [L[4] : L in genus_2_bielliptics_eqn_determined_final | [*L[1],L[2],L[3]*] eq X];
+    X_matches_having_eqn := [L[4] : L in genus_2_bielliptics_eqn_determined_PS_AH | [*L[1],L[2],L[3]*] eq X];
     if not IsEmpty(X_matches_having_eqn) then 
         Append(~genus_2_bielliptics_having_eqn,X);
     else
-        X_matches_having_eqn_candidates := [L[4] : L in genus_2_bielliptics_eqn_not_determined_final | [*L[1],L[2],L[3]*] eq X];
+        X_matches_having_eqn_candidates := [L[4] : L in genus_2_bielliptics_eqn_not_determined_PS_AH | [*L[1],L[2],L[3]*] eq X];
         if not IsEmpty(X_matches_having_eqn_candidates) then 
             Append(~genus_2_bielliptics_having_eqn_candidates,X);
         end if;
     end if;
 
-    Y_matches_having_eqn := [L[4] : L in genus_2_bielliptics_eqn_determined_final | [*L[1],L[2],L[3]*] eq Y];
+    Y_matches_having_eqn := [L[4] : L in genus_2_bielliptics_eqn_determined_PS_AH | [*L[1],L[2],L[3]*] eq Y];
     if not IsEmpty(Y_matches_having_eqn) then 
         Append(~genus_2_bielliptics_having_eqn,Y);
     else
-        Y_matches_having_eqn_candidates := [L[4] : L in genus_2_bielliptics_eqn_not_determined_final | [*L[1],L[2],L[3]*] eq Y];
+        Y_matches_having_eqn_candidates := [L[4] : L in genus_2_bielliptics_eqn_not_determined_PS_AH | [*L[1],L[2],L[3]*] eq Y];
         if not IsEmpty(Y_matches_having_eqn_candidates) then 
             Append(~genus_2_bielliptics_having_eqn_candidates,Y);
         end if;
@@ -643,7 +643,7 @@ for pair in genus_2_isom_candidates do
 
         elif X in genus_2_bielliptics_having_eqn then 
             have_X_model := true;
-            X_eqn := Explode([L[4] : L in genus_2_bielliptics_eqn_determined_final | [*L[1],L[2],L[3]*] eq X]);
+            X_eqn := Explode([L[4] : L in genus_2_bielliptics_eqn_determined_PS_AH | [*L[1],L[2],L[3]*] eq X]);
             X_model := HyperellipticCurve(X_eqn);
 
         elif X in quotients_with_hyperelliptic_top_curve then 
@@ -652,7 +652,7 @@ for pair in genus_2_isom_candidates do
 
         elif X in genus_2_bielliptics_having_eqn_candidates then 
             have_X_model_candidates := true;
-            X_eqn_candidates := Explode([L[4] : L in genus_2_bielliptics_eqn_not_determined_final | [*L[1],L[2],L[3]*] eq X]);
+            X_eqn_candidates := Explode([L[4] : L in genus_2_bielliptics_eqn_not_determined_PS_AH | [*L[1],L[2],L[3]*] eq X]);
         end if;
 
         // Checking if we have a model or candidate models for Y
@@ -668,7 +668,7 @@ for pair in genus_2_isom_candidates do
 
         elif Y in genus_2_bielliptics_having_eqn then 
             have_Y_model := true;
-            Y_eqn := Explode([L[4] : L in genus_2_bielliptics_eqn_determined_final | [*L[1],L[2],L[3]*] eq Y]);
+            Y_eqn := Explode([L[4] : L in genus_2_bielliptics_eqn_determined_PS_AH | [*L[1],L[2],L[3]*] eq Y]);
             Y_model := HyperellipticCurve(Y_eqn);
 
         elif Y in quotients_with_hyperelliptic_top_curve then 
@@ -677,7 +677,7 @@ for pair in genus_2_isom_candidates do
 
         elif Y in genus_2_bielliptics_having_eqn_candidates then 
             have_Y_model_candidates := true;
-            Y_eqn_candidates := Explode([L[4] : L in genus_2_bielliptics_eqn_not_determined_final | [*L[1],L[2],L[3]*] eq Y]);
+            Y_eqn_candidates := Explode([L[4] : L in genus_2_bielliptics_eqn_not_determined_PS_AH | [*L[1],L[2],L[3]*] eq Y]);
         end if;
 
         // running through checks for isomorphism over \mathbb{Q} when we have an equation

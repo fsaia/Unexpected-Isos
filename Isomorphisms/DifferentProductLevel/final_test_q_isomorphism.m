@@ -1,10 +1,11 @@
 // Run from the top folder Unexpected-Isos (copy this file there), after Fp_isomorphism_check.m:
 //   nohup magma -s final_test_q_isomorphism.m > final_test_q_isomorphism.log &
 //
-// Final test of isomorphism over Q for the genus >= 2 pairs surviving Fp_isomorphism_check.m,
+// Test for isomorphism over Q for the genus >= 2 pairs surviving Fp_isomorphism_check.m,
 // together with the purely modular pairs of genus >= 2 surviving
-// reduction_type_different_products.m. Equations come from models_db.m, together
-// with X0NQuotient on the modular side.
+// reduction_type_different_products.m.
+
+// Equations come from models_db.m, together with X0NQuotient on the modular side.
 //
 // A quotient whose equation is only known up to a list of candidates is handled as
 // follows: the true curve is somewhere in each list, so if no pair of candidates is
@@ -15,13 +16,14 @@
 // bielliptic quotients of Shimura curves.
 ChangeDirectory("AuxiliaryFiles");
 load "AL_identifiers.m";
-load "genus_2_bielliptics_eqn_determined_final.m";
-load "genus_2_bielliptics_eqn_not_determined_final.m";
+load "genus_2_bielliptics_eqn_determined_PS_AH.m";
+load "genus_2_bielliptics_eqn_not_determined_PS_AH.m";
 load "models_db.m";
 ChangeDirectory("..");
 
-// Loading the pairs surviving Fp_isomorphism_check.m, and the purely modular pairs surviving
-// reduction_type_different_products.m
+// Loading the pairs after Fp_isomorphism_check.m, and the purely modular pairs
+// that have the same reduction type (i.e., after reduction_type_different_products.m)
+
 load "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_different_products_v3.m";
 load "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_modular_different_levels_v1.m";
 
@@ -54,7 +56,7 @@ for pair in candidates do
         continue;
     end if;
 
-    // for each combination of candidate models: "yes", "no", or "unknown" if Magma cannot decide
+    // for each combination of candidate models: "yes", "no", or "unknown"
     results := [];
     for X in A, Y in B do
         try
