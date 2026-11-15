@@ -1,5 +1,5 @@
 // Run from the top folder Unexpected-Isos (copy this file there):
-//   nohup magma -s isomorphisms_narrowing_different_products.m > isomorphisms_narrowing_different_products.log &
+//   nohup magma -s reduction_type_different_products.m > reduction_type_different_products.log &
 
 // Loading compare_reduction_types, which compares the special fibers of two quotients at
 // primes dividing the level (dual_graphs_level.m) and at primes dividing the discriminant
@@ -74,21 +74,18 @@ end for;
     print "D1 = D2 = 1: pairs excluded by reduction type checks: ", #excluded_modular;
     print "D1 = D2 = 1: pairs remaining: ", #remaining_modular;
 
+    // the excluded pairs of all our checks are collected in excluded.m: this first check
+    // starts the list excluded, and the later checks append to it
     // Overwrite := true, since SetOutputFile appends to an existing file by default
-    SetOutputFile("Isomorphisms/DifferentProductLevel/excluded_by_reduction_different_products_v1.m" : Overwrite := true);
-    print "excluded_by_reduction_different_products_v1 := ", excluded_by_reduction, ";";
+    SetOutputFile("Isomorphisms/DifferentProductLevel/excluded.m" : Overwrite := true);
+    print "excluded := ", excluded_by_reduction cat excluded_modular, ";";
     UnsetOutputFile();
 
     SetOutputFile("Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_different_products_v1.m" : Overwrite := true);
     print "remaining_isomorphism_lists_different_products_v1 := ", remaining_after_reduction, ";";
     UnsetOutputFile();
 
-    SetOutputFile("Isomorphisms/DifferentProductLevel/excluded_by_reduction_modular_different_levels_v1.m" : Overwrite := true);
-    print "excluded_by_reduction_modular_different_levels_v1 := ", excluded_modular, ";";
-    UnsetOutputFile();
-
     SetOutputFile("Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_modular_different_levels_v1.m" : Overwrite := true);
     print "remaining_isomorphism_lists_modular_different_levels_v1 := ", remaining_modular, ";";
     UnsetOutputFile();
 
-quit;
