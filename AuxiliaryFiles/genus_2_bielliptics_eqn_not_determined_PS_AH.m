@@ -1,6 +1,6 @@
 _<x> := PolynomialRing(Rationals());
 
-genus_2_bielliptics_eqn_not_determined_final :=  [ [* 6, 25,
+genus_2_bielliptics_eqn_not_determined_PS_AH :=  [ [* 6, 25,
     { 2 },
     [
         -1350*x^6 - 765*x^4 - 180*x^2 - 9,
