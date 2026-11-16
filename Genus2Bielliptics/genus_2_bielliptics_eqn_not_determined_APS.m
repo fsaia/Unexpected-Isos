@@ -1,3 +1,5 @@
+A<x> := PolynomialRing(Rationals());
+
 genus_2_bielliptics_eqn_not_determined_APS := 
 [ [* 6, 25,
     { 2 },
