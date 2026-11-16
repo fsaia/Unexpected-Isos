@@ -340,7 +340,7 @@ dual_graph_edge_counts_discriminant := function(D,N,Wgens)
 end function; 
 
 
-// quotient_has_Qp_points: given D, N, Wgens, and p | D, determines whether the quotient
+// quotient_has_Qp_points_disc: given D, N, Wgens, and p | D, determines whether the quotient
 // X_0^D(N)/W is locally solvable at p. This is done by computing information for the
 // dual graph of the special fiber over Zp and checking for a vertex in the
 // resolution of its minimization which is fixed by the action of w_p (frobenius) and 
@@ -348,7 +348,12 @@ end function;
 // (i.e., such a vertex corresponds to a component of the minimal regular 
 // model which is defined over Fp and has a smooth point)
 
-quotient_has_Qp_points := function(D,N,Wgens,p)
+quotient_has_Qp_points_disc := function(D,N,Wgens,p)
+	
+	// modular curve case
+	if D eq 1 then 
+		return true;
+	end if;
 	
 	// get AL info at p for top graph G
 	edge_info, AL := bipartite_cover_fiber(D,N,p);

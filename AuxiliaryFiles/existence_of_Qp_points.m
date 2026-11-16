@@ -73,9 +73,12 @@ end function;
 // code of Mercuri--Padurariu--Saia--Stirpe 2025 (using Eichler--Shimura)
 quotient_has_Qp_points := function(D, N, Wgens, p)
   error if D*N mod p ne 0, "This implementation is for primes dividing D*N; 
-  compute the Fp point count via MPSS25";
+  you can compute this Fp point count via MPSS25";
 
-  if N mod p eq 0 then
+  // modular curve case
+  if D eq 1 then
+    return true;
+  elif N mod p eq 0 then
     return existence_of_Qp_points_level(D,N,p,Wgens);
   elif D mod p eq 0 then 
     return quotient_has_Qp_points_disc(D,N,Wgens, p);
