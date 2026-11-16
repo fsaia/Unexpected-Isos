@@ -21498,1917 +21498,6 @@ D1*D2 > 1: pairs remaining:  960
 D1 = D2 = 1: pairs excluded by reduction type checks:  96
 D1 = D2 = 1: pairs remaining:  54
 
-Loading "local_points_check.m"
-Loading "existence_of_Qp_points.m"
-Loading "dual_graphs_level.m"
-Loading "dual_graphs_discriminant.m"
-Loading "AL_identifiers.m"
-Loading "quot_genus.m"
-Loading "counting_points.m"
-Loading "tracesALL.m"
-Loading "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_differe\
-nt_products_v1.m"
-Step out of  112 :  1
-Pair:  [* 26, 7, 1, 26, 2,
-    [ 182 ],
-    []
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  2
-Pair:  [* 26, 15, 1, 26, 2,
-    [ 6, 65 ],
-    []
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  3
-Pair:  [* 15, 2, 15, 14, 2,
-    [ 2 ],
-    [ 6, 7 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  4
-Pair:  [* 15, 22, 1, 30, 2,
-    [ 6, 55 ],
-    [ 2 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  5
-Pair:  [* 15, 34, 1, 30, 2,
-    [ 2, 255 ],
-    [ 2 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  6
-Pair:  [* 35, 1, 35, 6, 3,
-    [],
-    [ 2, 15 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  7
-Pair:  [* 35, 1, 35, 6, 2,
-    [ 5 ],
-    [ 2, 3, 5 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  8
-Pair:  [* 39, 5, 1, 39, 2,
-    [ 3, 65 ],
-    [ 13 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  9
-Pair:  [* 39, 5, 1, 39, 3,
-    [ 195 ],
-    []
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  10
-Pair:  [* 14, 15, 1, 42, 2,
-    [ 6, 35 ],
-    [ 3 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  11
-Pair:  [* 14, 39, 1, 42, 2,
-    [ 3, 182 ],
-    [ 3 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  12
-Pair:  [* 58, 3, 1, 58, 2,
-    [ 174 ],
-    [ 29 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  13
-Pair:  [* 22, 3, 33, 10, 2,
-    [ 2 ],
-    [ 15, 33 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  14
-Pair:  [* 6, 55, 1, 66, 2,
-    [ 11, 30 ],
-    [ 11 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  15
-Pair:  [* 33, 2, 6, 55, 2,
-    [ 33 ],
-    [ 2, 165 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  16
-Pair:  [* 33, 2, 22, 15, 2,
-    [ 3 ],
-    [ 5, 22 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  17
-Pair:  [* 35, 3, 1, 70, 2,
-    [ 5, 21 ],
-    [ 2, 7 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  18
-Pair:  [* 35, 3, 1, 70, 3,
-    [ 105 ],
-    [ 14 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  19
-Pair:  [* 35, 6, 1, 70, 2,
-    [ 3, 5, 14 ],
-    [ 2, 7 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  20
-Pair:  [* 14, 15, 1, 70, 2,
-    [ 10, 21 ],
-    [ 35 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  21
-Pair:  [* 35, 2, 35, 6, 2,
-    [ 5, 14 ],
-    [ 2, 5, 21 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  22
-Pair:  [* 39, 7, 1, 78, 2,
-    [ 3, 91 ],
-    [ 2, 13 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  23
-Pair:  [* 39, 2, 39, 7, 2,
-    [ 3, 26 ],
-    [ 3, 91 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  24
-Pair:  [* 39, 10, 1, 78, 2,
-    [ 2, 3, 65 ],
-    [ 2, 13 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  25
-Pair:  [* 39, 2, 39, 10, 2,
-    [ 2, 13 ],
-    [ 2, 13, 15 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  26
-Pair:  [* 39, 2, 39, 10, 2,
-    [ 3, 26 ],
-    [ 2, 3, 65 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  27
-Pair:  [* 26, 3, 26, 21, 3,
-    [ 39 ],
-    [ 3, 182 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  28
-Pair:  [* 26, 3, 26, 21, 2,
-    [ 3, 13 ],
-    [ 3, 13, 14 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  29
-Pair:  [* 85, 1, 1, 170, 2,
-    [ 85 ],
-    [ 2, 5, 17 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  30
-Pair:  [* 85, 3, 1, 85, 2,
-    [ 3, 85 ],
-    [ 5, 17 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  31
-Pair:  [* 85, 1, 1, 255, 2,
-    [ 85 ],
-    [ 3, 5, 17 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  32
-Pair:  [* 87, 2, 1, 87, 2,
-    [ 3, 58 ],
-    [ 29 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  33
-Pair:  [* 93, 2, 1, 93, 2,
-    [ 2, 93 ],
-    [ 3, 31 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  34
-Pair:  [* 93, 1, 1, 186, 2,
-    [ 93 ],
-    [ 2, 3, 31 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  35
-Pair:  [* 93, 1, 93, 2, 2,
-    [ 93 ],
-    [ 2, 93 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  36
-Pair:  [* 95, 3, 1, 95, 3,
-    [ 5, 57 ],
-    [ 19 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  37
-Pair:  [* 51, 2, 6, 85, 2,
-    [ 51 ],
-    [ 6, 85 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  38
-Pair:  [* 51, 2, 51, 10, 2,
-    [ 2, 17 ],
-    [ 2, 15, 17 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  39
-Pair:  [* 35, 3, 35, 6, 2,
-    [ 5, 21 ],
-    [ 3, 5, 14 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  40
-Pair:  [* 55, 2, 55, 3, 2,
-    [ 10, 11 ],
-    [ 3, 11 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  41
-Pair:  [* 55, 2, 55, 3, 2,
-    [ 10, 11 ],
-    [ 11, 15 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  42
-Pair:  [* 55, 2, 10, 33, 2,
-    [ 55 ],
-    [ 2, 165 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  43
-Pair:  [* 22, 5, 10, 77, 2,
-    [ 11 ],
-    [ 10, 77 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  44
-Pair:  [* 57, 2, 57, 7, 2,
-    [ 3, 38 ],
-    [ 3, 133 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  45
-Pair:  [* 115, 1, 1, 230, 2,
-    [ 115 ],
-    [ 2, 5, 23 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  46
-Pair:  [* 115, 1, 115, 2, 2,
-    [ 115 ],
-    [ 2, 115 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  47
-Pair:  [* 115, 2, 1, 115, 2,
-    [ 2, 115 ],
-    [ 5, 23 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  48
-Pair:  [* 65, 2, 10, 39, 2,
-    [ 5, 13 ],
-    [ 5, 78 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  49
-Pair:  [* 46, 3, 6, 115, 2,
-    [ 2, 23 ],
-    [ 2, 3, 115 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  50
-Pair:  [* 69, 2, 6, 115, 2,
-    [ 3, 23 ],
-    [ 2, 3, 115 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  51
-Pair:  [* 46, 3, 6, 161, 2,
-    [ 2, 23 ],
-    [ 2, 3, 161 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  52
-Pair:  [* 69, 2, 6, 161, 2,
-    [ 3, 23 ],
-    [ 2, 3, 161 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  53
-Pair:  [* 142, 1, 142, 3, 3,
-    [ 71 ],
-    [ 6, 71 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  54
-Pair:  [* 145, 1, 145, 3, 2,
-    [ 5, 29 ],
-    [ 3, 5, 29 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  55
-Pair:  [* 77, 2, 22, 21, 2,
-    [ 7, 11 ],
-    [ 2, 3, 11 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  56
-Pair:  [* 15, 22, 1, 165, 2,
-    [ 2, 11, 15 ],
-    [ 3, 5, 11 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  57
-Pair:  [* 33, 10, 1, 165, 2,
-    [ 2, 5, 33 ],
-    [ 3, 5, 11 ]
-*]
-have one modular curve and one non-modular curve; checking local points
-Step out of  112 :  58
-Pair:  [* 55, 3, 15, 22, 2,
-    [ 15, 33 ],
-    [ 3, 10, 11 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  59
-Pair:  [* 55, 3, 15, 22, 2,
-    [ 3, 55 ],
-    [ 2, 11, 15 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  60
-Pair:  [* 55, 3, 33, 10, 2,
-    [ 15, 33 ],
-    [ 3, 5, 22 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  61
-Pair:  [* 55, 3, 33, 10, 2,
-    [ 3, 55 ],
-    [ 2, 5, 33 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  62
-Pair:  [* 177, 1, 177, 2, 2,
-    [ 3, 59 ],
-    [ 2, 3, 59 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  63
-Pair:  [* 26, 7, 26, 15, 2,
-    [ 182 ],
-    [ 6, 65 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  64
-Pair:  [* 91, 2, 91, 5, 3,
-    [ 7, 26 ],
-    [ 7, 65 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  65
-Pair:  [* 10, 19, 38, 15, 3,
-    [ 95 ],
-    [ 3, 10, 38 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  66
-Pair:  [* 38, 5, 38, 15, 2,
-    [ 2, 95 ],
-    [ 2, 5, 57 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  67
-Pair:  [* 38, 5, 10, 57, 2,
-    [ 2, 19 ],
-    [ 2, 285 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  68
-Pair:  [* 65, 3, 15, 26, 2,
-    [ 5, 13 ],
-    [ 3, 5, 26 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  69
-Pair:  [* 65, 3, 39, 10, 2,
-    [ 5, 13 ],
-    [ 3, 10, 13 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  70
-Pair:  [* 205, 1, 205, 3, 3,
-    [ 5, 41 ],
-    [ 3, 5, 41 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  71
-Pair:  [* 21, 10, 21, 22, 2,
-    [ 14, 15 ],
-    [ 6, 154 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  72
-Pair:  [* 14, 15, 14, 39, 2,
-    [ 6, 35 ],
-    [ 3, 182 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  73
-Pair:  [* 21, 10, 210, 11, 2,
-    [ 7, 15 ],
-    [ 2, 7, 165 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  74
-Pair:  [* 213, 1, 213, 2, 2,
-    [ 3, 71 ],
-    [ 2, 3, 71 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  75
-Pair:  [* 74, 3, 74, 5, 2,
-    [ 2, 111 ],
-    [ 2, 185 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  76
-Pair:  [* 46, 5, 10, 69, 4,
-    [ 46 ],
-    [ 5, 138 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  77
-Pair:  [* 46, 5, 10, 69, 2,
-    [ 2, 23 ],
-    [ 2, 5, 69 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  78
-Pair:  [* 46, 5, 10, 69, 2,
-    [ 10, 46 ],
-    [ 5, 6, 23 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  79
-Pair:  [* 115, 2, 10, 69, 2,
-    [ 5, 23 ],
-    [ 2, 5, 69 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  80
-Pair:  [* 77, 3, 21, 22, 2,
-    [ 7, 11 ],
-    [ 3, 7, 22 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  81
-Pair:  [* 33, 7, 21, 22, 5,
-    [ 33 ],
-    [ 7, 22 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  82
-Pair:  [* 33, 7, 21, 22, 3,
-    [ 21, 33 ],
-    [ 2, 7, 11 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  83
-Pair:  [* 33, 7, 21, 22, 2,
-    [ 3, 11 ],
-    [ 3, 7, 22 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  84
-Pair:  [* 85, 3, 15, 34, 3,
-    [ 5, 17 ],
-    [ 3, 5, 34 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  85
-Pair:  [* 51, 5, 51, 10, 2,
-    [ 15, 51 ],
-    [ 6, 10, 34 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  86
-Pair:  [* 267, 1, 267, 2, 3,
-    [ 3, 89 ],
-    [ 2, 3, 89 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  87
-Pair:  [* 39, 7, 39, 10, 2,
-    [ 3, 91 ],
-    [ 2, 3, 65 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  88
-Pair:  [* 39, 7, 21, 26, 3,
-    [ 7, 39 ],
-    [ 2, 13, 21 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  89
-Pair:  [* 39, 7, 21, 26, 2,
-    [ 21, 39 ],
-    [ 6, 7, 13 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  90
-Pair:  [* 33, 10, 33, 14, 3,
-    [ 6, 55 ],
-    [ 6, 154 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  91
-Pair:  [* 15, 22, 15, 34, 2,
-    [ 6, 55 ],
-    [ 2, 255 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  92
-Pair:  [* 15, 26, 390, 7, 2,
-    [ 3, 5, 13 ],
-    [ 2, 3, 5, 91 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  93
-Pair:  [* 6, 65, 390, 7, 2,
-    [ 2, 3, 13 ],
-    [ 2, 3, 5, 91 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  94
-Pair:  [* 14, 33, 462, 5, 2,
-    [ 2, 7, 11 ],
-    [ 2, 7, 165 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  95
-Pair:  [* 22, 21, 462, 5, 2,
-    [ 6, 11, 14 ],
-    [ 3, 7, 10, 11 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  96
-Pair:  [* 21, 23, 21, 46, 2,
-    [ 3, 7, 23 ],
-    [ 2, 3, 7, 23 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  97
-Pair:  [* 6, 91, 546, 5, 2,
-    [ 2, 3, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  98
-Pair:  [* 14, 39, 546, 5, 2,
-    [ 2, 7, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  99
-Pair:  [* 26, 21, 546, 5, 2,
-    [ 2, 7, 13 ],
-    [ 2, 3, 13, 35 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  100
-Pair:  [* 21, 26, 546, 5, 2,
-    [ 3, 7, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  101
-Pair:  [* 15, 37, 15, 74, 2,
-    [ 3, 5, 37 ],
-    [ 2, 3, 5, 37 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  102
-Pair:  [* 10, 57, 570, 7, 2,
-    [ 2, 5, 19 ],
-    [ 2, 3, 5, 133 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  103
-Pair:  [* 35, 17, 35, 34, 3,
-    [ 5, 7, 17 ],
-    [ 2, 5, 7, 17 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  104
-Pair:  [* 6, 115, 6, 161, 2,
-    [ 2, 3, 115 ],
-    [ 2, 3, 161 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  105
-Pair:  [* 14, 51, 14, 85, 3,
-    [ 6, 7, 17 ],
-    [ 7, 10, 17 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  106
-Pair:  [* 14, 51, 14, 85, 2,
-    [ 2, 7, 51 ],
-    [ 2, 7, 85 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  107
-Pair:  [* 10, 77, 770, 3, 2,
-    [ 5, 14, 22 ],
-    [ 5, 6, 7, 11 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  108
-Pair:  [* 10, 77, 770, 3, 2,
-    [ 2, 35, 55 ],
-    [ 2, 7, 11, 15 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  109
-Pair:  [* 22, 35, 770, 3, 2,
-    [ 10, 11, 14 ],
-    [ 5, 6, 7, 11 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  110
-Pair:  [* 22, 35, 770, 3, 3,
-    [ 2, 35, 55 ],
-    [ 2, 5, 7, 33 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  111
-Pair:  [* 1365, 1, 1365, 2, 2,
-    [ 3, 5, 7, 13 ],
-    [ 2, 3, 5, 7, 13 ]
-*]
-have two non-modular curves; comparing local points
-Step out of  112 :  112
-Pair:  [* 1995, 1, 1995, 2, 3,
-    [ 3, 5, 7, 19 ],
-    [ 2, 3, 5, 7, 19 ]
-*]
-have two non-modular curves; comparing local points
-candidate pairs considered:  112
-pairs excluded by local points checks:  0
-pairs remaining:  112
-
-Loading "Fp_isomorphism_check.m"
-Loading "AL_identifiers.m"
-Loading "quot_genus.m"
-Loading "genus_2_bielliptics_eqn_determined_PS_AH.m"
-Loading "genus_2_bielliptics_eqn_not_determined_PS_AH.m"
-Loading "models_db.m"
-Loading "quotients_of_hyperelliptic_models_plus_Molina_eqs.m"
-Loading "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_differe\
-nt_products_v2.m"
-Step out of  112 :  1
-Pair:  [* 26, 7, 1, 26, 2,
-    [ 182 ],
-    []
-*]
-Step out of  112 :  2
-Pair:  [* 26, 15, 1, 26, 2,
-    [ 6, 65 ],
-    []
-*]
-Step out of  112 :  3
-Pair:  [* 15, 2, 15, 14, 2,
-    [ 2 ],
-    [ 6, 7 ]
-*]
-Step out of  112 :  4
-Pair:  [* 15, 22, 1, 30, 2,
-    [ 6, 55 ],
-    [ 2 ]
-*]
-Step out of  112 :  5
-Pair:  [* 15, 34, 1, 30, 2,
-    [ 2, 255 ],
-    [ 2 ]
-*]
-Step out of  112 :  6
-Pair:  [* 35, 1, 35, 6, 3,
-    [],
-    [ 2, 15 ]
-*]
-Step out of  112 :  7
-Pair:  [* 35, 1, 35, 6, 2,
-    [ 5 ],
-    [ 2, 3, 5 ]
-*]
-Step out of  112 :  8
-Pair:  [* 39, 5, 1, 39, 2,
-    [ 3, 65 ],
-    [ 13 ]
-*]
-Step out of  112 :  9
-Pair:  [* 39, 5, 1, 39, 3,
-    [ 195 ],
-    []
-*]
-Step out of  112 :  10
-Pair:  [* 14, 15, 1, 42, 2,
-    [ 6, 35 ],
-    [ 3 ]
-*]
-Step out of  112 :  11
-Pair:  [* 14, 39, 1, 42, 2,
-    [ 3, 182 ],
-    [ 3 ]
-*]
-Step out of  112 :  12
-Pair:  [* 58, 3, 1, 58, 2,
-    [ 174 ],
-    [ 29 ]
-*]
-Step out of  112 :  13
-Pair:  [* 22, 3, 33, 10, 2,
-    [ 2 ],
-    [ 15, 33 ]
-*]
-Step out of  112 :  14
-Pair:  [* 6, 55, 1, 66, 2,
-    [ 11, 30 ],
-    [ 11 ]
-*]
-Step out of  112 :  15
-Pair:  [* 33, 2, 6, 55, 2,
-    [ 33 ],
-    [ 2, 165 ]
-*]
-Step out of  112 :  16
-Pair:  [* 33, 2, 22, 15, 2,
-    [ 3 ],
-    [ 5, 22 ]
-*]
-Step out of  112 :  17
-Pair:  [* 35, 3, 1, 70, 2,
-    [ 5, 21 ],
-    [ 2, 7 ]
-*]
-Step out of  112 :  18
-Pair:  [* 35, 3, 1, 70, 3,
-    [ 105 ],
-    [ 14 ]
-*]
-Step out of  112 :  19
-Pair:  [* 35, 6, 1, 70, 2,
-    [ 3, 5, 14 ],
-    [ 2, 7 ]
-*]
-Step out of  112 :  20
-Pair:  [* 14, 15, 1, 70, 2,
-    [ 10, 21 ],
-    [ 35 ]
-*]
-Step out of  112 :  21
-Pair:  [* 35, 2, 35, 6, 2,
-    [ 5, 14 ],
-    [ 2, 5, 21 ]
-*]
-Step out of  112 :  22
-Pair:  [* 39, 7, 1, 78, 2,
-    [ 3, 91 ],
-    [ 2, 13 ]
-*]
-Step out of  112 :  23
-Pair:  [* 39, 2, 39, 7, 2,
-    [ 3, 26 ],
-    [ 3, 91 ]
-*]
-Step out of  112 :  24
-Pair:  [* 39, 10, 1, 78, 2,
-    [ 2, 3, 65 ],
-    [ 2, 13 ]
-*]
-Step out of  112 :  25
-Pair:  [* 39, 2, 39, 10, 2,
-    [ 2, 13 ],
-    [ 2, 13, 15 ]
-*]
-Step out of  112 :  26
-Pair:  [* 39, 2, 39, 10, 2,
-    [ 3, 26 ],
-    [ 2, 3, 65 ]
-*]
-Step out of  112 :  27
-Pair:  [* 26, 3, 26, 21, 3,
-    [ 39 ],
-    [ 3, 182 ]
-*]
-Step out of  112 :  28
-Pair:  [* 26, 3, 26, 21, 2,
-    [ 3, 13 ],
-    [ 3, 13, 14 ]
-*]
-Step out of  112 :  29
-Pair:  [* 85, 1, 1, 170, 2,
-    [ 85 ],
-    [ 2, 5, 17 ]
-*]
-Step out of  112 :  30
-Pair:  [* 85, 3, 1, 85, 2,
-    [ 3, 85 ],
-    [ 5, 17 ]
-*]
-Step out of  112 :  31
-Pair:  [* 85, 1, 1, 255, 2,
-    [ 85 ],
-    [ 3, 5, 17 ]
-*]
-Step out of  112 :  32
-Pair:  [* 87, 2, 1, 87, 2,
-    [ 3, 58 ],
-    [ 29 ]
-*]
-Step out of  112 :  33
-Pair:  [* 93, 2, 1, 93, 2,
-    [ 2, 93 ],
-    [ 3, 31 ]
-*]
-Step out of  112 :  34
-Pair:  [* 93, 1, 1, 186, 2,
-    [ 93 ],
-    [ 2, 3, 31 ]
-*]
-Step out of  112 :  35
-Pair:  [* 93, 1, 93, 2, 2,
-    [ 93 ],
-    [ 2, 93 ]
-*]
-Step out of  112 :  36
-Pair:  [* 95, 3, 1, 95, 3,
-    [ 5, 57 ],
-    [ 19 ]
-*]
-Step out of  112 :  37
-Pair:  [* 51, 2, 6, 85, 2,
-    [ 51 ],
-    [ 6, 85 ]
-*]
-Step out of  112 :  38
-Pair:  [* 51, 2, 51, 10, 2,
-    [ 2, 17 ],
-    [ 2, 15, 17 ]
-*]
-Step out of  112 :  39
-Pair:  [* 35, 3, 35, 6, 2,
-    [ 5, 21 ],
-    [ 3, 5, 14 ]
-*]
-Step out of  112 :  40
-Pair:  [* 55, 2, 55, 3, 2,
-    [ 10, 11 ],
-    [ 3, 11 ]
-*]
-Step out of  112 :  41
-Pair:  [* 55, 2, 55, 3, 2,
-    [ 10, 11 ],
-    [ 11, 15 ]
-*]
-Step out of  112 :  42
-Pair:  [* 55, 2, 10, 33, 2,
-    [ 55 ],
-    [ 2, 165 ]
-*]
-Step out of  112 :  43
-Pair:  [* 22, 5, 10, 77, 2,
-    [ 11 ],
-    [ 10, 77 ]
-*]
-Step out of  112 :  44
-Pair:  [* 57, 2, 57, 7, 2,
-    [ 3, 38 ],
-    [ 3, 133 ]
-*]
-Step out of  112 :  45
-Pair:  [* 115, 1, 1, 230, 2,
-    [ 115 ],
-    [ 2, 5, 23 ]
-*]
-Step out of  112 :  46
-Pair:  [* 115, 1, 115, 2, 2,
-    [ 115 ],
-    [ 2, 115 ]
-*]
-Step out of  112 :  47
-Pair:  [* 115, 2, 1, 115, 2,
-    [ 2, 115 ],
-    [ 5, 23 ]
-*]
-Step out of  112 :  48
-Pair:  [* 65, 2, 10, 39, 2,
-    [ 5, 13 ],
-    [ 5, 78 ]
-*]
-Step out of  112 :  49
-Pair:  [* 46, 3, 6, 115, 2,
-    [ 2, 23 ],
-    [ 2, 3, 115 ]
-*]
-Step out of  112 :  50
-Pair:  [* 69, 2, 6, 115, 2,
-    [ 3, 23 ],
-    [ 2, 3, 115 ]
-*]
-Step out of  112 :  51
-Pair:  [* 46, 3, 6, 161, 2,
-    [ 2, 23 ],
-    [ 2, 3, 161 ]
-*]
-Step out of  112 :  52
-Pair:  [* 69, 2, 6, 161, 2,
-    [ 3, 23 ],
-    [ 2, 3, 161 ]
-*]
-Step out of  112 :  53
-Pair:  [* 142, 1, 142, 3, 3,
-    [ 71 ],
-    [ 6, 71 ]
-*]
-Step out of  112 :  54
-Pair:  [* 145, 1, 145, 3, 2,
-    [ 5, 29 ],
-    [ 3, 5, 29 ]
-*]
-Step out of  112 :  55
-Pair:  [* 77, 2, 22, 21, 2,
-    [ 7, 11 ],
-    [ 2, 3, 11 ]
-*]
-Step out of  112 :  56
-Pair:  [* 15, 22, 1, 165, 2,
-    [ 2, 11, 15 ],
-    [ 3, 5, 11 ]
-*]
-Step out of  112 :  57
-Pair:  [* 33, 10, 1, 165, 2,
-    [ 2, 5, 33 ],
-    [ 3, 5, 11 ]
-*]
-Step out of  112 :  58
-Pair:  [* 55, 3, 15, 22, 2,
-    [ 15, 33 ],
-    [ 3, 10, 11 ]
-*]
-Step out of  112 :  59
-Pair:  [* 55, 3, 15, 22, 2,
-    [ 3, 55 ],
-    [ 2, 11, 15 ]
-*]
-Step out of  112 :  60
-Pair:  [* 55, 3, 33, 10, 2,
-    [ 15, 33 ],
-    [ 3, 5, 22 ]
-*]
-Step out of  112 :  61
-Pair:  [* 55, 3, 33, 10, 2,
-    [ 3, 55 ],
-    [ 2, 5, 33 ]
-*]
-Step out of  112 :  62
-Pair:  [* 177, 1, 177, 2, 2,
-    [ 3, 59 ],
-    [ 2, 3, 59 ]
-*]
-Step out of  112 :  63
-Pair:  [* 26, 7, 26, 15, 2,
-    [ 182 ],
-    [ 6, 65 ]
-*]
-Step out of  112 :  64
-Pair:  [* 91, 2, 91, 5, 3,
-    [ 7, 26 ],
-    [ 7, 65 ]
-*]
-Step out of  112 :  65
-Pair:  [* 10, 19, 38, 15, 3,
-    [ 95 ],
-    [ 3, 10, 38 ]
-*]
-Step out of  112 :  66
-Pair:  [* 38, 5, 38, 15, 2,
-    [ 2, 95 ],
-    [ 2, 5, 57 ]
-*]
-Step out of  112 :  67
-Pair:  [* 38, 5, 10, 57, 2,
-    [ 2, 19 ],
-    [ 2, 285 ]
-*]
-Step out of  112 :  68
-Pair:  [* 65, 3, 15, 26, 2,
-    [ 5, 13 ],
-    [ 3, 5, 26 ]
-*]
-Step out of  112 :  69
-Pair:  [* 65, 3, 39, 10, 2,
-    [ 5, 13 ],
-    [ 3, 10, 13 ]
-*]
-Step out of  112 :  70
-Pair:  [* 205, 1, 205, 3, 3,
-    [ 5, 41 ],
-    [ 3, 5, 41 ]
-*]
-Step out of  112 :  71
-Pair:  [* 21, 10, 21, 22, 2,
-    [ 14, 15 ],
-    [ 6, 154 ]
-*]
-Step out of  112 :  72
-Pair:  [* 14, 15, 14, 39, 2,
-    [ 6, 35 ],
-    [ 3, 182 ]
-*]
-Step out of  112 :  73
-Pair:  [* 21, 10, 210, 11, 2,
-    [ 7, 15 ],
-    [ 2, 7, 165 ]
-*]
-Step out of  112 :  74
-Pair:  [* 213, 1, 213, 2, 2,
-    [ 3, 71 ],
-    [ 2, 3, 71 ]
-*]
-Step out of  112 :  75
-Pair:  [* 74, 3, 74, 5, 2,
-    [ 2, 111 ],
-    [ 2, 185 ]
-*]
-Step out of  112 :  76
-Pair:  [* 46, 5, 10, 69, 4,
-    [ 46 ],
-    [ 5, 138 ]
-*]
-Step out of  112 :  77
-Pair:  [* 46, 5, 10, 69, 2,
-    [ 2, 23 ],
-    [ 2, 5, 69 ]
-*]
-Step out of  112 :  78
-Pair:  [* 46, 5, 10, 69, 2,
-    [ 10, 46 ],
-    [ 5, 6, 23 ]
-*]
-Step out of  112 :  79
-Pair:  [* 115, 2, 10, 69, 2,
-    [ 5, 23 ],
-    [ 2, 5, 69 ]
-*]
-Step out of  112 :  80
-Pair:  [* 77, 3, 21, 22, 2,
-    [ 7, 11 ],
-    [ 3, 7, 22 ]
-*]
-Step out of  112 :  81
-Pair:  [* 33, 7, 21, 22, 5,
-    [ 33 ],
-    [ 7, 22 ]
-*]
-Step out of  112 :  82
-Pair:  [* 33, 7, 21, 22, 3,
-    [ 21, 33 ],
-    [ 2, 7, 11 ]
-*]
-Step out of  112 :  83
-Pair:  [* 33, 7, 21, 22, 2,
-    [ 3, 11 ],
-    [ 3, 7, 22 ]
-*]
-Step out of  112 :  84
-Pair:  [* 85, 3, 15, 34, 3,
-    [ 5, 17 ],
-    [ 3, 5, 34 ]
-*]
-Step out of  112 :  85
-Pair:  [* 51, 5, 51, 10, 2,
-    [ 15, 51 ],
-    [ 6, 10, 34 ]
-*]
-Step out of  112 :  86
-Pair:  [* 267, 1, 267, 2, 3,
-    [ 3, 89 ],
-    [ 2, 3, 89 ]
-*]
-Step out of  112 :  87
-Pair:  [* 39, 7, 39, 10, 2,
-    [ 3, 91 ],
-    [ 2, 3, 65 ]
-*]
-Step out of  112 :  88
-Pair:  [* 39, 7, 21, 26, 3,
-    [ 7, 39 ],
-    [ 2, 13, 21 ]
-*]
-Step out of  112 :  89
-Pair:  [* 39, 7, 21, 26, 2,
-    [ 21, 39 ],
-    [ 6, 7, 13 ]
-*]
-Step out of  112 :  90
-Pair:  [* 33, 10, 33, 14, 3,
-    [ 6, 55 ],
-    [ 6, 154 ]
-*]
-Step out of  112 :  91
-Pair:  [* 15, 22, 15, 34, 2,
-    [ 6, 55 ],
-    [ 2, 255 ]
-*]
-Step out of  112 :  92
-Pair:  [* 15, 26, 390, 7, 2,
-    [ 3, 5, 13 ],
-    [ 2, 3, 5, 91 ]
-*]
-Step out of  112 :  93
-Pair:  [* 6, 65, 390, 7, 2,
-    [ 2, 3, 13 ],
-    [ 2, 3, 5, 91 ]
-*]
-Step out of  112 :  94
-Pair:  [* 14, 33, 462, 5, 2,
-    [ 2, 7, 11 ],
-    [ 2, 7, 165 ]
-*]
-Step out of  112 :  95
-Pair:  [* 22, 21, 462, 5, 2,
-    [ 6, 11, 14 ],
-    [ 3, 7, 10, 11 ]
-*]
-Step out of  112 :  96
-Pair:  [* 21, 23, 21, 46, 2,
-    [ 3, 7, 23 ],
-    [ 2, 3, 7, 23 ]
-*]
-Step out of  112 :  97
-Pair:  [* 6, 91, 546, 5, 2,
-    [ 2, 3, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-Step out of  112 :  98
-Pair:  [* 14, 39, 546, 5, 2,
-    [ 2, 7, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-Step out of  112 :  99
-Pair:  [* 26, 21, 546, 5, 2,
-    [ 2, 7, 13 ],
-    [ 2, 3, 13, 35 ]
-*]
-Step out of  112 :  100
-Pair:  [* 21, 26, 546, 5, 2,
-    [ 3, 7, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-Step out of  112 :  101
-Pair:  [* 15, 37, 15, 74, 2,
-    [ 3, 5, 37 ],
-    [ 2, 3, 5, 37 ]
-*]
-Step out of  112 :  102
-Pair:  [* 10, 57, 570, 7, 2,
-    [ 2, 5, 19 ],
-    [ 2, 3, 5, 133 ]
-*]
-Step out of  112 :  103
-Pair:  [* 35, 17, 35, 34, 3,
-    [ 5, 7, 17 ],
-    [ 2, 5, 7, 17 ]
-*]
-Step out of  112 :  104
-Pair:  [* 6, 115, 6, 161, 2,
-    [ 2, 3, 115 ],
-    [ 2, 3, 161 ]
-*]
-Step out of  112 :  105
-Pair:  [* 14, 51, 14, 85, 3,
-    [ 6, 7, 17 ],
-    [ 7, 10, 17 ]
-*]
-Step out of  112 :  106
-Pair:  [* 14, 51, 14, 85, 2,
-    [ 2, 7, 51 ],
-    [ 2, 7, 85 ]
-*]
-Step out of  112 :  107
-Pair:  [* 10, 77, 770, 3, 2,
-    [ 5, 14, 22 ],
-    [ 5, 6, 7, 11 ]
-*]
-Step out of  112 :  108
-Pair:  [* 10, 77, 770, 3, 2,
-    [ 2, 35, 55 ],
-    [ 2, 7, 11, 15 ]
-*]
-Step out of  112 :  109
-Pair:  [* 22, 35, 770, 3, 2,
-    [ 10, 11, 14 ],
-    [ 5, 6, 7, 11 ]
-*]
-Step out of  112 :  110
-Pair:  [* 22, 35, 770, 3, 3,
-    [ 2, 35, 55 ],
-    [ 2, 5, 7, 33 ]
-*]
-Step out of  112 :  111
-Pair:  [* 1365, 1, 1365, 2, 2,
-    [ 3, 5, 7, 13 ],
-    [ 2, 3, 5, 7, 13 ]
-*]
-Step out of  112 :  112
-Pair:  [* 1995, 1, 1995, 2, 3,
-    [ 3, 5, 7, 19 ],
-    [ 2, 3, 5, 7, 19 ]
-*]
-candidate pairs considered:  112
-pairs excluded by F_p-isomorphism checks:  0
-pairs remaining:  112
-
-Loading "final_test_q_isomorphism.m"
-Loading "AL_identifiers.m"
-Loading "quot_genus.m"
-Loading "genus_2_bielliptics_eqn_determined_PS_AH.m"
-Loading "genus_2_bielliptics_eqn_not_determined_PS_AH.m"
-Loading "models_db.m"
-Loading "quotients_of_hyperelliptic_models_plus_Molina_eqs.m"
-Loading "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_differe\
-nt_products_v3.m"
-Loading "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_modular\
-_different_levels_v1.m"
-Pair:  [* 26, 7, 1, 26, 2,
-    [ 182 ],
-    []
-*]
-  ISOMORPHIC over Q
-Pair:  [* 26, 15, 1, 26, 2,
-    [ 6, 65 ],
-    []
-*]
-  ISOMORPHIC over Q
-Pair:  [* 15, 2, 15, 14, 2,
-    [ 2 ],
-    [ 6, 7 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 15, 22, 1, 30, 2,
-    [ 6, 55 ],
-    [ 2 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 15, 34, 1, 30, 2,
-    [ 2, 255 ],
-    [ 2 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 35, 1, 35, 6, 3,
-    [],
-    [ 2, 15 ]
-*]
-  no models, no comparison made
-Pair:  [* 35, 1, 35, 6, 2,
-    [ 5 ],
-    [ 2, 3, 5 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 5, 1, 39, 2,
-    [ 3, 65 ],
-    [ 13 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 5, 1, 39, 3,
-    [ 195 ],
-    []
-*]
-  no models, no comparison made
-Pair:  [* 14, 15, 1, 42, 2,
-    [ 6, 35 ],
-    [ 3 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 14, 39, 1, 42, 2,
-    [ 3, 182 ],
-    [ 3 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 58, 3, 1, 58, 2,
-    [ 174 ],
-    [ 29 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 22, 3, 33, 10, 2,
-    [ 2 ],
-    [ 15, 33 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 6, 55, 1, 66, 2,
-    [ 11, 30 ],
-    [ 11 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 33, 2, 6, 55, 2,
-    [ 33 ],
-    [ 2, 165 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 33, 2, 22, 15, 2,
-    [ 3 ],
-    [ 5, 22 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 35, 3, 1, 70, 2,
-    [ 5, 21 ],
-    [ 2, 7 ]
-*]
-  no models, no comparison made
-Pair:  [* 35, 3, 1, 70, 3,
-    [ 105 ],
-    [ 14 ]
-*]
-  no models, no comparison made
-Pair:  [* 35, 6, 1, 70, 2,
-    [ 3, 5, 14 ],
-    [ 2, 7 ]
-*]
-  no models, no comparison made
-Pair:  [* 14, 15, 1, 70, 2,
-    [ 10, 21 ],
-    [ 35 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 35, 2, 35, 6, 2,
-    [ 5, 14 ],
-    [ 2, 5, 21 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 7, 1, 78, 2,
-    [ 3, 91 ],
-    [ 2, 13 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 2, 39, 7, 2,
-    [ 3, 26 ],
-    [ 3, 91 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 10, 1, 78, 2,
-    [ 2, 3, 65 ],
-    [ 2, 13 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 2, 39, 10, 2,
-    [ 2, 13 ],
-    [ 2, 13, 15 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 2, 39, 10, 2,
-    [ 3, 26 ],
-    [ 2, 3, 65 ]
-*]
-  no models, no comparison made
-Pair:  [* 26, 3, 26, 21, 3,
-    [ 39 ],
-    [ 3, 182 ]
-*]
-  no models, no comparison made
-Pair:  [* 26, 3, 26, 21, 2,
-    [ 3, 13 ],
-    [ 3, 13, 14 ]
-*]
-  no models, no comparison made
-Pair:  [* 85, 1, 1, 170, 2,
-    [ 85 ],
-    [ 2, 5, 17 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 85, 3, 1, 85, 2,
-    [ 3, 85 ],
-    [ 5, 17 ]
-*]
-  no models, no comparison made
-Pair:  [* 85, 1, 1, 255, 2,
-    [ 85 ],
-    [ 3, 5, 17 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 87, 2, 1, 87, 2,
-    [ 3, 58 ],
-    [ 29 ]
-*]
-  no models, no comparison made
-Pair:  [* 93, 2, 1, 93, 2,
-    [ 2, 93 ],
-    [ 3, 31 ]
-*]
-  no models, no comparison made
-Pair:  [* 93, 1, 1, 186, 2,
-    [ 93 ],
-    [ 2, 3, 31 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 93, 1, 93, 2, 2,
-    [ 93 ],
-    [ 2, 93 ]
-*]
-  no models, no comparison made
-Pair:  [* 95, 3, 1, 95, 3,
-    [ 5, 57 ],
-    [ 19 ]
-*]
-  no models, no comparison made
-Pair:  [* 51, 2, 6, 85, 2,
-    [ 51 ],
-    [ 6, 85 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 51, 2, 51, 10, 2,
-    [ 2, 17 ],
-    [ 2, 15, 17 ]
-*]
-  no models, no comparison made
-Pair:  [* 35, 3, 35, 6, 2,
-    [ 5, 21 ],
-    [ 3, 5, 14 ]
-*]
-  no models, no comparison made
-Pair:  [* 55, 2, 55, 3, 2,
-    [ 10, 11 ],
-    [ 3, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 55, 2, 55, 3, 2,
-    [ 10, 11 ],
-    [ 11, 15 ]
-*]
-  no models, no comparison made
-Pair:  [* 55, 2, 10, 33, 2,
-    [ 55 ],
-    [ 2, 165 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 22, 5, 10, 77, 2,
-    [ 11 ],
-    [ 10, 77 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 57, 2, 57, 7, 2,
-    [ 3, 38 ],
-    [ 3, 133 ]
-*]
-  no models, no comparison made
-Pair:  [* 115, 1, 1, 230, 2,
-    [ 115 ],
-    [ 2, 5, 23 ]
-*]
-  no models, no comparison made
-Pair:  [* 115, 1, 115, 2, 2,
-    [ 115 ],
-    [ 2, 115 ]
-*]
-  no models, no comparison made
-Pair:  [* 115, 2, 1, 115, 2,
-    [ 2, 115 ],
-    [ 5, 23 ]
-*]
-  no models, no comparison made
-Pair:  [* 65, 2, 10, 39, 2,
-    [ 5, 13 ],
-    [ 5, 78 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 46, 3, 6, 115, 2,
-    [ 2, 23 ],
-    [ 2, 3, 115 ]
-*]
-  no models, no comparison made
-Pair:  [* 69, 2, 6, 115, 2,
-    [ 3, 23 ],
-    [ 2, 3, 115 ]
-*]
-  no models, no comparison made
-Pair:  [* 46, 3, 6, 161, 2,
-    [ 2, 23 ],
-    [ 2, 3, 161 ]
-*]
-  no models, no comparison made
-Pair:  [* 69, 2, 6, 161, 2,
-    [ 3, 23 ],
-    [ 2, 3, 161 ]
-*]
-  no models, no comparison made
-Pair:  [* 142, 1, 142, 3, 3,
-    [ 71 ],
-    [ 6, 71 ]
-*]
-  no models, no comparison made
-Pair:  [* 145, 1, 145, 3, 2,
-    [ 5, 29 ],
-    [ 3, 5, 29 ]
-*]
-  no models, no comparison made
-Pair:  [* 77, 2, 22, 21, 2,
-    [ 7, 11 ],
-    [ 2, 3, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 15, 22, 1, 165, 2,
-    [ 2, 11, 15 ],
-    [ 3, 5, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 33, 10, 1, 165, 2,
-    [ 2, 5, 33 ],
-    [ 3, 5, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 55, 3, 15, 22, 2,
-    [ 15, 33 ],
-    [ 3, 10, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 55, 3, 15, 22, 2,
-    [ 3, 55 ],
-    [ 2, 11, 15 ]
-*]
-  no models, no comparison made
-Pair:  [* 55, 3, 33, 10, 2,
-    [ 15, 33 ],
-    [ 3, 5, 22 ]
-*]
-  no models, no comparison made
-Pair:  [* 55, 3, 33, 10, 2,
-    [ 3, 55 ],
-    [ 2, 5, 33 ]
-*]
-  no models, no comparison made
-Pair:  [* 177, 1, 177, 2, 2,
-    [ 3, 59 ],
-    [ 2, 3, 59 ]
-*]
-  no models, no comparison made
-Pair:  [* 26, 7, 26, 15, 2,
-    [ 182 ],
-    [ 6, 65 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 91, 2, 91, 5, 3,
-    [ 7, 26 ],
-    [ 7, 65 ]
-*]
-  no models, no comparison made
-Pair:  [* 10, 19, 38, 15, 3,
-    [ 95 ],
-    [ 3, 10, 38 ]
-*]
-  no models, no comparison made
-Pair:  [* 38, 5, 38, 15, 2,
-    [ 2, 95 ],
-    [ 2, 5, 57 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 38, 5, 10, 57, 2,
-    [ 2, 19 ],
-    [ 2, 285 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 65, 3, 15, 26, 2,
-    [ 5, 13 ],
-    [ 3, 5, 26 ]
-*]
-  no models, no comparison made
-Pair:  [* 65, 3, 39, 10, 2,
-    [ 5, 13 ],
-    [ 3, 10, 13 ]
-*]
-  no models, no comparison made
-Pair:  [* 205, 1, 205, 3, 3,
-    [ 5, 41 ],
-    [ 3, 5, 41 ]
-*]
-  no models, no comparison made
-Pair:  [* 21, 10, 21, 22, 2,
-    [ 14, 15 ],
-    [ 6, 154 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 14, 15, 14, 39, 2,
-    [ 6, 35 ],
-    [ 3, 182 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 21, 10, 210, 11, 2,
-    [ 7, 15 ],
-    [ 2, 7, 165 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 213, 1, 213, 2, 2,
-    [ 3, 71 ],
-    [ 2, 3, 71 ]
-*]
-  no models, no comparison made
-Pair:  [* 74, 3, 74, 5, 2,
-    [ 2, 111 ],
-    [ 2, 185 ]
-*]
-  no models, no comparison made
-Pair:  [* 46, 5, 10, 69, 4,
-    [ 46 ],
-    [ 5, 138 ]
-*]
-  no models, no comparison made
-Pair:  [* 46, 5, 10, 69, 2,
-    [ 2, 23 ],
-    [ 2, 5, 69 ]
-*]
-  no models, no comparison made
-Pair:  [* 46, 5, 10, 69, 2,
-    [ 10, 46 ],
-    [ 5, 6, 23 ]
-*]
-  no models, no comparison made
-Pair:  [* 115, 2, 10, 69, 2,
-    [ 5, 23 ],
-    [ 2, 5, 69 ]
-*]
-  no models, no comparison made
-Pair:  [* 77, 3, 21, 22, 2,
-    [ 7, 11 ],
-    [ 3, 7, 22 ]
-*]
-  no models, no comparison made
-Pair:  [* 33, 7, 21, 22, 5,
-    [ 33 ],
-    [ 7, 22 ]
-*]
-  no models, no comparison made
-Pair:  [* 33, 7, 21, 22, 3,
-    [ 21, 33 ],
-    [ 2, 7, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 33, 7, 21, 22, 2,
-    [ 3, 11 ],
-    [ 3, 7, 22 ]
-*]
-  no models, no comparison made
-Pair:  [* 85, 3, 15, 34, 3,
-    [ 5, 17 ],
-    [ 3, 5, 34 ]
-*]
-  no models, no comparison made
-Pair:  [* 51, 5, 51, 10, 2,
-    [ 15, 51 ],
-    [ 6, 10, 34 ]
-*]
-  no models, no comparison made
-Pair:  [* 267, 1, 267, 2, 3,
-    [ 3, 89 ],
-    [ 2, 3, 89 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 7, 39, 10, 2,
-    [ 3, 91 ],
-    [ 2, 3, 65 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 7, 21, 26, 3,
-    [ 7, 39 ],
-    [ 2, 13, 21 ]
-*]
-  no models, no comparison made
-Pair:  [* 39, 7, 21, 26, 2,
-    [ 21, 39 ],
-    [ 6, 7, 13 ]
-*]
-  no models, no comparison made
-Pair:  [* 33, 10, 33, 14, 3,
-    [ 6, 55 ],
-    [ 6, 154 ]
-*]
-  no models, no comparison made
-Pair:  [* 15, 22, 15, 34, 2,
-    [ 6, 55 ],
-    [ 2, 255 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 15, 26, 390, 7, 2,
-    [ 3, 5, 13 ],
-    [ 2, 3, 5, 91 ]
-*]
-  no models, no comparison made
-Pair:  [* 6, 65, 390, 7, 2,
-    [ 2, 3, 13 ],
-    [ 2, 3, 5, 91 ]
-*]
-  no models, no comparison made
-Pair:  [* 14, 33, 462, 5, 2,
-    [ 2, 7, 11 ],
-    [ 2, 7, 165 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 22, 21, 462, 5, 2,
-    [ 6, 11, 14 ],
-    [ 3, 7, 10, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 21, 23, 21, 46, 2,
-    [ 3, 7, 23 ],
-    [ 2, 3, 7, 23 ]
-*]
-  no models, no comparison made
-Pair:  [* 6, 91, 546, 5, 2,
-    [ 2, 3, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-  no models, no comparison made
-Pair:  [* 14, 39, 546, 5, 2,
-    [ 2, 7, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-  no models, no comparison made
-Pair:  [* 26, 21, 546, 5, 2,
-    [ 2, 7, 13 ],
-    [ 2, 3, 13, 35 ]
-*]
-  no models, no comparison made
-Pair:  [* 21, 26, 546, 5, 2,
-    [ 3, 7, 13 ],
-    [ 2, 3, 7, 65 ]
-*]
-  no models, no comparison made
-Pair:  [* 15, 37, 15, 74, 2,
-    [ 3, 5, 37 ],
-    [ 2, 3, 5, 37 ]
-*]
-  no models, no comparison made
-Pair:  [* 10, 57, 570, 7, 2,
-    [ 2, 5, 19 ],
-    [ 2, 3, 5, 133 ]
-*]
-  no models, no comparison made
-Pair:  [* 35, 17, 35, 34, 3,
-    [ 5, 7, 17 ],
-    [ 2, 5, 7, 17 ]
-*]
-  no models, no comparison made
-Pair:  [* 6, 115, 6, 161, 2,
-    [ 2, 3, 115 ],
-    [ 2, 3, 161 ]
-*]
-  no models, no comparison made
-Pair:  [* 14, 51, 14, 85, 3,
-    [ 6, 7, 17 ],
-    [ 7, 10, 17 ]
-*]
-  no models, no comparison made
-Pair:  [* 14, 51, 14, 85, 2,
-    [ 2, 7, 51 ],
-    [ 2, 7, 85 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 10, 77, 770, 3, 2,
-    [ 5, 14, 22 ],
-    [ 5, 6, 7, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 10, 77, 770, 3, 2,
-    [ 2, 35, 55 ],
-    [ 2, 7, 11, 15 ]
-*]
-  no models, no comparison made
-Pair:  [* 22, 35, 770, 3, 2,
-    [ 10, 11, 14 ],
-    [ 5, 6, 7, 11 ]
-*]
-  no models, no comparison made
-Pair:  [* 22, 35, 770, 3, 3,
-    [ 2, 35, 55 ],
-    [ 2, 5, 7, 33 ]
-*]
-  no models, no comparison made
-Pair:  [* 1365, 1, 1365, 2, 2,
-    [ 3, 5, 7, 13 ],
-    [ 2, 3, 5, 7, 13 ]
-*]
-  no models, no comparison made
-Pair:  [* 1995, 1, 1995, 2, 3,
-    [ 3, 5, 7, 19 ],
-    [ 2, 3, 5, 7, 19 ]
-*]
-  no models, no comparison made
-Pair:  [* 1, 46, 1, 69, 2,
-    [ 46 ],
-    [ 69 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 57, 1, 114, 2,
-    [ 57 ],
-    [ 3, 38 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 58, 1, 174, 3,
-    [ 58 ],
-    [ 2, 87 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 67, 1, 134, 2,
-    [ 67 ],
-    [ 2, 67 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 73, 1, 146, 2,
-    [ 73 ],
-    [ 2, 73 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 74, 1, 111, 2,
-    [ 74 ],
-    [ 111 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 93, 1, 186, 2,
-    [ 3, 31 ],
-    [ 2, 3, 31 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 93, 1, 186, 4,
-    [ 93 ],
-    [ 3, 62 ]
-*]
-  ISOMORPHIC over Q (rough_work.tex), skipped
-Pair:  [* 1, 97, 1, 194, 3,
-    [ 97 ],
-    [ 2, 97 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 103, 1, 206, 2,
-    [ 103 ],
-    [ 2, 103 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 115, 1, 230, 2,
-    [ 5, 23 ],
-    [ 2, 5, 23 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 130, 1, 195, 3,
-    [ 5, 26 ],
-    [ 5, 39 ]
-*]
-  NOT isomorphic over Q
-Pair:  [* 1, 133, 1, 266, 2,
-    [ 7, 19 ],
-    [ 2, 7, 19 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 170, 1, 255, 2,
-    [ 2, 5, 17 ],
-    [ 3, 5, 17 ]
-*]
-  ISOMORPHIC over Q
-Pair:  [* 1, 170, 1, 255, 4,
-    [ 5, 34 ],
-    [ 5, 51 ]
-*]
-  ISOMORPHIC over Q
-
-genus >= 2 pairs considered:  127
-  isomorphic over Q:  43
-  NOT isomorphic   :  1
-  unsure           :  83
-
 Loading "genus1_label_comparison.m"
 Loading "AL_identifiers.m"
 Loading "quot_genus.m"
@@ -24315,5 +22404,1916 @@ genus 1 pairs examined:  887
   ISOMORPHIC over Q, with a Shimura curve:  598
   NOT isomorphic over Q:  154
   inconclusive         :  96
+
+Loading "local_points_check.m"
+Loading "existence_of_Qp_points.m"
+Loading "dual_graphs_level.m"
+Loading "dual_graphs_discriminant.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "counting_points.m"
+Loading "tracesALL.m"
+Loading "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_differe\
+nt_products_v1.m"
+Step out of  112 :  1
+Pair:  [* 26, 7, 1, 26, 2,
+    [ 182 ],
+    []
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  2
+Pair:  [* 26, 15, 1, 26, 2,
+    [ 6, 65 ],
+    []
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  3
+Pair:  [* 15, 2, 15, 14, 2,
+    [ 2 ],
+    [ 6, 7 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  4
+Pair:  [* 15, 22, 1, 30, 2,
+    [ 6, 55 ],
+    [ 2 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  5
+Pair:  [* 15, 34, 1, 30, 2,
+    [ 2, 255 ],
+    [ 2 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  6
+Pair:  [* 35, 1, 35, 6, 3,
+    [],
+    [ 2, 15 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  7
+Pair:  [* 35, 1, 35, 6, 2,
+    [ 5 ],
+    [ 2, 3, 5 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  8
+Pair:  [* 39, 5, 1, 39, 2,
+    [ 3, 65 ],
+    [ 13 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  9
+Pair:  [* 39, 5, 1, 39, 3,
+    [ 195 ],
+    []
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  10
+Pair:  [* 14, 15, 1, 42, 2,
+    [ 6, 35 ],
+    [ 3 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  11
+Pair:  [* 14, 39, 1, 42, 2,
+    [ 3, 182 ],
+    [ 3 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  12
+Pair:  [* 58, 3, 1, 58, 2,
+    [ 174 ],
+    [ 29 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  13
+Pair:  [* 22, 3, 33, 10, 2,
+    [ 2 ],
+    [ 15, 33 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  14
+Pair:  [* 6, 55, 1, 66, 2,
+    [ 11, 30 ],
+    [ 11 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  15
+Pair:  [* 33, 2, 6, 55, 2,
+    [ 33 ],
+    [ 2, 165 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  16
+Pair:  [* 33, 2, 22, 15, 2,
+    [ 3 ],
+    [ 5, 22 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  17
+Pair:  [* 35, 3, 1, 70, 2,
+    [ 5, 21 ],
+    [ 2, 7 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  18
+Pair:  [* 35, 3, 1, 70, 3,
+    [ 105 ],
+    [ 14 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  19
+Pair:  [* 35, 6, 1, 70, 2,
+    [ 3, 5, 14 ],
+    [ 2, 7 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  20
+Pair:  [* 14, 15, 1, 70, 2,
+    [ 10, 21 ],
+    [ 35 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  21
+Pair:  [* 35, 2, 35, 6, 2,
+    [ 5, 14 ],
+    [ 2, 5, 21 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  22
+Pair:  [* 39, 7, 1, 78, 2,
+    [ 3, 91 ],
+    [ 2, 13 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  23
+Pair:  [* 39, 2, 39, 7, 2,
+    [ 3, 26 ],
+    [ 3, 91 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  24
+Pair:  [* 39, 10, 1, 78, 2,
+    [ 2, 3, 65 ],
+    [ 2, 13 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  25
+Pair:  [* 39, 2, 39, 10, 2,
+    [ 2, 13 ],
+    [ 2, 13, 15 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  26
+Pair:  [* 39, 2, 39, 10, 2,
+    [ 3, 26 ],
+    [ 2, 3, 65 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  27
+Pair:  [* 26, 3, 26, 21, 3,
+    [ 39 ],
+    [ 3, 182 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  28
+Pair:  [* 26, 3, 26, 21, 2,
+    [ 3, 13 ],
+    [ 3, 13, 14 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  29
+Pair:  [* 85, 1, 1, 170, 2,
+    [ 85 ],
+    [ 2, 5, 17 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  30
+Pair:  [* 85, 3, 1, 85, 2,
+    [ 3, 85 ],
+    [ 5, 17 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  31
+Pair:  [* 85, 1, 1, 255, 2,
+    [ 85 ],
+    [ 3, 5, 17 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  32
+Pair:  [* 87, 2, 1, 87, 2,
+    [ 3, 58 ],
+    [ 29 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  33
+Pair:  [* 93, 2, 1, 93, 2,
+    [ 2, 93 ],
+    [ 3, 31 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  34
+Pair:  [* 93, 1, 1, 186, 2,
+    [ 93 ],
+    [ 2, 3, 31 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  35
+Pair:  [* 93, 1, 93, 2, 2,
+    [ 93 ],
+    [ 2, 93 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  36
+Pair:  [* 95, 3, 1, 95, 3,
+    [ 5, 57 ],
+    [ 19 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  37
+Pair:  [* 51, 2, 6, 85, 2,
+    [ 51 ],
+    [ 6, 85 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  38
+Pair:  [* 51, 2, 51, 10, 2,
+    [ 2, 17 ],
+    [ 2, 15, 17 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  39
+Pair:  [* 35, 3, 35, 6, 2,
+    [ 5, 21 ],
+    [ 3, 5, 14 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  40
+Pair:  [* 55, 2, 55, 3, 2,
+    [ 10, 11 ],
+    [ 3, 11 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  41
+Pair:  [* 55, 2, 55, 3, 2,
+    [ 10, 11 ],
+    [ 11, 15 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  42
+Pair:  [* 55, 2, 10, 33, 2,
+    [ 55 ],
+    [ 2, 165 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  43
+Pair:  [* 22, 5, 10, 77, 2,
+    [ 11 ],
+    [ 10, 77 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  44
+Pair:  [* 57, 2, 57, 7, 2,
+    [ 3, 38 ],
+    [ 3, 133 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  45
+Pair:  [* 115, 1, 1, 230, 2,
+    [ 115 ],
+    [ 2, 5, 23 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  46
+Pair:  [* 115, 1, 115, 2, 2,
+    [ 115 ],
+    [ 2, 115 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  47
+Pair:  [* 115, 2, 1, 115, 2,
+    [ 2, 115 ],
+    [ 5, 23 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  48
+Pair:  [* 65, 2, 10, 39, 2,
+    [ 5, 13 ],
+    [ 5, 78 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  49
+Pair:  [* 46, 3, 6, 115, 2,
+    [ 2, 23 ],
+    [ 2, 3, 115 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  50
+Pair:  [* 69, 2, 6, 115, 2,
+    [ 3, 23 ],
+    [ 2, 3, 115 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  51
+Pair:  [* 46, 3, 6, 161, 2,
+    [ 2, 23 ],
+    [ 2, 3, 161 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  52
+Pair:  [* 69, 2, 6, 161, 2,
+    [ 3, 23 ],
+    [ 2, 3, 161 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  53
+Pair:  [* 142, 1, 142, 3, 3,
+    [ 71 ],
+    [ 6, 71 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  54
+Pair:  [* 145, 1, 145, 3, 2,
+    [ 5, 29 ],
+    [ 3, 5, 29 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  55
+Pair:  [* 77, 2, 22, 21, 2,
+    [ 7, 11 ],
+    [ 2, 3, 11 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  56
+Pair:  [* 15, 22, 1, 165, 2,
+    [ 2, 11, 15 ],
+    [ 3, 5, 11 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  57
+Pair:  [* 33, 10, 1, 165, 2,
+    [ 2, 5, 33 ],
+    [ 3, 5, 11 ]
+*]
+have one modular curve and one non-modular curve; checking local points
+Step out of  112 :  58
+Pair:  [* 55, 3, 15, 22, 2,
+    [ 15, 33 ],
+    [ 3, 10, 11 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  59
+Pair:  [* 55, 3, 15, 22, 2,
+    [ 3, 55 ],
+    [ 2, 11, 15 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  60
+Pair:  [* 55, 3, 33, 10, 2,
+    [ 15, 33 ],
+    [ 3, 5, 22 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  61
+Pair:  [* 55, 3, 33, 10, 2,
+    [ 3, 55 ],
+    [ 2, 5, 33 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  62
+Pair:  [* 177, 1, 177, 2, 2,
+    [ 3, 59 ],
+    [ 2, 3, 59 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  63
+Pair:  [* 26, 7, 26, 15, 2,
+    [ 182 ],
+    [ 6, 65 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  64
+Pair:  [* 91, 2, 91, 5, 3,
+    [ 7, 26 ],
+    [ 7, 65 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  65
+Pair:  [* 10, 19, 38, 15, 3,
+    [ 95 ],
+    [ 3, 10, 38 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  66
+Pair:  [* 38, 5, 38, 15, 2,
+    [ 2, 95 ],
+    [ 2, 5, 57 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  67
+Pair:  [* 38, 5, 10, 57, 2,
+    [ 2, 19 ],
+    [ 2, 285 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  68
+Pair:  [* 65, 3, 15, 26, 2,
+    [ 5, 13 ],
+    [ 3, 5, 26 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  69
+Pair:  [* 65, 3, 39, 10, 2,
+    [ 5, 13 ],
+    [ 3, 10, 13 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  70
+Pair:  [* 205, 1, 205, 3, 3,
+    [ 5, 41 ],
+    [ 3, 5, 41 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  71
+Pair:  [* 21, 10, 21, 22, 2,
+    [ 14, 15 ],
+    [ 6, 154 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  72
+Pair:  [* 14, 15, 14, 39, 2,
+    [ 6, 35 ],
+    [ 3, 182 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  73
+Pair:  [* 21, 10, 210, 11, 2,
+    [ 7, 15 ],
+    [ 2, 7, 165 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  74
+Pair:  [* 213, 1, 213, 2, 2,
+    [ 3, 71 ],
+    [ 2, 3, 71 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  75
+Pair:  [* 74, 3, 74, 5, 2,
+    [ 2, 111 ],
+    [ 2, 185 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  76
+Pair:  [* 46, 5, 10, 69, 4,
+    [ 46 ],
+    [ 5, 138 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  77
+Pair:  [* 46, 5, 10, 69, 2,
+    [ 2, 23 ],
+    [ 2, 5, 69 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  78
+Pair:  [* 46, 5, 10, 69, 2,
+    [ 10, 46 ],
+    [ 5, 6, 23 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  79
+Pair:  [* 115, 2, 10, 69, 2,
+    [ 5, 23 ],
+    [ 2, 5, 69 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  80
+Pair:  [* 77, 3, 21, 22, 2,
+    [ 7, 11 ],
+    [ 3, 7, 22 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  81
+Pair:  [* 33, 7, 21, 22, 5,
+    [ 33 ],
+    [ 7, 22 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  82
+Pair:  [* 33, 7, 21, 22, 3,
+    [ 21, 33 ],
+    [ 2, 7, 11 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  83
+Pair:  [* 33, 7, 21, 22, 2,
+    [ 3, 11 ],
+    [ 3, 7, 22 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  84
+Pair:  [* 85, 3, 15, 34, 3,
+    [ 5, 17 ],
+    [ 3, 5, 34 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  85
+Pair:  [* 51, 5, 51, 10, 2,
+    [ 15, 51 ],
+    [ 6, 10, 34 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  86
+Pair:  [* 267, 1, 267, 2, 3,
+    [ 3, 89 ],
+    [ 2, 3, 89 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  87
+Pair:  [* 39, 7, 39, 10, 2,
+    [ 3, 91 ],
+    [ 2, 3, 65 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  88
+Pair:  [* 39, 7, 21, 26, 3,
+    [ 7, 39 ],
+    [ 2, 13, 21 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  89
+Pair:  [* 39, 7, 21, 26, 2,
+    [ 21, 39 ],
+    [ 6, 7, 13 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  90
+Pair:  [* 33, 10, 33, 14, 3,
+    [ 6, 55 ],
+    [ 6, 154 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  91
+Pair:  [* 15, 22, 15, 34, 2,
+    [ 6, 55 ],
+    [ 2, 255 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  92
+Pair:  [* 15, 26, 390, 7, 2,
+    [ 3, 5, 13 ],
+    [ 2, 3, 5, 91 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  93
+Pair:  [* 6, 65, 390, 7, 2,
+    [ 2, 3, 13 ],
+    [ 2, 3, 5, 91 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  94
+Pair:  [* 14, 33, 462, 5, 2,
+    [ 2, 7, 11 ],
+    [ 2, 7, 165 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  95
+Pair:  [* 22, 21, 462, 5, 2,
+    [ 6, 11, 14 ],
+    [ 3, 7, 10, 11 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  96
+Pair:  [* 21, 23, 21, 46, 2,
+    [ 3, 7, 23 ],
+    [ 2, 3, 7, 23 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  97
+Pair:  [* 6, 91, 546, 5, 2,
+    [ 2, 3, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  98
+Pair:  [* 14, 39, 546, 5, 2,
+    [ 2, 7, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  99
+Pair:  [* 26, 21, 546, 5, 2,
+    [ 2, 7, 13 ],
+    [ 2, 3, 13, 35 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  100
+Pair:  [* 21, 26, 546, 5, 2,
+    [ 3, 7, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  101
+Pair:  [* 15, 37, 15, 74, 2,
+    [ 3, 5, 37 ],
+    [ 2, 3, 5, 37 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  102
+Pair:  [* 10, 57, 570, 7, 2,
+    [ 2, 5, 19 ],
+    [ 2, 3, 5, 133 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  103
+Pair:  [* 35, 17, 35, 34, 3,
+    [ 5, 7, 17 ],
+    [ 2, 5, 7, 17 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  104
+Pair:  [* 6, 115, 6, 161, 2,
+    [ 2, 3, 115 ],
+    [ 2, 3, 161 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  105
+Pair:  [* 14, 51, 14, 85, 3,
+    [ 6, 7, 17 ],
+    [ 7, 10, 17 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  106
+Pair:  [* 14, 51, 14, 85, 2,
+    [ 2, 7, 51 ],
+    [ 2, 7, 85 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  107
+Pair:  [* 10, 77, 770, 3, 2,
+    [ 5, 14, 22 ],
+    [ 5, 6, 7, 11 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  108
+Pair:  [* 10, 77, 770, 3, 2,
+    [ 2, 35, 55 ],
+    [ 2, 7, 11, 15 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  109
+Pair:  [* 22, 35, 770, 3, 2,
+    [ 10, 11, 14 ],
+    [ 5, 6, 7, 11 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  110
+Pair:  [* 22, 35, 770, 3, 3,
+    [ 2, 35, 55 ],
+    [ 2, 5, 7, 33 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  111
+Pair:  [* 1365, 1, 1365, 2, 2,
+    [ 3, 5, 7, 13 ],
+    [ 2, 3, 5, 7, 13 ]
+*]
+have two non-modular curves; comparing local points
+Step out of  112 :  112
+Pair:  [* 1995, 1, 1995, 2, 3,
+    [ 3, 5, 7, 19 ],
+    [ 2, 3, 5, 7, 19 ]
+*]
+have two non-modular curves; comparing local points
+candidate pairs considered:  112
+pairs excluded by local points checks:  0
+pairs remaining:  112
+
+Loading "Fp_isomorphism_check.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "genus_2_bielliptics_eqn_determined_final.m"
+Loading "genus_2_bielliptics_eqn_not_determined_final.m"
+Loading "models_db.m"
+Loading "quotients_of_hyperelliptic_models_plus_Molina_eqs.m"
+Loading "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_differe\
+nt_products_v2.m"
+Step out of  112 :  1
+Pair:  [* 26, 7, 1, 26, 2,
+    [ 182 ],
+    []
+*]
+Step out of  112 :  2
+Pair:  [* 26, 15, 1, 26, 2,
+    [ 6, 65 ],
+    []
+*]
+Step out of  112 :  3
+Pair:  [* 15, 2, 15, 14, 2,
+    [ 2 ],
+    [ 6, 7 ]
+*]
+Step out of  112 :  4
+Pair:  [* 15, 22, 1, 30, 2,
+    [ 6, 55 ],
+    [ 2 ]
+*]
+Step out of  112 :  5
+Pair:  [* 15, 34, 1, 30, 2,
+    [ 2, 255 ],
+    [ 2 ]
+*]
+Step out of  112 :  6
+Pair:  [* 35, 1, 35, 6, 3,
+    [],
+    [ 2, 15 ]
+*]
+Step out of  112 :  7
+Pair:  [* 35, 1, 35, 6, 2,
+    [ 5 ],
+    [ 2, 3, 5 ]
+*]
+Step out of  112 :  8
+Pair:  [* 39, 5, 1, 39, 2,
+    [ 3, 65 ],
+    [ 13 ]
+*]
+Step out of  112 :  9
+Pair:  [* 39, 5, 1, 39, 3,
+    [ 195 ],
+    []
+*]
+Step out of  112 :  10
+Pair:  [* 14, 15, 1, 42, 2,
+    [ 6, 35 ],
+    [ 3 ]
+*]
+Step out of  112 :  11
+Pair:  [* 14, 39, 1, 42, 2,
+    [ 3, 182 ],
+    [ 3 ]
+*]
+Step out of  112 :  12
+Pair:  [* 58, 3, 1, 58, 2,
+    [ 174 ],
+    [ 29 ]
+*]
+Step out of  112 :  13
+Pair:  [* 22, 3, 33, 10, 2,
+    [ 2 ],
+    [ 15, 33 ]
+*]
+Step out of  112 :  14
+Pair:  [* 6, 55, 1, 66, 2,
+    [ 11, 30 ],
+    [ 11 ]
+*]
+Step out of  112 :  15
+Pair:  [* 33, 2, 6, 55, 2,
+    [ 33 ],
+    [ 2, 165 ]
+*]
+Step out of  112 :  16
+Pair:  [* 33, 2, 22, 15, 2,
+    [ 3 ],
+    [ 5, 22 ]
+*]
+Step out of  112 :  17
+Pair:  [* 35, 3, 1, 70, 2,
+    [ 5, 21 ],
+    [ 2, 7 ]
+*]
+Step out of  112 :  18
+Pair:  [* 35, 3, 1, 70, 3,
+    [ 105 ],
+    [ 14 ]
+*]
+Step out of  112 :  19
+Pair:  [* 35, 6, 1, 70, 2,
+    [ 3, 5, 14 ],
+    [ 2, 7 ]
+*]
+Step out of  112 :  20
+Pair:  [* 14, 15, 1, 70, 2,
+    [ 10, 21 ],
+    [ 35 ]
+*]
+Step out of  112 :  21
+Pair:  [* 35, 2, 35, 6, 2,
+    [ 5, 14 ],
+    [ 2, 5, 21 ]
+*]
+Step out of  112 :  22
+Pair:  [* 39, 7, 1, 78, 2,
+    [ 3, 91 ],
+    [ 2, 13 ]
+*]
+Step out of  112 :  23
+Pair:  [* 39, 2, 39, 7, 2,
+    [ 3, 26 ],
+    [ 3, 91 ]
+*]
+Step out of  112 :  24
+Pair:  [* 39, 10, 1, 78, 2,
+    [ 2, 3, 65 ],
+    [ 2, 13 ]
+*]
+Step out of  112 :  25
+Pair:  [* 39, 2, 39, 10, 2,
+    [ 2, 13 ],
+    [ 2, 13, 15 ]
+*]
+Step out of  112 :  26
+Pair:  [* 39, 2, 39, 10, 2,
+    [ 3, 26 ],
+    [ 2, 3, 65 ]
+*]
+Step out of  112 :  27
+Pair:  [* 26, 3, 26, 21, 3,
+    [ 39 ],
+    [ 3, 182 ]
+*]
+Step out of  112 :  28
+Pair:  [* 26, 3, 26, 21, 2,
+    [ 3, 13 ],
+    [ 3, 13, 14 ]
+*]
+Step out of  112 :  29
+Pair:  [* 85, 1, 1, 170, 2,
+    [ 85 ],
+    [ 2, 5, 17 ]
+*]
+Step out of  112 :  30
+Pair:  [* 85, 3, 1, 85, 2,
+    [ 3, 85 ],
+    [ 5, 17 ]
+*]
+Step out of  112 :  31
+Pair:  [* 85, 1, 1, 255, 2,
+    [ 85 ],
+    [ 3, 5, 17 ]
+*]
+Step out of  112 :  32
+Pair:  [* 87, 2, 1, 87, 2,
+    [ 3, 58 ],
+    [ 29 ]
+*]
+Step out of  112 :  33
+Pair:  [* 93, 2, 1, 93, 2,
+    [ 2, 93 ],
+    [ 3, 31 ]
+*]
+Step out of  112 :  34
+Pair:  [* 93, 1, 1, 186, 2,
+    [ 93 ],
+    [ 2, 3, 31 ]
+*]
+Step out of  112 :  35
+Pair:  [* 93, 1, 93, 2, 2,
+    [ 93 ],
+    [ 2, 93 ]
+*]
+Step out of  112 :  36
+Pair:  [* 95, 3, 1, 95, 3,
+    [ 5, 57 ],
+    [ 19 ]
+*]
+Step out of  112 :  37
+Pair:  [* 51, 2, 6, 85, 2,
+    [ 51 ],
+    [ 6, 85 ]
+*]
+Step out of  112 :  38
+Pair:  [* 51, 2, 51, 10, 2,
+    [ 2, 17 ],
+    [ 2, 15, 17 ]
+*]
+Step out of  112 :  39
+Pair:  [* 35, 3, 35, 6, 2,
+    [ 5, 21 ],
+    [ 3, 5, 14 ]
+*]
+Step out of  112 :  40
+Pair:  [* 55, 2, 55, 3, 2,
+    [ 10, 11 ],
+    [ 3, 11 ]
+*]
+Step out of  112 :  41
+Pair:  [* 55, 2, 55, 3, 2,
+    [ 10, 11 ],
+    [ 11, 15 ]
+*]
+Step out of  112 :  42
+Pair:  [* 55, 2, 10, 33, 2,
+    [ 55 ],
+    [ 2, 165 ]
+*]
+Step out of  112 :  43
+Pair:  [* 22, 5, 10, 77, 2,
+    [ 11 ],
+    [ 10, 77 ]
+*]
+Step out of  112 :  44
+Pair:  [* 57, 2, 57, 7, 2,
+    [ 3, 38 ],
+    [ 3, 133 ]
+*]
+Step out of  112 :  45
+Pair:  [* 115, 1, 1, 230, 2,
+    [ 115 ],
+    [ 2, 5, 23 ]
+*]
+Step out of  112 :  46
+Pair:  [* 115, 1, 115, 2, 2,
+    [ 115 ],
+    [ 2, 115 ]
+*]
+Step out of  112 :  47
+Pair:  [* 115, 2, 1, 115, 2,
+    [ 2, 115 ],
+    [ 5, 23 ]
+*]
+Step out of  112 :  48
+Pair:  [* 65, 2, 10, 39, 2,
+    [ 5, 13 ],
+    [ 5, 78 ]
+*]
+Step out of  112 :  49
+Pair:  [* 46, 3, 6, 115, 2,
+    [ 2, 23 ],
+    [ 2, 3, 115 ]
+*]
+Step out of  112 :  50
+Pair:  [* 69, 2, 6, 115, 2,
+    [ 3, 23 ],
+    [ 2, 3, 115 ]
+*]
+Step out of  112 :  51
+Pair:  [* 46, 3, 6, 161, 2,
+    [ 2, 23 ],
+    [ 2, 3, 161 ]
+*]
+Step out of  112 :  52
+Pair:  [* 69, 2, 6, 161, 2,
+    [ 3, 23 ],
+    [ 2, 3, 161 ]
+*]
+Step out of  112 :  53
+Pair:  [* 142, 1, 142, 3, 3,
+    [ 71 ],
+    [ 6, 71 ]
+*]
+Step out of  112 :  54
+Pair:  [* 145, 1, 145, 3, 2,
+    [ 5, 29 ],
+    [ 3, 5, 29 ]
+*]
+Step out of  112 :  55
+Pair:  [* 77, 2, 22, 21, 2,
+    [ 7, 11 ],
+    [ 2, 3, 11 ]
+*]
+Step out of  112 :  56
+Pair:  [* 15, 22, 1, 165, 2,
+    [ 2, 11, 15 ],
+    [ 3, 5, 11 ]
+*]
+Step out of  112 :  57
+Pair:  [* 33, 10, 1, 165, 2,
+    [ 2, 5, 33 ],
+    [ 3, 5, 11 ]
+*]
+Step out of  112 :  58
+Pair:  [* 55, 3, 15, 22, 2,
+    [ 15, 33 ],
+    [ 3, 10, 11 ]
+*]
+Step out of  112 :  59
+Pair:  [* 55, 3, 15, 22, 2,
+    [ 3, 55 ],
+    [ 2, 11, 15 ]
+*]
+Step out of  112 :  60
+Pair:  [* 55, 3, 33, 10, 2,
+    [ 15, 33 ],
+    [ 3, 5, 22 ]
+*]
+Step out of  112 :  61
+Pair:  [* 55, 3, 33, 10, 2,
+    [ 3, 55 ],
+    [ 2, 5, 33 ]
+*]
+Step out of  112 :  62
+Pair:  [* 177, 1, 177, 2, 2,
+    [ 3, 59 ],
+    [ 2, 3, 59 ]
+*]
+Step out of  112 :  63
+Pair:  [* 26, 7, 26, 15, 2,
+    [ 182 ],
+    [ 6, 65 ]
+*]
+Step out of  112 :  64
+Pair:  [* 91, 2, 91, 5, 3,
+    [ 7, 26 ],
+    [ 7, 65 ]
+*]
+Step out of  112 :  65
+Pair:  [* 10, 19, 38, 15, 3,
+    [ 95 ],
+    [ 3, 10, 38 ]
+*]
+Step out of  112 :  66
+Pair:  [* 38, 5, 38, 15, 2,
+    [ 2, 95 ],
+    [ 2, 5, 57 ]
+*]
+Step out of  112 :  67
+Pair:  [* 38, 5, 10, 57, 2,
+    [ 2, 19 ],
+    [ 2, 285 ]
+*]
+Step out of  112 :  68
+Pair:  [* 65, 3, 15, 26, 2,
+    [ 5, 13 ],
+    [ 3, 5, 26 ]
+*]
+Step out of  112 :  69
+Pair:  [* 65, 3, 39, 10, 2,
+    [ 5, 13 ],
+    [ 3, 10, 13 ]
+*]
+Step out of  112 :  70
+Pair:  [* 205, 1, 205, 3, 3,
+    [ 5, 41 ],
+    [ 3, 5, 41 ]
+*]
+Step out of  112 :  71
+Pair:  [* 21, 10, 21, 22, 2,
+    [ 14, 15 ],
+    [ 6, 154 ]
+*]
+Step out of  112 :  72
+Pair:  [* 14, 15, 14, 39, 2,
+    [ 6, 35 ],
+    [ 3, 182 ]
+*]
+Step out of  112 :  73
+Pair:  [* 21, 10, 210, 11, 2,
+    [ 7, 15 ],
+    [ 2, 7, 165 ]
+*]
+Step out of  112 :  74
+Pair:  [* 213, 1, 213, 2, 2,
+    [ 3, 71 ],
+    [ 2, 3, 71 ]
+*]
+Step out of  112 :  75
+Pair:  [* 74, 3, 74, 5, 2,
+    [ 2, 111 ],
+    [ 2, 185 ]
+*]
+Step out of  112 :  76
+Pair:  [* 46, 5, 10, 69, 4,
+    [ 46 ],
+    [ 5, 138 ]
+*]
+Step out of  112 :  77
+Pair:  [* 46, 5, 10, 69, 2,
+    [ 2, 23 ],
+    [ 2, 5, 69 ]
+*]
+Step out of  112 :  78
+Pair:  [* 46, 5, 10, 69, 2,
+    [ 10, 46 ],
+    [ 5, 6, 23 ]
+*]
+Step out of  112 :  79
+Pair:  [* 115, 2, 10, 69, 2,
+    [ 5, 23 ],
+    [ 2, 5, 69 ]
+*]
+Step out of  112 :  80
+Pair:  [* 77, 3, 21, 22, 2,
+    [ 7, 11 ],
+    [ 3, 7, 22 ]
+*]
+Step out of  112 :  81
+Pair:  [* 33, 7, 21, 22, 5,
+    [ 33 ],
+    [ 7, 22 ]
+*]
+Step out of  112 :  82
+Pair:  [* 33, 7, 21, 22, 3,
+    [ 21, 33 ],
+    [ 2, 7, 11 ]
+*]
+Step out of  112 :  83
+Pair:  [* 33, 7, 21, 22, 2,
+    [ 3, 11 ],
+    [ 3, 7, 22 ]
+*]
+Step out of  112 :  84
+Pair:  [* 85, 3, 15, 34, 3,
+    [ 5, 17 ],
+    [ 3, 5, 34 ]
+*]
+Step out of  112 :  85
+Pair:  [* 51, 5, 51, 10, 2,
+    [ 15, 51 ],
+    [ 6, 10, 34 ]
+*]
+Step out of  112 :  86
+Pair:  [* 267, 1, 267, 2, 3,
+    [ 3, 89 ],
+    [ 2, 3, 89 ]
+*]
+Step out of  112 :  87
+Pair:  [* 39, 7, 39, 10, 2,
+    [ 3, 91 ],
+    [ 2, 3, 65 ]
+*]
+Step out of  112 :  88
+Pair:  [* 39, 7, 21, 26, 3,
+    [ 7, 39 ],
+    [ 2, 13, 21 ]
+*]
+Step out of  112 :  89
+Pair:  [* 39, 7, 21, 26, 2,
+    [ 21, 39 ],
+    [ 6, 7, 13 ]
+*]
+Step out of  112 :  90
+Pair:  [* 33, 10, 33, 14, 3,
+    [ 6, 55 ],
+    [ 6, 154 ]
+*]
+Step out of  112 :  91
+Pair:  [* 15, 22, 15, 34, 2,
+    [ 6, 55 ],
+    [ 2, 255 ]
+*]
+Step out of  112 :  92
+Pair:  [* 15, 26, 390, 7, 2,
+    [ 3, 5, 13 ],
+    [ 2, 3, 5, 91 ]
+*]
+Step out of  112 :  93
+Pair:  [* 6, 65, 390, 7, 2,
+    [ 2, 3, 13 ],
+    [ 2, 3, 5, 91 ]
+*]
+Step out of  112 :  94
+Pair:  [* 14, 33, 462, 5, 2,
+    [ 2, 7, 11 ],
+    [ 2, 7, 165 ]
+*]
+Step out of  112 :  95
+Pair:  [* 22, 21, 462, 5, 2,
+    [ 6, 11, 14 ],
+    [ 3, 7, 10, 11 ]
+*]
+Step out of  112 :  96
+Pair:  [* 21, 23, 21, 46, 2,
+    [ 3, 7, 23 ],
+    [ 2, 3, 7, 23 ]
+*]
+Step out of  112 :  97
+Pair:  [* 6, 91, 546, 5, 2,
+    [ 2, 3, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+Step out of  112 :  98
+Pair:  [* 14, 39, 546, 5, 2,
+    [ 2, 7, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+Step out of  112 :  99
+Pair:  [* 26, 21, 546, 5, 2,
+    [ 2, 7, 13 ],
+    [ 2, 3, 13, 35 ]
+*]
+Step out of  112 :  100
+Pair:  [* 21, 26, 546, 5, 2,
+    [ 3, 7, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+Step out of  112 :  101
+Pair:  [* 15, 37, 15, 74, 2,
+    [ 3, 5, 37 ],
+    [ 2, 3, 5, 37 ]
+*]
+Step out of  112 :  102
+Pair:  [* 10, 57, 570, 7, 2,
+    [ 2, 5, 19 ],
+    [ 2, 3, 5, 133 ]
+*]
+Step out of  112 :  103
+Pair:  [* 35, 17, 35, 34, 3,
+    [ 5, 7, 17 ],
+    [ 2, 5, 7, 17 ]
+*]
+Step out of  112 :  104
+Pair:  [* 6, 115, 6, 161, 2,
+    [ 2, 3, 115 ],
+    [ 2, 3, 161 ]
+*]
+Step out of  112 :  105
+Pair:  [* 14, 51, 14, 85, 3,
+    [ 6, 7, 17 ],
+    [ 7, 10, 17 ]
+*]
+Step out of  112 :  106
+Pair:  [* 14, 51, 14, 85, 2,
+    [ 2, 7, 51 ],
+    [ 2, 7, 85 ]
+*]
+Step out of  112 :  107
+Pair:  [* 10, 77, 770, 3, 2,
+    [ 5, 14, 22 ],
+    [ 5, 6, 7, 11 ]
+*]
+Step out of  112 :  108
+Pair:  [* 10, 77, 770, 3, 2,
+    [ 2, 35, 55 ],
+    [ 2, 7, 11, 15 ]
+*]
+Step out of  112 :  109
+Pair:  [* 22, 35, 770, 3, 2,
+    [ 10, 11, 14 ],
+    [ 5, 6, 7, 11 ]
+*]
+Step out of  112 :  110
+Pair:  [* 22, 35, 770, 3, 3,
+    [ 2, 35, 55 ],
+    [ 2, 5, 7, 33 ]
+*]
+Step out of  112 :  111
+Pair:  [* 1365, 1, 1365, 2, 2,
+    [ 3, 5, 7, 13 ],
+    [ 2, 3, 5, 7, 13 ]
+*]
+Step out of  112 :  112
+Pair:  [* 1995, 1, 1995, 2, 3,
+    [ 3, 5, 7, 19 ],
+    [ 2, 3, 5, 7, 19 ]
+*]
+candidate pairs considered:  112
+pairs excluded by F_p-isomorphism checks:  0
+pairs remaining:  112
+
+Loading "final_test_q_isomorphism.m"
+Loading "AL_identifiers.m"
+Loading "quot_genus.m"
+Loading "genus_2_bielliptics_eqn_determined_final.m"
+Loading "genus_2_bielliptics_eqn_not_determined_final.m"
+Loading "models_db.m"
+Loading "quotients_of_hyperelliptic_models_plus_Molina_eqs.m"
+Loading "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_differe\
+nt_products_v3.m"
+Loading "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_modular\
+_different_levels_v1.m"
+Pair:  [* 26, 7, 1, 26, 2,
+    [ 182 ],
+    []
+*]
+  ISOMORPHIC over Q
+Pair:  [* 26, 15, 1, 26, 2,
+    [ 6, 65 ],
+    []
+*]
+  ISOMORPHIC over Q
+Pair:  [* 15, 2, 15, 14, 2,
+    [ 2 ],
+    [ 6, 7 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 15, 22, 1, 30, 2,
+    [ 6, 55 ],
+    [ 2 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 15, 34, 1, 30, 2,
+    [ 2, 255 ],
+    [ 2 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 35, 1, 35, 6, 3,
+    [],
+    [ 2, 15 ]
+*]
+  no models, no comparison made
+Pair:  [* 35, 1, 35, 6, 2,
+    [ 5 ],
+    [ 2, 3, 5 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 5, 1, 39, 2,
+    [ 3, 65 ],
+    [ 13 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 5, 1, 39, 3,
+    [ 195 ],
+    []
+*]
+  no models, no comparison made
+Pair:  [* 14, 15, 1, 42, 2,
+    [ 6, 35 ],
+    [ 3 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 14, 39, 1, 42, 2,
+    [ 3, 182 ],
+    [ 3 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 58, 3, 1, 58, 2,
+    [ 174 ],
+    [ 29 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 22, 3, 33, 10, 2,
+    [ 2 ],
+    [ 15, 33 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 6, 55, 1, 66, 2,
+    [ 11, 30 ],
+    [ 11 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 33, 2, 6, 55, 2,
+    [ 33 ],
+    [ 2, 165 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 33, 2, 22, 15, 2,
+    [ 3 ],
+    [ 5, 22 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 35, 3, 1, 70, 2,
+    [ 5, 21 ],
+    [ 2, 7 ]
+*]
+  no models, no comparison made
+Pair:  [* 35, 3, 1, 70, 3,
+    [ 105 ],
+    [ 14 ]
+*]
+  no models, no comparison made
+Pair:  [* 35, 6, 1, 70, 2,
+    [ 3, 5, 14 ],
+    [ 2, 7 ]
+*]
+  no models, no comparison made
+Pair:  [* 14, 15, 1, 70, 2,
+    [ 10, 21 ],
+    [ 35 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 35, 2, 35, 6, 2,
+    [ 5, 14 ],
+    [ 2, 5, 21 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 7, 1, 78, 2,
+    [ 3, 91 ],
+    [ 2, 13 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 2, 39, 7, 2,
+    [ 3, 26 ],
+    [ 3, 91 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 10, 1, 78, 2,
+    [ 2, 3, 65 ],
+    [ 2, 13 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 2, 39, 10, 2,
+    [ 2, 13 ],
+    [ 2, 13, 15 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 2, 39, 10, 2,
+    [ 3, 26 ],
+    [ 2, 3, 65 ]
+*]
+  no models, no comparison made
+Pair:  [* 26, 3, 26, 21, 3,
+    [ 39 ],
+    [ 3, 182 ]
+*]
+  no models, no comparison made
+Pair:  [* 26, 3, 26, 21, 2,
+    [ 3, 13 ],
+    [ 3, 13, 14 ]
+*]
+  no models, no comparison made
+Pair:  [* 85, 1, 1, 170, 2,
+    [ 85 ],
+    [ 2, 5, 17 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 85, 3, 1, 85, 2,
+    [ 3, 85 ],
+    [ 5, 17 ]
+*]
+  no models, no comparison made
+Pair:  [* 85, 1, 1, 255, 2,
+    [ 85 ],
+    [ 3, 5, 17 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 87, 2, 1, 87, 2,
+    [ 3, 58 ],
+    [ 29 ]
+*]
+  no models, no comparison made
+Pair:  [* 93, 2, 1, 93, 2,
+    [ 2, 93 ],
+    [ 3, 31 ]
+*]
+  no models, no comparison made
+Pair:  [* 93, 1, 1, 186, 2,
+    [ 93 ],
+    [ 2, 3, 31 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 93, 1, 93, 2, 2,
+    [ 93 ],
+    [ 2, 93 ]
+*]
+  no models, no comparison made
+Pair:  [* 95, 3, 1, 95, 3,
+    [ 5, 57 ],
+    [ 19 ]
+*]
+  no models, no comparison made
+Pair:  [* 51, 2, 6, 85, 2,
+    [ 51 ],
+    [ 6, 85 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 51, 2, 51, 10, 2,
+    [ 2, 17 ],
+    [ 2, 15, 17 ]
+*]
+  no models, no comparison made
+Pair:  [* 35, 3, 35, 6, 2,
+    [ 5, 21 ],
+    [ 3, 5, 14 ]
+*]
+  no models, no comparison made
+Pair:  [* 55, 2, 55, 3, 2,
+    [ 10, 11 ],
+    [ 3, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 55, 2, 55, 3, 2,
+    [ 10, 11 ],
+    [ 11, 15 ]
+*]
+  no models, no comparison made
+Pair:  [* 55, 2, 10, 33, 2,
+    [ 55 ],
+    [ 2, 165 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 22, 5, 10, 77, 2,
+    [ 11 ],
+    [ 10, 77 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 57, 2, 57, 7, 2,
+    [ 3, 38 ],
+    [ 3, 133 ]
+*]
+  no models, no comparison made
+Pair:  [* 115, 1, 1, 230, 2,
+    [ 115 ],
+    [ 2, 5, 23 ]
+*]
+  no models, no comparison made
+Pair:  [* 115, 1, 115, 2, 2,
+    [ 115 ],
+    [ 2, 115 ]
+*]
+  no models, no comparison made
+Pair:  [* 115, 2, 1, 115, 2,
+    [ 2, 115 ],
+    [ 5, 23 ]
+*]
+  no models, no comparison made
+Pair:  [* 65, 2, 10, 39, 2,
+    [ 5, 13 ],
+    [ 5, 78 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 46, 3, 6, 115, 2,
+    [ 2, 23 ],
+    [ 2, 3, 115 ]
+*]
+  no models, no comparison made
+Pair:  [* 69, 2, 6, 115, 2,
+    [ 3, 23 ],
+    [ 2, 3, 115 ]
+*]
+  no models, no comparison made
+Pair:  [* 46, 3, 6, 161, 2,
+    [ 2, 23 ],
+    [ 2, 3, 161 ]
+*]
+  no models, no comparison made
+Pair:  [* 69, 2, 6, 161, 2,
+    [ 3, 23 ],
+    [ 2, 3, 161 ]
+*]
+  no models, no comparison made
+Pair:  [* 142, 1, 142, 3, 3,
+    [ 71 ],
+    [ 6, 71 ]
+*]
+  no models, no comparison made
+Pair:  [* 145, 1, 145, 3, 2,
+    [ 5, 29 ],
+    [ 3, 5, 29 ]
+*]
+  no models, no comparison made
+Pair:  [* 77, 2, 22, 21, 2,
+    [ 7, 11 ],
+    [ 2, 3, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 15, 22, 1, 165, 2,
+    [ 2, 11, 15 ],
+    [ 3, 5, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 33, 10, 1, 165, 2,
+    [ 2, 5, 33 ],
+    [ 3, 5, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 55, 3, 15, 22, 2,
+    [ 15, 33 ],
+    [ 3, 10, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 55, 3, 15, 22, 2,
+    [ 3, 55 ],
+    [ 2, 11, 15 ]
+*]
+  no models, no comparison made
+Pair:  [* 55, 3, 33, 10, 2,
+    [ 15, 33 ],
+    [ 3, 5, 22 ]
+*]
+  no models, no comparison made
+Pair:  [* 55, 3, 33, 10, 2,
+    [ 3, 55 ],
+    [ 2, 5, 33 ]
+*]
+  no models, no comparison made
+Pair:  [* 177, 1, 177, 2, 2,
+    [ 3, 59 ],
+    [ 2, 3, 59 ]
+*]
+  no models, no comparison made
+Pair:  [* 26, 7, 26, 15, 2,
+    [ 182 ],
+    [ 6, 65 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 91, 2, 91, 5, 3,
+    [ 7, 26 ],
+    [ 7, 65 ]
+*]
+  no models, no comparison made
+Pair:  [* 10, 19, 38, 15, 3,
+    [ 95 ],
+    [ 3, 10, 38 ]
+*]
+  no models, no comparison made
+Pair:  [* 38, 5, 38, 15, 2,
+    [ 2, 95 ],
+    [ 2, 5, 57 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 38, 5, 10, 57, 2,
+    [ 2, 19 ],
+    [ 2, 285 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 65, 3, 15, 26, 2,
+    [ 5, 13 ],
+    [ 3, 5, 26 ]
+*]
+  no models, no comparison made
+Pair:  [* 65, 3, 39, 10, 2,
+    [ 5, 13 ],
+    [ 3, 10, 13 ]
+*]
+  no models, no comparison made
+Pair:  [* 205, 1, 205, 3, 3,
+    [ 5, 41 ],
+    [ 3, 5, 41 ]
+*]
+  no models, no comparison made
+Pair:  [* 21, 10, 21, 22, 2,
+    [ 14, 15 ],
+    [ 6, 154 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 14, 15, 14, 39, 2,
+    [ 6, 35 ],
+    [ 3, 182 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 21, 10, 210, 11, 2,
+    [ 7, 15 ],
+    [ 2, 7, 165 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 213, 1, 213, 2, 2,
+    [ 3, 71 ],
+    [ 2, 3, 71 ]
+*]
+  no models, no comparison made
+Pair:  [* 74, 3, 74, 5, 2,
+    [ 2, 111 ],
+    [ 2, 185 ]
+*]
+  no models, no comparison made
+Pair:  [* 46, 5, 10, 69, 4,
+    [ 46 ],
+    [ 5, 138 ]
+*]
+  no models, no comparison made
+Pair:  [* 46, 5, 10, 69, 2,
+    [ 2, 23 ],
+    [ 2, 5, 69 ]
+*]
+  no models, no comparison made
+Pair:  [* 46, 5, 10, 69, 2,
+    [ 10, 46 ],
+    [ 5, 6, 23 ]
+*]
+  no models, no comparison made
+Pair:  [* 115, 2, 10, 69, 2,
+    [ 5, 23 ],
+    [ 2, 5, 69 ]
+*]
+  no models, no comparison made
+Pair:  [* 77, 3, 21, 22, 2,
+    [ 7, 11 ],
+    [ 3, 7, 22 ]
+*]
+  no models, no comparison made
+Pair:  [* 33, 7, 21, 22, 5,
+    [ 33 ],
+    [ 7, 22 ]
+*]
+  no models, no comparison made
+Pair:  [* 33, 7, 21, 22, 3,
+    [ 21, 33 ],
+    [ 2, 7, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 33, 7, 21, 22, 2,
+    [ 3, 11 ],
+    [ 3, 7, 22 ]
+*]
+  no models, no comparison made
+Pair:  [* 85, 3, 15, 34, 3,
+    [ 5, 17 ],
+    [ 3, 5, 34 ]
+*]
+  no models, no comparison made
+Pair:  [* 51, 5, 51, 10, 2,
+    [ 15, 51 ],
+    [ 6, 10, 34 ]
+*]
+  no models, no comparison made
+Pair:  [* 267, 1, 267, 2, 3,
+    [ 3, 89 ],
+    [ 2, 3, 89 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 7, 39, 10, 2,
+    [ 3, 91 ],
+    [ 2, 3, 65 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 7, 21, 26, 3,
+    [ 7, 39 ],
+    [ 2, 13, 21 ]
+*]
+  no models, no comparison made
+Pair:  [* 39, 7, 21, 26, 2,
+    [ 21, 39 ],
+    [ 6, 7, 13 ]
+*]
+  no models, no comparison made
+Pair:  [* 33, 10, 33, 14, 3,
+    [ 6, 55 ],
+    [ 6, 154 ]
+*]
+  no models, no comparison made
+Pair:  [* 15, 22, 15, 34, 2,
+    [ 6, 55 ],
+    [ 2, 255 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 15, 26, 390, 7, 2,
+    [ 3, 5, 13 ],
+    [ 2, 3, 5, 91 ]
+*]
+  no models, no comparison made
+Pair:  [* 6, 65, 390, 7, 2,
+    [ 2, 3, 13 ],
+    [ 2, 3, 5, 91 ]
+*]
+  no models, no comparison made
+Pair:  [* 14, 33, 462, 5, 2,
+    [ 2, 7, 11 ],
+    [ 2, 7, 165 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 22, 21, 462, 5, 2,
+    [ 6, 11, 14 ],
+    [ 3, 7, 10, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 21, 23, 21, 46, 2,
+    [ 3, 7, 23 ],
+    [ 2, 3, 7, 23 ]
+*]
+  no models, no comparison made
+Pair:  [* 6, 91, 546, 5, 2,
+    [ 2, 3, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+  no models, no comparison made
+Pair:  [* 14, 39, 546, 5, 2,
+    [ 2, 7, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+  no models, no comparison made
+Pair:  [* 26, 21, 546, 5, 2,
+    [ 2, 7, 13 ],
+    [ 2, 3, 13, 35 ]
+*]
+  no models, no comparison made
+Pair:  [* 21, 26, 546, 5, 2,
+    [ 3, 7, 13 ],
+    [ 2, 3, 7, 65 ]
+*]
+  no models, no comparison made
+Pair:  [* 15, 37, 15, 74, 2,
+    [ 3, 5, 37 ],
+    [ 2, 3, 5, 37 ]
+*]
+  no models, no comparison made
+Pair:  [* 10, 57, 570, 7, 2,
+    [ 2, 5, 19 ],
+    [ 2, 3, 5, 133 ]
+*]
+  no models, no comparison made
+Pair:  [* 35, 17, 35, 34, 3,
+    [ 5, 7, 17 ],
+    [ 2, 5, 7, 17 ]
+*]
+  no models, no comparison made
+Pair:  [* 6, 115, 6, 161, 2,
+    [ 2, 3, 115 ],
+    [ 2, 3, 161 ]
+*]
+  no models, no comparison made
+Pair:  [* 14, 51, 14, 85, 3,
+    [ 6, 7, 17 ],
+    [ 7, 10, 17 ]
+*]
+  no models, no comparison made
+Pair:  [* 14, 51, 14, 85, 2,
+    [ 2, 7, 51 ],
+    [ 2, 7, 85 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 10, 77, 770, 3, 2,
+    [ 5, 14, 22 ],
+    [ 5, 6, 7, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 10, 77, 770, 3, 2,
+    [ 2, 35, 55 ],
+    [ 2, 7, 11, 15 ]
+*]
+  no models, no comparison made
+Pair:  [* 22, 35, 770, 3, 2,
+    [ 10, 11, 14 ],
+    [ 5, 6, 7, 11 ]
+*]
+  no models, no comparison made
+Pair:  [* 22, 35, 770, 3, 3,
+    [ 2, 35, 55 ],
+    [ 2, 5, 7, 33 ]
+*]
+  no models, no comparison made
+Pair:  [* 1365, 1, 1365, 2, 2,
+    [ 3, 5, 7, 13 ],
+    [ 2, 3, 5, 7, 13 ]
+*]
+  no models, no comparison made
+Pair:  [* 1995, 1, 1995, 2, 3,
+    [ 3, 5, 7, 19 ],
+    [ 2, 3, 5, 7, 19 ]
+*]
+  no models, no comparison made
+Pair:  [* 1, 46, 1, 69, 2,
+    [ 46 ],
+    [ 69 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 57, 1, 114, 2,
+    [ 57 ],
+    [ 3, 38 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 58, 1, 174, 3,
+    [ 58 ],
+    [ 2, 87 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 67, 1, 134, 2,
+    [ 67 ],
+    [ 2, 67 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 73, 1, 146, 2,
+    [ 73 ],
+    [ 2, 73 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 74, 1, 111, 2,
+    [ 74 ],
+    [ 111 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 93, 1, 186, 2,
+    [ 3, 31 ],
+    [ 2, 3, 31 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 93, 1, 186, 4,
+    [ 93 ],
+    [ 3, 62 ]
+*]
+  ISOMORPHIC over Q (rough_work.tex), skipped
+Pair:  [* 1, 97, 1, 194, 3,
+    [ 97 ],
+    [ 2, 97 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 103, 1, 206, 2,
+    [ 103 ],
+    [ 2, 103 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 115, 1, 230, 2,
+    [ 5, 23 ],
+    [ 2, 5, 23 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 130, 1, 195, 3,
+    [ 5, 26 ],
+    [ 5, 39 ]
+*]
+  NOT isomorphic over Q
+Pair:  [* 1, 133, 1, 266, 2,
+    [ 7, 19 ],
+    [ 2, 7, 19 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 170, 1, 255, 2,
+    [ 2, 5, 17 ],
+    [ 3, 5, 17 ]
+*]
+  ISOMORPHIC over Q
+Pair:  [* 1, 170, 1, 255, 4,
+    [ 5, 34 ],
+    [ 5, 51 ]
+*]
+  ISOMORPHIC over Q
+
+genus >= 2 pairs considered:  127
+  isomorphic over Q:  43
+  NOT isomorphic   :  1
+  unsure           :  83
 
 Total time: 73395.647 seconds, Total memory usage: 6681.41MB

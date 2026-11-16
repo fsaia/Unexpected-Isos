@@ -6,9 +6,9 @@ SetMemoryLimit(40 * 1024^3);
 // but only because their input/output files assume this order).
 
 load "reduction_type_different_products.m";
+load "genus1_label_comparison.m";
 load "local_points_check.m";
 load "Fp_isomorphism_check.m";
 load "final_test_q_isomorphism.m";
-load "genus1_label_comparison.m";
 
 quit;
