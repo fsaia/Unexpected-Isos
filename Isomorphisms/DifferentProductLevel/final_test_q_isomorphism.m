@@ -39,11 +39,11 @@ end for;
 for pair in candidates do
     print "Pair: ", pair;
 
-    // X_0(93)/<w_93> and X_0(186)/<w_3,w_62> are isomorphic over Q (rough_work.tex, by
-    // lifting isomorphisms mod p), but the direct check needs too much memory
+    // X_0(93)/<w_93> and X_0(186)/<w_3,w_62> are isomorphic over Q (provided in a separate file
+    // by lifting isomorphisms mod p), but the direct check needs too much memory
     if pair[1] eq 1 and pair[2] eq 93 and pair[3] eq 1 and pair[4] eq 186 and pair[5] eq 4 then
         Append(~isomorphic_pairs,pair);
-        print "  ISOMORPHIC over Q (rough_work.tex), skipped";
+        print "  ISOMORPHIC over Q, skipped";
         continue;
     end if;
 
