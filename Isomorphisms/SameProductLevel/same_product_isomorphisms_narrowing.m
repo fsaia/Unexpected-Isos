@@ -1,6 +1,6 @@
 /*
 In this file, we take those pairs of Atkin--Lehner quotients
-X_0^{D1}(N1)/W1 and X_0^{D2}(N2)/W2)
+X_0^{D1}(N1)/W1 and X_0^{D2}(N2)/W2
 with D1N1 = D2N2 whose Jacobians are isogenous and we
 undergo checks to work to prove whether the curves
 are isomorphic over \mathbb{Q}
