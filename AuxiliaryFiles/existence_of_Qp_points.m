@@ -62,3 +62,23 @@ existence_of_Qp_points_level := function(D, N, p, Wgens)
     end if;
   end if;
 end function;
+
+
+
+// quotient_has_Qp_points: for a prime p dividing D*N, with
+// D and N coprime, returns True if X_0^D(N)/W has a Q_p point
+// and False otherwise. If p does not divide D*N, then by Hensel
+// there exists a Q_p point if and only if there exists an F_p point,
+// and the number of F_p points on the quotient can be computed using the
+// code of Mercuri--Padurariu--Saia--Stirpe 2025 (using Eichler--Shimura)
+quotient_has_Qp_points := function(D, N, Wgens, p)
+  error if D*N mod p ne 0, "This implementation is for primes dividing D*N; 
+  compute the Fp point count via MPSS25";
+
+  if N mod p eq 0 then
+    return existence_of_Qp_points_level(D,N,p,Wgens);
+  elif D mod p eq 0 then 
+    return quotient_has_Qp_points_disc(D,N,Wgens, p);
+  end if; 
+
+end function; 
