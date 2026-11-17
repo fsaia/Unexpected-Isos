@@ -1,5 +1,3 @@
-A<x> := PolynomialRing(Rationals());
-
 genus_2_bielliptics_eqn_determined_by_level_red_types := 
 [ [* 14, 45,
     { 9, 10, 14 },

@@ -64,7 +64,7 @@ for X in genus_2_bielliptics_eqn_not_determined_PS_AH do
 
 	// For p || N, we check info of the reduction type at p against 
     // that of the remaining candidate models.
-	for p in [q : q in PrimeDivisors(N) | Valuation(N,q) eq 1] do
+	for p in [q : q in PrimeDivisors(N) | (Valuation(N,q) eq 1) and (q ne 2)] do
 		
         // We check number of intersection points in minimal regular model at odd primes dividing
 		// D for the bielliptic genus 2 curve to try to get rid of candidate equations. 
