@@ -1,6 +1,6 @@
 /*
 In this file, we take those pairs of Atkin--Lehner quotients
-X_0^{D1}(N1)/W1 and X_0^{D2}(N2)/W2
+X_0^{D1}(N1)/W1 and X_0^{D2}(N2)/W2)
 with D1N1 = D2N2 whose Jacobians are isogenous and we
 undergo checks to work to prove whether the curves
 are isomorphic over \mathbb{Q}
@@ -484,14 +484,17 @@ end function;
 // Genus 2 cases
 /////////////////////
 
+SetLogFile("isom_narrowing_same_product_level.log");
+
 // list of equations of some bielliptic genus 2 quotients of Shimura curves
-// from Padurariu--Saia 2025
-load "genus_2_bielliptics_eqn_determined_PS_AH.m";
+// from work of Padurariu--Saia 2025, Assaf--Hashimoto 2026 plus some
+// effort in the paper of this repo.
+load "genus_2_bielliptics_eqn_determined_APS.m";
 
 // list of candidate equations of some bielliptic genus 2 quotients of Shimura curves
-// from Padurariu--Saia 2025 (for each quotient in the list, exactly one of the
+// from the same references as for the prior file (for each quotient in the list, exactly one of the
 // given candidate models is correct)
-load "genus_2_bielliptics_eqn_not_determined_PS_AH.m";
+load "genus_2_bielliptics_eqn_not_determined_APS.m";
 
 // loading algorithms from Padurariu--Saia for computing reduction types
 // and existence of local points at primes dividing D for quotients of X_0^D(N)
@@ -500,8 +503,10 @@ load "dual_graphs_discriminant.m";
 
 // loading algorithms for computing reduction types
 // at primes dividing N for quotients of X_0^D(N)
-// with p exactly dividing N and D>1.
+// with p exactly dividing N, and for determining the existence
+// of Q_p points on such quotients for p dividing D*N
 load "dual_graphs_level.m";
+load "existence_of_Qp_points.m";
 
 genus_2_bielliptics_having_eqn := [];
 genus_2_bielliptics_having_eqn_candidates := [];
@@ -510,21 +515,21 @@ for pair in genus_2_isom_candidates do
     X := pair[1];
     Y := pair[2];
 
-    X_matches_having_eqn := [L[4] : L in genus_2_bielliptics_eqn_determined_PS_AH | [*L[1],L[2],L[3]*] eq X];
+    X_matches_having_eqn := [L[4] : L in genus_2_bielliptics_eqn_determined_APS | [*L[1],L[2],L[3]*] eq X];
     if not IsEmpty(X_matches_having_eqn) then 
         Append(~genus_2_bielliptics_having_eqn,X);
     else
-        X_matches_having_eqn_candidates := [L[4] : L in genus_2_bielliptics_eqn_not_determined_PS_AH | [*L[1],L[2],L[3]*] eq X];
+        X_matches_having_eqn_candidates := [L[4] : L in genus_2_bielliptics_eqn_not_determined_APS | [*L[1],L[2],L[3]*] eq X];
         if not IsEmpty(X_matches_having_eqn_candidates) then 
             Append(~genus_2_bielliptics_having_eqn_candidates,X);
         end if;
     end if;
 
-    Y_matches_having_eqn := [L[4] : L in genus_2_bielliptics_eqn_determined_PS_AH | [*L[1],L[2],L[3]*] eq Y];
+    Y_matches_having_eqn := [L[4] : L in genus_2_bielliptics_eqn_determined_APS | [*L[1],L[2],L[3]*] eq Y];
     if not IsEmpty(Y_matches_having_eqn) then 
         Append(~genus_2_bielliptics_having_eqn,Y);
     else
-        Y_matches_having_eqn_candidates := [L[4] : L in genus_2_bielliptics_eqn_not_determined_PS_AH | [*L[1],L[2],L[3]*] eq Y];
+        Y_matches_having_eqn_candidates := [L[4] : L in genus_2_bielliptics_eqn_not_determined_APS | [*L[1],L[2],L[3]*] eq Y];
         if not IsEmpty(Y_matches_having_eqn_candidates) then 
             Append(~genus_2_bielliptics_having_eqn_candidates,Y);
         end if;
@@ -575,7 +580,7 @@ for pair in genus_2_isom_candidates do
     // We check info of reduction types for at primes dividing DN.
     if not proven_non_isom then 
         print "checking reduction type info at bad primes";
-        for p in PrimeDivisors(D1*N1) do  
+        for p in DN_primes do  
             p_edge_count_X := dual_graph_at_p_edge_count(D1,N1,W1gens,p);
             p_edge_count_Y := dual_graph_at_p_edge_count(D2,N2,W2gens,p);
             if p_edge_count_X ne p_edge_count_Y then 
@@ -587,37 +592,16 @@ for pair in genus_2_isom_candidates do
         end for;
     end if; 
 
+    // We check existence of local points at primes p dividing DN. 
     if not proven_non_isom then 
-        for p in PrimeDivisors(GCD(D1,D2)) do 
+        for p in DN_primes do 
             if quotient_has_Qp_points(D1,N1,W1gens,p) ne quotient_has_Qp_points(D2,N2,W2gens,p) then 
-                print "proven non-isomorphic by exactly one curve lacking local points at a prime dividing both discriminants";
+                print "proven non-isomorphic by exactly one curve lacking local points at a prime dividing DN";
                 proven_non_isom := true;
                 Append(~genus_2_excluded_by_Qp_pts,pair);
                 break;
             end if;
         end for; 
-    end if;
-
-    if not proven_non_isom then
-        // This is the case where exactly one of the curves has D=1. In this case, we will check reduction types
-        // against the modular curve separately using Tim Dokchitser's package for hyperelliptic curves
-        // in a separate file, but here we check whether the Shimura curve quotient can be seen
-        // to lack a rational point by local means at a prime dividing the discriminant.
-        if (X[1] eq 1) and (Y[1] gt 1) then  
-            print "have one modular curve and one non-modular curve; checking local points";
-            Y := pair[2];
-            D := Y[1];
-            N := Y[2];
-            Wgens := Y[3];
-            for p in PrimeDivisors(D) do 
-                if not (quotient_has_Qp_points(D,N,Wgens,p)) then
-                    print "proven non-isomorphic by local points check"; 
-                    proven_non_isom := true;
-                    Append(~genus_2_excluded_by_Qp_pts,pair);
-                    break;
-                end if;
-            end for;
-        end if;
     end if;
 
     // If the above checks did not succeed in concluding the quotients were
@@ -643,7 +627,7 @@ for pair in genus_2_isom_candidates do
 
         elif X in genus_2_bielliptics_having_eqn then 
             have_X_model := true;
-            X_eqn := Explode([L[4] : L in genus_2_bielliptics_eqn_determined_PS_AH | [*L[1],L[2],L[3]*] eq X]);
+            X_eqn := Explode([L[4] : L in genus_2_bielliptics_eqn_determined_APS | [*L[1],L[2],L[3]*] eq X]);
             X_model := HyperellipticCurve(X_eqn);
 
         elif X in quotients_with_hyperelliptic_top_curve then 
@@ -652,7 +636,7 @@ for pair in genus_2_isom_candidates do
 
         elif X in genus_2_bielliptics_having_eqn_candidates then 
             have_X_model_candidates := true;
-            X_eqn_candidates := Explode([L[4] : L in genus_2_bielliptics_eqn_not_determined_PS_AH | [*L[1],L[2],L[3]*] eq X]);
+            X_eqn_candidates := Explode([L[4] : L in genus_2_bielliptics_eqn_not_determined_APS | [*L[1],L[2],L[3]*] eq X]);
         end if;
 
         // Checking if we have a model or candidate models for Y
@@ -668,7 +652,7 @@ for pair in genus_2_isom_candidates do
 
         elif Y in genus_2_bielliptics_having_eqn then 
             have_Y_model := true;
-            Y_eqn := Explode([L[4] : L in genus_2_bielliptics_eqn_determined_PS_AH | [*L[1],L[2],L[3]*] eq Y]);
+            Y_eqn := Explode([L[4] : L in genus_2_bielliptics_eqn_determined_APS | [*L[1],L[2],L[3]*] eq Y]);
             Y_model := HyperellipticCurve(Y_eqn);
 
         elif Y in quotients_with_hyperelliptic_top_curve then 
@@ -677,7 +661,7 @@ for pair in genus_2_isom_candidates do
 
         elif Y in genus_2_bielliptics_having_eqn_candidates then 
             have_Y_model_candidates := true;
-            Y_eqn_candidates := Explode([L[4] : L in genus_2_bielliptics_eqn_not_determined_PS_AH | [*L[1],L[2],L[3]*] eq Y]);
+            Y_eqn_candidates := Explode([L[4] : L in genus_2_bielliptics_eqn_not_determined_APS | [*L[1],L[2],L[3]*] eq Y]);
         end if;
 
         // running through checks for isomorphism over \mathbb{Q} when we have an equation
@@ -758,6 +742,9 @@ for pair in genus_2_isom_candidates do
     end if;
 end for;
 
+UnsetLogFile();
+
+
 SetOutputFile("remaining_genus_2_isom_candidates.m");
 print "remaining_genus_2_isom_candidates := ", remaining_genus_2_isom_candidates, ";";
 UnsetOutputFile();
@@ -822,8 +809,7 @@ for pair in higher_genus_isom_candidates do
     D2 := Y[1];
     N2 := Y[2];
     W2gens := Y[3];
-    D_primes := PrimeDivisors(D);
-    N_primes := PrimeDivisors(N);
+    DN_primes := PrimeDivisors(D1*N1);
 
     // initalizing a boolean 
     proven_non_isom := false;
@@ -839,7 +825,7 @@ for pair in higher_genus_isom_candidates do
     // We check info of reduction types for at primes dividing DN.
     if not proven_non_isom then 
         print "checking reduction type info at bad primes";
-        for p in PrimeDivisors(D1*N1) do  
+        for p in DN_primes do  
             p_edge_count_X := dual_graph_at_p_edge_count(D1,N1,W1gens,p);
             p_edge_count_Y := dual_graph_at_p_edge_count(D2,N2,W2gens,p);
             if p_edge_count_X ne p_edge_count_Y then 
@@ -851,10 +837,11 @@ for pair in higher_genus_isom_candidates do
         end for;
     end if; 
 
+    // We check existence of local points at primes p dividing DN. 
     if not proven_non_isom then 
-        for p in PrimeDivisors(GCD(D1,D2)) do 
+        for p in DN_primes do 
             if quotient_has_Qp_points(D1,N1,W1gens,p) ne quotient_has_Qp_points(D2,N2,W2gens,p) then 
-                print "proven non-isomorphic by exactly one curve lacking local points at a prime dividing both discriminants";
+                print "proven non-isomorphic by exactly one curve lacking local points at a prime dividing DN";
                 proven_non_isom := true;
                 Append(~higher_genus_excluded_by_Qp_pts,pair);
                 break;
@@ -862,27 +849,6 @@ for pair in higher_genus_isom_candidates do
         end for; 
     end if;
     
-    // This case only occurs if exactly one of the curves has D=1. In this case, we will check reduction types
-    // against the modular curve separately using Tim Dokchitser's package for hyperelliptic curves
-    // in a separate file, but here we check whether the Shimura curve quotient can be seen
-    // to lack a rational point by local means at a prime dividing the discriminant.
-    if not proven_non_isom then
-        if (D1 eq 1) and (D2 gt 1) then  
-            print "have one modular curve and one non-modular curve; checking local points";
-            Y := pair[2];
-            D := Y[1];
-            N := Y[2];
-            Wgens := Y[3];
-            for p in PrimeDivisors(D) do 
-                if not (quotient_has_Qp_points(D,N,Wgens,p)) then
-                    print "proven non-isomorphic by local points check"; 
-                    proven_non_isom := true;
-                    Append(~higher_genus_excluded_by_Qp_pts,pair);
-                    break;
-                end if;
-            end for;
-        end if;
-    end if;
 
     // If the above checks did not succeed in concluding the quotients were
     // not isomorphic over \Q, then we test isomorphism using models if we have them
