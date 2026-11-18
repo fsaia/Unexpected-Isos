@@ -18,13 +18,15 @@ ChangeDirectory("..");
 load "Isogenies/DifferentProductLevel/isogenous_pairs__different_products.m";
 load "Isogenies/DifferentProductLevel/isogenous_modular_quotients_different_levels.m";
 
-// all pairs, in the first format (D1 = D2 = 1 for the modular ones)
+// all pairs of genus >= 2, in the first format (D1 = D2 = 1 for the modular ones); the
+// genus 1 pairs are decided by the isomorphism classes of their Jacobians and their
+// rational points, which are known
 candidate_pairs := [* *];
 for P in remaining_after_pt_cts_general do
-    Append(~candidate_pairs, P);
+    if P[5] ge 2 then Append(~candidate_pairs, P); end if;
 end for;
 for P in isogenous_modular_quotients_different_levels do
-    Append(~candidate_pairs, [* 1, P[1], 1, P[2], P[3], P[4], P[5] *]);
+    if P[3] ge 2 then Append(~candidate_pairs, [* 1, P[1], 1, P[2], P[3], P[4], P[5] *]); end if;
 end for;
 
 

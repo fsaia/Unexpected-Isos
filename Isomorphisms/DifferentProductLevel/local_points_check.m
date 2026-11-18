@@ -32,7 +32,7 @@ load "Isomorphisms/DifferentProductLevel/remaining_isomorphism_lists_different_p
     remaining_after_local_points := [* *];
     excluded_by_local_points := [* *];
 
-    // only the genus >= 2 pairs; the genus 1 pairs are decided by genus1_label_comparison.m
+    // only the genus >= 2 pairs
     candidates := [pair : pair in remaining_isomorphism_lists_different_products_v1 | pair[5] ge 2];
     steps := #candidates;
     step := 0;
