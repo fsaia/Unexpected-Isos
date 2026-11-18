@@ -7,12 +7,18 @@ SetMemoryLimit(40 * 1024^3);
 
 X93  := X0NQuotient(93, [93]);
 X186 := X0NQuotient(186, [3, 62]);
-R<x1,x2,x3,x4> := CoordinateRing(AmbientSpace(X93));
+R<X,Y,Z,W> := CoordinateRing(AmbientSpace(X93));
+A186 := AmbientSpace(X186);
+AssignNames(~A186, ["X", "Y", "Z", "W"]);
+
+// the models, since later Magma versions may compute different ones
+print "X_0(93)/<w_93>:", MinimalBasis(X93);
+print "X_0(186)/<w_3,w_62>:", MinimalBasis(X186);
 
 // the explicit isomorphism over Q
-phi := map< X93 -> X186 | [x3, x1, x2, -x4] >;
+phi := map< X93 -> X186 | [Z, X, Y, -W] >;
 assert IsIsomorphism(phi);
-print "X_0(93)/<w_93> and X_0(186)/<w_3,w_62> are isomorphic over Q via (x1:x2:x3:x4) -> (x3:x1:x2:-x4)";
+print "X_0(93)/<w_93> and X_0(186)/<w_3,w_62> are isomorphic over Q via (X:Y:Z:W) -> (Z:X:Y:-W)";
 
 
 // How we found it. IsIsomorphic over Q needs too much memory, but over F_p it is quick.

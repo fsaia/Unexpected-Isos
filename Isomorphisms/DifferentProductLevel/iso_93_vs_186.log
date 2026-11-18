@@ -1,10 +1,18 @@
-Magma V2.30-1     Mon Nov 16 2026 15:07:24 on mordell  [Seed = 4066617670]
+Magma V2.30-1     Wed Nov 18 2026 14:09:08 on mordell  [Seed = 3207100525]
 Type <Ctrl>-D to quit.
 
 Loading startup file "iso_93_vs_186.m"
 
-X_0(93)/<w_93> and X_0(186)/<w_3,w_62> are isomorphic over Q via (x1:x2:x3:x4) 
--> (x3:x1:x2:-x4)
+X_0(93)/<w_93>: [
+    X*Z - Y*Z + Y*W,
+    X*Y^2 - Y^3 - Y*Z^2 + X^2*W - X*Y*W + 2*Y^2*W + Y*Z*W - 2*Y*W^2 + Z*W^2
+]
+X_0(186)/<w_3,w_62>: [
+    X*Y - X*Z - Z*W,
+    X^2*Z - Y*Z^2 + Z^3 + Y^2*W + X*Z*W - Y*Z*W + 2*Z^2*W - X*W^2 + 2*Z*W^2
+]
+X_0(93)/<w_93> and X_0(186)/<w_3,w_62> are isomorphic over Q via (X:Y:Z:W) -> 
+(Z:X:Y:-W)
 lift of an isomorphism mod 29 works over Q, with matrix
 [ 0  0  1  0]
 [ 1  0  0  0]
@@ -16,4 +24,4 @@ lift of an isomorphism mod 29 works over Q, with matrix
 [ 0  0  0 -1]
 [ 0  1  0  0]
 
-Total time: 1.159 seconds, Total memory usage: 32.09MB
+Total time: 1.129 seconds, Total memory usage: 32.09MB
